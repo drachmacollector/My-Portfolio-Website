@@ -35,7 +35,7 @@ const AboutSection = () => {
               <h3 className="text-2xl font-bold mb-6 text-firebase-orange">My Journey</h3>
               <div className="space-y-4 text-gray-300 leading-relaxed">
                 <p>
-                  Welcome to my digital realm! I'm Alex Chen, a passionate full-stack developer 
+                  Welcome to my digital realm! I'm Nakul, a passionate full-stack developer 
                   with over 5 years of experience crafting exceptional digital experiences. 
                   My journey began with a simple "Hello World" and has evolved into building 
                   complex, scalable applications that serve millions of users.

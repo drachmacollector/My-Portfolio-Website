@@ -99,7 +99,7 @@ const HeroSection = () => {
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-firebase-orange via-firebase-purple to-firebase-pink opacity-75 animate-glow-pulse" />
               <div className="absolute inset-2 rounded-full overflow-hidden bg-black">
                 <img 
-                  src="/lovable-uploads/84e213a0-77be-49dd-9cae-416761d61a57.png"
+                  src="/lovable-uploads/dedae507-a4f3-4e4d-aa46-e3d3397ebad5.png"
                   alt="Nakul - Software Developer"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
