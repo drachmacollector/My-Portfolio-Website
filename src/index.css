@@ -5,44 +5,44 @@
 
 @layer base {
   :root {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 221 83% 53%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 348 83% 47%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 13%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 0 0% 13%;
+    --muted-foreground: 0 0% 64%;
 
-    --accent: 217 33% 17%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 0 0% 13%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 224 76% 48%;
+    --border: 0 0% 13%;
+    --input: 0 0% 13%;
+    --ring: 348 83% 47%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 240 6% 10%;
-    --sidebar-foreground: 240 5% 96%;
-    --sidebar-primary: 224 76% 48%;
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 348 83% 47%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 4% 16%;
-    --sidebar-accent-foreground: 240 5% 96%;
-    --sidebar-border: 240 4% 16%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-accent: 0 0% 13%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 13%;
+    --sidebar-ring: 348 83% 47%;
   }
 }
 
@@ -54,9 +54,9 @@
   body {
     @apply bg-background text-foreground font-space;
     background: 
-      radial-gradient(ellipse at top, rgba(255, 138, 101, 0.1) 0%, transparent 50%),
-      radial-gradient(ellipse at bottom, rgba(156, 39, 176, 0.1) 0%, transparent 50%),
-      linear-gradient(180deg, #0a0a0b 0%, #1a1625 100%);
+      radial-gradient(ellipse at top, rgba(229, 9, 20, 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom, rgba(229, 9, 20, 0.05) 0%, transparent 50%),
+      linear-gradient(180deg, #000000 0%, #141414 100%);
     min-height: 100vh;
   }
 
@@ -69,46 +69,46 @@
   .glass-card {
     @apply backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl;
     box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.3),
+      0 8px 32px rgba(0, 0, 0, 0.5),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .neomorph-card {
-    background: linear-gradient(145deg, rgba(26, 22, 37, 0.8), rgba(16, 13, 25, 0.9));
+    background: linear-gradient(145deg, rgba(20, 20, 20, 0.8), rgba(8, 8, 8, 0.9));
     box-shadow: 
-      20px 20px 40px rgba(0, 0, 0, 0.4),
-      -20px -20px 40px rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+      20px 20px 40px rgba(0, 0, 0, 0.6),
+      -20px -20px 40px rgba(229, 9, 20, 0.02);
+    border: 1px solid rgba(229, 9, 20, 0.1);
   }
 
   .glow-text {
-    text-shadow: 0 0 20px rgba(255, 138, 101, 0.5);
+    text-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
   }
 
   .nav-link {
-    @apply relative transition-all duration-300 hover:text-firebase-orange;
+    @apply relative transition-all duration-300 hover:text-netflix-red;
   }
 
   .nav-link::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-firebase-orange transition-all duration-300;
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-netflix-red transition-all duration-300;
   }
 
   .nav-link:hover::after {
     @apply w-full;
-    box-shadow: 0 0 10px rgba(255, 138, 101, 0.7);
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.7);
   }
 
   .particle {
     position: absolute;
-    background: linear-gradient(45deg, #FF8A65, #E91E63);
+    background: linear-gradient(45deg, #E50914, #aa0a11);
     border-radius: 50%;
     pointer-events: none;
   }
 
   .typing-container {
     overflow: hidden;
-    border-right: 3px solid #FF8A65;
+    border-right: 3px solid #E50914;
     white-space: nowrap;
     margin: 0 auto;
     letter-spacing: 0.1em;
@@ -126,14 +126,14 @@
 
   .tech-tag {
     @apply px-3 py-1 rounded-full text-xs font-medium border transition-all duration-300;
-    background: rgba(255, 138, 101, 0.1);
-    border-color: rgba(255, 138, 101, 0.3);
-    color: #FF8A65;
+    background: rgba(229, 9, 20, 0.1);
+    border-color: rgba(229, 9, 20, 0.3);
+    color: #E50914;
   }
 
   .tech-tag:hover {
-    background: rgba(255, 138, 101, 0.2);
-    box-shadow: 0 0 15px rgba(255, 138, 101, 0.4);
+    background: rgba(229, 9, 20, 0.2);
+    box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
   }
 
   .contact-form {
@@ -149,18 +149,32 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 138, 101, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(229, 9, 20, 0.1), transparent);
     transition: left 0.5s;
   }
 
   .contact-form:hover::before {
     left: 100%;
   }
+
+  .title-transition {
+    position: relative;
+    overflow: hidden;
+    height: 1.2em;
+  }
+
+  .title-enter {
+    animation: slide-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .title-exit {
+    animation: slide-down 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
 }
 
 .grid-bg {
   background-image: 
-    linear-gradient(rgba(255, 138, 101, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 138, 101, 0.1) 1px, transparent 1px);
+    linear-gradient(rgba(229, 9, 20, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(229, 9, 20, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
 }

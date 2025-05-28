@@ -59,7 +59,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-md text-firebase-orange hover:bg-white/5 transition-colors"
+              className="p-2 rounded-md text-netflix-red hover:bg-white/5 transition-colors"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>

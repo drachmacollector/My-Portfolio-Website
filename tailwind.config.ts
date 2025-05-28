@@ -67,13 +67,13 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				firebase: {
-					orange: '#FF8A65',
-					red: '#F44336',
-					purple: '#9C27B0',
-					pink: '#E91E63',
-					blue: '#2196F3',
-					cyan: '#00BCD4'
+				netflix: {
+					red: '#E50914',
+					black: '#000000',
+					darkGray: '#141414',
+					gray: '#221f1f',
+					lightGray: '#564d4d',
+					white: '#ffffff'
 				}
 			},
 			borderRadius: {
@@ -114,10 +114,10 @@ export default {
 				},
 				'glow-pulse': {
 					'0%, 100%': { 
-						boxShadow: '0 0 20px rgba(255, 138, 101, 0.5)' 
+						boxShadow: '0 0 20px rgba(229, 9, 20, 0.5)' 
 					},
 					'50%': { 
-						boxShadow: '0 0 40px rgba(255, 138, 101, 0.8), 0 0 60px rgba(255, 138, 101, 0.3)' 
+						boxShadow: '0 0 40px rgba(229, 9, 20, 0.8), 0 0 60px rgba(229, 9, 20, 0.3)' 
 					}
 				},
 				'float': {
@@ -130,7 +130,7 @@ export default {
 				},
 				'blink': {
 					'0%, 50%': { borderColor: 'transparent' },
-					'51%, 100%': { borderColor: '#FF8A65' }
+					'51%, 100%': { borderColor: '#E50914' }
 				},
 				'particle-float': {
 					'0%': { 
@@ -147,6 +147,26 @@ export default {
 				'rotate-slow': {
 					'0%': { transform: 'rotate(0deg)' },
 					'100%': { transform: 'rotate(360deg)' }
+				},
+				'slide-up': {
+					'0%': { 
+						transform: 'translateY(100%)',
+						opacity: '0'
+					},
+					'100%': { 
+						transform: 'translateY(0)',
+						opacity: '1'
+					}
+				},
+				'slide-down': {
+					'0%': { 
+						transform: 'translateY(0)',
+						opacity: '1'
+					},
+					'100%': { 
+						transform: 'translateY(-100%)',
+						opacity: '0'
+					}
 				}
 			},
 			animation: {
@@ -158,10 +178,12 @@ export default {
 				'float': 'float 3s ease-in-out infinite',
 				'typing': 'typing 3.5s steps(40, end), blink 0.75s step-end infinite',
 				'particle-float': 'particle-float 15s linear infinite',
-				'rotate-slow': 'rotate-slow 20s linear infinite'
+				'rotate-slow': 'rotate-slow 20s linear infinite',
+				'slide-up': 'slide-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+				'slide-down': 'slide-down 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
 			},
 			backgroundImage: {
-				'grid-pattern': 'linear-gradient(rgba(255, 138, 101, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 138, 101, 0.1) 1px, transparent 1px)',
+				'grid-pattern': 'linear-gradient(rgba(229, 9, 20, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(229, 9, 20, 0.1) 1px, transparent 1px)',
 			},
 			backgroundSize: {
 				'grid': '50px 50px',
