@@ -55,7 +55,7 @@
     @apply bg-background text-foreground font-space;
     background: 
       radial-gradient(ellipse at top, rgba(255, 138, 101, 0.1) 0%, transparent 50%),
-      radial-gradient(ellipse at bottom, rgba(156, 39, 176, 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom, rgba(255, 7, 58, 0.1) 0%, transparent 50%),
       linear-gradient(180deg, #0a0a0b 0%, #1a1625 100%);
     min-height: 100vh;
   }
@@ -82,7 +82,7 @@
   }
 
   .glow-text {
-    text-shadow: 0 0 20px rgba(255, 138, 101, 0.5);
+    text-shadow: 0 0 20px rgba(255, 138, 101, 0.5), 0 0 40px rgba(255, 7, 58, 0.3);
   }
 
   .nav-link {
@@ -101,7 +101,7 @@
 
   .particle {
     position: absolute;
-    background: linear-gradient(45deg, #FF8A65, #E91E63);
+    background: linear-gradient(45deg, #FF8A65, #FF073A);
     border-radius: 50%;
     pointer-events: none;
   }
@@ -156,11 +156,19 @@
   .contact-form:hover::before {
     left: 100%;
   }
+
+  /* Enhanced neon effects */
+  .neon-glow {
+    box-shadow: 
+      0 0 10px rgba(255, 7, 58, 0.5),
+      0 0 20px rgba(255, 7, 58, 0.3),
+      0 0 40px rgba(255, 7, 58, 0.1);
+  }
 }
 
 .grid-bg {
   background-image: 
     linear-gradient(rgba(255, 138, 101, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 138, 101, 0.1) 1px, transparent 1px);
+    linear-gradient(90deg, rgba(255, 7, 58, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
 }
