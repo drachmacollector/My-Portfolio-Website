@@ -6,7 +6,6 @@ const HeroSection = () => {
   const [text, setText] = useState('');
   const [isTypingComplete, setIsTypingComplete] = useState(false);
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
   const fullText = "Hi, I'm Nakul";
   const developerTitles = ["software developer", "web developer", "frontend developer", "3D Animator"];
 
@@ -28,12 +27,8 @@ const HeroSection = () => {
   useEffect(() => {
     if (isTypingComplete) {
       const titleTimer = setInterval(() => {
-        setIsTransitioning(true);
-        setTimeout(() => {
-          setCurrentTitleIndex((prev) => (prev + 1) % developerTitles.length);
-          setIsTransitioning(false);
-        }, 400);
-      }, 2500);
+        setCurrentTitleIndex((prev) => (prev + 1) % developerTitles.length);
+      }, 2000);
 
       return () => clearInterval(titleTimer);
     }
@@ -47,10 +42,10 @@ const HeroSection = () => {
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-netflix-red rounded-full animate-pulse" />
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-red-600 rounded-full animate-pulse delay-1000" />
-        <div className="absolute bottom-1/4 left-1/2 w-1.5 h-1.5 bg-red-800 rounded-full animate-pulse delay-2000" />
-        <div className="absolute top-2/3 right-1/4 w-1 h-1 bg-netflix-red rounded-full animate-pulse delay-500" />
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-firebase-orange rounded-full animate-pulse" />
+        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-firebase-purple rounded-full animate-pulse delay-1000" />
+        <div className="absolute bottom-1/4 left-1/2 w-1.5 h-1.5 bg-firebase-pink rounded-full animate-pulse delay-2000" />
+        <div className="absolute top-2/3 right-1/4 w-1 h-1 bg-firebase-cyan rounded-full animate-pulse delay-500" />
       </div>
 
       <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -58,26 +53,20 @@ const HeroSection = () => {
         <div className="text-left z-10">
           {/* Main Title */}
           <div className="mb-8">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 font-space">
+            <h1 className="text-6xl md:text-8xl font-bold mb-6 font-space">
               <span className="glow-text">
                 {text}
                 {!isTypingComplete && <span className="animate-blink">|</span>}
               </span>
             </h1>
-            <div className="h-2 bg-gradient-to-r from-netflix-red via-red-600 to-red-800 rounded-full max-w-md opacity-80" />
+            <div className="h-2 bg-gradient-to-r from-firebase-orange via-firebase-purple to-firebase-pink rounded-full max-w-md opacity-80" />
           </div>
 
           {/* Subtitle with rotating titles */}
           <div className="mb-8 animate-fade-in opacity-0 animation-delay-3000" style={{animationDelay: '3s', animationFillMode: 'forwards'}}>
-            <p className="text-2xl md:text-3xl text-gray-300">
-              A{' '}
-              <span className="text-netflix-red font-semibold relative inline-block title-transition">
-                <span 
-                  className={`absolute inset-0 ${isTransitioning ? 'title-exit' : 'title-enter'}`}
-                  key={currentTitleIndex}
-                >
-                  {developerTitles[currentTitleIndex]}
-                </span>
+            <p className="text-xl md:text-2xl text-gray-300">
+              A <span className="text-firebase-orange font-semibold transition-all duration-500">
+                {developerTitles[currentTitleIndex]}
               </span>
             </p>
           </div>
@@ -91,11 +80,11 @@ const HeroSection = () => {
           {/* CTA Button */}
           <button
             onClick={scrollToAbout}
-            className="group relative px-8 py-4 bg-gradient-to-r from-netflix-red to-red-700 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-netflix-red/25 animate-fade-in opacity-0"
+            className="group relative px-8 py-4 bg-gradient-to-r from-firebase-orange to-firebase-red rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-firebase-orange/25 animate-fade-in opacity-0"
             style={{animationDelay: '5s', animationFillMode: 'forwards'}}
           >
             <span className="relative z-10">Explore My Universe</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-red-700 to-red-900 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-r from-firebase-red to-firebase-purple rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
         </div>
 
@@ -105,7 +94,7 @@ const HeroSection = () => {
             {/* Animated circular frame */}
             <div className="relative w-80 h-80 rounded-full overflow-hidden glass-card animate-float">
               {/* Glowing border animation */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-netflix-red via-red-600 to-red-800 opacity-75 animate-glow-pulse" />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-firebase-orange via-firebase-purple to-firebase-pink opacity-75 animate-glow-pulse" />
               <div className="absolute inset-2 rounded-full overflow-hidden bg-black">
                 <img 
                   src="/lovable-uploads/dedae507-a4f3-4e4d-aa46-e3d3397ebad5.png"
@@ -116,16 +105,16 @@ const HeroSection = () => {
             </div>
             
             {/* Floating decorative elements around the image */}
-            <div className="absolute -top-4 -right-4 w-8 h-8 bg-netflix-red rounded-full opacity-60 animate-pulse" />
-            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-red-600 rounded-full opacity-60 animate-pulse delay-1000" />
-            <div className="absolute top-1/2 -left-8 w-4 h-4 bg-red-800 rounded-full opacity-60 animate-pulse delay-2000" />
+            <div className="absolute -top-4 -right-4 w-8 h-8 bg-firebase-orange rounded-full opacity-60 animate-pulse" />
+            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-firebase-purple rounded-full opacity-60 animate-pulse delay-1000" />
+            <div className="absolute top-1/2 -left-8 w-4 h-4 bg-firebase-pink rounded-full opacity-60 animate-pulse delay-2000" />
           </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="w-6 h-6 text-netflix-red" />
+        <ArrowDown className="w-6 h-6 text-firebase-orange" />
       </div>
     </section>
   );
