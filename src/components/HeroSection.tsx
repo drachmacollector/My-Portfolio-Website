@@ -1,11 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
-import { ArrowDown, Code, Coffee } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 
 const HeroSection = () => {
   const [text, setText] = useState('');
   const [isTypingComplete, setIsTypingComplete] = useState(false);
-  const fullText = "Nakul";
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+  const fullText = "Hi, I'm Nakul";
+  const developerTitles = ["software developer", "web developer", "frontend developer", "3D Animator"];
 
   useEffect(() => {
     let index = 0;
@@ -21,6 +23,16 @@ const HeroSection = () => {
 
     return () => clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    if (isTypingComplete) {
+      const titleTimer = setInterval(() => {
+        setCurrentTitleIndex((prev) => (prev + 1) % developerTitles.length);
+      }, 2000);
+
+      return () => clearInterval(titleTimer);
+    }
+  }, [isTypingComplete]);
 
   const scrollToAbout = () => {
     document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
@@ -41,19 +53,23 @@ const HeroSection = () => {
         <div className="text-left z-10">
           {/* Main Title */}
           <div className="mb-8">
-            <h1 className="text-6xl md:text-8xl font-bold mb-4 font-space">
+            <h1 className="text-6xl md:text-8xl font-bold mb-6 font-space">
               <span className="glow-text">
                 {text}
                 {!isTypingComplete && <span className="animate-blink">|</span>}
               </span>
             </h1>
-            <div className="h-2 bg-gradient-to-r from-firebase-orange via-firebase-purple to-firebase-pink rounded-full max-w-md animate-glow-pulse" />
+            <div className="h-2 bg-gradient-to-r from-firebase-orange via-firebase-purple to-firebase-pink rounded-full max-w-md opacity-80" />
           </div>
 
-          {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 animate-fade-in opacity-0 animation-delay-3000" style={{animationDelay: '3s', animationFillMode: 'forwards'}}>
-            Hi, I'm Nakul, a software developer
-          </p>
+          {/* Subtitle with rotating titles */}
+          <div className="mb-8 animate-fade-in opacity-0 animation-delay-3000" style={{animationDelay: '3s', animationFillMode: 'forwards'}}>
+            <p className="text-xl md:text-2xl text-gray-300">
+              A <span className="text-firebase-orange font-semibold transition-all duration-500">
+                {developerTitles[currentTitleIndex]}
+              </span>
+            </p>
+          </div>
 
           {/* Mission Statement */}
           <p className="text-lg text-gray-400 mb-12 max-w-2xl animate-fade-in opacity-0" style={{animationDelay: '4s', animationFillMode: 'forwards'}}>
@@ -61,29 +77,11 @@ const HeroSection = () => {
             one line of code at a time. Building the future, today.
           </p>
 
-          {/* Stats */}
-          <div className="flex space-x-8 mb-12 animate-fade-in opacity-0" style={{animationDelay: '5s', animationFillMode: 'forwards'}}>
-            <div className="text-center">
-              <div className="flex items-center mb-2">
-                <Code className="w-6 h-6 text-firebase-orange mr-2" />
-                <span className="text-2xl font-bold text-firebase-orange">50+</span>
-              </div>
-              <p className="text-sm text-gray-400">Projects Built</p>
-            </div>
-            <div className="text-center">
-              <div className="flex items-center mb-2">
-                <Coffee className="w-6 h-6 text-firebase-purple mr-2" />
-                <span className="text-2xl font-bold text-firebase-purple">1000+</span>
-              </div>
-              <p className="text-sm text-gray-400">Cups of Coffee</p>
-            </div>
-          </div>
-
           {/* CTA Button */}
           <button
             onClick={scrollToAbout}
             className="group relative px-8 py-4 bg-gradient-to-r from-firebase-orange to-firebase-red rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-firebase-orange/25 animate-fade-in opacity-0"
-            style={{animationDelay: '6s', animationFillMode: 'forwards'}}
+            style={{animationDelay: '5s', animationFillMode: 'forwards'}}
           >
             <span className="relative z-10">Explore My Universe</span>
             <div className="absolute inset-0 bg-gradient-to-r from-firebase-red to-firebase-purple rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -117,14 +115,6 @@ const HeroSection = () => {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <ArrowDown className="w-6 h-6 text-firebase-orange" />
-      </div>
-
-      {/* Floating Code Snippets */}
-      <div className="absolute top-20 left-10 opacity-20 font-mono text-firebase-orange animate-float">
-        <span>&lt;developer&gt;</span>
-      </div>
-      <div className="absolute bottom-20 right-10 opacity-20 font-mono text-firebase-purple animate-float" style={{animationDelay: '1s'}}>
-        <span>console.log('Hello World');</span>
       </div>
     </section>
   );
