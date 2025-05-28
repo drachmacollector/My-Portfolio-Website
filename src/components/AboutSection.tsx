@@ -101,13 +101,6 @@ const AboutSection = () => {
               </div>
             </div>
 
-            {/* Experience Highlight */}
-            <div className="glass-card p-6 animate-fade-in">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-firebase-orange mb-2">5+</div>
-                <p className="text-gray-300">Years of Experience</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

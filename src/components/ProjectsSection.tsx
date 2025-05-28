@@ -32,7 +32,7 @@ const ProjectsSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">
-            Featured <span className="text-netflix-red">Project</span>
+            My <span className="text-netflix-red">Projects</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-netflix-red to-neon-red mx-auto mb-8" />
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">

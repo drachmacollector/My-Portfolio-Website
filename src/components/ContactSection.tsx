@@ -34,19 +34,13 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'alex.chen@example.com',
+      value: 'nakulccs@gmail.com',
       color: 'firebase-orange'
-    },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+1 (555) 123-4567',
-      color: 'firebase-purple'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Mumbai, India',
       color: 'firebase-pink'
     }
   ];
