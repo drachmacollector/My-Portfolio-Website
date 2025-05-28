@@ -75,7 +75,7 @@ const HeroSection = () => {
             className="group relative px-8 py-4 bg-gradient-to-r from-firebase-orange to-neon-red rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-neon-red/25 animate-fade-in opacity-0"
             style={{animationDelay: '5s', animationFillMode: 'forwards'}}
           >
-            <span className="relative z-10">Explore My Universe</span>
+            <span className="relative z-10">Explore More</span>
             <div className="absolute inset-0 bg-gradient-to-r from-neon-red to-neon-red-bright rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
         </div>
