@@ -1,12 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
+import RotatingText from './RotatingText';
 
 const HeroSection = () => {
   const [text, setText] = useState('');
   const [isTypingComplete, setIsTypingComplete] = useState(false);
-  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
   const fullText = "Hi, I'm Nakul";
   const developerTitles = ["software developer", "web developer", "frontend developer", "3D Animator"];
 
@@ -25,20 +24,6 @@ const HeroSection = () => {
     return () => clearInterval(timer);
   }, []);
 
-  useEffect(() => {
-    if (isTypingComplete) {
-      const titleTimer = setInterval(() => {
-        setIsAnimating(true);
-        setTimeout(() => {
-          setCurrentTitleIndex((prev) => (prev + 1) % developerTitles.length);
-          setIsAnimating(false);
-        }, 400);
-      }, 3000);
-
-      return () => clearInterval(titleTimer);
-    }
-  }, [isTypingComplete]);
-
   const scrollToAbout = () => {
     document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -56,33 +41,25 @@ const HeroSection = () => {
       <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side - Text Content */}
         <div className="text-left z-10">
-          {/* Main Title - Made smaller */}
+          {/* Main Title - Increased size */}
           <div className="mb-8">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 font-space">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 font-space">
               <span className="glow-text">
                 {text}
                 {!isTypingComplete && <span className="animate-blink">|</span>}
               </span>
             </h1>
-            <div className="h-2 bg-gradient-to-r from-firebase-orange via-neon-red to-firebase-pink rounded-full max-w-md opacity-80" />
+            <div className="h-3 bg-gradient-to-r from-firebase-orange via-neon-red to-firebase-pink rounded-full max-w-lg opacity-80" />
           </div>
 
-          {/* Subtitle with smooth rotating titles - Made larger */}
-          <div className="mb-8 animate-fade-in opacity-0 h-16 overflow-hidden" style={{animationDelay: '3s', animationFillMode: 'forwards'}}>
-            <p className="text-2xl md:text-3xl text-gray-300">
+          {/* Subtitle with rotating text - Increased size */}
+          <div className="mb-8 animate-fade-in opacity-0 h-20 overflow-hidden" style={{animationDelay: '3s', animationFillMode: 'forwards'}}>
+            <p className="text-3xl md:text-4xl text-gray-300">
               A{' '}
-              <span className="relative inline-block">
-                <span 
-                  className={`text-firebase-orange font-semibold transition-all duration-800 ease-in-out ${
-                    isAnimating ? 'animate-slide-down' : 'animate-slide-up'
-                  }`}
-                  style={{
-                    textShadow: '0 0 20px rgba(255, 7, 58, 0.5)'
-                  }}
-                >
-                  {developerTitles[currentTitleIndex]}
-                </span>
-              </span>
+              <RotatingText 
+                words={developerTitles}
+                className="text-firebase-orange font-semibold h-16"
+              />
             </p>
           </div>
 
@@ -103,15 +80,18 @@ const HeroSection = () => {
           </button>
         </div>
 
-        {/* Right Side - Enhanced Profile Image */}
+        {/* Right Side - Enhanced Profile Image - Increased size */}
         <div className="flex justify-center lg:justify-end z-10">
           <div className="relative">
-            {/* Enhanced animated circular frame */}
-            <div className="relative w-80 h-80 rounded-full overflow-hidden glass-card animate-float">
-              {/* Multiple glowing border layers for sci-fi effect */}
+            {/* Enhanced animated circular frame - Increased size */}
+            <div className="relative w-96 h-96 rounded-full overflow-hidden glass-card animate-float">
+              {/* Multiple glowing border layers for sci-fi effect with enhanced animations */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-firebase-orange via-neon-red to-firebase-pink opacity-75 animate-neon-pulse" />
               <div className="absolute inset-1 rounded-full bg-gradient-to-r from-neon-red via-firebase-purple to-firebase-orange opacity-50 animate-glow-pulse" />
-              <div className="absolute inset-2 rounded-full overflow-hidden bg-black">
+              <div className="absolute inset-0 rounded-full animate-rotate-slow">
+                <div className="w-full h-full rounded-full border-2 border-neon-red/30 border-dashed" />
+              </div>
+              <div className="absolute inset-4 rounded-full overflow-hidden bg-black">
                 <img 
                   src="/lovable-uploads/dedae507-a4f3-4e4d-aa46-e3d3397ebad5.png"
                   alt="Nakul - Software Developer"
@@ -119,12 +99,15 @@ const HeroSection = () => {
                 />
               </div>
               
-              {/* Orbiting elements for sci-fi feel */}
+              {/* Enhanced orbiting elements for sci-fi feel */}
               <div className="absolute inset-0 animate-orbit">
                 <div className="w-3 h-3 bg-neon-red rounded-full shadow-lg shadow-neon-red/50" />
               </div>
               <div className="absolute inset-0 animate-orbit" style={{animationDelay: '-4s', animationDirection: 'reverse'}}>
                 <div className="w-2 h-2 bg-firebase-orange rounded-full shadow-lg shadow-firebase-orange/50" />
+              </div>
+              <div className="absolute inset-0 animate-orbit" style={{animationDelay: '-2s'}}>
+                <div className="w-1.5 h-1.5 bg-neon-red-bright rounded-full shadow-lg shadow-neon-red-bright/50" />
               </div>
             </div>
             

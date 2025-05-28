@@ -6,6 +6,7 @@ import AboutSection from '../components/AboutSection';
 import ProjectsSection from '../components/ProjectsSection';
 import ContactSection from '../components/ContactSection';
 import ParticleBackground from '../components/ParticleBackground';
+import CanvasCursor from '../components/CanvasCursor';
 
 const Index = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -24,6 +25,9 @@ const Index = () => {
       {/* Background Elements */}
       <div className="fixed inset-0 grid-bg opacity-20" />
       <ParticleBackground />
+      
+      {/* Canvas Cursor Effect */}
+      <CanvasCursor />
       
       {/* Mouse Follow Glow */}
       <div 
