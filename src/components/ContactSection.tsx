@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Send, Mail, MessageCircle, User, MapPin, Phone } from 'lucide-react';
+import { Send, Mail, MessageCircle, User, MapPin, Github, Linkedin, FileText } from 'lucide-react';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -45,30 +45,30 @@ const ContactSection = () => {
     }
   ];
 
-  const socialLinks = [
+  const socialButtons = [
     {
       name: 'GitHub',
-      url: '#',
-      icon: '🐙',
-      color: 'firebase-orange'
+      url: 'https://github.com/drachmacollector',
+      icon: Github,
+      color: 'from-gray-700 to-gray-900'
     },
     {
       name: 'LinkedIn',
-      url: '#',
-      icon: '💼',
-      color: 'firebase-blue'
+      url: 'https://www.linkedin.com/in/nakul-bhadade-b7ba06313/',
+      icon: Linkedin,
+      color: 'from-blue-600 to-blue-800'
     },
     {
-      name: 'Twitter',
+      name: 'Read.cv',
       url: '#',
-      icon: '🐦',
-      color: 'firebase-cyan'
+      icon: FileText,
+      color: 'from-purple-600 to-purple-800'
     },
     {
-      name: 'Discord',
-      url: '#',
-      icon: '🎮',
-      color: 'firebase-purple'
+      name: 'Email',
+      url: 'mailto:nakulccs@gmail.com',
+      icon: Mail,
+      color: 'from-firebase-orange to-firebase-red'
     }
   ];
 
@@ -89,13 +89,13 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="space-y-8">
-            <div className="contact-form">
+            <div className="glassmorphic-card">
               <h3 className="text-2xl font-bold mb-6 text-firebase-orange">Send a Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="relative">
-                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-firebase-orange" />
+                  <div className="relative group">
+                    <User className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-firebase-orange/70 group-focus-within:text-firebase-orange transition-colors" />
                     <input
                       type="text"
                       name="name"
@@ -103,12 +103,12 @@ const ContactSection = () => {
                       onChange={handleChange}
                       placeholder="Your Name"
                       required
-                      className="w-full pl-12 pr-4 py-3 bg-black/20 border border-white/10 rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 focus:ring-firebase-orange/20 transition-all"
+                      className="glassmorphic-input pl-12"
                     />
                   </div>
                   
-                  <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-firebase-orange" />
+                  <div className="relative group">
+                    <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-firebase-orange/70 group-focus-within:text-firebase-orange transition-colors" />
                     <input
                       type="email"
                       name="email"
@@ -116,13 +116,13 @@ const ContactSection = () => {
                       onChange={handleChange}
                       placeholder="Your Email"
                       required
-                      className="w-full pl-12 pr-4 py-3 bg-black/20 border border-white/10 rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 focus:ring-firebase-orange/20 transition-all"
+                      className="glassmorphic-input pl-12"
                     />
                   </div>
                 </div>
 
-                <div className="relative">
-                  <MessageCircle className="absolute left-3 top-4 w-5 h-5 text-firebase-orange" />
+                <div className="relative group">
+                  <MessageCircle className="absolute left-4 top-4 w-5 h-5 text-firebase-orange/70 group-focus-within:text-firebase-orange transition-colors" />
                   <input
                     type="text"
                     name="subject"
@@ -130,7 +130,7 @@ const ContactSection = () => {
                     onChange={handleChange}
                     placeholder="Subject"
                     required
-                    className="w-full pl-12 pr-4 py-3 bg-black/20 border border-white/10 rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 focus:ring-firebase-orange/20 transition-all"
+                    className="glassmorphic-input pl-12"
                   />
                 </div>
 
@@ -142,14 +142,14 @@ const ContactSection = () => {
                     placeholder="Your Message"
                     rows={6}
                     required
-                    className="w-full p-4 bg-black/20 border border-white/10 rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 focus:ring-firebase-orange/20 transition-all resize-none"
+                    className="glassmorphic-input p-4 resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 bg-gradient-to-r from-firebase-orange to-firebase-red rounded-lg font-semibold text-white hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-firebase-orange/25 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                  className="w-full py-4 bg-gradient-to-r from-firebase-orange to-firebase-red rounded-xl font-semibold text-white hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 hover:shadow-2xl hover:shadow-firebase-orange/25 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 glassmorphic-button"
                 >
                   {isSubmitting ? (
                     <>
@@ -167,23 +167,22 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Contact Info & Social Links */}
+          {/* Contact Info */}
           <div className="space-y-8">
-            {/* Contact Information */}
-            <div className="glass-card p-8">
+            <div className="glassmorphic-card">
               <h3 className="text-2xl font-bold mb-6 text-firebase-purple">Contact Information</h3>
               
               <div className="space-y-6">
                 {contactInfo.map((info, index) => {
                   const Icon = info.icon;
                   return (
-                    <div key={index} className="flex items-center space-x-4 group cursor-pointer">
-                      <div className={`p-3 bg-${info.color}/20 rounded-lg group-hover:bg-${info.color}/30 transition-colors`}>
-                        <Icon className={`w-6 h-6 text-${info.color}`} />
+                    <div key={index} className="flex items-center space-x-4 group cursor-pointer hover:transform hover:scale-105 transition-all duration-300">
+                      <div className="p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl group-hover:bg-white/10 transition-all duration-300">
+                        <Icon className="w-6 h-6 text-firebase-orange" />
                       </div>
                       <div>
-                        <p className="text-sm text-gray-400">{info.label}</p>
-                        <p className="font-medium text-white">{info.value}</p>
+                        <p className="text-sm text-gray-400 uppercase tracking-wider">{info.label}</p>
+                        <p className="font-medium text-white text-lg">{info.value}</p>
                       </div>
                     </div>
                   );
@@ -191,28 +190,33 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* Social Links */}
-            <div className="neomorph-card p-8 rounded-2xl">
+            {/* Social Buttons */}
+            <div className="glassmorphic-card">
               <h3 className="text-2xl font-bold mb-6 text-firebase-pink">Connect With Me</h3>
               
-              <div className="grid grid-cols-2 gap-4">
-                {socialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.url}
-                    className={`p-4 bg-${social.color}/10 border border-${social.color}/20 rounded-lg hover:bg-${social.color}/20 transition-all duration-300 text-center group hover:scale-105`}
-                  >
-                    <div className="text-2xl mb-2">{social.icon}</div>
-                    <p className={`font-medium text-${social.color} group-hover:text-white transition-colors`}>
-                      {social.name}
-                    </p>
-                  </a>
-                ))}
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                {socialButtons.map((social, index) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={index}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`social-button bg-gradient-to-br ${social.color} text-center group`}
+                    >
+                      <Icon className="w-6 h-6 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
+                      <p className="font-medium text-white text-sm">
+                        {social.name}
+                      </p>
+                    </a>
+                  );
+                })}
               </div>
             </div>
 
             {/* Availability Status */}
-            <div className="glass-card p-6 text-center">
+            <div className="glassmorphic-card text-center">
               <div className="flex items-center justify-center space-x-3 mb-3">
                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
                 <span className="font-semibold text-green-400">Available for Work</span>
