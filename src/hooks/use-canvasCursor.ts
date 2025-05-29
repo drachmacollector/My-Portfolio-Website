@@ -154,7 +154,7 @@ const useCanvasCursor = () => {
     f = new n({
       phase: Math.random() * 2 * Math.PI,
       amplitude: 85,
-      frequency: 0.0015,
+      frequency: 0.0030,
       offset: 285,
     });
     document.addEventListener('mousemove', onMousemove);

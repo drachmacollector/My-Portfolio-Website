@@ -45,32 +45,6 @@ const ContactSection = () => {
     }
   ];
 
-  const socialLinks = [
-    {
-      name: 'GitHub',
-      url: '#',
-      icon: '🐙',
-      color: 'firebase-orange'
-    },
-    {
-      name: 'LinkedIn',
-      url: '#',
-      icon: '💼',
-      color: 'firebase-blue'
-    },
-    {
-      name: 'Twitter',
-      url: '#',
-      icon: '🐦',
-      color: 'firebase-cyan'
-    },
-    {
-      name: 'Discord',
-      url: '#',
-      icon: '🎮',
-      color: 'firebase-purple'
-    }
-  ];
 
   return (
     <section id="contact" className="py-20 px-6 lg:px-8 relative min-h-screen">
@@ -87,6 +61,30 @@ const ContactSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
+                    {/* Contact Info */}
+            <div className="space-y-8">
+            {/* Contact Information */}
+            <div className="glass-card p-8">
+              <h3 className="text-2xl font-bold mb-6 text-firebase-purple">Contact Information</h3>
+              
+              <div className="space-y-6">
+                {contactInfo.map((info, index) => {
+                  const Icon = info.icon;
+                  return (
+                    <div key={index} className="flex items-center space-x-4 group cursor-pointer">
+                      <div className={`p-3 bg-${info.color}/20 rounded-lg group-hover:bg-${info.color}/30 transition-colors`}>
+                        <Icon className={`w-6 h-6 text-${info.color}`} />
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-400">{info.label}</p>
+                        <p className="font-medium text-white">{info.value}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
           {/* Contact Form */}
           <div className="space-y-8">
             <div className="contact-form">
@@ -179,41 +177,7 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Contact Info & Social Links */}
-          <div className="space-y-8">
-            {/* Contact Information */}
-            <div className="glass-card p-8">
-              <h3 className="text-2xl font-bold mb-6 text-firebase-purple">Contact Information</h3>
-              
-              <div className="space-y-6">
-                {contactInfo.map((info, index) => {
-                  const Icon = info.icon;
-                  return (
-                    <div key={index} className="flex items-center space-x-4 group cursor-pointer">
-                      <div className={`p-3 bg-${info.color}/20 rounded-lg group-hover:bg-${info.color}/30 transition-colors`}>
-                        <Icon className={`w-6 h-6 text-${info.color}`} />
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-400">{info.label}</p>
-                        <p className="font-medium text-white">{info.value}</p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
 
-            {/* Availability Status */}
-            <div className="glass-card p-6 text-center">
-              <div className="flex items-center justify-center space-x-3 mb-3">
-                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-                <span className="font-semibold text-green-400">Available for Work</span>
-              </div>
-              <p className="text-gray-400 text-sm">
-                Currently accepting new projects and collaborations
-              </p>
-            </div>
-          </div>
         </div>
       </div>
 

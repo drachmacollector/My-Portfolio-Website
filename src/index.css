@@ -126,15 +126,64 @@
 
   .tech-tag {
     @apply px-3 py-1 rounded-full text-xs font-medium border transition-all duration-300;
-    background: rgba(255, 138, 101, 0.1);
-    border-color: rgba(255, 138, 101, 0.3);
-    color: #FF8A65;
+    background: rgb(0, 187, 255, 0.1);
+    border-color: rgb(0, 187, 255, 0.5);
+    color: #00bbff;
   }
 
   .tech-tag:hover {
-    background: rgba(255, 138, 101, 0.2);
-    box-shadow: 0 0 15px rgba(255, 138, 101, 0.4);
+    background: rgb(0, 187, 255, 0.2);
+    box-shadow: 0 0 15px rgb(0, 187, 255, 0.4);
   }
+.live-tag {
+  @apply px-6 py-2 rounded-full text-sm font-medium relative overflow-hidden transition-all duration-300 cursor-pointer;
+  background-color: transparent;
+  box-shadow: 0 0 0 1px #ffffff;
+  color: #ffffff;
+}
+
+.live-tag::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  color: #0a0a0b;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 0;
+}
+
+.live-tag:hover {
+  box-shadow: 0 0 0 8px transparent;
+  color: #0a0a0b;
+  border-radius: 12px;
+}
+
+.live-tag:hover::before {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+.live-tag:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 0 4px #ffffff;
+}
+
+.live-tag span {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.live-tag:hover span {
+  transform: translateX(12px);
+}
 
   .contact-form {
     @apply glass-card p-8;
