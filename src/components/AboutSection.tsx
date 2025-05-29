@@ -4,17 +4,11 @@ import { Code2, Database, Globe, Smartphone, Zap, Brain } from 'lucide-react';
 
 const AboutSection = () => {
   const skills = [
-    { icon: Code2, name: 'Frontend Dev', level: 95, color: 'firebase-orange' },
-    { icon: Database, name: 'Backend Dev', level: 90, color: 'firebase-red' },
-    { icon: Globe, name: 'Web Design', level: 85, color: 'firebase-purple' },
-    { icon: Smartphone, name: 'Mobile Dev', level: 80, color: 'firebase-pink' },
-    { icon: Zap, name: 'Performance', level: 92, color: 'firebase-blue' },
-    { icon: Brain, name: 'Problem Solving', level: 98, color: 'firebase-cyan' },
+    { icon: Code2, name: 'Frontend Dev', level: 95, color: 'firebase-orange' }
   ];
 
   const technologies = [
-    'React', 'TypeScript', 'Node.js', 'Python', 'PostgreSQL', 'MongoDB',
-    'AWS', 'Docker', 'GraphQL', 'Next.js', 'Vue.js', 'Rust'
+    'HTML', 'CSS', 'PHP','MySQL','React','TypeScript','Node.js','Python','MongoDB','Next.js','Tailwind CSS',
   ];
 
   return (
@@ -23,7 +17,7 @@ const AboutSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">
-            About <span className="text-firebase-orange">Me</span>
+            About <span className="text-firebase-red">Me</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-firebase-orange to-firebase-purple mx-auto mb-8" />
         </div>
@@ -32,25 +26,6 @@ const AboutSection = () => {
           {/* Bio Section */}
           <div className="space-y-8">
             <div className="glass-card p-8 animate-fade-in">
-              <h3 className="text-2xl font-bold mb-6 text-firebase-orange">My Journey</h3>
-              <div className="space-y-4 text-gray-300 leading-relaxed">
-                <p>
-                  Welcome to my digital realm! I'm Nakul, a passionate full-stack developer 
-                  with over 5 years of experience crafting exceptional digital experiences. 
-                  My journey began with a simple "Hello World" and has evolved into building 
-                  complex, scalable applications that serve millions of users.
-                </p>
-                <p>
-                  I specialize in modern web technologies and have a keen eye for design. 
-                  When I'm not coding, you'll find me exploring the latest in AI, 
-                  contributing to open-source projects, or perfecting my coffee brewing techniques.
-                </p>
-                <p>
-                  My mission is to bridge the gap between cutting-edge technology and 
-                  human-centered design, creating solutions that are not only functional 
-                  but truly delightful to use.
-                </p>
-              </div>
 
               {/* Tech Stack */}
               <div className="mt-8">
@@ -69,7 +44,7 @@ const AboutSection = () => {
           {/* Skills Section */}
           <div className="space-y-8">
             <div className="neomorph-card p-8 rounded-2xl animate-fade-in">
-              <h3 className="text-2xl font-bold mb-8 text-firebase-orange">Skills & Expertise</h3>
+              <h3 className="text-2xl font-bold mb-8 text-firebase-blue">Skills & Expertise</h3>
               
               <div className="space-y-6">
                 {skills.map((skill, index) => {

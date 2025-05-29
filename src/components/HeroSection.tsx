@@ -49,7 +49,7 @@ const HeroSection = () => {
                 {!isTypingComplete && <span className="animate-blink">|</span>}
               </span>
             </h1>
-            <div className="h-3 bg-gradient-to-r from-firebase-orange via-neon-red to-firebase-pink rounded-full max-w-lg opacity-80" />
+            <div className="h-2 bg-gradient-to-r from-firebase-orange via-neon-red to-firebase-pink rounded-full max-w-lg opacity-80" />
           </div>
 
           {/* Subtitle with rotating text - Increased size */}

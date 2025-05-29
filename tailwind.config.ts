@@ -67,12 +67,12 @@ const config = {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				firebase: {
-					orange: '#FF8A65',
-					red: '#F44336',
-					purple: '#9C27B0',
+					orange: '#FF5F1F',
+					red: '#FF3131',
+					purple: '#BC13FE',
 					pink: '#E91E63',
-					blue: '#2196F3',
-					cyan: '#00BCD4'
+					blue: '#1F51FF',
+					cyan: '#2CFF05'
 				},
 				neon: {
 					red: '#FF073A',
@@ -182,8 +182,8 @@ const config = {
 				},
 				'orbit': {
 					'0%': { transform: 'rotate(0deg) translateX(50px) rotate(0deg)' },
-					'100%': { transform: 'rotate(360deg) translateX(50px) rotate(-360deg)' }
- 					}
+					'100%': { transform: 'rotate(360deg) translateX(50px) rotate(-360deg)' },
+				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
