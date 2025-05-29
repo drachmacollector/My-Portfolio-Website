@@ -1,8 +1,7 @@
 
 import type { Config } from "tailwindcss";
-
-export default {
-	darkMode: ["class"],
+const config = {
+		darkMode: ["class"],
 	content: [
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
@@ -184,7 +183,7 @@ export default {
 				'orbit': {
 					'0%': { transform: 'rotate(0deg) translateX(50px) rotate(0deg)' },
 					'100%': { transform: 'rotate(360deg) translateX(50px) rotate(-360deg)' }
-				}
+ 					}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -210,4 +209,6 @@ export default {
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+};
+
+export default config;
