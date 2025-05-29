@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { ArrowDown, Github, Linkedin, FileText, Mail } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import RotatingText from './RotatingText';
 
 const HeroSection = () => {
@@ -28,33 +28,6 @@ const HeroSection = () => {
     document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const socialButtons = [
-    {
-      name: 'GitHub',
-      url: 'https://github.com/drachmacollector',
-      icon: Github,
-      color: 'from-gray-700 to-gray-900'
-    },
-    {
-      name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/nakul-bhadade-b7ba06313/',
-      icon: Linkedin,
-      color: 'from-blue-600 to-blue-800'
-    },
-    {
-      name: 'Read.cv',
-      url: '#',
-      icon: FileText,
-      color: 'from-purple-600 to-purple-800'
-    },
-    {
-      name: 'Email',
-      url: 'mailto:nakulccs@gmail.com',
-      icon: Mail,
-      color: 'from-firebase-orange to-firebase-red'
-    }
-  ];
-
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated Background Elements */}
@@ -70,57 +43,40 @@ const HeroSection = () => {
         <div className="text-left z-10">
           {/* Main Title - Increased size */}
           <div className="mb-8">
-            <h1 className="text-6xl md:text-8xl font-bold mb-8 font-space">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 font-space">
               <span className="glow-text">
                 {text}
                 {!isTypingComplete && <span className="animate-blink">|</span>}
               </span>
             </h1>
-            <div className="h-4 bg-gradient-to-r from-firebase-orange via-neon-red to-firebase-pink rounded-full max-w-2xl opacity-80" />
+            <div className="h-3 bg-gradient-to-r from-firebase-orange via-neon-red to-firebase-pink rounded-full max-w-lg opacity-80" />
           </div>
 
           {/* Subtitle with rotating text - Increased size */}
-          <div className="mb-8 animate-fade-in opacity-0 h-24 overflow-hidden" style={{animationDelay: '3s', animationFillMode: 'forwards'}}>
-            <p className="text-4xl md:text-5xl text-gray-300">
+          <div className="mb-8 animate-fade-in opacity-0 h-20 overflow-hidden" style={{animationDelay: '3s', animationFillMode: 'forwards'}}>
+            <p className="text-3xl md:text-4xl text-gray-300">
               A{' '}
               <RotatingText 
                 words={developerTitles}
-                className="text-firebase-orange font-semibold h-20"
+                className="text-firebase-orange font-semibold h-16"
               />
             </p>
           </div>
 
           {/* Mission Statement */}
-          <p className="text-xl text-gray-400 mb-12 max-w-2xl animate-fade-in opacity-0" style={{animationDelay: '4s', animationFillMode: 'forwards'}}>
+          <p className="text-lg text-gray-400 mb-12 max-w-2xl animate-fade-in opacity-0" style={{animationDelay: '4s', animationFillMode: 'forwards'}}>
             Crafting immersive digital experiences with cutting-edge technology,
             one line of code at a time. Building the future, today.
           </p>
 
-          {/* Social Buttons */}
-          <div className="grid grid-cols-4 gap-4 mb-8 animate-fade-in opacity-0" style={{animationDelay: '4.5s', animationFillMode: 'forwards'}}>
-            {socialButtons.map((social, index) => {
-              const Icon = social.icon;
-              return (
-                <a
-                  key={index}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`social-button bg-gradient-to-br ${social.color} group aspect-square`}
-                >
-                  <Icon className="w-6 h-6 mx-auto group-hover:scale-110 transition-transform duration-300" />
-                </a>
-              );
-            })}
-          </div>
-
-          {/* CTA Button with enhanced 3D effect */}
+          {/* CTA Button with neon accent */}
           <button
             onClick={scrollToAbout}
-            className="explore-button animate-fade-in opacity-0"
+            className="group relative px-8 py-4 bg-gradient-to-r from-firebase-orange to-neon-red rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-neon-red/25 animate-fade-in opacity-0"
             style={{animationDelay: '5s', animationFillMode: 'forwards'}}
           >
             <span className="relative z-10">Explore More</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-neon-red to-neon-red-bright rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
         </div>
 
@@ -128,14 +84,14 @@ const HeroSection = () => {
         <div className="flex justify-center lg:justify-end z-10">
           <div className="relative">
             {/* Enhanced animated circular frame - Increased size */}
-            <div className="relative w-[500px] h-[500px] rounded-full overflow-hidden glass-card animate-float">
+            <div className="relative w-96 h-96 rounded-full overflow-hidden glass-card animate-float">
               {/* Multiple glowing border layers for sci-fi effect with enhanced animations */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-firebase-orange via-neon-red to-firebase-pink opacity-75 animate-neon-pulse" />
               <div className="absolute inset-1 rounded-full bg-gradient-to-r from-neon-red via-firebase-purple to-firebase-orange opacity-50 animate-glow-pulse" />
               <div className="absolute inset-0 rounded-full animate-rotate-slow">
                 <div className="w-full h-full rounded-full border-2 border-neon-red/30 border-dashed" />
               </div>
-              <div className="absolute inset-6 rounded-full overflow-hidden bg-black">
+              <div className="absolute inset-4 rounded-full overflow-hidden bg-black">
                 <img 
                   src="/lovable-uploads/dedae507-a4f3-4e4d-aa46-e3d3397ebad5.png"
                   alt="Nakul - Software Developer"
