@@ -132,7 +132,7 @@
   }
 
   .nav-item-modern {
-    @apply relative px-6 py-3 text-sm font-medium text-gray-300 hover:text-white transition-all duration-300 rounded-xl group;
+    @apply relative px-6 py-3 text-sm font-medium text-gray-300 hover:text-white transition-all duration-300 rounded-xl;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -185,7 +185,7 @@
   }
 
   .explore-button {
-    @apply group relative px-12 py-4 bg-gradient-to-r from-firebase-orange to-neon-red rounded-2xl font-semibold text-white transition-all duration-300 overflow-hidden;
+    @apply relative px-12 py-4 bg-gradient-to-r from-firebase-orange to-neon-red rounded-2xl font-semibold text-white transition-all duration-300 overflow-hidden;
     box-shadow: 
       0 10px 25px rgba(0, 0, 0, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.2);
