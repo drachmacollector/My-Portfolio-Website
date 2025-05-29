@@ -38,11 +38,11 @@ const Navigation = () => {
     }`}>
      
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-end md:justify-center h-20">
 
           {/* Desktop Navigation with enhanced sci-fi styling */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-1">
+            <div className="flex items-baseline space-x-1">
               {navItems.map((item, index) => (
                 <button
                   key={item.href}
