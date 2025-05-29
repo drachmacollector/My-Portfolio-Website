@@ -33,21 +33,12 @@ const Navigation = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       scrolled 
-        ? 'backdrop-blur-xl bg-black/40 border-b border-neon-red/30 shadow-lg shadow-neon-red/10' 
+        ? 'backdrop-blur-xl bg-black/40 shadow-lg' 
         : 'bg-transparent'
     }`}>
-      {/* Sci-fi top border animation */}
-      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-neon-red to-transparent opacity-60 animate-pulse" />
-      
+     
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo/Brand area with futuristic styling */}
-          <div className="flex-shrink-0">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 border-2 border-neon-red rounded-lg rotate-45 animate-pulse" />
-              <span className="text-xl font-bold text-white glow-text">NAKUL.DEV</span>
-            </div>
-          </div>
 
           {/* Desktop Navigation with enhanced sci-fi styling */}
           <div className="hidden md:block">
@@ -59,17 +50,7 @@ const Navigation = () => {
                   className="relative px-6 py-3 text-sm font-medium text-gray-300 hover:text-white transition-all duration-300 group"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  {/* Futuristic background on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-neon-red/10 to-netflix-red/10 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100" />
-                  
-                  {/* Top and bottom borders */}
-                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-neon-red to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-neon-red to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
-                  {/* Side glow effect */}
-                  <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-0.5 h-0 bg-neon-red opacity-0 group-hover:opacity-100 group-hover:h-full transition-all duration-300" />
-                  <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-0.5 h-0 bg-neon-red opacity-0 group-hover:opacity-100 group-hover:h-full transition-all duration-300" />
-                  
+
                   <span className="relative z-10">{item.label}</span>
                 </button>
               ))}
@@ -107,8 +88,6 @@ const Navigation = () => {
         )}
       </div>
       
-      {/* Bottom sci-fi border */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-red/20 to-transparent" />
     </nav>
   );
 };

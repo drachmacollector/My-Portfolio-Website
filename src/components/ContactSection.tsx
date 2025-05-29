@@ -78,7 +78,7 @@ const ContactSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">
-            Get In <span className="text-firebase-orange">Touch</span>
+            Get In <span className="text-firebase-red">Touch</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-firebase-orange to-firebase-purple mx-auto mb-8" />
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -103,12 +103,15 @@ const ContactSection = () => {
                       onChange={handleChange}
                       placeholder="Your Name"
                       required
-                      className="w-full pl-12 pr-4 py-3 bg-black/20 border border-white/10 rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 focus:ring-firebase-orange/20 transition-all"
+                      className="w-full pl-12 pr-4 py-3 bg-black/20 border border-white/10 
+                      rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 
+                      focus:ring-firebase-orange/20 transition-all"
                     />
                   </div>
                   
                   <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-firebase-orange" />
+                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 
+                    text-firebase-orange" />
                     <input
                       type="email"
                       name="email"
@@ -116,7 +119,9 @@ const ContactSection = () => {
                       onChange={handleChange}
                       placeholder="Your Email"
                       required
-                      className="w-full pl-12 pr-4 py-3 bg-black/20 border border-white/10 rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 focus:ring-firebase-orange/20 transition-all"
+                      className="w-full pl-12 pr-4 py-3 bg-black/20 border border-white/10 
+                      rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 
+                      focus:ring-firebase-orange/20 transition-all"
                     />
                   </div>
                 </div>
@@ -130,7 +135,9 @@ const ContactSection = () => {
                     onChange={handleChange}
                     placeholder="Subject"
                     required
-                    className="w-full pl-12 pr-4 py-3 bg-black/20 border border-white/10 rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 focus:ring-firebase-orange/20 transition-all"
+                    className="w-full pl-12 pr-4 py-3 bg-black/20 border border-white/10 
+                    rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 
+                    focus:ring-firebase-orange/20 transition-all"
                   />
                 </div>
 
@@ -142,14 +149,19 @@ const ContactSection = () => {
                     placeholder="Your Message"
                     rows={6}
                     required
-                    className="w-full p-4 bg-black/20 border border-white/10 rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 focus:ring-firebase-orange/20 transition-all resize-none"
+                    className="w-full p-4 bg-black/20 border border-white/10 rounded-lg 
+                    focus:border-firebase-orange focus:outline-none focus:ring-2 
+                    focus:ring-firebase-orange/20 transition-all resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 bg-gradient-to-r from-firebase-orange to-firebase-red rounded-lg font-semibold text-white hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-firebase-orange/25 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                  className="w-full py-4 bg-gradient-to-r from-firebase-orange 
+                  to-firebase-red rounded-lg font-semibold text-white hover:scale-105 transition-all 
+                  duration-300 hover:shadow-2xl hover:shadow-firebase-orange/25 disabled:opacity-50 
+                  disabled:cursor-not-allowed flex items-center justify-center space-x-2"
                 >
                   {isSubmitting ? (
                     <>
