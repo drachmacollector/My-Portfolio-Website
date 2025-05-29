@@ -7,7 +7,7 @@ const HeroSection = () => {
   const [text, setText] = useState('');
   const [isTypingComplete, setIsTypingComplete] = useState(false);
   const fullText = "Hi, I'm Nakul";
-  const developerTitles = ["software developer", "web developer", "frontend developer", "3D Animator"];
+  const developerTitles = ["software developer", "3D Animator", "web developer", "frontend developer"];
 
   useEffect(() => {
     let index = 0;
@@ -19,7 +19,7 @@ const HeroSection = () => {
         setIsTypingComplete(true);
         clearInterval(timer);
       }
-    }, 150);
+    }, 100);
 
     return () => clearInterval(timer);
   }, []);
@@ -53,7 +53,7 @@ const HeroSection = () => {
           </div>
 
           {/* Subtitle with rotating text - Increased size */}
-          <div className="mb-8 animate-fade-in opacity-0 h-20 overflow-hidden" style={{animationDelay: '3s', animationFillMode: 'forwards'}}>
+          <div className="mb-8 animate-fade-in opacity-0 h-20 overflow-hidden" style={{animationDelay: '2s', animationFillMode: 'forwards'}}>
             <p className="text-3xl md:text-4xl text-gray-300">
               A{' '}
               <RotatingText 
@@ -64,7 +64,7 @@ const HeroSection = () => {
           </div>
 
           {/* Mission Statement */}
-          <p className="text-lg text-gray-400 mb-12 max-w-2xl animate-fade-in opacity-0" style={{animationDelay: '4s', animationFillMode: 'forwards'}}>
+          <p className="text-lg text-gray-400 mb-12 max-w-2xl animate-fade-in opacity-0" style={{animationDelay: '3s', animationFillMode: 'forwards'}}>
             Crafting immersive digital experiences with cutting-edge technology,
             one line of code at a time. Building the future, today.
           </p>
@@ -73,7 +73,7 @@ const HeroSection = () => {
           <button
             onClick={scrollToAbout}
             className="group relative px-8 py-4 bg-gradient-to-r from-firebase-orange to-neon-red rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-neon-red/25 animate-fade-in opacity-0"
-            style={{animationDelay: '5s', animationFillMode: 'forwards'}}
+            style={{animationDelay: '4s', animationFillMode: 'forwards'}}
           >
             <span className="relative z-10">Explore More</span>
             <div className="absolute inset-0 bg-gradient-to-r from-neon-red to-neon-red-bright rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
