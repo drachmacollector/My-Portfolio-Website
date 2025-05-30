@@ -5,6 +5,7 @@ import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import ProjectsSection from '../components/ProjectsSection';
 import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
 import Particles from '../components/ParticleBackground';
 import CanvasCursor from '../components/CanvasCursor';
 import { Button } from "@/components/ui/button";
@@ -42,6 +43,7 @@ const Index = () => {
         <AboutSection />
         <ProjectsSection />
         <ContactSection />
+        <Footer />
       </main>
 
     {/* <div className="relative justify-center">
