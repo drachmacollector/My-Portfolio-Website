@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
 import RotatingText from './RotatingText';
+import { AuroraText } from "@/components/magicui/aurora-text";
 
 const HeroSection = () => {
   const [text, setText] = useState('');
@@ -37,10 +38,12 @@ const HeroSection = () => {
           {/* Main Title - Increased size */}
           <div className="mb-8">
             <h1 className="text-5xl md:text-7xl font-bold mb-8 font-space">
-              <span className="glow-text">
+              <AuroraText>
+              <span>
                 {text}
                 {!isTypingComplete && <span className="animate-blink">|</span>}
               </span>
+              </AuroraText>
             </h1>
             <div className="h-2 bg-gradient-to-r from-firebase-orange via-neon-red to-firebase-pink rounded-full max-w-lg opacity-80" />
           </div>
