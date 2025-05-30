@@ -30,13 +30,6 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-firebase-orange rounded-full animate-pulse" />
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-neon-red rounded-full animate-pulse delay-1000" />
-        <div className="absolute bottom-1/4 left-1/2 w-1.5 h-1.5 bg-firebase-pink rounded-full animate-pulse delay-2000" />
-        <div className="absolute top-2/3 right-1/4 w-1 h-1 bg-firebase-cyan rounded-full animate-pulse delay-500" />
-      </div>
 
       <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side - Text Content */}
@@ -84,12 +77,12 @@ const HeroSection = () => {
         <div className="flex justify-center lg:justify-end z-10">
           <div className="relative">
             {/* Enhanced animated circular frame - Increased size */}
-            <div className="relative w-96 h-96 rounded-full overflow-hidden glass-card animate-float">
+            <div className="relative w-96 h-96 rounded-full glass-card animate-float">
               {/* Multiple glowing border layers for sci-fi effect with enhanced animations */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-firebase-orange via-neon-red to-firebase-pink opacity-75 animate-neon-pulse" />
-              <div className="absolute inset-1 rounded-full bg-gradient-to-r from-neon-red via-firebase-purple to-firebase-orange opacity-50 animate-glow-pulse" />
+              {/* <div className="absolute inset-0 rounded-full bg-gradient-to-r from-firebase-orange via-neon-red to-firebase-pink opacity-75 animate-neon-pulse" />
+              <div className="absolute inset-1 rounded-full bg-gradient-to-r from-neon-red via-firebase-purple to-firebase-orange opacity-50 animate-glow-pulse" /> */}
               <div className="absolute inset-0 rounded-full animate-rotate-slow">
-                <div className="w-full h-full rounded-full border-2 border-neon-red/30 border-dashed" />
+                <div className="w-full h-full rounded-full border-4 border-neon-red/60 border-dashed" />
               </div>
               <div className="absolute inset-4 rounded-full overflow-hidden bg-black">
                 <img 
@@ -101,10 +94,10 @@ const HeroSection = () => {
               
               {/* Enhanced orbiting elements for sci-fi feel */}
               <div className="absolute inset-0 animate-orbit">
-                <div className="w-3 h-3 bg-neon-red rounded-full shadow-lg shadow-neon-red/50" />
+                <div className="w-3.5 h-3.5 bg-neon-red rounded-full shadow-lg shadow-neon-red/50" />
               </div>
               <div className="absolute inset-0 animate-orbit" style={{animationDelay: '-4s', animationDirection: 'reverse'}}>
-                <div className="w-2 h-2 bg-firebase-orange rounded-full shadow-lg shadow-firebase-orange/50" />
+                <div className="w-2.5 h-2.5 bg-firebase-orange rounded-full shadow-lg shadow-firebase-orange/50" />
               </div>
               <div className="absolute inset-0 animate-orbit" style={{animationDelay: '-2s'}}>
                 <div className="w-1.5 h-1.5 bg-neon-red-bright rounded-full shadow-lg shadow-neon-red-bright/50" />
@@ -112,9 +105,25 @@ const HeroSection = () => {
             </div>
             
             {/* Enhanced floating decorative elements */}
-            <div className="absolute -top-4 -right-4 w-8 h-8 bg-neon-red rounded-full opacity-60 animate-pulse shadow-lg shadow-neon-red/50" />
-            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-firebase-purple rounded-full opacity-60 animate-pulse delay-1000 shadow-lg shadow-firebase-purple/50" />
-            <div className="absolute top-1/2 -left-8 w-4 h-4 bg-firebase-pink rounded-full opacity-60 animate-pulse delay-2000 shadow-lg shadow-firebase-pink/50" />
+            <div className="absolute -top-4 -right-4 w-8 h-8 bg-neon-red rounded-full 
+            opacity-60 animate-pulse shadow-lg shadow-neon-red/50" />
+            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-firebase-purple rounded-full 
+            opacity-60 animate-pulse delay-1000 shadow-lg shadow-firebase-purple/50" />
+            <div className="absolute top-1/2 -left-8 w-4 h-4 bg-firebase-pink rounded-full 
+            opacity-60 animate-pulse delay-2000 shadow-lg shadow-firebase-pink/50" />
+            
+            <div className="absolute -top-20 right-1/3 w-2 h-2 bg-neon-red rounded-full animate-pulse" />
+            <div className="absolute -bottom-1/4 left-1/2 w-2 h-2 bg-firebase-pink rounded-full animate-pulse" />
+            <div className="absolute bottom-1/4 w-2 h-2 bg-firebase-cyan rounded-full animate-pulse" />
+
+            {/* Floating Shapes The circle and the square*/}
+              <div className="absolute bottom-100 right-1 w-24 h-24 opacity-90 animate-rotate-slow">
+                <div className="w-full h-full border border-firebase-orange rounded-lg transform rotate-45 animate-float" />
+              </div>
+              <div className="absolute -top-10 -right-12 w-24 h-24 opacity-90 animate-float">
+                <div className="w-full h-full border border-firebase-purple rounded-full" />
+              </div>
+
           </div>
         </div>
       </div>
