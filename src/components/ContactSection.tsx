@@ -1,190 +1,310 @@
-
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Send, Mail, MessageCircle, User, MapPin } from 'lucide-react';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    console.log('Form submitted:', formData);
+    setIsSubmitting(false);
+    setFormData({ name: '', email: '', subject: '', message: '' });
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Add form submission logic here
-  };
-
-  const socialLinks = [
-    {
-      icon: Github,
-      href: "https://github.com",
-      label: "GitHub",
-      gradient: "from-gray-600 to-gray-800"
-    },
-    {
-      icon: Linkedin,
-      href: "https://linkedin.com",
-      label: "LinkedIn", 
-      gradient: "from-blue-600 to-blue-800"
-    },
-    {
-      icon: Twitter,
-      href: "https://twitter.com",
-      label: "Twitter",
-      gradient: "from-sky-500 to-blue-600"
-    }
-  ];
-
   return (
-    <section id="contact" className="min-h-screen py-20 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-firebase-orange/5 via-transparent to-neon-red/5" />
-      
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+    <section id="contact" className="py-20 px-6 lg:px-8 relative min-h-screen">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-firebase-orange via-neon-red to-firebase-pink bg-clip-text text-transparent">
-            Get In Touch
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">
+            Get In <span className="text-firebase-red">Touch</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Ready to bring your ideas to life? Let's create something amazing together.
+          <div className="w-24 h-1 bg-gradient-to-r from-firebase-orange to-firebase-purple mx-auto mb-8" />
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Ready to bring your ideas to life? Let's collaborate and create something amazing together.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div className="glassmorphic-card">
-              <h3 className="text-2xl font-semibold mb-6 text-firebase-orange">Let's Connect</h3>
-              
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4 group">
-                  <div className="p-3 rounded-xl bg-firebase-orange/10 border border-firebase-orange/20 group-hover:bg-firebase-orange/20 transition-all duration-300">
-                    <Mail className="w-6 h-6 text-firebase-orange" />
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Glassmorphic Contact Card */}
+          <div className="flex justify-center items-center">
+            <div className="glass-box relative w-full max-w-[320px] h-[400px] flex justify-center items-center my-10 transition-all duration-600 ease-[cubic-bezier(0.23,1,0.32,1)]">
+              <span className="absolute top-0 left-0 right-0 bottom-0 z-5 pointer-events-none"></span>
+              <div className="glass-content relative z-10 left-0 p-5 bg-white/5 backdrop-blur-md rounded-lg shadow-lg transition-all duration-600 ease-[cubic-bezier(0.23,1,0.32,1)]">
+                <h2 className="text-2xl font-bold text-white mb-6 transition-transform duration-600 ease-[cubic-bezier(0.23,1,0.32,1)]">
+                  Contact Information
+                </h2>
+                
+                <div className="space-y-6">
+                  {/* Email */}
+                  <div className="flex items-center space-x-4 group cursor-pointer">
+                    <div className="p-3 bg-firebase-orange/20 rounded-lg group-hover:bg-firebase-orange/30 transition-colors">
+                      <Mail className="w-6 h-6 text-firebase-orange" />
+                    </div>
+                    <div className="relative z-20">
+                      <p className="text-sm text-gray-300">Email</p>
+                      <p className="font-medium text-white">nakulccs@gmail.com</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-gray-400 text-sm">Email</p>
-                    <p className="text-white font-medium">hello@nakul.dev</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-4 group">
-                  <div className="p-3 rounded-xl bg-neon-red/10 border border-neon-red/20 group-hover:bg-neon-red/20 transition-all duration-300">
-                    <Phone className="w-6 h-6 text-neon-red" />
-                  </div>
-                  <div>
-                    <p className="text-gray-400 text-sm">Phone</p>
-                    <p className="text-white font-medium">+1 (555) 123-4567</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-4 group">
-                  <div className="p-3 rounded-xl bg-firebase-purple/10 border border-firebase-purple/20 group-hover:bg-firebase-purple/20 transition-all duration-300">
-                    <MapPin className="w-6 h-6 text-firebase-purple" />
-                  </div>
-                  <div>
-                    <p className="text-gray-400 text-sm">Location</p>
-                    <p className="text-white font-medium">San Francisco, CA</p>
+                  
+                  {/* Location */}
+                  <div className="flex items-center space-x-4 group cursor-pointer">
+                    <div className="p-3 bg-firebase-pink/20 rounded-lg group-hover:bg-firebase-pink/30 transition-colors">
+                      <MapPin className="w-6 h-6 text-firebase-pink" />
+                    </div>
+                    <div className="relative z-20">
+                      <p className="text-sm text-gray-300">Location</p>
+                      <p className="font-medium text-white">Mumbai, India</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="glassmorphic-card">
-              <h3 className="text-xl font-semibold mb-6 text-white">Follow Me</h3>
-              <div className="flex space-x-4">
-                {socialLinks.map((social, index) => {
-                  const Icon = social.icon;
-                  return (
-                    <a
-                      key={index}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`social-button bg-gradient-to-r ${social.gradient}`}
-                      aria-label={social.label}
-                    >
-                      <Icon className="w-6 h-6" />
-                    </a>
-                  );
-                })}
               </div>
             </div>
           </div>
-
+          
           {/* Contact Form */}
-          <div className="glassmorphic-card">
-            <h3 className="text-2xl font-semibold mb-6 text-white">Send a Message</h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  className="glassmorphic-input"
-                  placeholder="Your name"
-                  required
-                />
-              </div>
+          <div className="space-y-8">
+            <div className="contact-form">
+              <h3 className="text-2xl font-bold mb-6 text-firebase-orange">Send a Message</h3>
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="relative">
+                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-firebase-orange" />
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Your Name"
+                      required
+                      className="w-full pl-12 pr-4 py-3 bg-black/20 border border-white/10 
+                      rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 
+                      focus:ring-firebase-orange/20 transition-all"
+                    />
+                  </div>
+                  
+                  <div className="relative">
+                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 
+                    text-firebase-orange" />
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="Your Email"
+                      required
+                      className="w-full pl-12 pr-4 py-3 bg-black/20 border border-white/10 
+                      rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 
+                      focus:ring-firebase-orange/20 transition-all"
+                    />
+                  </div>
+                </div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="glassmorphic-input"
-                  placeholder="your.email@example.com"
-                  required
-                />
-              </div>
+                <div className="relative">
+                  <MessageCircle className="absolute left-3 top-4 w-5 h-5 text-firebase-orange" />
+                  <input
+                    type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="Subject"
+                    required
+                    className="w-full pl-12 pr-4 py-3 bg-black/20 border border-white/10 
+                    rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 
+                    focus:ring-firebase-orange/20 transition-all"
+                  />
+                </div>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  rows={6}
-                  className="glassmorphic-input resize-none"
-                  placeholder="Tell me about your project..."
-                  required
-                />
-              </div>
+                <div className="relative">
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Your Message"
+                    rows={6}
+                    required
+                    className="w-full p-4 bg-black/20 border border-white/10 rounded-lg 
+                    focus:border-firebase-orange focus:outline-none focus:ring-2 
+                    focus:ring-firebase-orange/20 transition-all resize-none"
+                  />
+                </div>
 
-              <button
-                type="submit"
-                className="glassmorphic-button w-full py-4 px-6 bg-gradient-to-r from-firebase-orange to-neon-red rounded-xl font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-firebase-orange/25 flex items-center justify-center space-x-2"
-              >
-                <Send className="w-5 h-5" />
-                <span>Send Message</span>
-              </button>
-            </form>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full py-4 bg-gradient-to-r from-firebase-orange 
+                  to-firebase-red rounded-lg font-semibold text-white hover:scale-105 transition-all 
+                  duration-300 hover:shadow-2xl hover:shadow-firebase-orange/25 disabled:opacity-50 
+                  disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white" />
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5" />
+                      <span>Send Message</span>
+                    </>
+                  )}
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Glassmorphic Card CSS */}
+      <style jsx>{`
+        .glass-box {
+          perspective: 1000px;
+        }
+        
+        .glass-box::before {
+          content: " ";
+          position: absolute;
+          top: 0;
+          left: 50px;
+          width: 50%;
+          height: 100%;
+          border-radius: 8px;
+          transform: skewX(15deg);
+          transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+          background: linear-gradient(315deg, #03a9f4, #ff0058);
+          z-index: 1; /* Ensure behind content */
+        }
+        
+        .glass-box::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 50px;
+          width: 50%;
+          height: 100%;
+          border-radius: 8px;
+          transform: skewX(15deg);
+          transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+          filter: blur(30px);
+          background: linear-gradient(315deg, #03a9f4, #ff0058);
+          z-index: 1; /* Ensure behind content */
+        }
+        
+        .glass-box:hover::before,
+        .glass-box:hover::after {
+          transform: skewX(0deg);
+          left: 20px;
+          width: calc(100% - 90px);
+        }
+        
+        .glass-box span::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 0;
+          border-radius: 8px;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          opacity: 0;
+          transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          animation: animate 3s ease-in-out infinite;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+          z-index: 2; /* Behind content but above base gradient */
+        }
+        
+        .glass-box:hover span::before {
+          top: -50px;
+          left: 50px;
+          width: 100px;
+          height: 100px;
+          opacity: 1;
+        }
+        
+        .glass-box span::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 8px;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          opacity: 0;
+          transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          animation: animate 3s ease-in-out infinite;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+          animation-delay: -1.5s;
+          z-index: 2; /* Behind content but above base gradient */
+        }
+        
+        .glass-box:hover span::after {
+          bottom: -50px;
+          right: 50px;
+          width: 100px;
+          height: 100px;
+          opacity: 1;
+        }
+        
+        @keyframes animate {
+          0%, 100% {
+            transform: translateY(10px) translateX(0);
+          }
+          50% {
+            transform: translateY(-10px) translateX(10px);
+          }
+        }
+        
+        .glass-box:hover .glass-content {
+          left: -25px;
+          padding: 40px 30px;
+        }
+        
+        .glass-box:hover .glass-content h2 {
+          transform: translateY(-10px);
+        }
+        
+        /* Fix text contrast */
+        .glass-content {
+          background: rgba(15, 15, 35, 0.7) !important;
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+          .glass-box {
+            width: 280px !important;
+            height: 360px !important;
+            margin: 20px 0;
+          }
+          
+          .glass-box:hover .glass-content {
+            padding: 30px 20px;
+            left: -15px;
+          }
+        }
+      `}</style>
     </section>
   );
 };
