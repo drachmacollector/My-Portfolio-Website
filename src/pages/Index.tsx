@@ -4,7 +4,7 @@ import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import ProjectsSection from '../components/ProjectsSection';
-import ContactSection from '../components/ContactSection';
+import ContactSection from '../components/contact/ContactSection';
 import ParticleBackground from '../components/ParticleBackground';
 import CanvasCursor from '../components/CanvasCursor';
 
