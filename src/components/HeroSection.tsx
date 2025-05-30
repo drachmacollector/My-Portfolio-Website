@@ -29,6 +29,33 @@ const HeroSection = () => {
     document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Split the text to apply AuroraText only to "Nakul"
+  const renderTitle = () => {
+    if (text.length <= 7) {
+      // Still typing "Hi, I'm "
+      return (
+        <span>
+          {text}
+          {!isTypingComplete && <span className="animate-blink">|</span>}
+        </span>
+      );
+    } else {
+      // Typing or completed "Nakul"
+      const introText = "Hi, I'm ";
+      const nakulText = text.slice(7); // Everything after "Hi, I'm "
+      
+      return (
+        <span>
+          {introText}
+          <AuroraText>
+            {nakulText}
+          </AuroraText>
+          {!isTypingComplete && <span className="animate-blink">|</span>}
+        </span>
+      );
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
 
@@ -38,12 +65,7 @@ const HeroSection = () => {
           {/* Main Title - Increased size */}
           <div className="mb-8">
             <h1 className="text-5xl md:text-7xl font-bold mb-8 font-space">
-              <AuroraText>
-              <span>
-                {text}
-                {!isTypingComplete && <span className="animate-blink">|</span>}
-              </span>
-              </AuroraText>
+              {renderTitle()}
             </h1>
             <div className="h-2 bg-gradient-to-r from-firebase-orange via-neon-red to-firebase-pink rounded-full max-w-lg opacity-80" />
           </div>
