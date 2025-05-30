@@ -80,9 +80,6 @@ const AboutSection = () => {
         </div>
       </div>
 
-      {/* Background Decoration */}
-      <div className="absolute top-10 right-10 w-32 h-32 border border-firebase-purple/20 rounded-full animate-rotate-slow" />
-      <div className="absolute bottom-10 left-10 w-24 h-24 border border-firebase-orange/20 rounded-lg transform rotate-45 animate-float" />
     </section>
   );
 };
