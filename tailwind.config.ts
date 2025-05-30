@@ -183,6 +183,28 @@ const config = {
 				'orbit': {
 					'0%': { transform: 'rotate(0deg) translateX(50px) rotate(0deg)' },
 					'100%': { transform: 'rotate(360deg) translateX(50px) rotate(-360deg)' },
+				},
+				'aurora': {
+ 				    '0%': {
+ 						backgroundPosition: '0% 50%',
+ 						transform: 'rotate(-5deg) scale(0.9)',
+ 						},
+ 						'25%': {
+ 						backgroundPosition: '50% 100%',
+ 						transform: 'rotate(5deg) scale(1.1)',
+ 						},
+ 						'50%': {
+ 						backgroundPosition: '100% 50%',
+ 						transform: 'rotate(-3deg) scale(0.95)',
+ 						},
+ 						'75%': {
+ 						backgroundPosition: '50% 0%',
+ 						transform: 'rotate(3deg) scale(1.05)',
+ 						},
+ 						'100%': {
+ 						backgroundPosition: '0% 50%',
+ 						transform: 'rotate(-5deg) scale(0.9)',
+ 						}
 				}
 			},
 			animation: {
@@ -198,7 +220,8 @@ const config = {
 				'slide-up': 'slide-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
 				'slide-down': 'slide-down 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
 				'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
-				'orbit': 'orbit 8s linear infinite'
+				'orbit': 'orbit 8s linear infinite',
+				'aurora': 'aurora 8s ease-in-out infinite alternate'
 			},
 			backgroundImage: {
 				'grid-pattern': 'linear-gradient(rgba(255, 138, 101, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 138, 101, 0.1) 1px, transparent 1px)',
