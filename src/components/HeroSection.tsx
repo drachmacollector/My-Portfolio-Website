@@ -47,7 +47,7 @@ const HeroSection = () => {
       return (
         <span>
           {introText}
-          <AuroraText>
+          <AuroraText className="text-6xl md:text-8xl">
             {nakulText}
           </AuroraText>
           {!isTypingComplete && <span className="animate-blink">|</span>}
