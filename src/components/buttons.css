@@ -1,10 +1,8 @@
-
 /* src/components/buttons.css */
 :root {
-  /* --- Updated to match website's firebase color scheme --- */
-  --background-2: #FF5F1F;  /* Firebase orange */
-  --background-3: #FF3131;  /* Firebase red */
-  --background-gradient: linear-gradient(135deg, #FF5F1F, #FF3131, #BC13FE); /* Firebase gradient */
+  /* --- Dark backgrounds, matching Tailwind zinc.950 & gray.900 --- */
+  --background-2: #18181b;  /* Tailwind zinc.950 */
+  --background-3: #111827;  /* Tailwind gray.900 */
   --contrast: #fff;
   --size: 5rem; /* keycap size */
 }
@@ -48,7 +46,6 @@ svg {
     'Liberation Mono',
     'Courier New',
     monospace;
-  background: var(--background-gradient);
 }
 
 .call-to-action-content::after {
@@ -78,7 +75,7 @@ svg {
   font-size: calc(var(--size) / 2);
   border: 0.1rem solid var(--background-3);
   border-radius: calc(var(--size) * 0.2);
-  background: var(--background-gradient);
+  background: var(--background-2);
   color: var(--contrast);
   box-shadow:
     0.15rem 0.15rem 0 0 var(--background-3),
@@ -99,7 +96,6 @@ svg {
     0.3rem 0.3rem 0 0 var(--background-3),
     0.45rem 0.45rem 0 0 var(--background-3),
     0.5rem 0.5rem 0 0 var(--background-3);
-  background: linear-gradient(135deg, #BC13FE, #E91E63, #FF5F1F); /* Animated gradient on hover */
 }
 
 .key:active,
@@ -112,7 +108,6 @@ svg {
     0.2rem 0.2rem 0 0 var(--background-3),
     0.2rem 0.2rem 0 0 var(--background-3);
   filter: blur(0.02rem);
-  background: linear-gradient(135deg, #E91E63, #BC13FE, #1F51FF); /* Different gradient on active */
 }
 
 /* Tooltip CSS (if you ever need data-tooltip) */
@@ -138,7 +133,7 @@ svg {
   margin-bottom: 5px;
   padding: 6px 12px;
   border-radius: 3px;
-  background-color: #FF5F1F;
+  background-color: hsl(0, 0%, 20%);
   color: #fff;
   content: attr(data-tooltip);
   text-align: center;
@@ -154,7 +149,7 @@ svg {
   left: 50%;
   margin-left: -5px;
   width: 0;
-  border-top: 5px solid #FF5F1F;
+  border-top: 5px solid hsl(0, 0%, 20%);
   border-right: 5px solid transparent;
   border-left: 5px solid transparent;
   content: ' ';
