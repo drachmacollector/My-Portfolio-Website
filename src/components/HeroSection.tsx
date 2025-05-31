@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
 import RotatingText from './RotatingText';
 import { AuroraText } from "@/components/magicui/aurora-text";
+import Buttons from './buttons';
 
 const HeroSection = () => {
   const [text, setText] = useState('');
@@ -87,15 +88,8 @@ const HeroSection = () => {
             one line of code at a time. Building the future, today.
           </p>
 
-          {/* CTA Button with neon accent */}
-          <button
-            onClick={scrollToAbout}
-            className="group relative px-8 py-4 bg-gradient-to-r from-firebase-orange to-neon-red rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-neon-red/25 animate-fade-in opacity-0"
-            style={{animationDelay: '4s', animationFillMode: 'forwards'}}
-          >
-            <span className="relative z-10">Explore More</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-neon-red to-neon-red-bright rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </button>
+          <Buttons></Buttons>
+
         </div>
 
         {/* Right Side - Enhanced Profile Image - Increased size */}
