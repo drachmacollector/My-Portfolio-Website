@@ -103,7 +103,7 @@ const Buttons: React.FC<ButtonProps> = ({ className = '' }) => {
       </div>
 
       {/* Call‐to‐Action “Explore more” key */}
-      <div className="key-position flex items-center justify-center">
+      <div className="key-position flex items-center justify-center ml-2">
         <a
           id="cta-hero-btn"
           href="#about"

@@ -59,17 +59,7 @@ const AboutSection = () => {
                         <span className={`text-${skill.color} font-bold`}>{skill.level}%</span>
                       </div>
                       
-                      {/* Progress Bar */}
-                      <div className="relative h-2 bg-gray-800 rounded-full overflow-hidden">
-                        <div 
-                          className={`absolute top-0 left-0 h-full bg-gradient-to-r from-${skill.color} to-${skill.color}/70 rounded-full transition-all duration-1000 ease-out`}
-                          style={{
-                            width: `${skill.level}%`,
-                            boxShadow: `0 0 10px rgba(255, 138, 101, 0.5)`
-                          }}
-                        />
-                        <div className={`absolute top-0 left-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse`} />
-                      </div>
+
                     </div>
                   );
                 })}
