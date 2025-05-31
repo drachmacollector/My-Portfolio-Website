@@ -175,7 +175,7 @@ const ContactSection = () => {
       </div>
 
       {/* Glassmorphic Card CSS */}
-      <style jsx>{`
+      <style>{`
         .glass-box {
           perspective: 1000px;
         }
