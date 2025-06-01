@@ -44,7 +44,7 @@ const Navigation = () => {
 
           {/* Desktop Navigation - Enhanced Floating Dock */}
           <div className="hidden md:block">
-            <div className={`flex items-center space-x-2 p-2 rounded-3xl transition-all duration-300 ease-in-out ${
+            <div className={`flex items-center space-x-3 p-2 rounded-3xl transition-all duration-300 ease-in-out ${
               scrolled 
                 ? 'backdrop-blur-2xl bg-black/60 border border-white/10 shadow-2xl shadow-black/50' 
                 : 'bg-transparent'
@@ -59,11 +59,11 @@ const Navigation = () => {
                 >
                   {/* Background hover effect */}
                   <div className="absolute inset-0 bg-white/10 
-                  opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-xl" />
+                  opacity-0 group-hover:opacity-100 transition-all duration-150 rounded-xl" />
                   
                   {/* Border glow effect */}
-                  <div className="absolute inset-0 border border-transparent group-hover:border-white/40 
-                  rounded-xl transition-all duration-300" />
+                  <div className="absolute inset-0 border border-transparent group-hover:border-white/50 
+                  rounded-xl transition-all duration-200" />
                   
                   <span className="relative z-10 transition-transform duration-300 group-hover:scale-110">
                     {item.label}

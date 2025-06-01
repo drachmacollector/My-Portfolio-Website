@@ -101,7 +101,10 @@ const HeroSection = () => {
               {/* <div className="absolute inset-0 rounded-full bg-gradient-to-r from-firebase-orange via-neon-red to-firebase-pink opacity-75 animate-neon-pulse" />
               <div className="absolute inset-1 rounded-full bg-gradient-to-r from-neon-red via-firebase-purple to-firebase-orange opacity-50 animate-glow-pulse" /> */}
               <div className="absolute inset-0 rounded-full animate-rotate-slow">
-                <div className="w-full h-full rounded-full border-4 border-neon-red/60 border-dashed" />
+                <div className="w-full h-full rounded-full border-4 border-red-600 border-dashed" />
+              </div>
+              <div className="absolute inset-2.5 rounded-full animate-rotate-slow2">
+                <div className="w-full h-full rounded-full border-4 border-sky-300 border-dashed" />
               </div>
               <div className="absolute inset-4 rounded-full overflow-hidden bg-black">
                 <img 

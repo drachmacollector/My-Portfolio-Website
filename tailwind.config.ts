@@ -152,6 +152,10 @@ const config = {
 					'0%': { transform: 'rotate(0deg)' },
 					'100%': { transform: 'rotate(360deg)' }
 				},
+				'rotate-slow2': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(-360deg)' }
+				},
 				'slide-up': {
 					'0%': { 
 						transform: 'translateY(100%)',
@@ -217,6 +221,7 @@ const config = {
 				'typing': 'typing 3.5s steps(40, end), blink 0.75s step-end infinite',
 				'particle-float': 'particle-float 15s linear infinite',
 				'rotate-slow': 'rotate-slow 20s linear infinite',
+				'rotate-slow2': 'rotate-slow2 20s linear infinite',
 				'slide-up': 'slide-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
 				'slide-down': 'slide-down 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
 				'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
