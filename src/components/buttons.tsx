@@ -73,7 +73,7 @@ const SOCIAL_MEDIA_DATA = [
   {
     name: 'Resume',
     icon: ScrollIcon,
-    href: 'https://read.cv/jestsee',
+
   },
   {
     name: 'Email',

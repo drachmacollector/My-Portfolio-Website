@@ -2,7 +2,7 @@
 :root {
   /* --- Dark backgrounds, matching Tailwind zinc.950 & gray.900 --- */
   --background-2: #18181b;  /* Tailwind zinc.950 */
-  --background-3: #111827;  /* Tailwind gray.900 */
+  --background-3: #0051ff;  /* Tailwind gray.900 */
   --contrast: #fff;
   --size: 5rem; /* keycap size */
 }
@@ -33,7 +33,7 @@ svg {
 
 .key.call-to-action {
   width: 160px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
@@ -74,7 +74,7 @@ svg {
   height: var(--size);
   font-size: calc(var(--size) / 2);
   border: 0.1rem solid var(--background-3);
-  border-radius: calc(var(--size) * 0.2);
+  border-radius: calc(var(--size) * 0.5);
   background: var(--background-2);
   color: var(--contrast);
   box-shadow:
