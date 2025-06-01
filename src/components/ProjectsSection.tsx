@@ -102,7 +102,7 @@ const ProjectsSection = () => {
             type="button"
             onClick={() => handleLiveClick(projects[0].liveUrl)}
             className="flex justify-center gap-2 items-center w-full text-lg 
-            bg-zinc-950 border-rose-600 border-[1px] relative px-8 py-2 rounded-lg 
+            bg-zinc-950 border-rose-600 border-[2px] relative px-8 py-2 rounded-lg 
             overflow-hidden group transition-all cursor-pointer hover:brightness-100 active:brightness-90"
           >
             <span className="relative z-20 group-hover:text-white transition-colors duration-300">
