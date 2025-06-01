@@ -1,57 +1,42 @@
-
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import Netflix from '../components/Netflix';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import ProjectsSection from '../components/ProjectsSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
-import Particles from '../components/ParticleBackground';
-import CanvasCursor from '../components/CanvasCursor';
-import { Button } from "@/components/ui/button";
-import { CoolMode } from "@/components/magicui/cool-mode";
 import ParticleBackground from '../components/ParticleBackground';
+import CanvasCursor from '../components/CanvasCursor';
 
-const Index = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+const Index: React.FC = () => {
+  const [showIntro, setShowIntro] = useState(true);
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  const handleIntroEnd = () => {
+    setShowIntro(false);
+  };
 
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* Background Elements */}
-      <div className="fixed inset-0 grid-bg opacity-20" />
+      {/* VIDEO INTRO */}
+      {showIntro && <Netflix onFinish={handleIntroEnd} />}
 
-      <ParticleBackground></ParticleBackground>
-      
-      {/* Canvas Cursor Effect */}
-      <CanvasCursor />
-
-      {/* Navigation */}
-      <Navigation />
-
-      {/* Main Content */}
-      <main className="relative z-10">
-        <HeroSection />
-        <AboutSection />
-        <ProjectsSection />
-        <ContactSection />
-        <Footer />
-      </main>
-
-    {/* <div className="relative justify-center">
-      <CoolMode>
-        <Button>Click Me!</Button>
-      </CoolMode>
-    </div> */}
-
+      {/* MAIN PAGE (shown only after intro) */}
+      {!showIntro && (
+        <>
+          <div className="fixed inset-0 grid-bg opacity-20" />
+          <ParticleBackground />
+          <CanvasCursor />
+          <Navigation />
+          <main className="relative z-10">
+            <HeroSection />
+            <AboutSection />
+            <ProjectsSection />
+            <ContactSection />
+            <Footer />
+          </main>
+        </>
+      )}
     </div>
   );
 };
