@@ -31,20 +31,20 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
       scrolled 
         ? 'transform translate-y-4' 
         : 'transform translate-y-0'
     }`}>
       
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className={`flex items-center justify-end md:justify-center transition-all duration-700 ease-in-out ${
+        <div className={`flex items-center justify-end md:justify-center transition-all duration-300 ease-in-out ${
           scrolled ? 'h-16' : 'h-20'
         }`}>
 
           {/* Desktop Navigation - Enhanced Floating Dock */}
           <div className="hidden md:block">
-            <div className={`flex items-center space-x-2 p-2 rounded-2xl transition-all duration-700 ease-in-out ${
+            <div className={`flex items-center space-x-2 p-2 rounded-3xl transition-all duration-300 ease-in-out ${
               scrolled 
                 ? 'backdrop-blur-2xl bg-black/60 border border-white/10 shadow-2xl shadow-black/50' 
                 : 'bg-transparent'
@@ -58,11 +58,11 @@ const Navigation = () => {
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {/* Background hover effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-firebase-orange/10 to-neon-red/10 
+                  <div className="absolute inset-0 bg-white/10 
                   opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-xl" />
                   
                   {/* Border glow effect */}
-                  <div className="absolute inset-0 border border-transparent group-hover:border-firebase-orange/30 
+                  <div className="absolute inset-0 border border-transparent group-hover:border-white/40 
                   rounded-xl transition-all duration-300" />
                   
                   <span className="relative z-10 transition-transform duration-300 group-hover:scale-110">
@@ -74,17 +74,6 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* Enhanced Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className={`mobile-menu-button ${scrolled ? 'scale-90' : 'scale-100'} transition-all duration-300`}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-neon-red/5 to-firebase-orange/5 
-              rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300" />
-              {isOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
-          </div>
         </div>
 
         {/* Enhanced Mobile Navigation */}
