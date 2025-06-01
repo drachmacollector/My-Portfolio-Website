@@ -31,7 +31,7 @@ const SendMessage = () => {
   };
 
     return(
-                  <div className="space-y-8">
+          <div className="space-y-8">
             <div className="contact-form">
               <h3 className="text-2xl font-bold mb-6 text-firebase-orange">Send a Message</h3>
               
@@ -101,9 +101,9 @@ const SendMessage = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 bg-gradient-to-r from-firebase-orange 
+                  className="w-full py-4 bg-gradient-to-r from-firebase-blue 
                   to-firebase-red rounded-lg font-semibold text-white hover:scale-105 transition-all 
-                  duration-300 hover:shadow-2xl hover:shadow-firebase-orange/25 disabled:opacity-50 
+                  duration-300 hover:shadow-2xl hover:shadow-firebase-blue/25 disabled:opacity-50 
                   disabled:cursor-not-allowed flex items-center justify-center space-x-2"
                 >
                   {isSubmitting ? (
@@ -114,7 +114,7 @@ const SendMessage = () => {
                   ) : (
                     <>
                       <Send className="w-5 h-5" />
-                      <span>Send Message</span>
+                      <span>Send Email</span>
                     </>
                   )}
                 </button>

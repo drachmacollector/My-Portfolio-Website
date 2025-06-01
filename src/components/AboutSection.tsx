@@ -22,12 +22,11 @@ const AboutSection = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-firebase-orange to-firebase-purple mx-auto mb-8" />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Bio Section */}
+        Coming soon......
+        {/* <div className="grid lg:grid-cols-2 gap-12">
           <div className="space-y-8">
             <div className="glass-card p-8 animate-fade-in">
 
-              {/* Tech Stack */}
               <div className="mt-8">
                 <h4 className="text-lg font-semibold mb-4 text-firebase-purple">Technologies I Love</h4>
                 <div className="flex flex-wrap gap-2">
@@ -41,7 +40,6 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Skills Section */}
           <div className="space-y-8">
             <div className="neomorph-card p-8 rounded-2xl animate-fade-in">
               <h3 className="text-2xl font-bold mb-8 text-firebase-blue">Skills & Expertise</h3>
@@ -67,7 +65,7 @@ const AboutSection = () => {
             </div>
 
           </div>
-        </div>
+        </div> */}
       </div>
 
     </section>
