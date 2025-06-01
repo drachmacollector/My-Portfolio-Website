@@ -74,7 +74,7 @@ svg {
   height: var(--size);
   font-size: calc(var(--size) / 2);
   border: 0.1rem solid var(--background-3);
-  border-radius: calc(var(--size) * 0.5);
+  border-radius: calc(var(--size) * 0.2);
   background: var(--background-2);
   color: var(--contrast);
   box-shadow:
