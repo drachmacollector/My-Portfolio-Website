@@ -31,7 +31,7 @@ const ProjectsSection = () => {
     <section id="projects" className="py-12 px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center ">
+        <div className="text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">
             My <span className="text-firebase-red">Projects</span>
           </h2>
@@ -42,12 +42,13 @@ const ProjectsSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+        <div className="flex flex-wrap justify-center items-center gap-8 mt-16">
           {projects.map((project) => (
             <div 
               key={project.id}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
+              className="flex-shrink-0"
             >
               <CardContainer className="inter-var">
                 <CardBody className="bg-slate-950 relative group/card dark:hover:shadow-2xl 
@@ -171,7 +172,6 @@ const ProjectsSection = () => {
           </button>
         </div>
       </div>
-
     </section>
   );
 };
