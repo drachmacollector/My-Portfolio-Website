@@ -88,7 +88,8 @@ const SOCIAL_MEDIA_DATA = [
 
 const Buttons: React.FC<ButtonProps> = ({ className = '' }) => {
   return (
-    <TooltipProvider>
+    <TooltipProvider delayDuration={20} skipDelayDuration={0}>
+
       <div className={`flex items-start text-center flex-col sm:flex-row ${className}`}>
         <div className="board">
           {SOCIAL_MEDIA_DATA.map(({ name, href, icon: Icon, tooltip }) => (
