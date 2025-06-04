@@ -35,10 +35,10 @@ const AboutSection = () => {
           {/* Decorative background circle */}
           <div className="hidden lg:block absolute -top-20 -left-20 w-80 h-80 rounded-full border-[4px] border-gradient-to-r from-cyan-400 to-violet-400 opacity-20 z-0" />
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+          <div className="grid grid-cols-12 grid-rows-6 gap-6 h-[600px] relative z-10">
             
-            {/* Card A - Typing Stats */}
-            <div className="bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-6 text-center">
+            {/* Card A - Typing Stats (Rectangle, top-left) */}
+            <div className="col-span-12 sm:col-span-6 lg:col-span-3 row-span-2 bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-6 text-center">
               <h3 className="text-2xl font-bold text-white">Typing Speed</h3>
               <div className="border-b border-cyan-400 w-12 my-2 mx-auto" />
               <div className="text-6xl font-extrabold text-white my-4">116 wpm</div>
@@ -68,43 +68,54 @@ const AboutSection = () => {
               </a>
             </div>
 
-            {/* Card B - 3D Renders (2x2) */}
-            <div className="lg:col-span-2 lg:row-span-2 bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-6">
-              <h3 className="text-3xl font-bold text-white mb-2">3D Art & Renders</h3>
-              <p className="text-sm text-white/70 mb-6">Created with Blender - Explore my 3D modeling journey</p>
+            {/* Card B - 3D Renders (Large Circle, center-right) */}
+            <div className="col-span-12 sm:col-span-6 lg:col-span-4 row-span-4 bg-black/30 backdrop-blur-xl border border-white/20 rounded-full shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-8 flex flex-col items-center justify-center text-center relative">
+              <div className="w-20 h-20 mb-4 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center">
+                <img 
+                  src="/lovable-uploads/blender.png" 
+                  alt="Blender"
+                  className="w-12 h-12 object-contain"
+                />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">3D Art</h3>
+              <p className="text-sm text-white/70 mb-6">Blender Creations</p>
               
               <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
                 <DialogTrigger asChild>
-                  <button className="px-4 py-2 bg-cyan-400 rounded-md text-black hover:bg-cyan-500 transition-colors">
+                  <button className="px-6 py-3 bg-cyan-400 rounded-full text-black hover:bg-cyan-500 transition-colors font-medium">
                     View Gallery
                   </button>
                 </DialogTrigger>
-                <DialogContent className="fixed inset-0 bg-black/70 backdrop-blur-xl flex items-center justify-center z-50 max-w-none w-full h-full p-0 border-0">
-                  <div className="bg-black/30 backdrop-blur-2xl border border-white/20 rounded-3xl max-w-4xl w-full p-6 relative mx-4">
+                <DialogContent className="max-w-none w-[95vw] max-h-[90vh] p-0 border-0 bg-transparent">
+                  <div className="bg-black/80 backdrop-blur-2xl border border-white/20 rounded-3xl p-8 relative h-full">
                     <DialogClose asChild>
-                      <button className="absolute right-6 top-6 text-2xl text-white/80 hover:text-white cursor-pointer">
+                      <button className="absolute right-6 top-6 text-3xl text-white/80 hover:text-white cursor-pointer z-10">
                         <X />
                       </button>
                     </DialogClose>
                     
-                    <h3 className="text-2xl font-bold text-white mb-6">3D Gallery</h3>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-h-96 overflow-y-auto">
+                    <h3 className="text-3xl font-bold text-white mb-8 text-center">3D Gallery</h3>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-h-[60vh] overflow-y-auto">
                       {blenderFiles.map((file, index) => (
                         <div key={index} className="bg-black/20 border border-white/10 rounded-xl overflow-hidden hover:scale-105 transition-transform">
                           {file.endsWith('.mp4') ? (
                             <video 
                               src={`/blender/${file}`}
-                              className="w-full h-32 object-cover"
+                              className="w-full h-40 object-cover"
                               controls
                               muted
+                              poster={`/blender/${file.replace('.mp4', '.jpg')}`}
                             />
                           ) : (
                             <img 
                               src={`/blender/${file}`}
                               alt={`3D render ${index + 1}`}
-                              className="w-full h-32 object-cover"
+                              className="w-full h-40 object-cover"
                             />
                           )}
+                          <div className="p-3">
+                            <p className="text-white/80 text-sm capitalize">{file.replace(/\.(png|mp4)$/, '').replace('-', ' ')}</p>
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -113,10 +124,10 @@ const AboutSection = () => {
               </Dialog>
             </div>
 
-            {/* Card C - Tech Stack Marquee (2x1) */}
-            <div className="lg:col-span-2 bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-6">
-              <h3 className="text-2xl font-bold text-white mb-2">Tech Stack</h3>
-              <div className="overflow-hidden whitespace-nowrap h-20 flex items-center">
+            {/* Card C - Tech Stack Marquee (Wide Rectangle) */}
+            <div className="col-span-12 lg:col-span-5 row-span-2 bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-6">
+              <h3 className="text-2xl font-bold text-white mb-4">Tech Stack</h3>
+              <div className="overflow-hidden whitespace-nowrap h-16 flex items-center">
                 <div className="marquee flex items-center">
                   {[...techStack, ...techStack].map((tech, index) => (
                     <div key={index} className="flex flex-col items-center space-y-1 mx-4 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.5)]">
@@ -132,14 +143,14 @@ const AboutSection = () => {
               </div>
             </div>
 
-            {/* Card D - Spotify Embed */}
-            <div className="bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-6 relative">
-              <div className="absolute top-2 left-2 bg-black/50 text-xs px-2 py-1 rounded-md text-white/80 z-10">
+            {/* Card D - Spotify Embed (Rectangle) */}
+            <div className="col-span-12 sm:col-span-6 lg:col-span-3 row-span-3 bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-6 relative">
+              <div className="absolute top-4 left-4 bg-black/50 text-xs px-3 py-1 rounded-full text-white/80 z-10">
                 Now Playing
               </div>
               <iframe 
                 src="https://open.spotify.com/embed/track/0GONea6G2XdnHWjNZd6zt3?utm_source=generator&theme=0"
-                className="w-full h-40 rounded-xl"
+                className="w-full h-full rounded-xl mt-8"
                 frameBorder="0"
                 allowFullScreen
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
@@ -147,33 +158,38 @@ const AboutSection = () => {
               />
             </div>
 
-            {/* Card E - Social Icons */}
-            <div className="bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-6 text-center">
-              <div className="flex justify-center space-x-4 mb-2">
-                <a href="#" className="transition-transform hover:scale-110 hover:drop-shadow-[0_0_10px_rgba(255,69,96,0.5)]">
-                  <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold">
-                    R
-                  </div>
-                </a>
-                <a href="#" className="transition-transform hover:scale-110 hover:drop-shadow-[0_0_10px_rgba(76,175,80,0.5)]">
-                  <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-bold">
-                    4
-                  </div>
+            {/* Card E - Social Icons (Small Circles) */}
+            <div className="col-span-6 lg:col-span-2 row-span-1 flex gap-4">
+              <div className="flex-1 bg-black/30 backdrop-blur-xl border border-white/20 rounded-full shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(255,69,96,0.5)] p-4 flex items-center justify-center">
+                <a href="https://reddit.com" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
+                  <img 
+                    src="/lovable-uploads/reddit.png" 
+                    alt="Reddit"
+                    className="w-8 h-8 object-contain"
+                  />
                 </a>
               </div>
-              <p className="text-sm text-white/80 mt-2">Find me on</p>
+              <div className="flex-1 bg-black/30 backdrop-blur-xl border border-white/20 rounded-full shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(76,175,80,0.5)] p-4 flex items-center justify-center">
+                <a href="https://4chan.org" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
+                  <img 
+                    src="/lovable-uploads/4chan.png" 
+                    alt="4chan"
+                    className="w-8 h-8 object-contain"
+                  />
+                </a>
+              </div>
             </div>
 
-            {/* Filler cards for larger screens */}
-            <div className="hidden lg:block bg-black/20 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg p-4">
+            {/* Filler decorative elements */}
+            <div className="hidden lg:block col-span-2 row-span-1 bg-black/20 backdrop-blur-xl border border-white/10 rounded-full shadow-lg p-4">
               <div className="w-full h-full flex items-center justify-center opacity-30">
                 <div className="w-8 h-8 border-2 border-cyan-400 rounded-full animate-pulse" />
               </div>
             </div>
 
-            <div className="hidden lg:block bg-black/20 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg p-4">
+            <div className="hidden lg:block col-span-3 row-span-1 bg-black/20 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg p-4">
               <div className="w-full h-full flex items-center justify-center opacity-30">
-                <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-violet-400 rounded-full animate-pulse" />
+                <div className="w-16 h-1 bg-gradient-to-r from-cyan-400 to-violet-400 rounded-full animate-pulse" />
               </div>
             </div>
 
