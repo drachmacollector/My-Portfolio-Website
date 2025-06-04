@@ -1,5 +1,6 @@
 // src/components/Buttons.tsx
 import React from 'react';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import './buttons.css';
 
 interface ButtonProps {
@@ -58,62 +59,74 @@ const MailIcon: React.FC = () => (
   </svg>
 );
 
-// The “database” of social‐link buttons:
+// The "database" of social‐link buttons:
 const SOCIAL_MEDIA_DATA = [
   {
     name: 'Github',
     icon: GithubIcon,
     href: 'https://github.com/drachmacollector',
+    tooltip: 'Github'
   },
   {
     name: 'LinkedIn',
     icon: LinkedInIcon,
     href: 'https://www.linkedin.com/in/nakul-bhadade-b7ba06313/',
+    tooltip: 'LinkedIn'
   },
   {
     name: 'Resume',
     icon: ScrollIcon,
-
+    tooltip: 'My Resume'
   },
   {
     name: 'Email',
     icon: MailIcon,
     href: 'mailto:nakulccs@gmail.com',
+    tooltip: 'Email Me'
   },
 ];
 
 const Buttons: React.FC<ButtonProps> = ({ className = '' }) => {
   return (
-    <div className={`flex items-start text-center flex-col sm:flex-row ${className}`}>
-      <div className="board">
-        {SOCIAL_MEDIA_DATA.map(({ name, href, icon: Icon }) => (
-          <div key={name} className="key-position">
-            <a
-              aria-label={name}
-              className="key"
-              data-key={name}
-              href={href}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Icon />
-            </a>
-          </div>
-        ))}
-      </div>
+    <TooltipProvider>
+      <div className={`flex items-start text-center flex-col sm:flex-row ${className}`}>
+        <div className="board">
+          {SOCIAL_MEDIA_DATA.map(({ name, href, icon: Icon, tooltip }) => (
+            <div key={name} className="key-position">
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <a
+                    aria-label={name}
+                    className="key"
+                    data-key={name}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Icon />
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" className="bg-zinc-900 text-white border-zinc-700">
+                  <p>{tooltip}</p>
+                </TooltipContent>
+              </Tooltip>
+            </div>
+          ))}
+        </div>
 
-      {/* Call‐to‐Action “Explore more” key */}
-      <div className="key-position flex items-center justify-center ml-2">
-        <a
-          id="cta-hero-btn"
-          href="#about"
-          data-block="center"
-          className="key call-to-action peer"
-        >
-          <p className="call-to-action-content text-white">Explore more</p>
-        </a>
+        {/* Call‐to‐Action "Explore more" key */}
+        <div className="key-position flex items-center justify-center ml-2">
+          <a
+            id="cta-hero-btn"
+            href="#about"
+            data-block="center"
+            className="key call-to-action peer"
+          >
+            <p className="call-to-action-content text-white">Explore more</p>
+          </a>
+        </div>
       </div>
-    </div>
+    </TooltipProvider>
   );
 };
 
