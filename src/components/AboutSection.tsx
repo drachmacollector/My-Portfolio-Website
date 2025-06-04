@@ -14,6 +14,7 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-20 px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
+
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">
@@ -22,52 +23,7 @@ const AboutSection = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-firebase-orange to-firebase-purple mx-auto mb-8" />
         </div>
 
-        Coming soon......
-        {/* <div className="grid lg:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <div className="glass-card p-8 animate-fade-in">
-
-              <div className="mt-8">
-                <h4 className="text-lg font-semibold mb-4 text-firebase-purple">Technologies I Love</h4>
-                <div className="flex flex-wrap gap-2">
-                  {technologies.map((tech) => (
-                    <span key={tech} className="tech-tag">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-8">
-            <div className="neomorph-card p-8 rounded-2xl animate-fade-in">
-              <h3 className="text-2xl font-bold mb-8 text-firebase-blue">Skills & Expertise</h3>
-              
-              <div className="space-y-6">
-                {skills.map((skill, index) => {
-                  const Icon = skill.icon;
-                  return (
-                    <div key={skill.name} className="group">
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center space-x-3">
-                          <Icon className={`w-5 h-5 text-${skill.color} group-hover:animate-pulse`} />
-                          <span className="font-medium">{skill.name}</span>
-                        </div>
-                        <span className={`text-${skill.color} font-bold`}>{skill.level}%</span>
-                      </div>
-                      
-
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-          </div>
-        </div> */}
       </div>
-
     </section>
   );
 };
