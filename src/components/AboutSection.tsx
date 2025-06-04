@@ -180,16 +180,6 @@ const AboutSection = () => {
           </div>
         </section>
       </div>
-
-      <style jsx>{`
-        @keyframes slide-left {
-          0% { transform: translateX(100%); }
-          100% { transform: translateX(-100%); }
-        }
-        .marquee {
-          animation: slide-left 20s linear infinite;
-        }
-      `}</style>
     </section>
   );
 };
