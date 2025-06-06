@@ -87,8 +87,8 @@ const AboutSection = () => {
                     </button>
                   </div>
                 </DialogTrigger>
-                <DialogContent className="max-w-none w-screen h-screen p-0 border-0 bg-black/80 backdrop-blur-xl flex items-center justify-center">
-                  <div className="bg-black/30 backdrop-blur-2xl border border-white/20 rounded-3xl max-w-5xl w-full max-h-[80vh] p-8 relative mx-4 overflow-hidden">
+                <DialogContent className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 flex items-center justify-center p-4">
+                  <div className="bg-black/90 backdrop-blur-xl border border-white/20 rounded-3xl w-full max-w-6xl max-h-[90vh] p-8 relative overflow-hidden">
                     <DialogClose asChild>
                       <button className="absolute right-6 top-6 text-2xl text-white/80 hover:text-white cursor-pointer z-10">
                         <X />
@@ -96,7 +96,7 @@ const AboutSection = () => {
                     </DialogClose>
                     
                     <h3 className="text-3xl font-bold text-white mb-6">3D Gallery</h3>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-h-[60vh] overflow-y-auto">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-h-[70vh] overflow-y-auto">
                       {blenderFiles.map((file, index) => (
                         <div key={index} className="bg-black/20 border border-white/10 rounded-xl overflow-hidden hover:scale-105 transition-transform">
                           {file.endsWith('.mp4') ? (
@@ -125,9 +125,9 @@ const AboutSection = () => {
             <div className="col-span-12 row-span-1 row-start-6 bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-4">
               <h3 className="text-xl font-bold text-white mb-2 text-center">Tech Stack</h3>
               <div className="overflow-hidden whitespace-nowrap h-16 flex items-center">
-                <div className="marquee-slow flex items-center">
+                <div className="marquee-smooth flex items-center">
                   {[...techStack, ...techStack, ...techStack].map((tech, index) => (
-                    <div key={index} className="flex flex-col items-center space-y-1 mx-8 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.5)]">
+                    <div key={index} className="flex flex-col items-center space-y-1 mx-12 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.5)]">
                       <img 
                         src={`/lovable-uploads/${tech}.png`} 
                         alt={tech}
