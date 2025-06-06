@@ -223,13 +223,22 @@
       0 0 40px rgba(255, 7, 58, 0.1);
   }
 
-  /* Marquee animation for tech stack */
+  /* Marquee animations for tech stack */
   .marquee {
     animation: slide-left 20s linear infinite;
   }
 
+  .marquee-slow {
+    animation: slide-left-slow 40s linear infinite;
+  }
+
   @keyframes slide-left {
     0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  @keyframes slide-left-slow {
+    0% { transform: translateX(0%); }
     100% { transform: translateX(-100%); }
   }
 }
