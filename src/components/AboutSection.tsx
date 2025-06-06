@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger, DialogClose } from './ui/dialog';
+import LocationCard from './LocationCard';
 
 const AboutSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -34,8 +34,8 @@ const AboutSection = () => {
         <section id="about-me" className="max-w-7xl mx-auto px-6 py-16 relative">
           <div className="grid grid-cols-12 gap-6 auto-rows-[140px]">
             
-            {/* Card A - Typing Stats (rectangle) */}
-            <div className="col-span-4 row-span-2 bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-6 flex flex-col justify-center text-center">
+            {/* Card A - Typing Stats (2x2 square) */}
+            <div className="col-span-3 row-span-2 bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-6 flex flex-col justify-center text-center">
               <h3 className="text-xl font-bold text-white mb-2">Typing Speed</h3>
               <div className="border-b border-cyan-400 w-12 mx-auto mb-3" />
               <div className="text-4xl font-extrabold text-white mb-3">116 wpm</div>
@@ -65,8 +65,8 @@ const AboutSection = () => {
               </a>
             </div>
 
-            {/* Card B - 3D Renders (large rectangle) */}
-            <div className="col-span-5 row-span-3 bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-8 flex flex-col items-center justify-center text-center cursor-pointer">
+            {/* Card B - 3D Renders (3x2 rectangle) */}
+            <div className="col-span-6 row-span-2 bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-8 flex flex-col items-center justify-center text-center cursor-pointer">
               <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
                 <DialogTrigger asChild>
                   <div className="w-full h-full flex flex-col items-center justify-center">
@@ -118,22 +118,12 @@ const AboutSection = () => {
               </Dialog>
             </div>
 
-            {/* Card C - Spotify Embed (rectangle) */}
-            <div className="col-span-3 row-span-3 bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-4 relative">
-              <div className="absolute top-3 left-3 bg-black/50 text-xs px-2 py-1 rounded-md text-white/80 z-10">
-                Now Playing
-              </div>
-              <iframe 
-                src="https://open.spotify.com/embed/track/0GONea6G2XdnHWjNZd6zt3?utm_source=generator&theme=0"
-                className="w-full h-full rounded-xl"
-                frameBorder="0"
-                allowFullScreen
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-              />
+            {/* Card C - Location (2x2 square) */}
+            <div className="col-span-3 row-span-2">
+              <LocationCard />
             </div>
 
-            {/* Card D - Social Icons (square) */}
+            {/* Card D - Social Icons (4x1 rectangle) */}
             <div className="col-span-4 row-span-1 bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-4 flex items-center justify-center">
               <div className="flex items-center space-x-8">
                 <a 
@@ -164,8 +154,23 @@ const AboutSection = () => {
               </div>
             </div>
 
-            {/* Card E - Tech Stack Marquee (wide rectangle) */}
-            <div className="col-span-8 row-span-1 bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-4">
+            {/* Card E - Spotify Embed (4x1 rectangle) */}
+            <div className="col-span-4 row-span-1 bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-4 relative">
+              <div className="absolute top-3 left-3 bg-black/50 text-xs px-2 py-1 rounded-md text-white/80 z-10">
+                Now Playing
+              </div>
+              <iframe 
+                src="https://open.spotify.com/embed/track/0GONea6G2XdnHWjNZd6zt3?utm_source=generator&theme=0"
+                className="w-full h-full rounded-xl"
+                frameBorder="0"
+                allowFullScreen
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              />
+            </div>
+
+            {/* Card F - Tech Stack Marquee (4x1 rectangle) */}
+            <div className="col-span-4 row-span-1 bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:backdrop-blur-2xl hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-4">
               <h3 className="text-lg font-bold text-white mb-2 text-center">Tech Stack</h3>
               <div className="overflow-hidden whitespace-nowrap h-12 flex items-center">
                 <div className="marquee-slow flex items-center">
