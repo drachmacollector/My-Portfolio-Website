@@ -32,7 +32,7 @@ const ProjectsSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">
+          <h2 className="text-4xl md:text-5xl font-bold glow-text">
             My <span className="text-firebase-red">Projects</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-netflix-red to-neon-red mx-auto mb-8" />
@@ -42,7 +42,7 @@ const ProjectsSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="flex flex-wrap justify-center items-center gap-8 mt-16">
+        <div className="flex flex-wrap justify-center items-center gap-8 ">
           {projects.map((project) => (
             <div 
               key={project.id}
@@ -159,17 +159,6 @@ const ProjectsSection = () => {
               </CardContainer>
             </div>
           ))}
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <button 
-            onClick={() => handleGithubClick('https://github.com/drachmacollector')}
-            className="px-8 py-4 bg-gradient-to-r from-neon-red to-netflix-red rounded-full font-semibold 
-            text-white hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-netflix-red/25"
-          >
-            View More on GitHub
-          </button>
         </div>
       </div>
     </section>
