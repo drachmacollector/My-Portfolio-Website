@@ -42,12 +42,11 @@ const Footer = () => {
                 <span className="text-lg text-gray-300">Deployed on</span>
                 <div className="flex items-center space-x-2">
                   <img 
-                        src="/lovable-uploads/vercel.png" 
-                        alt="Vercel" 
+                        src="/lovable-uploads/netlify.png" 
+                        alt="netlify" 
                         className="w-6 h-6 object-contain"
-                        style={{ filter: "drop-shadow(0 0 5px rgba(255, 255, 255, 0.5))",}}
                       />
-                  <span className="text-white font-medium">Vercel</span>
+                  <span className="text-white font-medium">Netlify</span>
                 </div>
               </div>
             </div>
