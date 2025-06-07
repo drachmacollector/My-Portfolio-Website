@@ -12,7 +12,10 @@ const Blender = () => {
     'donut.mp4',
     'heart.mp4',
     'infinite fluid.mp4',
-    'stormy ocean boat.mp4'
+    'stormy ocean boat.mp4',
+    'firesmoke.mp4',
+    'flow text fluid sim.mp4',
+    'wrecking ball.mp4'
   ];
 
   const openLightbox = (index: number) => {
@@ -95,7 +98,7 @@ const Blender = () => {
               <div className="fixed inset-0 z-40 bg-black/90 flex items-center justify-center p-8">
                 <button 
                   onClick={closeLightbox}
-                  className="absolute top-6 left-6 z-50 px-4 py-2 bg-black/80 border border-white/20 rounded-full text-white hover:bg-white/10 transition-colors flex items-center gap-2"
+                  className="absolute top-6 left-6 z-50 px-4 py-2 bg-black/80 border border-white/100 rounded-full text-white hover:bg-white/10 transition-colors flex items-center gap-2"
                 >
                   <ArrowLeft size={18} />
                   Back to Gallery
