@@ -58,15 +58,19 @@ const Blender = () => {
   }, [lightboxOpen, currentIndex]);
 
   return(
-    <div className="col-span-6 row-span-2 bg-black/30 border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-8 flex flex-col items-center justify-center text-center cursor-pointer">
+    <div className="col-span-4 row-span-2 bg-black/30 border border-white/20 rounded-full 
+    shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 
+    hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-8 flex flex-col items-center 
+    justify-center text-center cursor-pointer">
+      
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogTrigger asChild>
           <div className="w-full h-full flex flex-col items-center justify-center">
-            <div className="w-20 h-20 bg-cyan-400/20 rounded-xl flex items-center justify-center mb-4">
+            <div className="w-20 h-20 rounded-full flex items-center justify-center mb-4">
               <img 
                 src="/lovable-uploads/blender.png" 
                 alt="Blender"
-                className="w-12 h-12 object-contain"
+                className="w-20 h-20 object-contain"
               />
             </div>
             <h3 className="text-2xl font-bold text-white mb-2">3D Art</h3>
