@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Netflix from '../components/Netflix';
-import Navigation from '../components/Navigation';
+import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import ProjectsSection from '../components/ProjectsSection';
@@ -27,7 +27,7 @@ const Index: React.FC = () => {
           <div className="fixed inset-0 grid-bg opacity-20" />
           <ParticleBackground />
           <CanvasCursor />
-          <Navigation />
+          <Navbar />
           <main className="relative z-10">
             <HeroSection />
             <AboutSection />

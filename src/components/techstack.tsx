@@ -7,16 +7,21 @@ const techstack = () => {
   ];
 
   return(
-                    <div className="col-span-4 row-span-1 bg-black/30 border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-4">
+            <div className="col-span-4 row-span-1 bg-black/30 border border-white/20 rounded-2xl 
+            shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 
+            hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-4">
+
               <h3 className="text-lg font-bold text-white mb-2 text-center">Tech Stack</h3>
-              <div className="overflow-hidden whitespace-nowrap h-12 flex items-center">
+              <div className="overflow-hidden whitespace-nowrap flex items-center">
+                
                 <div className="marquee-slow flex items-center">
                   {[...techStack, ...techStack, ...techStack].map((tech, index) => (
-                    <div key={index} className="flex flex-col items-center space-y-1 mx-6 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.5)]">
+                    <div key={index} className="flex flex-col items-center space-y-1 mx-6 hover:scale-110 
+                    transition-transform hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.5)]">
                       <img 
                         src={`/lovable-uploads/${tech}.png`} 
                         alt={tech}
-                        className="w-6 h-6 object-contain"
+                        className="w-12 h-12 object-contain"
                       />
                       <span className="text-xs text-white/80 capitalize">{tech}</span>
                     </div>
