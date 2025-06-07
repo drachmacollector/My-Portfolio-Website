@@ -45,10 +45,8 @@ const Bento = () => {
             <Socials></Socials>
 
             {/* Card E - Spotify Embed (4x1 rectangle) */}
-            <div className="col-span-4 h-[26.6vh] bg-black/30 border border-white/20 rounded-2xl shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-4 relative">
-              <div className="absolute top-3 left-3 bg-black/50 text-xs px-2 py-1 rounded-md text-white/80 z-10">
-                Now Playing
-              </div>
+            <div className="col-span-4 h-[26.6vh]">
+
                 <iframe
                   src="https://open.spotify.com/embed/track/0GONea6G2XdnHWjNZd6zt3?utm_source=generator&theme=0"
                   className="w-[100%] h-[152px] rounded-xl"

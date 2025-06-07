@@ -1,8 +1,8 @@
-
+// THIS IS Navbar.TSX
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
-const Navigation = () => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -42,7 +42,7 @@ const Navigation = () => {
           scrolled ? 'h-16' : 'h-20'
         }`}>
 
-          {/* Desktop Navigation - Enhanced Floating Dock */}
+          {/* Desktop Navbar - Enhanced Floating Dock */}
           <div className="hidden md:block">
             <div className={`flex items-center space-x-3 p-2 rounded-3xl transition-all duration-300 ease-in-out ${
               scrolled 
@@ -76,7 +76,7 @@ const Navigation = () => {
 
         </div>
 
-        {/* Enhanced Mobile Navigation */}
+        {/* Enhanced Mobile Navbar */}
         {isOpen && (
           <div className="md:hidden animate-fade-in">
             <div className="px-2 pt-4 pb-6 space-y-2 backdrop-blur-2xl bg-black/70 border 
@@ -102,4 +102,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default Navbar;
