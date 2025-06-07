@@ -12,7 +12,7 @@ interface RotatingTextProps {
 const RotatingText: React.FC<RotatingTextProps> = ({ 
   words, 
   className = '',
-  duration = 3000 
+  duration = 30 
 }) => {
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);

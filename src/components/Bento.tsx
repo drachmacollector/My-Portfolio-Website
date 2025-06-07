@@ -10,19 +10,6 @@ import Socials from './socials'
 const Bento = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const techStack = [
-    'html', 'css', 'javascript', 'php', 'mysql', 'python', 'canva', 'figma', 
-    'obs', 'C', 'react', 'tailwind', 'mongodb', 'github', 'git', 'blender'
-  ];
-
-  const blenderFiles = [
-    'chair.png',
-    'donut.mp4',
-    'heart.mp4',
-    'infinite fluid.mp4',
-    'stormy ocean boat.mp4'
-  ];
-
   return (
     <section id="about" className="px-6 lg:px-8 relative">
 
@@ -55,7 +42,7 @@ const Bento = () => {
                   loading="lazy"
                 />
 
-            </div>
+            </div><br />
 
             {/* Card F - Tech Stack Marquee (4x1 rectangle) */}
             <TechStack></TechStack>

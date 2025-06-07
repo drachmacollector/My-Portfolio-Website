@@ -36,9 +36,6 @@ const ProjectsSection = () => {
             My <span className="text-firebase-red">Projects</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-netflix-red to-neon-red mx-auto mb-8" />
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            A showcase of my latest work, featuring cutting-edge technologies and innovative solutions
-          </p>
         </div>
 
         {/* Projects Grid */}
