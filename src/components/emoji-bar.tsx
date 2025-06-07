@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 function Emojibar() {
   const [flyingEmojis, setFlyingEmojis] = useState([]);
+  const [name, setName] = useState(''); // State for name input
 
   const handleClick = (emoji, e) => {
     // Create flying emoji element
@@ -76,6 +77,20 @@ function Emojibar() {
             Did you like my website? Leave a review
           </p>
           
+          {/* Name Input Field - Moved below text and above emojis */}
+          <div className="relative">
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Your name"
+              className="w-full p-3 bg-white/5 backdrop-blur-sm rounded-full border 
+                         border-white/20 text-white placeholder-white/50 text-sm
+                         focus:outline-none focus:ring-2 focus:ring-white/30 pl-5 pr-10
+                         transition-all duration-200"
+            />
+          </div>
+          
           <div className="hover:scale-x-105 transition-all duration-300 
           *:transition-all *:duration-300 flex justify-center text-2xl 
           items-center z-10 bg-white/5 backdrop-blur-sm gap-2 p-2 rounded-full border border-white/20">
@@ -88,7 +103,8 @@ function Emojibar() {
                 before:justify-center before:items-center before:h-4 before:text-[.6rem] 
                 before:px-1 before:content-[attr(data-label)] before:bg-black before:text-white 
                 before:bg-opacity-50 before:absolute before:-top-7 before:rounded-lg hover:-translate-y-5 
-                cursor-pointer hover:scale-125 active:scale-95 bg-white/10 backdrop-blur-sm rounded-full p-2 px-2 border border-white/10"
+                cursor-pointer hover:scale-125 active:scale-95 bg-white/10 backdrop-blur-sm rounded-full 
+                p-2 px-2 border border-white/10"
                 data-label={item.label}
               >
                 {item.emoji}

@@ -25,7 +25,7 @@ const Index: React.FC = () => {
       {!showIntro && (
         <>
           <div className="fixed inset-0 grid-bg opacity-20" />
-          <ParticleBackground />
+          {/* <ParticleBackground /> */}
           <CanvasCursor />
           <Navbar />
           <main className="relative z-10">
