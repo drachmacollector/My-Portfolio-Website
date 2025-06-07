@@ -1,33 +1,103 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 interface RotatingTextProps {
   words: string[];
   className?: string;
+  duration?: number;
 }
 
-const RotatingText: React.FC<RotatingTextProps> = ({ words, className = '' }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const RotatingText: React.FC<RotatingTextProps> = ({ 
+  words, 
+  className = '',
+  duration = 3000 
+}) => {
+  const [currentWord, setCurrentWord] = useState(words[0]);
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
+
+  const startAnimation = useCallback(() => {
+    const word = words[words.indexOf(currentWord) + 1] || words[0];
+    setCurrentWord(word);
+    setIsAnimating(true);
+  }, [currentWord, words]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % words.length);
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, [words.length]);
+    if (!isAnimating) {
+      setTimeout(() => {
+        startAnimation();
+      }, duration);
+    }
+  }, [isAnimating, duration, startAnimation]);
 
   return (
-    <span className={`inline-block ${className}`}>
-      <span
-        className="block transition-opacity duration-300"
+    <AnimatePresence
+      onExitComplete={() => {
+        setIsAnimating(false);
+      }}
+    >
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 10,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 100,
+          damping: 10,
+        }}
+        exit={{
+          opacity: 0,
+          y: -40,
+          x: 40,
+          filter: "blur(8px)",
+          scale: 2,
+          position: "absolute",
+        }}
+        className={cn(
+          "z-10 inline-block relative text-left px-2",
+          className
+        )}
+        key={currentWord}
         style={{
           textShadow: '0 0 20px rgba(229, 9, 20, 0.5), 0 0 40px rgba(229, 9, 20, 0.3)'
         }}
       >
-        {words[currentIndex]}
-      </span>
-    </span>
+        {currentWord.split(" ").map((word, wordIndex) => (
+          <motion.span
+            key={word + wordIndex}
+            initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{
+              delay: wordIndex * 0.3,
+              duration: 0.3,
+            }}
+            className="inline-block whitespace-nowrap"
+          >
+            {word.split("").map((letter, letterIndex) => (
+              <motion.span
+                key={word + letterIndex}
+                initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{
+                  delay: wordIndex * 0.3 + letterIndex * 0.05,
+                  duration: 0.2,
+                }}
+                className="inline-block"
+              >
+                {letter}
+              </motion.span>
+            ))}
+            <span className="inline-block">&nbsp;</span>
+          </motion.span>
+        ))}
+      </motion.div>
+    </AnimatePresence>
   );
 };
 
