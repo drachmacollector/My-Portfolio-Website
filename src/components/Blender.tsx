@@ -15,7 +15,8 @@ const Blender = () => {
     'stormy ocean boat.mp4',
     'firesmoke.mp4',
     'flow text fluid sim.mp4',
-    'wrecking ball.mp4'
+    'wrecking ball.mp4',
+    'dumbbells.png'
   ];
 
   const openLightbox = (index: number) => {
@@ -71,7 +72,7 @@ const Blender = () => {
           <div className="w-full h-full flex flex-col items-center justify-center">
             <div className="w-20 h-20 rounded-full flex items-center justify-center mb-4">
               <img 
-                src="/lovable-uploads/blender.png" 
+                src="/lovable-uploads/Blender.png" 
                 alt="Blender"
                 className="w-20 h-20 object-contain"
               />
