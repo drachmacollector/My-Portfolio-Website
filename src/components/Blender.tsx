@@ -13,8 +13,8 @@ const Blender = () => {
     'heart.mp4',
     'infinite fluid.mp4',
     'stormy ocean boat.mp4',
-    'firesmoke.mp4',
-    'flow text fluid sim.mp4',
+    'fireball.mp4',
+    'melting gold fluid simulation.mp4',
     'wrecking ball.mp4',
     'dumbbells.png'
   ];
@@ -62,7 +62,7 @@ const Blender = () => {
   }, [lightboxOpen, currentIndex]);
 
   return(
-    <div className="col-span-4 row-span-2 bg-black/30 border border-white/20 rounded-full 
+    <div className="col-span-4 row-span-2 bg-black/30 border border-white/20 rounded-2xl 
     shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 
     hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-8 flex flex-col items-center 
     justify-center text-center cursor-pointer">

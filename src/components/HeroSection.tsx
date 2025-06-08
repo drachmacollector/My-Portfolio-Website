@@ -49,7 +49,7 @@ const HeroSection = () => {
       return (
         <span>
           {introText}
-          <AuroraText className="text-6xl md:text-7xl">
+          <AuroraText className="text-7xl">
             {nakulText}
           </AuroraText>
           {!isTypingComplete && <span className="animate-blink">|</span>}
@@ -66,17 +66,18 @@ const HeroSection = () => {
         <div className="text-left z-10">
           {/* Main Title - Increased size */}
           <div className="mb-8">
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 font-space">
+            <h1 className="text-7xl font-bold mb-8 font-space">
               {renderTitle()}
             </h1>
-            <div className="h-2 bg-gradient-to-r from-firebase-orange via-neon-red to-firebase-pink 
-            rounded-full max-w-lg opacity-80" />
           </div>
+
+            <div className="h-1 bg-gradient-to-r from-firebase-orange via-neon-red to-firebase-purple 
+            rounded-full max-w-lg opacity-100 mb-8" />
 
           {/* Subtitle with rotating text - Increased size */}
           <div className="mb-8 animate-fade-in opacity-0 h-20 overflow-hidden" 
           style={{animationDelay: '2s', animationFillMode: 'forwards'}}>
-            <p className="text-3xl md:text-4xl text-gray-300">
+            <p className="text-4xl text-white">
               A{' '}
               <RotatingText 
                 words={developerTitles}
@@ -86,7 +87,8 @@ const HeroSection = () => {
           </div>
 
           {/* Mission Statement */}
-          <p className="text-lg text-gray-400 mb-12 max-w-2xl animate-fade-in opacity-0" style={{animationDelay: '3s', animationFillMode: 'forwards'}}>
+          <p className="text-lg text-gray-400 mb-12 max-w-2xl animate-fade-in opacity-0" 
+          style={{animationDelay: '3s', animationFillMode: 'forwards'}}>
             Crafting immersive digital experiences with cutting-edge technology,
             one line of code at a time. Building the future, today.
           </p>

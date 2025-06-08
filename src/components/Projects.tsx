@@ -9,7 +9,7 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: "Parkify - Smart Parking",
+      title: "🚗 Parkify - Smart Parking",
       description: "A modern smart parking system designed to streamline the process of finding and booking parking spots. With a futuristic UI and interactive features, it helps users locate, reserve, and manage parking efficiently in real-time.",
       image: "/lovable-uploads/Parkify.png",
       tech: ["PHP", "MySQL", "Javascript", "HTML", "CSS"],
@@ -32,10 +32,10 @@ const ProjectsSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-bold glow-text">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
             My <span className="text-firebase-red">Projects</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-netflix-red to-neon-red mx-auto mb-8" />
+          <div className="w-24 h-1 bg-gradient-to-r from-firebase-orange to-firebase-purple mx-auto" />
         </div>
 
         {/* Projects Grid */}
@@ -50,14 +50,14 @@ const ProjectsSection = () => {
               <CardContainer className="inter-var">
                 <CardBody className="bg-slate-950 relative group/card dark:hover:shadow-2xl 
                 dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] 
-                border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-0 border border-netflix-red/30">
+                border-black/[0.5] w-auto sm:w-[30rem] h-auto rounded-xl p-0 border border-netflix-red/30">
                   {/* Project Image */}
                   <CardItem translateZ="60" className="relative">
                     <img
                       src={project.image}
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-500 
-                      group-hover/card:scale-110 rounded-lg"
+                      group-hover/card:scale-110 rounded-xl"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     

@@ -25,9 +25,9 @@ const Index: React.FC = () => {
       {/* MAIN PAGE (shown only after intro) */}
       
         <>
-        <div className="fixed inset-0 z-1">
+        <div className="fixed inset-0 z-1 opacity-25">
           <LetterGlitch
-            glitchColors={['#0b120d', '#1a3d25', '#1a3d5b']}
+            glitchColors={['#2b4539', '#61dca3', '#61b3dc']}
             glitchSpeed={50}
             centerVignette={true}
             outerVignette={true}
