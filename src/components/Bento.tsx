@@ -17,11 +17,12 @@ const Bento = () => {
         <section id="about-me" className="max-w-7xl mx-auto px-6 py-2 relative">
           <div className="grid grid-cols-12 gap-6 auto-rows-[140px]">
             
-            {/* Card A - Typing Stats (2x2 square) */}
-              <Monkeytype></Monkeytype>
 
             {/* Card B - 3D Renders (3x2 rectangle) */}
             <Blender></Blender>
+
+            {/* Card C - Typing Stats (2x2 square) */}
+            <Monkeytype></Monkeytype>
 
             {/* Card C - Location (2x2 square) */}
             <div className="col-span-3 row-span-2">
