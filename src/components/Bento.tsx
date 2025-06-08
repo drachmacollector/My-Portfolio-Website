@@ -6,7 +6,7 @@ import Monkeytype from './monkeytype'
 import Blender from './Blender'
 import TechStack from './techstack'
 import Socials from './socials'
-import AboutMeCard from './Aboutme'
+import AboutMeCard from './AboutCard'
 import Spotify from './Spotify';
 
 const Bento = () => {

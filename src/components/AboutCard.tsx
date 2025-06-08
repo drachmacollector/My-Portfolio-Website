@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-const Aboutme = () => {
+const AboutCard = () => {
   return (
     <div className="w-full h-full bg-black/30 border border-white/20 rounded-2xl 
     shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 
@@ -18,4 +18,4 @@ const Aboutme = () => {
   );
 };
 
-export default Aboutme;
+export default AboutCard;
