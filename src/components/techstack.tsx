@@ -5,7 +5,7 @@ const Techstack = () => {
   ];
 
   return(
-    <div className="col-span-full row-span-1 bg-black/30 border border-white/20 rounded-2xl 
+    <div className="w-full bg-black/30 border border-white/20 rounded-2xl 
     shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 
     hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] px-4 py-4">
 
