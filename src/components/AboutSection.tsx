@@ -5,20 +5,6 @@ import LocationCard from './LocationCard';
 import Bento from './Bento'
 
 const AboutSection = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const techStack = [
-    'html', 'css', 'javascript', 'php', 'mysql', 'python', 'canva', 'figma', 
-    'obs', 'C', 'react', 'tailwind', 'mongodb', 'github', 'git', 'blender'
-  ];
-
-  const blenderFiles = [
-    'chair.png',
-    'donut.mp4',
-    'heart.mp4',
-    'infinite fluid.mp4',
-    'stormy ocean boat.mp4'
-  ];
 
   return (
     <section id="about" className="py-20 px-6 lg:px-8 relative">
