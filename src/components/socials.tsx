@@ -1,7 +1,7 @@
 function Socials() {
     return(
         <>
-            <div className="col-span-4 row-span-1 bg-black/30 border border-white/20 rounded-2xl 
+            <div className="w-full h-full bg-black/30 border border-white/20 rounded-2xl 
             shadow-lg transition transform duration-300 hover:scale-105 hover:border-white/40 
             hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.25)] p-4 flex items-center justify-center">
               <div className="flex items-center space-x-8">
