@@ -8,6 +8,7 @@ import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import ParticleBackground from '../components/ParticleBackground';
 import CanvasCursor from '../components/CanvasCursor';
+import LetterGlitch from '@/blocks/Backgrounds/LetterGlitch/LetterGlitch';
 
 const Index: React.FC = () => {
   const [showIntro, setShowIntro] = useState(true);
@@ -22,9 +23,17 @@ const Index: React.FC = () => {
       {showIntro && <Netflix onFinish={handleIntroEnd} />}
 
       {/* MAIN PAGE (shown only after intro) */}
-      {!showIntro && (
+      
         <>
-          <div className="fixed inset-0 grid-bg opacity-20" />
+        <div className="fixed inset-0 z-1">
+          <LetterGlitch
+            glitchColors={['#0b120d', '#1a3d25', '#1a3d5b']}
+            glitchSpeed={50}
+            centerVignette={true}
+            outerVignette={true}
+            smooth={true}
+          />
+        </div>
           {/* <ParticleBackground /> */}
           <CanvasCursor />
           <Navbar />
@@ -36,7 +45,7 @@ const Index: React.FC = () => {
             <Footer />
           </main>
         </>
-      )}
+
     </div>
   );
 };

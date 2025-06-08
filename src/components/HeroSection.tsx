@@ -69,11 +69,13 @@ const HeroSection = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-8 font-space">
               {renderTitle()}
             </h1>
-            <div className="h-2 bg-gradient-to-r from-firebase-orange via-neon-red to-firebase-pink rounded-full max-w-lg opacity-80" />
+            <div className="h-2 bg-gradient-to-r from-firebase-orange via-neon-red to-firebase-pink 
+            rounded-full max-w-lg opacity-80" />
           </div>
 
           {/* Subtitle with rotating text - Increased size */}
-          <div className="mb-8 animate-fade-in opacity-0 h-20 overflow-hidden" style={{animationDelay: '2s', animationFillMode: 'forwards'}}>
+          <div className="mb-8 animate-fade-in opacity-0 h-20 overflow-hidden" 
+          style={{animationDelay: '2s', animationFillMode: 'forwards'}}>
             <p className="text-3xl md:text-4xl text-gray-300">
               A{' '}
               <RotatingText 
