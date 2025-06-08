@@ -35,7 +35,7 @@ const ContactSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Get In <span className="text-firebase-red">Touch</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-firebase-orange to-firebase-purple mx-auto mb-8" />

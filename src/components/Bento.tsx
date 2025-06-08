@@ -25,19 +25,17 @@ const Bento = () => {
             <Monkeytype></Monkeytype>
 
             {/* Card C - Location (2x2 square) */}
-            <div className="col-span-3 row-span-2">
-              <LocationCard />
-            </div>
+
 
             {/* Card D - Social Icons (4x1 rectangle) */}
             <Socials></Socials>
 
             {/* Card E - Spotify Embed (4x1 rectangle) */}
-            <div className="col-span-4 h-[26.6vh]">
+            <div className="col-span-4 row-span-2">
 
                 <iframe
                   src="https://open.spotify.com/embed/track/0GONea6G2XdnHWjNZd6zt3?utm_source=generator&theme=0"
-                  className="w-[100%] h-[152px] rounded-xl"
+                  className="w-[100%] h-[100%] rounded-2xl"
                   allowFullScreen
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"

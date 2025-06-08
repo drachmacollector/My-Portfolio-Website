@@ -28,9 +28,10 @@ const Techstack = () => {
       </div>
 
       {/* Marquee Animation Styles */}
-      <style >{`
+      <style>
+        {`
         .marquee-slow {
-          animation: marquee 60s linear infinite;
+          animation: marquee 90s linear infinite;
           padding-right: 100%;
         }
         
@@ -42,7 +43,8 @@ const Techstack = () => {
             transform: translateX(-100%);
           }
         }
-      `}</style>
+      `}
+      </style>
     </div>
   );
 };
