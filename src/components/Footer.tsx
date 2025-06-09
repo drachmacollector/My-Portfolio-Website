@@ -18,7 +18,7 @@ const Footer = () => {
                 <span className="text-lg text-gray-300">Built with</span>
                 <div className="flex items-center space-x-2">
                   <img 
-                    src="/lovable-uploads/React.png" 
+                    src="/Uploads/React.png" 
                     alt="React" 
                     className="w-6 h-6 object-contain"
                   />
@@ -30,7 +30,7 @@ const Footer = () => {
                 <span className="text-lg text-gray-300">Styled with</span>
                 <div className="flex items-center space-x-2">
                   <img 
-                    src="/lovable-uploads/Tailwind.png" 
+                    src="/Uploads/Tailwind.png" 
                     alt="Tailwind CSS" 
                     className="w-6 h-6 object-contain"
                   />
@@ -42,7 +42,7 @@ const Footer = () => {
                 <span className="text-lg text-gray-300">Deployed on</span>
                 <div className="flex items-center space-x-2">
                   <img 
-                        src="/lovable-uploads/netlify.png" 
+                        src="/Uploads/netlify.png" 
                         alt="netlify" 
                         className="w-6 h-6 object-contain"
                       />

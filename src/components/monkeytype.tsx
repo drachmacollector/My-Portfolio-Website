@@ -16,7 +16,7 @@ function monkeytype() {
                   {/* Header with Logo */}
                   <div className="flex items-center justify-center space-x-1 mb-8">
                     <img 
-                      src="/lovable-uploads/monkeytype.png" 
+                      src="/Uploads/monkeytype.png" 
                       alt="Monkeytype"
                       className="w-8 h-6 opacity-100"
                     />

@@ -18,7 +18,7 @@ const Techstack = () => {
               <div key={index} className="flex flex-col items-center space-y-1 mx-8 hover:scale-110 
               transition-transform hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.5)]">
                 <img 
-                  src={`/lovable-uploads/${tech}.png`} 
+                  src={`/Uploads/${tech}.png`} 
                   alt={tech}
                   className="w-12 h-12 object-contain"
                 />
