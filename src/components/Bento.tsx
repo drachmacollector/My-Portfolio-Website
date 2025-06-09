@@ -16,10 +16,10 @@ const Bento = () => {
     <section id="about" className="px-6 lg:px-8 relative">
         {/* Bento Grid */}
         <section id="about-me" className="max-w-7xl mx-auto px-6 py-2 relative">
-          <div className="grid grid-cols-12 gap-6 auto-rows-[100px]">
+          <div className="grid grid-cols-12 gap-5 auto-rows-[100px]">
             
             {/* Blender Card - Top Left (Large) */}
-            <div className="col-start-1 col-span-4 row-span-5 ">
+            <div className="col-start-1 col-span-4 row-span-4 ">
               <Blender />
             </div>
 

@@ -87,7 +87,7 @@ const Blender = () => {
               </button>
             </div>
           </DialogTrigger>
-          <DialogContent className="max-w-none w-[95vw] h-[90vh] p-0 border-0 bg-black/90 backdrop-blur-sm">
+          <DialogContent className="max-w-none w-[95vw] h-[90vh] p-0 border-0 bg-transparent backdrop-blur-sm">
             <div className="border border-white/20 rounded-3xl w-full h-full p-8 relative overflow-hidden">
               <DialogClose asChild>
                 <button className="absolute right-6 top-6 z-50 w-10 h-10 rounded-full bg-black/80 border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-colors">
@@ -173,7 +173,7 @@ const Blender = () => {
                     )}
                     
                     <div className="absolute top-2 right-2 bg-black/70 rounded-full w-8 h-8 flex items-center justify-center text-white/80 group-hover:text-cyan-400">
-                      {file.endsWith('.mp4') ? '▶' : '🖼️'}
+                      {file.endsWith('.mp4') ? '▶' : '📷'}
                     </div>
                   </div>
                 ))}
