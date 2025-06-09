@@ -77,7 +77,7 @@ const Blender = () => {
                 className="w-56 h-56 object-contain"
               />
             </div>
-            <h3 className="text-5xl font-bold text-white mb-2">3D Art</h3>
+            <h3 className="text-5xl font-bold text-white mb-2">My 3D Art</h3>
             <p className="text-l text-white/70 mb-5">Created with Blender</p>
             <button className="px-6 py-3 bg-cyan-400 rounded-lg text-black hover:bg-cyan-500 
             transition-colors font-medium">
