@@ -34,13 +34,13 @@ const ContactSection = () => {
     <section id="contact" className="py-20 px-6 lg:px-8 relative min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Get In <span className="text-firebase-red">Touch</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-firebase-orange to-firebase-purple mx-auto mb-8" />
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Ready to bring your ideas to life? Let's collaborate and create something amazing together.
+            Let's collaborate and create something amazing together.
           </p>
         </div>
 

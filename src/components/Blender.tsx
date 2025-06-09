@@ -62,7 +62,7 @@ const Blender = () => {
   }, [lightboxOpen, currentIndex]);
 
   return(
-    <div className="w-full h-full bg-gradient-to-r from-firebase-orange to-firebase-purple rounded-2xl p-[2px] 
+    <div className="w-full h-full bg-gradient-to-r from-firebase-orange to-firebase-purple rounded-2xl p-[1px] 
     shadow-lg transition transform duration-300 hover:scale-105 
     hover:shadow-[0_0_20px_rgba(255,95,31,0.1),0_0_40px_rgba(188,19,254,0.1)] cursor-pointer">
       
