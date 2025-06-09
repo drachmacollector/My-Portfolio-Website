@@ -74,7 +74,7 @@ const Blender = () => {
             <div className="w-full h-full flex flex-col items-center justify-center">
               <div className="w-56 h-56 rounded-full flex items-center justify-center mb-4 mr-15">
                 <img 
-                  src="/lovable-uploads/Blender.png" 
+                  src="/Uploads/Blender.png" 
                   alt="Blender"
                   className="w-56 h-56 object-contain"
                 />

@@ -11,7 +11,7 @@ const ProjectsSection = () => {
       id: 1,
       title: "🚗 Parkify - Smart Parking",
       description: "A modern smart parking system designed to streamline the process of finding and booking parking spots. With a futuristic UI and interactive features, it helps users locate, reserve, and manage parking efficiently in real-time.",
-      image: "/lovable-uploads/Parkify.png",
+      image: "/Uploads/Parkify.png",
       tech: ["PHP", "MySQL", "Javascript", "HTML", "CSS"],
       githubUrl: "https://github.com/drachmacollector/parkify",
       liveUrl: "https://parkify.great-site.net/",
