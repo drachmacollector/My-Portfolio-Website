@@ -1,6 +1,6 @@
 // src/components/Buttons.tsx
 import React from 'react';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/blocks/ui/tooltip";
 import './buttons.css';
 
 interface ButtonProps {

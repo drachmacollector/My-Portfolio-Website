@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
-import { Dialog, DialogContent, DialogTrigger, DialogClose } from './ui/dialog';
-import LocationCard from './LocationCard';
-import Bento from './Bento'
+import { Dialog, DialogContent, DialogTrigger, DialogClose } from '@/blocks/ui/dialog';
+import LocationCard from '../About Me/LocationCard';
+import Bento from '../About Me/Bento'
 
 const AboutSection = () => {
 
