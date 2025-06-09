@@ -241,6 +241,21 @@
     0% { transform: translateX(0%); }
     100% { transform: translateX(-100%); }
   }
+
+  /* SVG Line Drawing Animation */
+  @keyframes draw {
+    0% { 
+      stroke-dashoffset: 500;
+      opacity: 0;
+    }
+    20% {
+      opacity: 0.6;
+    }
+    100% { 
+      stroke-dashoffset: 0;
+      opacity: 0.6;
+    }
+  }
 }
 
 .grid-bg {
