@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
-import { Dialog, DialogContent, DialogTrigger, DialogClose } from './ui/dialog';
+import { Dialog, DialogContent, DialogTrigger, DialogClose } from '@/blocks/ui/dialog';
 import Monkeytype from './monkeytype'
 import Blender from './Blender'
 import TechStack from './techstack'

@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import Netflix from '../components/Netflix';
 import Navbar from '../components/Navbar';
-import HeroSection from '../components/HeroSection';
-import AboutSection from '../components/AboutSection';
-import ProjectsSection from '../components/Projects';
-import ContactSection from '../components/ContactSection';
-import Footer from '../components/Footer';
-import ParticleBackground from '../components/ParticleBackground';
+import HeroSection from '../components/Hero Section/HeroSection';
+import AboutSection from '../components/About Me/AboutSection';
+import ProjectsSection from '../components/Projects/Projects';
+import ContactSection from '../components/Contact Me/ContactSection';
+import Footer from '../components/Footer/Footer';
 import CanvasCursor from '../components/CanvasCursor';
 import LetterGlitch from '@/blocks/Backgrounds/LetterGlitch/LetterGlitch';
 

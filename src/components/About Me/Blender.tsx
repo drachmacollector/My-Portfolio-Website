@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, ArrowLeft, ArrowRight } from 'lucide-react';
-import { Dialog, DialogContent, DialogTrigger, DialogClose } from './ui/dialog';
+import { Dialog, DialogContent, DialogTrigger, DialogClose } from '@/blocks/ui/dialog';
 
 const Blender = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -72,14 +72,14 @@ const Blender = () => {
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
           <DialogTrigger asChild>
             <div className="w-full h-full flex flex-col items-center justify-center">
-              <div className="w-56 h-56 rounded-full flex items-center justify-center mb-4 mr-15">
+              <div className="w-44 h-44 rounded-full flex items-center justify-center mb-4 mr-15">
                 <img 
                   src="/Uploads/Blender.png" 
                   alt="Blender"
-                  className="w-56 h-56 object-contain"
+                  className="w-44 h-44 object-contain"
                 />
               </div>
-              <h3 className="text-5xl font-bold text-white mb-2">My 3D Art</h3>
+              <h3 className="text-4xl font-bold text-white mb-2">My 3D Art</h3>
               <p className="text-l text-white/70 mb-5">Created with Blender</p>
               <button className="px-6 py-3 bg-cyan-400 rounded-lg text-black hover:bg-cyan-500 
               transition-colors font-medium">

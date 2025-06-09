@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { ExternalLink, Github, Eye } from 'lucide-react';
-import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { CardBody, CardContainer, CardItem } from "@/blocks/ui/3d-card";
 
 const ProjectsSection = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);

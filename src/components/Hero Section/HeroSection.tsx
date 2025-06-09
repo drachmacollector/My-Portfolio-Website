@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
 import RotatingText from './RotatingText';
-import { AuroraText } from "@/components/magicui/aurora-text";
+import { AuroraText } from "@/blocks/magicui/aurora-text";
 import Buttons from './buttons';
 import Profile from './Profile'
 
@@ -75,8 +75,8 @@ const HeroSection = () => {
             rounded-full max-w-lg opacity-100 mb-8" />
 
           {/* Subtitle with rotating text - Increased size */}
-          <div className="mb-8 animate-fade-in opacity-0 h-20 overflow-hidden" 
-          style={{animationDelay: '2s', animationFillMode: 'forwards'}}>
+          <div className="mb-8 animate-fade-in opacity-0 h-20" 
+          style={{animationDelay: '1s', animationFillMode: 'forwards'}}>
             <p className="text-4xl text-white">
               A{' '}
               <RotatingText 
@@ -87,10 +87,9 @@ const HeroSection = () => {
           </div>
 
           {/* Mission Statement */}
-          <p className="text-lg text-gray-400 mb-12 max-w-2xl animate-fade-in opacity-0" 
-          style={{animationDelay: '3s', animationFillMode: 'forwards'}}>
-            Crafting immersive digital experiences with cutting-edge technology,
-            one line of code at a time. Building the future, today.
+          <p className="text-lg text-slate-100 mb-12 max-w-2xl animate-fade-in opacity-0" 
+          style={{animationDelay: '2s', animationFillMode: 'forwards'}}>
+            A Computer Science sophomore at IIIT Nagpur, specializing in Artificial Intelligence and Machine Learning
           </p>
 
           <Buttons></Buttons>
