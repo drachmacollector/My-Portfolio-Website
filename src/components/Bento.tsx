@@ -19,7 +19,7 @@ const Bento = () => {
           <div className="grid grid-cols-12 gap-6 auto-rows-[100px]">
             
             {/* Blender Card - Top Left (Large) */}
-            <div className="col-start-1 col-span-4 row-span-5">
+            <div className="col-start-1 col-span-4 row-span-5 ">
               <Blender />
             </div>
 
