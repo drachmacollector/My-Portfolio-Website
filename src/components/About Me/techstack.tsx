@@ -20,7 +20,7 @@ const Techstack = () => {
                 <img 
                   src={`/Uploads/${tech}.png`} 
                   alt={tech}
-                  className="w-12 h-12 object-contain"
+                  className="w-10 h-10 object-contain"
                 />
                 <span className="text-s text-white/80 capitalize">{tech}</span>
               </div>
