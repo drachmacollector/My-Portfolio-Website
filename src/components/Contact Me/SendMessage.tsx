@@ -53,7 +53,7 @@ const SendMessage: React.FC = () => {
           className="space-y-6"
         >
           {/* Netlify form name */}
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="contact" value="contact" />
 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="relative">
