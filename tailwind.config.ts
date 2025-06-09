@@ -72,7 +72,7 @@ const config = {
 					purple: '#BC13FE',
 					pink: '#E91E63',
 					blue: '#1F51FF',
-					cyan: '#2CFF05'
+					green: '#2CFF05'
 				},
 				neon: {
 					red: '#FF073A',
