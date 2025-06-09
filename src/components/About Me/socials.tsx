@@ -12,7 +12,7 @@ function Socials() {
                     href="https://www.instagram.com/nxkul_19/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="transition-transform hover:scale-110 hover:drop-shadow-[0_0_10px_rgba(255,69,96,0.5)]"
+                    className="transition-transform hover:scale-150 hover:drop-shadow-[0_0_10px_rgba(255,69,96,0.5)]"
                   >
                     <img 
                       src="/Uploads/instagram.png" 
@@ -24,7 +24,7 @@ function Socials() {
                     href="https://old.reddit.com" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="transition-transform hover:scale-110 hover:drop-shadow-[0_0_10px_rgba(255,69,96,0.5)]"
+                    className="transition-transform hover:scale-150 hover:drop-shadow-[0_0_10px_rgba(255,69,96,0.5)]"
                   >
                     <img 
                       src="/Uploads/reddit.png" 
@@ -36,7 +36,7 @@ function Socials() {
                     href="https://4chan.org" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="transition-transform hover:scale-110 hover:drop-shadow-[0_0_10px_rgba(76,175,80,0.5)]"
+                    className="transition-transform hover:scale-150 hover:drop-shadow-[0_0_10px_rgba(76,175,80,0.5)]"
                   >
                     <img 
                       src="/Uploads/4chan.png" 
