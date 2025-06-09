@@ -2,29 +2,46 @@ import React, { useState } from 'react';
 
 function Emojibar() {
   const [flyingEmojis, setFlyingEmojis] = useState([]);
-  const [name, setName] = useState(''); // State for name input
+  const [name, setName] = useState('');
 
-  const handleClick = (emoji, e) => {
-    // Create flying emoji element
+  const handleClick = async (emoji, e) => {
     const id = Date.now() + Math.random();
     const buttonRect = e.currentTarget.getBoundingClientRect();
-    
+
     setFlyingEmojis(prev => [
       ...prev,
       {
         id,
         emoji,
         position: {
-          x: buttonRect.left + buttonRect.width/2,
-          y: buttonRect.top
-        }
-      }
+          x: buttonRect.left + buttonRect.width / 2,
+          y: buttonRect.top,
+        },
+      },
     ]);
 
-    // Remove after animation completes
     setTimeout(() => {
       setFlyingEmojis(prev => prev.filter(item => item.id !== id));
     }, 1000);
+
+    // Send data to Formspree
+    try {
+      await fetch('https://formspree.io/f/mqabpdep', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: name || 'Anonymous',
+          emoji,
+        }),
+      });
+      // optionally handle success, e.g. show a toast
+    } catch (error) {
+      console.error('Error sending emoji review:', error);
+      // optionally handle error, e.g. show error message
+    }
   };
 
   const emojis = [
@@ -39,7 +56,7 @@ function Emojibar() {
     <>
       {/* Flying Emojis Container */}
       <div className="fixed inset-0 pointer-events-none z-50">
-        {flyingEmojis.map(({id, emoji, position}) => (
+        {flyingEmojis.map(({ id, emoji, position }) => (
           <div
             key={id}
             className="absolute text-2xl animate-fly-emoji"
@@ -76,13 +93,12 @@ function Emojibar() {
           <p className="text-center text-white font-medium">
             Did you like my website? Leave a review
           </p>
-          
-          {/* Name Input Field - Moved below text and above emojis */}
+
           <div className="relative">
             <input
               type="text"
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={e => setName(e.target.value)}
               placeholder="Your name"
               className="w-full p-3 bg-white/5 backdrop-blur-sm rounded-full border 
                          border-white/20 text-white placeholder-white/50 text-sm
@@ -90,15 +106,16 @@ function Emojibar() {
                          transition-all duration-200"
             />
           </div>
-          
-          <div className="hover:scale-x-105 transition-all duration-300 
-          *:transition-all *:duration-300 flex justify-center text-2xl 
-          items-center z-10 bg-white/5 backdrop-blur-sm gap-2 p-2 rounded-full border border-white/20">
 
+          <div
+            className="hover:scale-x-105 transition-all duration-300 
+          *:transition-all *:duration-300 flex justify-center text-2xl 
+          items-center z-10 bg-white/5 backdrop-blur-sm gap-2 p-2 rounded-full border border-white/20"
+          >
             {emojis.map((item, index) => (
-              <button 
+              <button
                 key={index}
-                onClick={(e) => handleClick(item.emoji, e)}
+                onClick={e => handleClick(item.emoji, e)}
                 className="relative before:hidden hover:before:flex 
                 before:justify-center before:items-center before:h-4 before:text-[.6rem] 
                 before:px-1 before:content-[attr(data-label)] before:bg-black before:text-white 
@@ -114,7 +131,7 @@ function Emojibar() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default Emojibar;
