@@ -12,14 +12,14 @@ function Profile() {
               {/* Rotating concentric dashed rings */}
 
               <div className="absolute inset-0 rounded-full animate-rotate-slow">
-                <div className="w-full h-full rounded-full border-4 border-red-600 border-dashed" />
+                <div className="w-full h-full rounded-full border-4 border-rose-600 border-dashed" />
               </div>
               <div className="absolute inset-2.5 rounded-full animate-rotate-slow2">
-                <div className="w-full h-full rounded-full border-4 border-sky-300 border-dashed" />
+                <div className="w-full h-full rounded-full border-4 border-cyan-300 border-dashed" />
               </div>
               <div className="absolute inset-4 rounded-full overflow-hidden bg-black">
                 <img 
-                  src="/Uploads/dedae507-a4f3-4e4d-aa46-e3d3397ebad5.png"
+                  src="/Uploads/Nakul 3.png"
                   alt="Nakul - Software Developer"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
