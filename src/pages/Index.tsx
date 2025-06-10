@@ -33,8 +33,8 @@ const Index: React.FC = () => {
             smooth
           />
         </div>
-        {/* {!isMobile && <CanvasCursor />} */}
-        {!isMobile && <FluidCursor />}
+        {!isMobile && <CanvasCursor />}
+        {/* {!isMobile && <FluidCursor />} */}
 
         <Navbar />
         <main className="relative z-10">
