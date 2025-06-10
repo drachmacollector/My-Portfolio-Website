@@ -9,7 +9,7 @@ const AboutCard = () => {
       <div className="w-full h-full bg-black/100 rounded-full p-6 flex flex-col justify-center">
         <p className="text-white/80 text-sm leading-relaxed text-center">
           Hello there <br />
-          General Kenobi.... you are a brave one.
+          General Kenobi.... you are a bold one!
         </p>
       </div>
     </div>
