@@ -10,6 +10,7 @@ import CanvasCursor from '../components/CanvasCursor';
 import LetterGlitch from '@/blocks/Backgrounds/LetterGlitch/LetterGlitch';
 import FluidCursor from '@/components/FluidCursor';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { LogVisitorIP } from '@/components/LogVisitorIP';
 
 const Index: React.FC = () => {
   const [showIntro, setShowIntro] = useState(true);
@@ -24,6 +25,8 @@ const Index: React.FC = () => {
       {showIntro && <Netflix onFinish={handleIntroEnd} />}
 
       <>
+      <LogVisitorIP></LogVisitorIP>
+      
         <div className="fixed inset-0 z-1 opacity-20">
           <LetterGlitch
             glitchColors={["#2b4539", "#61dca3", "#61b3dc"]}
