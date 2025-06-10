@@ -50,7 +50,7 @@ const ProjectsSection = () => {
               <CardContainer className="inter-var">
                 <CardBody className="bg-slate-950 relative group/card dark:hover:shadow-2xl 
                 dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] 
-                border-black/[0.5] w-auto sm:w-[30rem] h-auto rounded-xl p-0 border border-netflix-red/30">
+                border-black/[0.5] w-17% sm:w-[30rem] h-auto rounded-xl p-0 border">
                   {/* Project Image */}
                   <CardItem translateZ="60" className="relative">
                     <img
@@ -63,8 +63,8 @@ const ProjectsSection = () => {
                     
                     {/* Category Badge */}
                     <CardItem translateZ="60" className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-netflix-red/20 text-netflix-red text-xs font-semibold 
-                      rounded-full backdrop-blur-sm border border-netflix-red/30">
+                      <span className="px-3 py-1 text-xs font-semibold 
+                      rounded-full backdrop-blur-sm border">
                         {project.category}
                       </span>
                     </CardItem>
@@ -74,7 +74,7 @@ const ProjectsSection = () => {
                   <div className="p-6">
                     <CardItem
                       translateZ="60"
-                      className="text-2xl font-bold mb-3 group-hover/card:text-netflix-red transition-colors"
+                      className="text-2xl font-bold mb-3 transition-colors"
                     >
                       {project.title}
                     </CardItem>
@@ -150,7 +150,7 @@ const ProjectsSection = () => {
                   <div className={`absolute inset-0 rounded-2xl transition-opacity duration-300 pointer-events-none ${
                     hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
                   }`} style={{
-                    boxShadow: '0 0 30px rgb(0, 187, 255, 0.3)',
+                    boxShadow: '0 0 30px rgba(19, 172, 254, 0.35)',
                   }} />
                 </CardBody>
               </CardContainer>
