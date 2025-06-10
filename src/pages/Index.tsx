@@ -8,6 +8,7 @@ import ContactSection from '../components/Contact Me/ContactSection';
 import Footer from '../components/Footer/Footer';
 import CanvasCursor from '../components/CanvasCursor';
 import LetterGlitch from '@/blocks/Backgrounds/LetterGlitch/LetterGlitch';
+import FluidCursor from '@/components/FluidCursor';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const Index: React.FC = () => {
@@ -32,7 +33,8 @@ const Index: React.FC = () => {
             smooth
           />
         </div>
-        {!isMobile && <CanvasCursor />}
+        {/* {!isMobile && <CanvasCursor />} */}
+        {!isMobile && <FluidCursor />}
 
         <Navbar />
         <main className="relative z-10">
