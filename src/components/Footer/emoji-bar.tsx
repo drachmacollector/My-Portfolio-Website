@@ -37,6 +37,9 @@ function Emojibar() {
           emoji,
         }),
       });
+
+      setName(''); // 🔄 clear the input field
+
       // optionally handle success, e.g. show a toast
     } catch (error) {
       console.error('Error sending emoji review:', error);
