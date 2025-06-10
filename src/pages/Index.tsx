@@ -8,9 +8,11 @@ import ContactSection from '../components/Contact Me/ContactSection';
 import Footer from '../components/Footer/Footer';
 import CanvasCursor from '../components/CanvasCursor';
 import LetterGlitch from '@/blocks/Backgrounds/LetterGlitch/LetterGlitch';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Index: React.FC = () => {
   const [showIntro, setShowIntro] = useState(true);
+  const isMobile = useIsMobile(); 
 
   const handleIntroEnd = () => {
     setShowIntro(false);
@@ -18,35 +20,32 @@ const Index: React.FC = () => {
 
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* VIDEO INTRO */}
       {showIntro && <Netflix onFinish={handleIntroEnd} />}
 
-      {/* MAIN PAGE (shown only after intro) */}
-      
-        <>
+      <>
         <div className="fixed inset-0 z-1 opacity-20">
           <LetterGlitch
-            glitchColors={['#2b4539', '#61dca3', '#61b3dc']}
+            glitchColors={["#2b4539", "#61dca3", "#61b3dc"]}
             glitchSpeed={50}
-            centerVignette={true}
-            outerVignette={true}
-            smooth={true}
+            centerVignette
+            outerVignette
+            smooth
           />
         </div>
-          {/* <ParticleBackground /> */}
-          <CanvasCursor />
-          <Navbar />
-          <main className="relative z-10">
-            <HeroSection />
-            <AboutSection />
-            <ProjectsSection />
-            <ContactSection />
-            <Footer />
-          </main>
-        </>
+        {!isMobile && <CanvasCursor />}
 
+        <Navbar />
+        <main className="relative z-10">
+          <HeroSection />
+          <AboutSection />
+          <ProjectsSection />
+          <ContactSection />
+          <Footer />
+        </main>
+      </>
     </div>
   );
 };
+
 
 export default Index;
