@@ -51,7 +51,7 @@ function Emojibar() {
     { emoji: '🥰', label: 'Like' },
     { emoji: '👏🏻', label: 'Cheer' },
     { emoji: '🤮', label: 'Celebrate' },
-    { emoji: '✨', label: 'Appreciate' },
+    { emoji: '🔥', label: 'Fire' },
     { emoji: '👎🏻', label: 'Dislike' },
   ];
 
