@@ -8,7 +8,7 @@ function Socials() {
               <div className="w-full h-full bg-black/100 rounded-2xl p-4 flex items-center justify-center">
                 <div className="flex items-center space-x-8">
                   <span className="text-sm text-white/80 ml-2">Find me on</span>
-                  {/* <a 
+                  <a 
                     href="https://www.instagram.com/nxkul_19/" 
                     target="_blank" 
                     rel="noopener noreferrer"
@@ -19,7 +19,7 @@ function Socials() {
                       alt="Reddit"
                       className="w-9 h-9 object-contain"
                     />
-                  </a> */}
+                  </a>
                   <a 
                     href="https://old.reddit.com" 
                     target="_blank" 
