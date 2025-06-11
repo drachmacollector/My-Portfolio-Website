@@ -7,14 +7,16 @@ exports.handler = async (event) => {
 
   // Step 2: Format timestamp
   const now = new Date();
-  const timestamp = now.toLocaleString('en-US', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit',
-    hour12: true,
-  });
+const timestamp = now.toLocaleString('en-IN', {
+  timeZone: 'Asia/Kolkata',
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric',
+  hour: 'numeric',
+  minute: '2-digit',
+  hour12: true,
+});
+
 
   // Step 3: Get geolocation from ipapi
   let location = 'Location not found';
