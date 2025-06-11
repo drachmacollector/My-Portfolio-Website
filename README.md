@@ -2,7 +2,7 @@
 
 ## And this is the repository for my portfolio website
 
-**You can view it here**:
+**You can view it here**: https://nakul-web.netlify.app/
 
 ## What technologies did I use for this project?
 
