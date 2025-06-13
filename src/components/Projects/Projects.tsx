@@ -16,6 +16,16 @@ const ProjectsSection = () => {
       githubUrl: "https://github.com/drachmacollector/parkify",
       liveUrl: "https://parkify.great-site.net/",
       category: "Web App"
+    },
+    {
+      id: 2,
+      title: "🎨Typaint - Draw with Words",
+      description: "A fun little website that lets you paint with words/text and allows you to customize the size, angle, color of the text and background",
+      image: "/Uploads/Typaint 2.png",
+      tech: ["Javascript", "HTML", "CSS"],
+      githubUrl: "https://github.com/drachmacollector/Typaint",
+      liveUrl: "https://typaint.vercel.app/",
+      category: "Web App"
     }
   ];
 
@@ -59,7 +69,7 @@ const ProjectsSection = () => {
                       className="w-full h-full object-cover transition-transform duration-500 
                       group-hover/card:scale-110 rounded-xl"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute inset-0" />
                     
                     {/* Category Badge */}
                     <CardItem translateZ="60" className="absolute top-4 left-4">
