@@ -50,7 +50,7 @@ function Emojibar() {
   const emojis = [
     { emoji: '🥰', label: 'Like' },
     { emoji: '👏🏻', label: 'Cheer' },
-    { emoji: '🤮', label: 'Celebrate' },
+    { emoji: '🤮', label: 'Puke' },
     { emoji: '🔥', label: 'Fire' },
     { emoji: '👎🏻', label: 'Dislike' },
   ];
