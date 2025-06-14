@@ -27,6 +27,9 @@ const Index: React.FC = () => {
       <>
       <LogVisitorIP></LogVisitorIP>
       
+
+        {
+        // !isMobile &&        
         <div className="fixed inset-0 z-1 opacity-20">
           <LetterGlitch
             glitchColors={["#2b4539", "#61dca3", "#61b3dc"]}
@@ -36,6 +39,7 @@ const Index: React.FC = () => {
             smooth
           />
         </div>
+        }
         {!isMobile && <CanvasCursor />}
         {/* {!isMobile && <FluidCursor />} */}
 
