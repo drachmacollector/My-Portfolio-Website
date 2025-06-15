@@ -37,7 +37,9 @@ const timestamp = now.toLocaleString('en-IN', {
   }
 
   // Step 4: Send to Discord
-  const discordWebhookUrl = "https://discord.com/api/webhooks/1381935635496964197/IpuhtBNQCsp-4LE2GOuKsy4hfkwVrfUpPC-PMxjbZDGweTA67Oyxmb3v6ABZPYJUeStU";
+  const discordWebhookUrl = process.env.DISCORD_WEBHOOK_URL;
+
+  // const discordWebhookUrl = "https://discord.com/api/webhooks/1383855353707630612/FFv_r8NPkmitCGO6iF8RFIBLykxgkg93He0t_N_gDRsNfGrprsIUsJ4oZi3aCPP360nl";
 
   await fetch(discordWebhookUrl, {
     method: "POST",
