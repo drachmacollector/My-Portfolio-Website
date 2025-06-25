@@ -1,0 +1,13 @@
+# Allow all crawlers full access
+User-agent: *
+Allow: /
+
+# (Optional) Block any “private” folders or query-param–heavy pages
+# Disallow: /admin/
+# Disallow: /*?*
+
+# Tell search engines where to find your sitemap
+Sitemap: https://nakul-web.netlify.app/sitemap.xml
+
+# (Optional) If you ever switch to a custom domain, you can set the preferred host:
+# Host: www.yourdomain.com
