@@ -19,6 +19,16 @@ const ProjectsSection = () => {
     },
     {
       id: 2,
+      title: "Icarus",
+      description: "A space-weather dashboard that visualises phenomena like  Solar Flares, Coronal Mass Ejections CMEs and Auroras on an interactive 3D globe using the NASA DONKI APIs and NOAA Kp‑index forecasts",
+      image: "/Uploads/icarus.png",
+      tech: ["React", "NASA APIs", "Three Js", "Javascript", "CSS"],
+      githubUrl: "https://github.com/drachmacollector/Icarus",
+      liveUrl: "https://icarus-solar.vercel.app/",
+      category: "Web App"
+    },
+    {
+      id: 3,
       title: "🎨Typaint - Draw with Words",
       description: "A fun little website that lets you paint with words/text and allows you to customize the size, angle, color of the text and background",
       image: "/Uploads/Typaint 2.png",
@@ -41,7 +51,7 @@ const ProjectsSection = () => {
     <section id="projects" className="py-12 px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center">
+        <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             My <span className="text-firebase-red">Projects</span>
           </h2>

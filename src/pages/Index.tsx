@@ -49,7 +49,7 @@ const Index: React.FC = () => {
           <AboutSection />
           <ProjectsSection />
           <ContactSection />
-          <Footer />
+          {/* <Footer /> */}
         </main>
       </>
     </div>
