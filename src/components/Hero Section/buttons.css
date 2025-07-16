@@ -2,7 +2,7 @@
 :root {
   /* --- Dark backgrounds, matching Tailwind zinc.950 & gray.900 --- */
   --background-2: #18181b;  /* Tailwind zinc.950 */
-  --background-3: #0051ff;  /* Tailwind gray.900 */
+  --background-3: #0051ff; 
   --contrast: #fff;
   --size: 5rem; /* keycap size */
 }
@@ -28,7 +28,7 @@ svg {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: calc(var(--size) * 0.125);
+  gap: calc(var(--size) * 0.15);
 }
 
 .key.call-to-action {

@@ -38,7 +38,7 @@ const ContactSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Get In <span className="text-firebase-red">Touch</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-firebase-orange to-firebase-purple mx-auto mb-8" />
+          {/* <div className="w-24 h-1 bg-gradient-to-r from-firebase-orange to-firebase-purple mx-auto mb-8" /> */}
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Let's collaborate and create something amazing together.
           </p>

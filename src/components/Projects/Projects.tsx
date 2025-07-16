@@ -15,7 +15,7 @@ const ProjectsSection = () => {
       tech: ["PHP", "MySQL", "Javascript", "HTML", "CSS"],
       githubUrl: "https://github.com/drachmacollector/parkify",
       liveUrl: "https://parkify.great-site.net/",
-      category: "Web App"
+      // category: "Web App"
     },
     {
       id: 2,
@@ -24,8 +24,7 @@ const ProjectsSection = () => {
       image: "/Uploads/icarus.png",
       tech: ["React", "NASA APIs", "Three Js", "Javascript", "CSS"],
       githubUrl: "https://github.com/drachmacollector/Icarus",
-      liveUrl: "https://icarus-solar.vercel.app/",
-      category: "Web App"
+      liveUrl: "https://icarus-solar.vercel.app/"
     },
     {
       id: 3,
@@ -34,8 +33,7 @@ const ProjectsSection = () => {
       image: "/Uploads/Typaint 2.png",
       tech: ["Javascript", "HTML", "CSS"],
       githubUrl: "https://github.com/drachmacollector/Typaint",
-      liveUrl: "https://typaint.vercel.app/",
-      category: "Web App"
+      liveUrl: "https://typaint.vercel.app/"
     }
   ];
 
@@ -55,7 +53,7 @@ const ProjectsSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             My <span className="text-firebase-red">Projects</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-firebase-orange to-firebase-purple mx-auto" />
+          {/* <div className="w-24 h-1 bg-gradient-to-r from-firebase-orange to-firebase-purple mx-auto" /> */}
         </div>
 
         {/* Projects Grid */}
@@ -82,12 +80,12 @@ const ProjectsSection = () => {
                     <div className="absolute inset-0" />
                     
                     {/* Category Badge */}
-                    <CardItem translateZ="60" className="absolute top-4 left-4">
+                    {/* <CardItem translateZ="60" className="absolute top-4 left-4">
                       <span className="px-3 py-1 text-xs font-semibold 
                       rounded-full backdrop-blur-sm border">
                         {project.category}
                       </span>
-                    </CardItem>
+                    </CardItem> */}
                   </CardItem>
 
                   {/* Project Content */}
@@ -122,7 +120,7 @@ const ProjectsSection = () => {
                           type="button"
                           onClick={() => handleLiveClick(project.liveUrl)}
                           className="flex justify-center gap-2 items-center w-full text-lg 
-                          bg-zinc-950 border-rose-600 border-[2px] relative px-8 py-2 rounded-lg 
+                          bg-zinc-950 border-rose-600 border-[2px] relative px-8 py-2 rounded-full 
                           overflow-hidden group transition-all cursor-pointer hover:brightness-100 active:brightness-90"
                         >
                           <span className="relative z-20 group-hover:text-white transition-colors duration-300">
