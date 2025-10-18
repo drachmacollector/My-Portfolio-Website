@@ -9,6 +9,7 @@ const Blender = () => {
 
   const blenderFiles = [
     'chair.png',
+    'space station.mp4',
     'donut.mp4',
     'heart.mp4',
     'infinite fluid.mp4',
