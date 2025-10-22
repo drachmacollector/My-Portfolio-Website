@@ -43,7 +43,13 @@ const SendMessage: React.FC = () => {
   return (
     <div className="space-y-8">
       <div className="contact-form">
-        <h3 className="text-2xl font-bold mb-6 text-firebase-orange">Send a Message</h3>
+        <h3 
+          className="text-2xl font-bold mb-6 text-firebase-orange"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >
+          Send a Message
+        </h3>
 
         <form
           name="contact"
@@ -55,7 +61,12 @@ const SendMessage: React.FC = () => {
           {/* Netlify form name */}
           <input type="hidden" name="contact" value="contact" />
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div 
+            className="grid md:grid-cols-2 gap-6"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="100"
+          >
             <div className="relative">
               <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-firebase-orange" />
               <input
@@ -83,7 +94,12 @@ const SendMessage: React.FC = () => {
             </div>
           </div>
 
-          <div className="relative">
+          <div 
+            className="relative"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="200"
+          >
             <MessageCircle className="absolute left-3 top-4 w-5 h-5 text-firebase-orange" />
             <input
               type="text"
@@ -96,7 +112,12 @@ const SendMessage: React.FC = () => {
             />
           </div>
 
-          <div className="relative">
+          <div 
+            className="relative"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="300"
+          >
             <textarea
               name="message"
               value={formData.message}
@@ -112,6 +133,9 @@ const SendMessage: React.FC = () => {
             type="submit"
             disabled={isSubmitting}
             className="w-full py-4 bg-gradient-to-r from-firebase-blue to-firebase-red rounded-lg font-semibold text-white hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-firebase-blue/25 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="400"
           >
             {isSubmitting ? (
               <>

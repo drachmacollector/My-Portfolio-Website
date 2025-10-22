@@ -46,7 +46,12 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Glassmorphic Contact Card */}
-          <div className="flex justify-center items-center">
+          <div 
+            className="flex justify-center items-center"
+            data-aos="fade-right"
+            data-aos-duration="1200"
+            data-aos-easing="ease-out-cubic"
+          >
             <div className="glass-box relative w-full max-w-[320px] h-[400px] flex justify-center items-center my-10 transition-all duration-600 ease-[cubic-bezier(0.23,1,0.32,1)]">
               <span className="absolute top-0 left-0 right-0 bottom-0 z-5 pointer-events-none"></span>
               <div className="glass-content relative z-10 left-0 p-5 bg-white/5 backdrop-blur-md rounded-lg shadow-lg transition-all duration-600 ease-[cubic-bezier(0.23,1,0.32,1)]">
@@ -82,7 +87,14 @@ const ContactSection = () => {
           </div>
           
           {/* Contact Form */}
-          <SendMessage></SendMessage>
+          <div 
+            data-aos="fade-left"
+            data-aos-duration="1200"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="200"
+          >
+            <SendMessage></SendMessage>
+          </div>
 
         </div>
       </div>

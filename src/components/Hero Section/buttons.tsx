@@ -70,7 +70,7 @@ const SOCIAL_MEDIA_DATA = [
   {
     name: 'LinkedIn',
     icon: LinkedInIcon,
-    href: 'https://www.linkedin.com/in/nakul-bhadade-b7ba06313/',
+    href: 'https://www.linkedin.com/in/nakul-bhadade/',
     tooltip: 'LinkedIn'
   },
   {
