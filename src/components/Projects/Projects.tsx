@@ -19,22 +19,31 @@ const ProjectsSection = () => {
     },
     {
       id: 2,
-      title: "Icarus",
+      title: "🌎 Icarus",
       description: "A space-weather dashboard that visualises phenomena like  Solar Flares, Coronal Mass Ejections CMEs and Auroras on an interactive 3D globe using the NASA DONKI APIs and NOAA Kp‑index forecasts",
       image: "/Uploads/icarus.png",
       tech: ["React", "NASA APIs", "Three Js", "Javascript", "CSS"],
       githubUrl: "https://github.com/drachmacollector/Icarus",
       liveUrl: "https://icarus-solar.vercel.app/"
-    },
-    {
+    },    {
       id: 3,
-      title: "🎨Typaint - Draw with Words",
+      title: "🎨 Typaint - Draw with Words",
       description: "A fun little website that lets you paint with words/text and allows you to customize the size, angle, color of the text and background",
       image: "/Uploads/Typaint 2.png",
       tech: ["Javascript", "HTML", "CSS"],
       githubUrl: "https://github.com/drachmacollector/Typaint",
       liveUrl: "https://typaint.vercel.app/"
+    },
+    {
+      id: 4,
+      title: "🌊 FloatChat",
+      description: "An AI-driven chatbot that ingests ARGO NetCDF oceanographic datasets, converts them into structured and vectorized formats, and enables natural language querying through an LLM-powered RAG pipeline—delivering real-time geospatial visualizations and analytical insights",
+      image: "/Uploads/FloatChat.png",
+      tech: ["Streamlit", "Python", "React", "PostgreSQL", "ChromaDB", "LangChain", "OLLaMA"],
+      githubUrl: "https://github.com/drachmacollector/Aquasense ",
+      liveUrl: "https://aquasense-seven.vercel.app/"
     }
+
   ];
 
   const handleGithubClick = (url: string) => {
@@ -57,20 +66,20 @@ const ProjectsSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="flex flex-wrap justify-center items-center gap-8 ">
+        <div className="flex flex-wrap justify-center items-center gap-12 ">
           {projects.map((project) => (
             <div 
               key={project.id}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
-              className="flex-shrink-0"
+              className="flex-shrink-0 px-4"
             >
               <CardContainer className="inter-var">
                 <CardBody className="bg-slate-950 relative group/card dark:hover:shadow-2xl 
                 dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] 
                 border-black/[0.5] w-17% sm:w-[30rem] h-auto rounded-xl p-0 border">
                   {/* Project Image */}
-                  <CardItem translateZ="60" className="relative">
+                  <CardItem translateZ="50" className="relative">
                     <img
                       src={project.image}
                       alt={project.title}
