@@ -28,7 +28,7 @@ function monkeytype() {
                     <div className="text-7xl font-black text-transparent 
                     bg-gradient-to-r from-cyan-400 via-firebase-blue to-blue-400 bg-clip-text 
                                  transition-transform duration-300 hover:scale-110">
-                      116
+                      123
                     </div>
                     <div className="text-lg font-medium text-cyan-300/100 -mt-2">
                       words per minute
