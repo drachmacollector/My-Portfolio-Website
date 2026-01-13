@@ -25,23 +25,24 @@ const ProjectsSection = () => {
       tech: ["React", "NASA APIs", "Three Js", "Javascript", "CSS"],
       githubUrl: "https://github.com/drachmacollector/Icarus",
       liveUrl: "https://icarus-solar.vercel.app/"
-    },    {
-      id: 3,
-      title: "🎨 Typaint - Draw with Words",
-      description: "A fun little website that lets you paint with words/text and allows you to customize the size, angle, color of the text and background",
-      image: "/Uploads/Typaint 2.png",
-      tech: ["Javascript", "HTML", "CSS"],
-      githubUrl: "https://github.com/drachmacollector/Typaint",
-      liveUrl: "https://typaint.vercel.app/"
-    },
+    },    
     {
-      id: 4,
+      id: 3,
       title: "🌊 FloatChat",
       description: "An AI-driven chatbot that ingests ARGO NetCDF oceanographic datasets, converts them into structured and vectorized formats, and enables natural language querying through an LLM-powered RAG pipeline—delivering real-time geospatial visualizations and analytical insights",
       image: "/Uploads/FloatChat.png",
       tech: ["Streamlit", "Python", "React", "PostgreSQL", "ChromaDB", "LangChain", "OLLaMA"],
       githubUrl: "https://github.com/drachmacollector/Aquasense ",
       liveUrl: "https://aquasense-seven.vercel.app/"
+    },
+    {
+      id: 4,
+      title: "The Consistent Academy",
+      description: "An AI-driven chatbot that ingests ARGO NetCDF oceanographic datasets, converts them into structured and vectorized formats, and enables natural language querying through an LLM-powered RAG pipeline—delivering real-time geospatial visualizations and analytical insights",
+      image: "/Uploads/TCA.png",
+      tech: ["React", "Firebase", "Razorpay"],
+      githubUrl: "https://github.com/sidii1/The-Consistent-Academy",
+      liveUrl: "https://theconsistentacademy.in/"
     }
 
   ];
