@@ -5,24 +5,40 @@ const Techstack = () => {
   ];
 
   return(
-    <div className="w-full bg-gradient-to-r from-firebase-orange to-firebase-purple rounded-2xl p-[1px] 
-    shadow-lg transition transform duration-300 hover:scale-105 
-    hover:shadow-[0_0_20px_rgba(255,95,31,0.1),0_0_40px_rgba(188,19,254,0.1)]">
+    <div className="w-full rounded-2xl overflow-hidden
+    shadow-lg transition-all duration-500 ease-out hover:scale-[1.01] 
+    hover:shadow-[0_8px_30px_rgba(255,95,31,0.25),0_8px_30px_rgba(188,19,254,0.25)]
+    group bg-black/100">
       
-      <div className="w-full bg-black/100 rounded-2xl px-4 py-4">
-        <h3 className="text-lg font-bold text-white mb-4 text-center">Tech Stack</h3>
+      <div className="w-full bg-black/100 rounded-2xl px-4 py-4 relative overflow-hidden">
         
-        <div className="overflow-hidden whitespace-nowrap flex items-center">
-          <div className="marquee-slow flex items-center">
+        {/* Animated gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-firebase-orange/0 via-firebase-purple/0 to-firebase-orange/0 
+        group-hover:from-firebase-orange/5 group-hover:via-firebase-purple/5 group-hover:to-firebase-orange/5 
+        transition-all duration-700 rounded-2xl pointer-events-none" />
+        
+        <h3 className="text-lg font-bold text-white mb-4 text-center relative z-10 
+        transition-all duration-300 group-hover:text-transparent group-hover:bg-gradient-to-r 
+        group-hover:from-firebase-orange group-hover:to-firebase-purple group-hover:bg-clip-text">
+          Tech Stack
+        </h3>
+        
+        <div className="overflow-hidden whitespace-nowrap flex items-center relative z-10">
+          <div className="marquee-slow flex items-center group-hover:animation-pause">
             {[...techStack, ...techStack, ...techStack, ...techStack].map((tech, index) => (
-              <div key={index} className="flex flex-col items-center space-y-1 mx-8 hover:scale-110 
-              transition-transform hover:drop-shadow-[0_0_10px_rgba(100,200,255,0.5)]">
+              <div key={index} className="flex flex-col items-center space-y-1 mx-8 
+              transition-all duration-300 hover:scale-125
+              hover:drop-shadow-[0_0_15px_rgba(100,200,255,0.7)]
+              hover:-translate-y-2">
                 <img 
                   src={`/Uploads/${tech}.png`} 
                   alt={tech}
-                  className="w-10 h-10 object-contain"
+                  className="w-10 h-10 object-contain transition-all duration-300"
                 />
-                <span className="text-s text-white/80 capitalize">{tech}</span>
+                <span className="text-s text-white/80 capitalize transition-all duration-300 
+                hover:text-white">
+                  {tech}
+                </span>
               </div>
             ))}
           </div>
@@ -43,6 +59,10 @@ const Techstack = () => {
             100% {
               transform: translateX(-100%);
             }
+          }
+          
+          .group:hover .marquee-slow {
+            animation-play-state: paused;
           }
         `}
         </style>

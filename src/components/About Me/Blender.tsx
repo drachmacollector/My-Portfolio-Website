@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { X, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger, DialogClose } from '@/blocks/ui/dialog';
 
@@ -6,6 +6,7 @@ const Blender = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   const blenderFiles = [
     'chair.png',
@@ -19,6 +20,37 @@ const Blender = () => {
     'wrecking ball.mp4',
     'dumbbells.png'
   ];
+
+  // Add subtle tilt effect
+  useEffect(() => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = ((y - centerY) / centerY) * -3;
+      const rotateY = ((x - centerX) / centerX) * 3;
+      
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    };
+
+    const handleMouseLeave = () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+    };
+
+    card.addEventListener('mousemove', handleMouseMove);
+    card.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      card.removeEventListener('mousemove', handleMouseMove);
+      card.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, []);
 
   const openLightbox = (index: number) => {
     setCurrentIndex(index);
@@ -63,27 +95,50 @@ const Blender = () => {
   }, [lightboxOpen, currentIndex]);
 
   return(
-    <div className="w-full h-full bg-gradient-to-r from-firebase-orange to-firebase-purple rounded-2xl p-[1px] 
-    shadow-lg transition transform duration-300 hover:scale-105 
-    hover:shadow-[0_0_20px_rgba(255,95,31,0.1),0_0_40px_rgba(188,19,254,0.1)] cursor-pointer">
-      
-      <div className="w-full h-full bg-black/100 rounded-2xl px-6 py-3 flex flex-col items-center 
-      justify-center text-center">
+    <div 
+      ref={cardRef}
+      className="w-full h-full rounded-2xl overflow-hidden
+      transition-all duration-500 ease-out
+      shadow-lg hover:shadow-[0_8px_30px_rgba(255,95,31,0.3),0_8px_30px_rgba(188,19,254,0.3)] 
+      cursor-pointer group bg-black/100"
+      style={{ 
+        transformStyle: 'preserve-3d',
+        transition: 'transform 0.1s ease-out, box-shadow 0.5s ease-out'
+      }}
+    >
+      <div className="w-full h-full rounded-2xl px-6 py-3 flex flex-col items-center 
+      justify-center text-center overflow-hidden relative">
+        
+        {/* Animated gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-firebase-orange/0 via-firebase-purple/0 to-firebase-orange/0 
+        group-hover:from-firebase-orange/5 group-hover:via-firebase-purple/5 group-hover:to-firebase-orange/5 
+        transition-all duration-500 rounded-2xl pointer-events-none" />
         
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
           <DialogTrigger asChild>
-            <div className="w-full h-full flex flex-col items-center justify-center">
-              <div className="w-44 h-44 rounded-full flex items-center justify-center mb-4 mr-15">
+            <div className="w-full h-full flex flex-col items-center justify-center relative z-10">
+              <div className="w-44 h-44 rounded-full flex items-center justify-center mb-4 mr-15 
+              transition-transform duration-500 ease-out group-hover:scale-110 group-hover:rotate-6">
                 <img 
                   src="/Uploads/Blender.png" 
                   alt="Blender"
-                  className="w-44 h-44 object-contain"
+                  className="w-44 h-44 object-contain drop-shadow-[0_0_15px_rgba(255,95,31,0)] 
+                  group-hover:drop-shadow-[0_0_25px_rgba(255,95,31,0.6)]
+                  transition-all duration-500"
                 />
               </div>
-              <h3 className="text-4xl font-bold text-white mb-2">My 3D Art</h3>
-              <p className="text-l text-white/70 mb-5">Created with Blender</p>
-              <button className="px-6 py-3 bg-cyan-400 rounded-lg text-black hover:bg-cyan-500 
-              transition-colors font-medium">
+              <h3 className="text-4xl font-bold text-white mb-2 transition-all duration-300 
+              group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-firebase-orange 
+              group-hover:to-firebase-purple group-hover:bg-clip-text">
+                My 3D Art
+              </h3>
+              <p className="text-l text-white/70 mb-5 transition-all duration-300 group-hover:text-white/90">
+                Created with Blender
+              </p>
+              <button className="px-6 py-3 bg-cyan-400 rounded-lg text-black 
+              transition-all duration-300 font-medium
+              group-hover:bg-gradient-to-r group-hover:from-firebase-orange group-hover:to-firebase-purple 
+              group-hover:text-white group-hover:shadow-lg group-hover:scale-105">
                 View Gallery
               </button>
             </div>
