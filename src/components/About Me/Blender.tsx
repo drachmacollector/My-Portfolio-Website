@@ -99,7 +99,7 @@ const Blender = () => {
       ref={cardRef}
       className="w-full h-full rounded-2xl overflow-hidden
       transition-all duration-500 ease-out
-      shadow-lg hover:shadow-[0_8px_30px_rgba(255,95,31,0.3),0_8px_30px_rgba(188,19,254,0.3)] 
+      shadow-lg 
       cursor-pointer group bg-black/100"
       style={{ 
         transformStyle: 'preserve-3d',

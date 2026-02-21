@@ -38,7 +38,6 @@ const AboutCard = () => {
       ref={cardRef}
       className="w-full h-full rounded-full overflow-hidden
       shadow-lg
-      hover:shadow-[0_8px_30px_rgba(255,95,31,0.25),0_8px_30px_rgba(188,19,254,0.25)]
       group cursor-pointer bg-black/100"
       style={{ 
         transformStyle: 'preserve-3d',

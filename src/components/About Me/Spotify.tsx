@@ -5,7 +5,7 @@ function Spotify() {
         <>
         <div className='w-full h-full transition-all duration-500 ease-out hover:scale-[1.02] 
         group cursor-pointer rounded-2xl overflow-hidden
-        hover:shadow-[0_8px_30px_rgba(30,215,96,0.3)] relative bg-black/100'>
+        relative bg-black/100'>
             {/* Animated border gradient - moved outside to prevent glitch */}
             <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-green-400 to-green-500 
             opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-sm -z-10" />

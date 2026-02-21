@@ -7,7 +7,6 @@ const Techstack = () => {
   return(
     <div className="w-full rounded-2xl overflow-hidden
     shadow-lg transition-all duration-500 ease-out hover:scale-[1.01] 
-    hover:shadow-[0_8px_30px_rgba(255,95,31,0.25),0_8px_30px_rgba(188,19,254,0.25)]
     group bg-black/100">
       
       <div className="w-full bg-black/100 rounded-2xl px-4 py-4 relative overflow-hidden">

@@ -3,7 +3,6 @@ function monkeytype() {
         <>
             <div className="w-full h-full rounded-2xl overflow-hidden
             shadow-lg transition-all duration-500 ease-out hover:scale-[1.02] 
-            hover:shadow-[0_8px_30px_rgba(255,95,31,0.3),0_8px_30px_rgba(188,19,254,0.3)]
             group bg-black/100">
               
               <div className="w-full h-full rounded-2xl p-2 flex flex-col justify-center text-center
