@@ -10,7 +10,7 @@ const ProjectsSection = () => {
     {
       id: 1,
       title: "🚗 Parkify - Smart Parking",
-      description: "A modern smart parking system designed to streamline the process of finding and booking parking spots. With a futuristic UI and interactive features, it helps users locate, reserve, and manage parking efficiently in real-time.",
+      description: "A modern smart parking system designed to streamline the process of finding and booking parking spots. It helps users locate, reserve, and manage parking efficiently in real-time.",
       image: "/Uploads/Parkify.png",
       tech: ["PHP", "MySQL", "Javascript", "HTML", "CSS"],
       githubUrl: "https://github.com/drachmacollector/parkify",
@@ -29,7 +29,7 @@ const ProjectsSection = () => {
     {
       id: 3,
       title: "🌊 FloatChat",
-      description: "An AI-driven chatbot that ingests ARGO NetCDF oceanographic datasets, converts them into structured and vectorized formats, and enables natural language querying through an LLM-powered RAG pipeline—delivering real-time geospatial visualizations and analytical insights",
+      description: "An AI-driven chatbot that ingests ARGO NetCDF oceanographic datasets, converts them into structured and vectorized formats, and enables natural language querying through an LLM-powered RAG pipeline",
       image: "/Uploads/FloatChat.png",
       tech: ["Streamlit", "Python", "React", "PostgreSQL", "ChromaDB", "LangChain", "OLLaMA"],
       githubUrl: "https://github.com/drachmacollector/Aquasense ",
@@ -37,8 +37,17 @@ const ProjectsSection = () => {
     },
     {
       id: 4,
+      title: "🪐 Kepler AI",
+      description: "An AI powered dashboard that predicts possible exoplanets & their characteristics based on raw astronomical data as detected by the Kepler Space Telescope",
+      image: "/Uploads/KeplerAI.png",
+      tech: ["Python", "Scikit-Learn", "React", "FastAPI", "PyDantic", "Render"],
+      githubUrl: "https://github.com/drachmacollector/Kepler-AI ",
+      liveUrl: "https://kepler-ai-koi.vercel.app/"
+    },
+    {
+      id: 5,
       title: "The Consistent Academy",
-      description: "An AI-driven chatbot that ingests ARGO NetCDF oceanographic datasets, converts them into structured and vectorized formats, and enables natural language querying through an LLM-powered RAG pipeline—delivering real-time geospatial visualizations and analytical insights",
+      description: "An educational platform built for The Consistent Academy featuring various IELTS courses alongwith a seamless test interface",
       image: "/Uploads/TCA.png",
       tech: ["React", "Firebase", "Razorpay"],
       githubUrl: "https://github.com/sidii1/The-Consistent-Academy",
@@ -134,7 +143,7 @@ const ProjectsSection = () => {
                           overflow-hidden group transition-all cursor-pointer hover:brightness-100 active:brightness-90"
                         >
                           <span className="relative z-20 group-hover:text-white transition-colors duration-300">
-                            View Live Demo
+                            Live Demo
                           </span>
                           <svg
                             className="w-8 h-8 justify-end text-white ease-linear duration-300 rounded-full 
