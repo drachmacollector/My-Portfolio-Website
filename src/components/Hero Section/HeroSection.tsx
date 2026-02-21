@@ -75,16 +75,18 @@ const HeroSection = () => {
             rounded-full max-w-lg opacity-100 mb-8" />
 
           {/* Subtitle with rotating text - Increased size */}
-          <div className="mb-8 animate-fade-in opacity-0 h-20" 
-          style={{animationDelay: '1s', animationFillMode: 'forwards'}}>
-            <p className="text-4xl text-white">
-              A{' '}
-              <RotatingText 
-                words={developerTitles}
-                className="text-firebase-orange font-semibold h-16"
-              />
-            </p>
+        <div
+          className="mb-8 animate-fade-in opacity-0 h-20"
+          style={{ animationDelay: '1s', animationFillMode: 'forwards' }}
+        >
+          <div className="text-4xl text-white">
+            A{' '}
+            <RotatingText
+              words={developerTitles}
+              className="text-firebase-orange font-semibold h-16"
+            />
           </div>
+        </div>
 
           {/* Mission Statement */}
           <p className="text-lg text-slate-300 mb-12 max-w-2xl animate-fade-in opacity-0" 
