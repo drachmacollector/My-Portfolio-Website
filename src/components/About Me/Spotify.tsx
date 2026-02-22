@@ -3,7 +3,7 @@ import React from 'react';
 function Spotify() {
     return(
         <>
-        <div className='w-full h-full transition-all duration-500 ease-out hover:scale-[1.02] 
+        <div className='w-full h-full transition-all duration-500 ease-out hover:scale-[1.01] 
         group cursor-pointer rounded-2xl overflow-hidden
         relative bg-black/100'>
             {/* Animated border gradient - moved outside to prevent glitch */}

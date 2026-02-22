@@ -17,7 +17,7 @@ const AboutCard = () => {
       const rotateX = ((y - centerY) / centerY) * -4;
       const rotateY = ((x - centerX) / centerX) * 4;
       
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.005)`;
     };
 
     const handleMouseLeave = () => {
@@ -53,7 +53,7 @@ const AboutCard = () => {
         transition-all duration-700 rounded-full pointer-events-none" />
         
         <p className="text-white/80 text-sm leading-relaxed text-center relative z-10
-        transition-all duration-300 group-hover:text-white group-hover:scale-105">
+        transition-all duration-300 group-hover:text-white group-hover:scale-[1.02]">
           Hello there <br />
           General Kenobi.... you are a bold one!
         </p>

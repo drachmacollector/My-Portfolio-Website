@@ -65,25 +65,8 @@ const Bento = () => {
           }
         }
         
-        .bento-card:hover::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(
-            110deg,
-            transparent 25%,
-            rgba(255, 255, 255, 0.05) 45%,
-            rgba(255, 255, 255, 0.08) 50%,
-            rgba(255, 255, 255, 0.05) 55%,
-            transparent 75%
-          );
-          background-size: 200% 100%;
-          animation: shimmer 3s infinite;
-          border-radius: inherit;
-          pointer-events: none;
-          z-index: 3;
-        }
         
+
         /* Spotlight and red shadow removed */
         
         /* Smooth transitions */

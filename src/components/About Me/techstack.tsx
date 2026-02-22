@@ -6,7 +6,7 @@ const Techstack = () => {
 
   return(
     <div className="w-full rounded-2xl overflow-hidden
-    shadow-lg transition-all duration-500 ease-out hover:scale-[1.01] 
+    shadow-lg transition-all duration-500 ease-out hover:scale-[1.005] 
     group bg-black/100">
       
       <div className="w-full bg-black/100 rounded-2xl px-4 py-4 relative overflow-hidden">
@@ -26,7 +26,7 @@ const Techstack = () => {
           <div className="marquee-slow flex items-center group-hover:animation-pause">
             {[...techStack, ...techStack, ...techStack, ...techStack].map((tech, index) => (
               <div key={index} className="flex flex-col items-center space-y-1 mx-8 
-              transition-all duration-300 hover:scale-125
+              transition-all duration-300 hover:scale-110
               hover:drop-shadow-[0_0_15px_rgba(100,200,255,0.7)]
               hover:-translate-y-2">
                 <img 

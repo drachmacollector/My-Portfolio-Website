@@ -2,7 +2,7 @@ function monkeytype() {
     return(
         <>
             <div className="w-full h-full rounded-2xl overflow-hidden
-            shadow-lg transition-all duration-500 ease-out hover:scale-[1.02] 
+            shadow-lg transition-all duration-500 ease-out hover:scale-[1.01] 
             group bg-black/100">
               
               <div className="w-full h-full rounded-2xl p-2 flex flex-col justify-center text-center
@@ -22,12 +22,12 @@ function monkeytype() {
 
                   {/* Header with Logo */}
                   <div className="flex items-center justify-center space-x-1 mb-8 
-                  transition-all duration-300 group-hover:scale-105">
+                  transition-all duration-300 group-hover:scale-[1.02]">
                     <img 
                       src="/Uploads/monkeytype.png" 
                       alt="Monkeytype"
                       className="w-8 h-6 opacity-100 transition-all duration-300 
-                      group-hover:drop-shadow-[0_0_10px_rgba(34,211,238,0.6)]"
+                      group-hover:drop-shadow-[0_0_5px_rgba(34,211,238,0.3)]"
                     />
                     <h3 className="text-lg font-medium text-white/100 transition-all duration-300 
                     group-hover:text-cyan-400">
@@ -39,8 +39,8 @@ function monkeytype() {
                   <div className="mb-4">
                     <div className="text-7xl font-black text-transparent 
                     bg-gradient-to-r from-cyan-400 via-firebase-blue to-blue-400 bg-clip-text 
-                    transition-all duration-500 group-hover:scale-110 
-                    group-hover:drop-shadow-[0_0_20px_rgba(34,211,238,0.5)]">
+                    transition-all duration-500 group-hover:scale-[1.02] 
+                    group-hover:drop-shadow-[0_0_10px_rgba(34,211,238,0.3)]">
                       137
                     </div>
                     <div className="text-lg font-medium text-cyan-300/100 -mt-2 
@@ -68,7 +68,7 @@ function monkeytype() {
 
                     {/* Dot */}
                     <span className="w-1 h-1 bg-cyan-400/40 rounded-full transition-all duration-300 
-                    group-hover:bg-cyan-400/80 group-hover:scale-150" />
+                    group-hover:bg-cyan-400/80 group-hover:scale-110" />
 
                     {/* 100% with progress icon */}
                     <span className="flex items-center space-x-1">
@@ -86,7 +86,7 @@ function monkeytype() {
 
                     {/* Dot */}
                     <span className="w-1 h-1 bg-cyan-400/40 rounded-full transition-all duration-300 
-                    group-hover:bg-cyan-400/80 group-hover:scale-150" />
+                    group-hover:bg-cyan-400/80 group-hover:scale-110" />
 
                     {/* English with language icon */}
                     <span className="flex items-center space-x-1">

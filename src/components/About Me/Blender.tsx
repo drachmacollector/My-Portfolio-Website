@@ -36,7 +36,7 @@ const Blender = () => {
       const rotateX = ((y - centerY) / centerY) * -3;
       const rotateY = ((x - centerX) / centerX) * 3;
       
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.005)`;
     };
 
     const handleMouseLeave = () => {
@@ -123,7 +123,7 @@ const Blender = () => {
                   src="/Uploads/Blender.png" 
                   alt="Blender"
                   className="w-44 h-44 object-contain drop-shadow-[0_0_15px_rgba(255,95,31,0)] 
-                  group-hover:drop-shadow-[0_0_25px_rgba(255,95,31,0.6)]
+                  group-hover:drop-shadow-[0_0_15px_rgba(255,95,31,0.3)]
                   transition-all duration-500"
                 />
               </div>
@@ -138,7 +138,7 @@ const Blender = () => {
               <button className="px-6 py-3 bg-cyan-400 rounded-lg text-black 
               transition-all duration-300 font-medium
               group-hover:bg-gradient-to-r group-hover:from-firebase-orange group-hover:to-firebase-purple 
-              group-hover:text-white group-hover:shadow-lg group-hover:scale-105">
+              group-hover:text-white group-hover:shadow-lg group-hover:scale-[1.02]">
                 View Gallery
               </button>
             </div>
