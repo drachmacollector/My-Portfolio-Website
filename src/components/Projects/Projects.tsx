@@ -80,11 +80,20 @@ const ProjectsSection = () => {
     {
       id: 5,
       title: "The Consistent Academy",
-      description: "An educational platform built for The Consistent Academy featuring various IELTS courses alongwith a seamless test interface",
+      description: "An educational platform built for The Consistent Academy featuring various IELTS & English speaking courses alongwith a seamless test interface",
       image: "/Uploads/TCA.png",
       tech: ["React", "Firebase", "Razorpay"],
       githubUrl: "https://github.com/sidii1/The-Consistent-Academy",
       liveUrl: "https://theconsistentacademy.in/"
+    },
+    {
+      id: 5,
+      title: "👣 Kadam",
+      description: "A pan-India networking site for NGOs & their supporters that allows them to connect with each other and share information about their activities as well as make donations",
+      image: "/Uploads/Kadam.png",
+      tech: ["React", "Firebase", "Cloudinary"],
+      githubUrl: "https://github.com/n3ssdub3y/Kadam",
+      liveUrl: "https://kadam-ngo.vercel.app/"
     }
 
   ];
