@@ -1,10 +1,43 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { ExternalLink, Github, Eye } from 'lucide-react';
 import { CardBody, CardContainer, CardItem } from "@/blocks/ui/3d-card";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ProjectsSection = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    const projectsContainer = scrollRef.current;
+    if (!projectsContainer) return;
+
+    // Calculate how far to scroll
+    const scrollWidth = projectsContainer.scrollWidth;
+    const windowWidth = window.innerWidth;
+    // Add extra padding so the last item isn't strictly at the edge
+    const scrollDistance = scrollWidth - windowWidth + 200;
+
+    if (scrollDistance > 0) {
+      gsap.to(projectsContainer, {
+        x: -scrollDistance,
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: () => "+=" + scrollDistance,
+          scrub: 1,
+          pin: true,
+          invalidateOnRefresh: true,
+        }
+      });
+    }
+  }, { scope: sectionRef });
 
   const projects = [
     {
@@ -65,25 +98,26 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-12 px-6 lg:px-8 relative">
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" ref={sectionRef} className="relative h-screen bg-transparent overflow-hidden flex flex-col justify-start pt-12 md:pt-10">
+      <div className="w-full flex flex-col">
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-16 md:mb-10 shrink-0">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             My <span className="text-firebase-red">Projects</span>
           </h2>
           {/* <div className="w-24 h-1 bg-gradient-to-r from-firebase-orange to-firebase-purple mx-auto" /> */}
         </div>
 
-        {/* Projects Grid */}
-        <div className="flex flex-wrap justify-center items-center gap-12 ">
-          {projects.map((project) => (
-            <div 
-              key={project.id}
-              onMouseEnter={() => setHoveredProject(project.id)}
-              onMouseLeave={() => setHoveredProject(null)}
-              className="flex-shrink-0 px-4"
-            >
+        {/* Projects Grid Container */}
+        <div className="pl-12 lg:pl-32 flex-1 flex items-center min-h-0">
+          <div ref={scrollRef} className="flex gap-24 pr-[20vw]">
+            {projects.map((project) => (
+              <div 
+                key={project.id}
+                onMouseEnter={() => setHoveredProject(project.id)}
+                onMouseLeave={() => setHoveredProject(null)}
+                className="flex-shrink-0"
+              >
               <CardContainer className="inter-var">
                 <CardBody className="bg-slate-950 relative group/card dark:hover:shadow-2xl 
                 dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] 
@@ -193,6 +227,7 @@ const ProjectsSection = () => {
               </CardContainer>
             </div>
           ))}
+          </div>
         </div>
       </div>
     </section>
