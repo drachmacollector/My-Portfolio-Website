@@ -18,7 +18,7 @@ function Profile() {
               </div>
               <div className="absolute inset-4 rounded-full overflow-hidden bg-black">
                 <img 
-                  src="/Uploads/Nakul 3.png"
+                  src="/Uploads/Nakul 5.jpg"
                   alt="Nakul - Software Developer"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />

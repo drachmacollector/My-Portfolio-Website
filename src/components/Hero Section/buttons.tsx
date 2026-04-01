@@ -78,7 +78,7 @@ const SOCIAL_MEDIA_DATA = [
   {
     name: 'Resume',
     icon: ScrollIcon,
-    href: '/Nakul Resume.pdf',
+    href: '/Nakul Resume 2.pdf',
     tooltip: 'My Resume'
   },
   {
