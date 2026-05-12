@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import HeroSection from "@/sections/hero/HeroSection";
 import AboutSection from "@/sections/about/AboutSection";
+import Experience from "@/sections/experience/Experience";
 import ProjectsSection from "@/sections/projects/ProjectsSection";
 import ContactSection from "@/sections/contact/ContactSection";
 import CanvasCursor from "@/components/effects/CanvasCursor";
@@ -40,6 +41,7 @@ const Index: React.FC = () => {
       <main className="relative z-10">
         <HeroSection />
         <AboutSection />
+        <Experience />
         <ProjectsSection />
         <ContactSection />
       </main>

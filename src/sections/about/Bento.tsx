@@ -41,10 +41,6 @@ const Bento = () => {
         .bento-card {
           transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
-        .bento-card:hover {
-          transform: translateY(-2px);
-        }
       `}</style>
       
       <section id="about-me" className="max-w-7xl mx-auto px-6 py-4 relative">
