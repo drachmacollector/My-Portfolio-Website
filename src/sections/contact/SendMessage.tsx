@@ -40,9 +40,9 @@ const SendMessage: React.FC = () => {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <div className="contact-form">
-        <h3 className="text-2xl font-bold mb-6 text-firebase-orange">
+        <h3 className="text-xl font-bold mb-5 text-firebase-orange">
           Send a Message
         </h3>
 
@@ -55,9 +55,9 @@ const SendMessage: React.FC = () => {
         >
           <input type="hidden" name="contact" value="contact" />
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-4">
             <div className="relative">
-              <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-firebase-orange" />
+              <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-firebase-orange" />
               <input
                 type="text"
                 name="name"
@@ -65,12 +65,12 @@ const SendMessage: React.FC = () => {
                 onChange={handleChange}
                 placeholder="Your Name"
                 required
-                className="w-full pl-12 pr-4 py-3 bg-black/20 border border-white/10 rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 focus:ring-firebase-orange/20 transition-all"
+                className="w-full pl-10 pr-4 py-2.5 bg-black/20 border border-white/10 rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 focus:ring-firebase-orange/20 transition-all text-sm"
               />
             </div>
 
             <div className="relative">
-              <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-firebase-orange" />
+              <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-firebase-orange" />
               <input
                 type="email"
                 name="email"
@@ -78,13 +78,13 @@ const SendMessage: React.FC = () => {
                 onChange={handleChange}
                 placeholder="Your Email"
                 required
-                className="w-full pl-12 pr-4 py-3 bg-black/20 border border-white/10 rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 focus:ring-firebase-orange/20 transition-all"
+                className="w-full pl-10 pr-4 py-2.5 bg-black/20 border border-white/10 rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 focus:ring-firebase-orange/20 transition-all text-sm"
               />
             </div>
           </div>
 
           <div className="relative">
-            <MessageCircle className="absolute left-3 top-4 w-5 h-5 text-firebase-orange" />
+            <MessageCircle className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-firebase-orange" />
             <input
               type="text"
               name="subject"
@@ -92,7 +92,7 @@ const SendMessage: React.FC = () => {
               onChange={handleChange}
               placeholder="Subject"
               required
-              className="w-full pl-12 pr-4 py-3 bg-black/20 border border-white/10 rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 focus:ring-firebase-orange/20 transition-all"
+              className="w-full pl-10 pr-4 py-2.5 bg-black/20 border border-white/10 rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 focus:ring-firebase-orange/20 transition-all text-sm"
             />
           </div>
 
@@ -102,25 +102,25 @@ const SendMessage: React.FC = () => {
               value={formData.message}
               onChange={handleChange}
               placeholder="Your Message"
-              rows={6}
+              rows={5}
               required
-              className="w-full p-4 bg-black/20 border border-white/10 rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 focus:ring-firebase-orange/20 transition-all resize-none"
+              className="w-full p-4 bg-black/20 border border-white/10 rounded-lg focus:border-firebase-orange focus:outline-none focus:ring-2 focus:ring-firebase-orange/20 transition-all resize-none text-sm"
             />
           </div>
 
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-4 bg-gradient-to-r from-firebase-blue to-firebase-red rounded-lg font-semibold text-white hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-firebase-blue/25 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+            className="w-full py-3 bg-gradient-to-r from-firebase-blue to-firebase-red rounded-lg font-semibold text-white hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-firebase-blue/25 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 text-sm"
           >
             {isSubmitting ? (
               <>
-                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white" />
+                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white" />
                 <span>Sending...</span>
               </>
             ) : (
               <>
-                <Send className="w-5 h-5" />
+                <Send className="w-4 h-4" />
                 <span>Send Email</span>
               </>
             )}

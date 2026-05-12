@@ -81,7 +81,7 @@ const HeroSection = () => {
           {/* Mission Statement */}
           <p className="text-lg text-slate-300 mb-12 max-w-2xl animate-fade-in opacity-0" 
           style={{animationDelay: '2s', animationFillMode: 'forwards'}}>
-            A Computer Science sophomore, specializing in Artificial Intelligence and Machine Learning and super passionate about frontend web development & 3D animation.
+            A Computer Science sophomore, specializing in Artificial Intelligence and Machine Learning and super passionate about AI/ML, web development, 3D animation & debating.
           </p>
 
           <HeroButtons />

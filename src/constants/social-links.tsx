@@ -63,8 +63,8 @@ export const SOCIAL_LINKS: SocialLink[] = [
 ];
 
 export const DEVELOPER_TITLES = [
-  "software developer",
   "3D Animator",
   "web developer",
+  "debater",
   "frontend developer",
 ] as const;

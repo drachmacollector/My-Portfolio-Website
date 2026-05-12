@@ -28,7 +28,7 @@ svg {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: calc(var(--size) * 0.15);
+  gap: calc(var(--size) * 0.3);
 }
 
 .key.call-to-action {

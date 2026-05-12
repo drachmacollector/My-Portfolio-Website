@@ -9,8 +9,7 @@ function monkeytype() {
               relative overflow-hidden">
                 
                 {/* Animated gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-blue-500/0 to-cyan-500/0 
-                group-hover:from-cyan-500/5 group-hover:via-blue-500/5 group-hover:to-cyan-500/5 
+                <div className="absolute inset-0
                 transition-all duration-700 rounded-2xl pointer-events-none" />
                 
                 <a 

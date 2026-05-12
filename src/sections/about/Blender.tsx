@@ -111,8 +111,7 @@ const Blender = () => {
       justify-center text-center overflow-hidden relative">
         
         {/* Animated gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-firebase-orange/0 via-firebase-purple/0 to-firebase-orange/0 
-        group-hover:from-firebase-orange/5 group-hover:via-firebase-purple/5 group-hover:to-firebase-orange/5 
+        <div className="absolute inset-0 
         transition-all duration-500 rounded-2xl pointer-events-none" />
         
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
@@ -128,9 +127,7 @@ const Blender = () => {
                   transition-all duration-500"
                 />
               </div>
-              <h3 className="text-4xl font-bold text-white mb-2 transition-all duration-300 
-              group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-firebase-orange 
-              group-hover:to-firebase-purple group-hover:bg-clip-text">
+              <h3 className="text-4xl font-bold text-white mb-2 transition-all duration-300 ">
                 My 3D Art
               </h3>
               <p className="text-l text-white/70 mb-5 transition-all duration-300 group-hover:text-white/90">
@@ -138,8 +135,7 @@ const Blender = () => {
               </p>
               <button className="px-6 py-3 bg-cyan-400 rounded-lg text-black 
               transition-all duration-300 font-medium
-              group-hover:bg-gradient-to-r group-hover:from-firebase-orange group-hover:to-firebase-purple 
-              group-hover:text-white group-hover:shadow-lg group-hover:scale-[1.02]">
+               group-hover:shadow-lg group-hover:scale-[1.02]">
                 View Gallery
               </button>
             </div>
