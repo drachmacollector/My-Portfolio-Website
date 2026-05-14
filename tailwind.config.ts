@@ -73,7 +73,7 @@ const config = {
 					purple: '#BC13FE',
 					pink: '#E91E63',
 					blue: '#1F51FF',
-					cyab: '#00bbff',
+					cyan: '#00bbff',
 					green: '#2CFF05'
 				},
 				neon: {
@@ -211,6 +211,16 @@ const config = {
  						backgroundPosition: '0% 50%',
  						transform: 'rotate(-5deg) scale(0.9)',
  						}
+				},
+				'lock-on': {
+					'0%': { transform: 'scale(3)', opacity: '0' },
+					'40%': { transform: 'scale(0.8)', opacity: '1' },
+					'70%': { transform: 'scale(1.1)', opacity: '0.8' },
+					'100%': { transform: 'scale(1)', opacity: '1' }
+				},
+				'spin-reverse': {
+					'0%': { transform: 'rotate(360deg)' },
+					'100%': { transform: 'rotate(0deg)' }
 				}
 			},
 			animation: {
@@ -228,7 +238,9 @@ const config = {
 				'slide-down': 'slide-down 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
 				'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
 				'orbit': 'orbit 8s linear infinite',
-				'aurora': 'aurora 8s ease-in-out infinite alternate'
+				'aurora': 'aurora 8s ease-in-out infinite alternate',
+				'lock-on': 'lock-on 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+				'spin-reverse': 'spin-reverse 10s linear infinite'
 			},
 			backgroundImage: {
 				'grid-pattern': 'linear-gradient(rgba(255, 138, 101, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 138, 101, 0.1) 1px, transparent 1px)',

@@ -138,7 +138,7 @@ const Spotify = () => {
             
             {/* Track Info */}
             <div className="flex items-center gap-4 min-w-0">
-              <div className="relative w-16 h-16 flex-shrink-0 rounded-full p-[3px] transition-all duration-500 bg-gradient-to-br from-[#1DB954] via-firebase-cyab to-firebase-purple shadow-[0_0_22px_rgba(29,185,84,0.32)] group-hover:shadow-[0_0_30px_rgba(29,185,84,0.55)]">
+              <div className="relative w-16 h-16 flex-shrink-0 rounded-full p-[3px] transition-all duration-500 bg-gradient-to-br from-[#1DB954] via-firebase-cyan to-firebase-purple shadow-[0_0_22px_rgba(29,185,84,0.32)] group-hover:shadow-[0_0_30px_rgba(29,185,84,0.55)]">
                 <img 
                   src={data.albumImageUrl} 
                   alt={data.title} 

@@ -1,70 +1,106 @@
 function Profile() {
-    return (
-        <>
+  return (
+    <>
+      {/* Right Side - Profile Image Area */}
+      {/* Reduced padding to help it sit better in the grid layout */}
+      <div className="flex justify-center lg:justify-end z-10 p-4 lg:p-8">
+        
+        {/* Core Container - Added 'group' class here to trigger hover effects on children */}
+        <div className="relative w-80 h-80 lg:w-96 lg:h-96 animate-float group cursor-crosshair">
 
-         {/* Right Side - Profile Image */}
-        <div className="flex justify-center lg:justify-end z-10">
-          <div className="relative">
-            {/* Enhanced animated circular frame*/}
-            <div className="relative w-96 h-96 rounded-full glass-card animate-float">
+          {/* ========================================================= */}
+          {/* HUD LAYER 1: The Outer Targeting Perimeter                  */}
+          {/* ========================================================= */}
+          {/* Added base duration and faster group-hover duration */}
+          <div className="absolute -inset-10 lg:-inset-12 rounded-full border border-firebase-cyan/20 animate-rotate-slow [animation-duration:20s] group-hover:[animation-duration:5s] pointer-events-none hidden md:block">
+            <div className="absolute top-0 left-1/2 w-6 h-1 bg-firebase-cyan -translate-x-1/2 shadow-[0_0_8px_#00bbff]" />
+            <div className="absolute bottom-0 left-1/2 w-6 h-1 bg-firebase-cyan -translate-x-1/2 shadow-[0_0_8px_#00bbff]" />
+            <div className="absolute left-0 top-1/2 w-1 h-6 bg-firebase-cyan -translate-y-1/2 shadow-[0_0_8px_#00bbff]" />
+            <div className="absolute right-0 top-1/2 w-1 h-6 bg-firebase-cyan -translate-y-1/2 shadow-[0_0_8px_#00bbff]" />
+          </div>
 
-              {/* Rotating concentric dashed rings */}
+          {/* ========================================================= */}
+          {/* HUD LAYER 2: High-Fidelity Segmented Data Tracks            */}
+          {/* ========================================================= */}
+          {/* Outer thick tick marks - Moved duration to Tailwind classes */}
+          <div 
+            className="absolute -inset-7 lg:-inset-8 rounded-full animate-rotate-slow2 [animation-duration:35s] group-hover:[animation-duration:10s] pointer-events-none"
+            style={{
+              background: 'repeating-conic-gradient(from 0deg, transparent 0deg 4deg, rgba(255,7,58,0.4) 4deg 6deg)',
+              WebkitMaskImage: 'radial-gradient(circle, transparent 67%, black 68%)',
+              maskImage: 'radial-gradient(circle, transparent 67%, black 68%)',
+            }} 
+          />
+          
+          {/* Inner dense, fine tick marks - Moved duration to Tailwind classes */}
+          <div 
+            className="absolute -inset-3 lg:-inset-4 rounded-full animate-rotate-slow [animation-duration:60s] group-hover:[animation-duration:15s] pointer-events-none"
+            style={{
+              background: 'repeating-conic-gradient(from 0deg, transparent 0deg 2deg, rgba(0,187,255,0.5) 2deg 3deg)',
+              WebkitMaskImage: 'radial-gradient(circle, transparent 69%, black 70%)',
+              maskImage: 'radial-gradient(circle, transparent 69%, black 70%)',
+            }} 
+          />
 
-              <div className="absolute inset-0 rounded-full animate-rotate-slow">
-                <div className="w-full h-full rounded-full border-4 border-rose-600 border-dashed" />
-              </div>
-              <div className="absolute inset-2.5 rounded-full animate-rotate-slow2">
-                <div className="w-full h-full rounded-full border-4 border-cyan-300 border-dashed" />
-              </div>
-              <div className="absolute inset-4 rounded-full overflow-hidden bg-black">
-                <img 
-                  src="/Uploads/Nakul 5.jpg"
-                  alt="Nakul - Software Developer"
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                />
-              </div>
+          {/* Solid Orbital Ring with Gaps - Moved duration to Tailwind classes */}
+          <div className="absolute -inset-5 lg:-inset-6 rounded-full border-[3px] border-transparent border-t-firebase-cyan/80 border-b-firebase-cyan/80 animate-spin-reverse [animation-duration:20s] group-hover:[animation-duration:4s] pointer-events-none" />
+
+          {/* ========================================================= */}
+          {/* HUD LAYER 3: Tactical Brackets                              */}
+          {/* ========================================================= */}
+          {/* Brackets pinch inward slightly on hover to simulate locking on */}
+          <div className="absolute -inset-2 lg:-inset-3 pointer-events-none transition-all duration-500 group-hover:-inset-1">
+            <div className="absolute top-0 left-0 w-10 h-10 lg:w-12 lg:h-12 border-t-[3px] border-l-[3px] border-firebase-cyan rounded-tl-xl shadow-[-3px_-3px_10px_rgba(0,187,255,0.2)]" />
+            <div className="absolute top-0 right-0 w-10 h-10 lg:w-12 lg:h-12 border-t-[3px] border-r-[3px] border-firebase-cyan rounded-tr-xl shadow-[3px_-3px_10px_rgba(0,187,255,0.2)]" />
+            <div className="absolute bottom-0 left-0 w-10 h-10 lg:w-12 lg:h-12 border-b-[3px] border-l-[3px] border-neon-red rounded-bl-xl shadow-[-3px_3px_10px_rgba(255,7,58,0.2)]" />
+            <div className="absolute bottom-0 right-0 w-10 h-10 lg:w-12 lg:h-12 border-b-[3px] border-r-[3px] border-neon-red rounded-br-xl shadow-[3px_3px_10px_rgba(255,7,58,0.2)]" />
+          </div>
+
+          {/* ========================================================= */}
+          {/* SIDE UI: Holographic Readouts (Desktop Only)                */}
+          {/* ========================================================= */}
+          <div className="absolute top-1/4 -right-24 xl:-right-32 hidden lg:flex flex-col gap-2 font-mono text-[9px] xl:text-[10px] text-firebase-cyan pointer-events-none">
+            <div className="flex items-center gap-2">
+              <span className="w-10 text-right tracking-widest">SYS</span>
+              <div className="w-16 h-[2px] bg-firebase-cyan/20"><div className="w-full h-full bg-firebase-cyan animate-glow-pulse" /></div>
             </div>
+            <div className="flex items-center gap-2">
+              <span className="w-10 text-right tracking-widest text-neon-red">TMP</span>
+              <div className="w-16 h-[2px] bg-neon-red/20"><div className="w-[85%] h-full bg-neon-red animate-neon-pulse" /></div>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-10 text-right tracking-widest">NRG</span>
+              <div className="w-16 h-[2px] bg-firebase-cyan/20"><div className="w-[92%] h-full bg-firebase-cyan" /></div>
+            </div>
+          </div>
 
+          <div className="absolute bottom-1/4 -left-24 xl:-left-32 hidden lg:flex flex-col gap-1.5 font-mono text-[9px] xl:text-[10px] text-firebase-cyan pointer-events-none text-left transition-opacity duration-300">
+            <div className="tracking-widest opacity-70">AZM: 345.9</div>
+            <div className="tracking-widest opacity-70">ELV: -12.4</div>
+            <div className="flex gap-1 mt-0.5">
+               <div className="w-2 h-1.5 bg-firebase-cyan animate-pulse group-hover:animate-none group-hover:bg-neon-red transition-colors" />
+               <div className="w-2 h-1.5 bg-firebase-cyan/40 group-hover:bg-neon-red transition-colors delay-75" />
+               <div className="w-2 h-1.5 bg-neon-red animate-pulse delay-75 group-hover:animate-none group-hover:bg-neon-red transition-colors delay-150" />
+            </div>
+          </div>
 
-            {/* decorative elements - hidden on mobile, visible from lg screens */}
-            <div className="hidden lg:block">
-
-              {/* Enhanced orbiting elements for sci-fi feel */}
-              <div className="absolute inset-0 animate-orbit">
-                <div className="w-3.5 h-3.5 bg-neon-red rounded-full shadow-lg shadow-neon-red/50" />
-              </div>
-              <div className="absolute inset-0 animate-orbit" style={{animationDelay: '-4s', animationDirection: 'reverse'}}>
-                <div className="w-2.5 h-2.5 bg-firebase-orange rounded-full shadow-lg shadow-firebase-orange/50" />
-              </div>
-              <div className="absolute inset-0 animate-orbit" style={{animationDelay: '-2s'}}>
-                <div className="w-1.5 h-1.5 bg-neon-red-bright rounded-full shadow-lg shadow-neon-red-bright/50" />
-              </div>
+          {/* ========================================================= */}
+          {/* THE CORE: Profile Image                                     */}
+          {/* ========================================================= */}
+          <div className="absolute inset-0 rounded-full overflow-hidden bg-black border-2 border-firebase-cyan/50 shadow-[0_0_20px_rgba(0,187,255,0.3)] z-20 relative group-hover:border-neon-red/80 transition-colors duration-500 group-hover:shadow-[0_0_30px_rgba(255,7,58,0.4)]">
             
-              {/* Enhanced floating decorative elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-neon-red rounded-full 
-              opacity-60 animate-pulse shadow-lg shadow-neon-red/50" />
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-firebase-purple rounded-full 
-              opacity-60 animate-pulse delay-1000 shadow-lg shadow-firebase-purple/50" />
-              <div className="absolute top-1/2 -left-8 w-4 h-4 bg-firebase-pink rounded-full 
-              opacity-60 animate-pulse delay-2000 shadow-lg shadow-firebase-pink/50" />
-              
-              <div className="absolute -top-20 right-1/3 w-2 h-2 bg-neon-red rounded-full animate-pulse" />
-              <div className="absolute -bottom-1/4 left-1/2 w-2 h-2 bg-firebase-pink rounded-full animate-pulse" />
-              <div className="absolute bottom-1/4 w-2 h-2 bg-firebase-cyan rounded-full animate-pulse" />
-
-              {/* Floating Shapes The circle and the square*/}
-              <div className="absolute bottom-100 right-1 w-24 h-24 opacity-90 animate-rotate-slow">
-                <div className="w-full h-full border border-firebase-orange rounded-lg transform rotate-45 animate-float" />
-              </div>
-              <div className="absolute -top-10 -right-12 w-24 h-24 opacity-90 animate-float">
-                <div className="w-full h-full border border-firebase-purple rounded-full" />
-              </div>
-            </div>
+            <img 
+              src="/Uploads/Nakul 5.jpg"
+              alt="Nakul - Software Developer"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
 
           </div>
+
         </div>
-        </>
-    )
+      </div>
+    </>
+  )
 }
 
 export default Profile
