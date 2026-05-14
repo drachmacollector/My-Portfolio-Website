@@ -4,7 +4,7 @@
 
 A personal developer portfolio website built with React, TypeScript, Tailwind CSS, Framer Motion, and GSAP. It showcases projects, skills, 3D artwork, and provides contact functionality via Netlify Forms.
 
-**Live URL:** Deployed on Netlify  
+**Live URL:** nakul-web.netlify.app 
 **Repository:** [GitHub](https://github.com/drachmacollector/My-Portfolio-Website)
 
 ---
