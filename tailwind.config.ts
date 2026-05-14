@@ -1,5 +1,6 @@
 
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 const config = {
 		darkMode: ["class"],
 	content: [
@@ -72,6 +73,7 @@ const config = {
 					purple: '#BC13FE',
 					pink: '#E91E63',
 					blue: '#1F51FF',
+					cyab: '#00bbff',
 					green: '#2CFF05'
 				},
 				neon: {
@@ -236,7 +238,7 @@ const config = {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [tailwindcssAnimate],
 };
 
 export default config;
