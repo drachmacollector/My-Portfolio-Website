@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { X, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger, DialogClose } from '@/components/ui/dialog';
+import { getLenis } from '@/animations/smooth-scroll';
 
 const Blender = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -75,10 +76,18 @@ const Blender = () => {
 
   // Reset lightbox state when modal opens
   useEffect(() => {
+    const lenis = getLenis();
     if (isModalOpen) {
       setLightboxOpen(false);
       setCurrentIndex(null);
+      lenis?.stop();
+    } else {
+      lenis?.start();
     }
+    
+    return () => {
+      lenis?.start();
+    };
   }, [isModalOpen]);
 
   // Handle keyboard navigation
@@ -86,7 +95,6 @@ const Blender = () => {
     if (!lightboxOpen) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowLeft') navigateMedia('prev');
       if (e.key === 'ArrowRight') navigateMedia('next');
     };
@@ -140,36 +148,54 @@ const Blender = () => {
               </button>
             </div>
           </DialogTrigger>
-          <DialogContent className="max-w-none w-[95vw] h-[90vh] p-0 border-0 bg-transparent backdrop-blur-sm">
+          <DialogContent 
+            className="max-w-none w-[95vw] h-[90vh] p-0 border-0 bg-transparent backdrop-blur-sm"
+            onEscapeKeyDown={(e) => {
+              if (lightboxOpen) {
+                e.preventDefault();
+                closeLightbox();
+              }
+            }}
+          >
             <div className="border border-white/20 rounded-3xl w-full h-full p-8 relative overflow-hidden">
-              <DialogClose asChild>
-                <button className="absolute right-6 top-6 z-50 w-10 h-10 rounded-full bg-black/80 border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-colors">
+              {lightboxOpen ? (
+                <button 
+                  onClick={closeLightbox}
+                  className="absolute right-6 top-6 z-50 w-10 h-10 rounded-full bg-black/80 border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
+                >
                   <X size={24} />
                 </button>
-              </DialogClose>
+              ) : (
+                <DialogClose asChild>
+                  <button className="absolute right-6 top-6 z-50 w-10 h-10 rounded-full bg-black/80 border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-colors">
+                    <X size={24} />
+                  </button>
+                </DialogClose>
+              )}
               
               <h3 className="text-3xl font-bold text-white mb-6 text-center">3D Gallery</h3>
               
               {/* Lightbox View */}
               {lightboxOpen && currentIndex !== null && (
-                <div className="fixed inset-0 z-40 bg-black/90 flex items-center justify-center p-8">
+                <div 
+                  className="fixed inset-0 z-40 bg-black/90 flex items-center justify-center p-8"
+                  onClick={closeLightbox}
+                >
                   <button 
-                    onClick={closeLightbox}
-                    className="absolute top-6 left-6 z-50 px-4 py-2 bg-black/80 border border-white/100 rounded-full text-white hover:bg-white/10 transition-colors flex items-center gap-2"
-                  >
-                    <ArrowLeft size={18} />
-                    Back to Gallery
-                  </button>
-                  
-                  <button 
-                    onClick={() => navigateMedia('prev')}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigateMedia('prev');
+                    }}
                     className="absolute left-6 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-black/80 border border-white/20 flex items-center justify-center text-white hover:bg-white/10"
                   >
                     <ArrowLeft size={24} />
                   </button>
                   
                   <button 
-                    onClick={() => navigateMedia('next')}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigateMedia('next');
+                    }}
                     className="absolute right-6 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-black/80 border border-white/20 flex items-center justify-center text-white hover:bg-white/10"
                   >
                     <ArrowRight size={24} />
@@ -183,12 +209,14 @@ const Blender = () => {
                         controls
                         autoPlay
                         muted
+                        onClick={(e) => e.stopPropagation()}
                       />
                     ) : (
                       <img 
                         src={`/blender/${blenderFiles[currentIndex]}`}
                         alt={`3D render ${currentIndex + 1}`}
                         className="max-w-[90%] max-h-[90%] object-contain"
+                        onClick={(e) => e.stopPropagation()}
                       />
                     )}
                   </div>
@@ -196,7 +224,10 @@ const Blender = () => {
               )}
               
               {/* Gallery Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-h-[calc(100%-6rem)] overflow-y-auto p-2">
+              <div 
+                className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-h-[calc(100%-6rem)] overflow-y-auto p-2"
+                data-lenis-prevent="true"
+              >
                 {blenderFiles.map((file, index) => (
                   <div 
                     key={index} 
