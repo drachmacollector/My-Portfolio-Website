@@ -12,12 +12,13 @@ const experiences = [
     ]
   },
   {
-    role: "Summer Internship",
+    role: "AI Consultant Intern",
     company: "KPMG India — G&PS DGA Team",
-    date: "Upcoming",
+    date: "May 2026 – July 2026",
     type: "On-site",
     responsibilities: [
-      "Worked in the Government & Public Services (G & PS) — Digital Government & Analytics (DGA) department."
+      "Consulted for the Labor Department of the Government of Maharashtra to strategize the integration of Artificial Intelligence across critical public services",
+      "Streamlined operations for a state-wide integrated portal, directly optimizing Consumer Price Index (CPI) validation workflows and data management architectures"
     ]
   }
 ];
