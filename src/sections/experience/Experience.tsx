@@ -1,27 +1,5 @@
 import React from "react";
-
-const experiences = [
-  {
-    role: "Web Developer Intern",
-    company: "The Consistent Academy",
-    date: "Dec. 2025 – Present",
-    type: "Remote",
-    responsibilities: [
-      "Engineered and deployed a production-grade React + Firebase platform & test interface serving 100+ users.",
-      "Integrated Razorpay for payments & robust email communication via Resend."
-    ]
-  },
-  {
-    role: "AI Consultant Intern",
-    company: "KPMG India — G&PS DGA Team",
-    date: "May 2026 – July 2026",
-    type: "On-site",
-    responsibilities: [
-      "Consulted for the Labor Department of the Government of Maharashtra to strategize the integration of Artificial Intelligence across critical public services",
-      "Streamlined operations for a state-wide integrated portal, directly optimizing Consumer Price Index (CPI) validation workflows and data management architectures"
-    ]
-  }
-];
+import { EXPERIENCES } from "@/constants/experience";
 
 const Experience = () => {
   return (
@@ -34,7 +12,7 @@ const Experience = () => {
         </div>
 
         <div className="flex flex-col gap-8">
-          {experiences.map((exp, index) => (
+          {EXPERIENCES.map((exp, index) => (
             <div 
               key={index}
               className="w-full bg-black/100 border border-white/10 rounded-2xl p-8 

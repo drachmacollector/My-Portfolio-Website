@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import Monkeytype from './Monkeytype';
 import Blender from './Blender';
 import TechStack from './TechStack';
@@ -7,46 +7,11 @@ import AboutMeCard from './AboutCard';
 import Spotify from './Spotify';
 
 const Bento = () => {
-  const gridRef = useRef<HTMLDivElement>(null);
-
   return (
     <section id="about" className="px-6 lg:px-8 relative">
-      <style>{`
-        .bento-card {
-          position: relative;
-        }
-        
-        .bento-card > * {
-          position: relative;
-          z-index: 2;
-        }
-        
-        @keyframes shimmer {
-          0% { background-position: -1000px 0; }
-          100% { background-position: 1000px 0; }
-        }
-        
-        @keyframes pulse-glow {
-          0%, 100% { opacity: 0.5; }
-          50% { opacity: 1; }
-        }
-        
-        @keyframes float-up {
-          0% { transform: translateY(0) scale(1); opacity: 0; }
-          10% { opacity: 1; }
-          90% { opacity: 1; }
-          100% { transform: translateY(-100px) scale(0); opacity: 0; }
-        }
-        
-        .bento-card {
-          transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-      `}</style>
-      
       <section id="about-me" className="max-w-7xl mx-auto px-6 py-4 relative">
         
         <div
-          ref={gridRef}
           className="
             bento-grid-container
             grid
@@ -58,10 +23,9 @@ const Bento = () => {
             auto-rows-auto
             md:auto-rows-[100px]
           "
-          style={{
-            perspective: '1000px'
-          }}
+          style={{ perspective: '1000px' }}
         >
+
           {/* Blender Card */}
           <div className="
               bento-card

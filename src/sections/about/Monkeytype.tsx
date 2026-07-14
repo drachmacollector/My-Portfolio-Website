@@ -1,4 +1,4 @@
-function monkeytype() {
+function Monkeytype() {
     return(
         <>
             <div className="w-full h-full rounded-2xl overflow-hidden
@@ -25,6 +25,7 @@ function monkeytype() {
                     <img 
                       src="/Uploads/monkeytype.png" 
                       alt="Monkeytype"
+                      loading="lazy"
                       className="w-8 h-6 opacity-100 transition-all duration-300 
                       group-hover:drop-shadow-[0_0_5px_rgba(34,211,238,0.3)]"
                     />
@@ -116,4 +117,4 @@ function monkeytype() {
     )
 }
 
-export default monkeytype
+export default Monkeytype

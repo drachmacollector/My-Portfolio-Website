@@ -92,6 +92,8 @@ function Profile() {
             <img 
               src="/Uploads/Nakul 5.jpg"
               alt="Nakul - Software Developer"
+              loading="eager"
+              fetchPriority="high"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
 

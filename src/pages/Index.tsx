@@ -8,7 +8,7 @@ import ContactSection from "@/sections/contact/ContactSection";
 import CanvasCursor from "@/components/effects/CanvasCursor";
 import LetterGlitch from "@/components/effects/LetterGlitch";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { LogVisitorIP } from "@/components/layout/LogVisitorIP";
+
 import { initSmoothScroll } from "@/animations/smooth-scroll";
 
 const Index: React.FC = () => {
@@ -22,7 +22,7 @@ const Index: React.FC = () => {
 
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
-      <LogVisitorIP />
+
 
       {!isMobile && (
         <div className="fixed inset-0 z-1 opacity-20">

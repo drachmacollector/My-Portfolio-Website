@@ -158,7 +158,7 @@ const LetterGlitch = ({
     const parent = canvas.parentElement;
     if (!parent) return;
 
-    const dpr = window.devicePixelRatio || 1;
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
     const rect = parent.getBoundingClientRect();
 
     canvas.width = rect.width * dpr;
@@ -272,11 +272,22 @@ const LetterGlitch = ({
       }, 100);
     };
 
+    // Pause animation when tab is not visible to save CPU/GPU
+    const handleVisibility = () => {
+      if (document.hidden) {
+        cancelAnimationFrame(animationRef.current as number);
+      } else {
+        animate();
+      }
+    };
+
     window.addEventListener("resize", handleResize);
+    document.addEventListener("visibilitychange", handleVisibility);
 
     return () => {
       cancelAnimationFrame(animationRef.current!);
       window.removeEventListener("resize", handleResize);
+      document.removeEventListener("visibilitychange", handleVisibility);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [glitchSpeed, smooth]);

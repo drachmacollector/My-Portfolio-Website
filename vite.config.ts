@@ -16,4 +16,24 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Warn when a chunk exceeds 600KB
+    chunkSizeWarningLimit: 600,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Vendor animation libs — loaded async, not on initial paint
+          "vendor-gsap": ["gsap", "@gsap/react"],
+          "vendor-framer": ["framer-motion"],
+          "vendor-lenis": ["lenis"],
+          // Radix UI primitives
+          "vendor-radix": [
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-slot",
+            "@radix-ui/react-tooltip",
+          ],
+        },
+      },
+    },
+  },
 }));

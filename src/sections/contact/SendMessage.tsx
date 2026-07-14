@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Send, Mail, MessageCircle, User } from 'lucide-react';
+import { Send, Mail, MessageCircle, User, CheckCircle, AlertCircle } from 'lucide-react';
 
 const encode = (data: Record<string, string>) =>
   Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&');
+
+type SubmitStatus = 'idle' | 'success' | 'error';
 
 const SendMessage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -14,10 +16,12 @@ const SendMessage: React.FC = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
 
     try {
       await fetch('/', {
@@ -25,11 +29,11 @@ const SendMessage: React.FC = () => {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({ 'form-name': 'contact', ...formData })
       });
-      alert('Message sent!');
+      setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
       console.error(error);
-      alert('Submission failed.');
+      setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
     }
@@ -37,6 +41,7 @@ const SendMessage: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    if (submitStatus !== 'idle') setSubmitStatus('idle');
   };
 
   return (
@@ -45,6 +50,20 @@ const SendMessage: React.FC = () => {
         <h3 className="text-xl font-bold mb-5 text-firebase-orange">
           Send a Message
         </h3>
+
+        {/* Inline feedback banner */}
+        {submitStatus === 'success' && (
+          <div className="flex items-center gap-3 mb-5 px-4 py-3 rounded-lg bg-green-500/10 border border-green-500/30 text-green-400">
+            <CheckCircle className="w-5 h-5 flex-shrink-0" />
+            <span className="text-sm font-medium">Message sent! I'll get back to you soon.</span>
+          </div>
+        )}
+        {submitStatus === 'error' && (
+          <div className="flex items-center gap-3 mb-5 px-4 py-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400">
+            <AlertCircle className="w-5 h-5 flex-shrink-0" />
+            <span className="text-sm font-medium">Submission failed. Please try again or email me directly.</span>
+          </div>
+        )}
 
         <form
           name="contact"
