@@ -51,7 +51,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     name: 'Resume',
     icon: ScrollIcon,
-    href: '/Nakul Resume 2.pdf',
+    href: '/Nakul_Resume.pdf',
     tooltip: 'My Resume',
   },
   {
