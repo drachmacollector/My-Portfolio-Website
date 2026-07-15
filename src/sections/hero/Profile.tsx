@@ -80,14 +80,14 @@ function Profile() {
             <div className="flex gap-1 mt-0.5">
                <div className="w-2 h-1.5 bg-firebase-cyan animate-pulse group-hover:animate-none group-hover:bg-neon-red transition-colors" />
                <div className="w-2 h-1.5 bg-firebase-cyan/40 group-hover:bg-neon-red transition-colors delay-75" />
-               <div className="w-2 h-1.5 bg-neon-red animate-pulse delay-75 group-hover:animate-none group-hover:bg-neon-red transition-colors delay-150" />
+               <div className="w-2 h-1.5 bg-neon-red animate-pulse delay-75 group-hover:animate-none group-hover:bg-neon-red transition-colors" />
             </div>
           </div>
 
           {/* ========================================================= */}
           {/* THE CORE: Profile Image                                     */}
           {/* ========================================================= */}
-          <div className="absolute inset-0 rounded-full overflow-hidden bg-black border-2 border-firebase-cyan/50 shadow-[0_0_20px_rgba(0,187,255,0.3)] z-20 relative group-hover:border-neon-red/80 transition-colors duration-500 group-hover:shadow-[0_0_30px_rgba(255,7,58,0.4)]">
+          <div className="absolute inset-0 rounded-full overflow-hidden bg-black border-2 border-firebase-cyan/50 shadow-[0_0_20px_rgba(0,187,255,0.3)] z-20 group-hover:border-neon-red/80 transition-colors duration-500 group-hover:shadow-[0_0_30px_rgba(255,7,58,0.4)]">
             
             <img 
               src="/Uploads/Nakul 5.jpg"

@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { PROJECTS } from '@/constants/projects';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,8 +13,12 @@ const ProjectsSection = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
 
   useGSAP(() => {
+    // Skip horizontal scroll pinning on mobile — too expensive on Android
+    if (isMobile) return;
+
     const projectsContainer = scrollRef.current;
     if (!projectsContainer) return;
 
@@ -35,11 +40,64 @@ const ProjectsSection = () => {
         }
       });
     }
-  }, { scope: sectionRef });
+  }, { scope: sectionRef, dependencies: [isMobile] });
 
   const handleExternalLink = (url: string) => {
     window.open(url, '_blank');
   };
+
+  // On mobile: simple vertical grid layout, no horizontal scroll pinning
+  if (isMobile) {
+    return (
+      <section id="projects" ref={sectionRef} className="relative bg-transparent py-12 px-6">
+        <div className="w-full flex flex-col">
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-bold mb-6">
+              My <span className="text-firebase-red">Projects</span>
+            </h2>
+          </div>
+          <div className="flex flex-col gap-10 items-center">
+            {PROJECTS.map((project) => (
+              <div key={project.id} className="w-full max-w-sm">
+                <div className="bg-slate-950 border border-white/[0.2] rounded-xl overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    loading="lazy"
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-5">
+                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                    <p className="text-gray-400 text-sm mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.tech.map((tech) => (
+                        <span key={tech} className="tech-tag text-xs">{tech}</span>
+                      ))}
+                    </div>
+                    <div className="flex gap-3">
+                      <button
+                        type="button"
+                        onClick={() => handleExternalLink(project.liveUrl)}
+                        className="flex-1 py-2 rounded-full border-[2px] border-rose-600 text-white text-sm font-medium"
+                      >
+                        Live Demo
+                      </button>
+                      <button
+                        onClick={() => handleExternalLink(project.githubUrl)}
+                        className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center"
+                      >
+                        <Github className="w-4 h-4 text-white" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="projects" ref={sectionRef} className="relative h-screen bg-transparent overflow-hidden flex flex-col justify-start pt-12 md:pt-10">

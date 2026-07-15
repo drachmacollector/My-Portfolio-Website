@@ -431,3 +431,113 @@
   }
 }
 
+/* ============================================================
+   MOBILE / TOUCH DEVICE OPTIMIZATIONS
+   Targets touchscreen devices (Android, iOS) using the
+   `hover: none` media feature. Desktop is not affected.
+   ============================================================ */
+@media (hover: none) and (pointer: coarse) {
+
+  /* --- Disable all CSS transitions globally on mobile --- */
+  *, *::before, *::after {
+    transition-duration: 0ms !important;
+    animation-play-state: paused !important;
+  }
+
+  /* --- Re-enable ONLY the animations that are core to UX --- */
+  /* Spotify bars (small, GPU-friendly) */
+  .animate-\[spotify-bar_0\.82s_ease-in-out_infinite\] {
+    animation-play-state: running !important;
+  }
+
+  /* Marquee / tech stack scroll — keep running but slow it down */
+  .marquee-scroll {
+    animation-play-state: running !important;
+    animation-duration: 60s !important;
+  }
+
+  /* Loading spinner */
+  .animate-spin {
+    animation-play-state: running !important;
+  }
+
+  /* --- Reset all hover pseudo-states to their base state --- */
+
+  .glow-text:hover {
+    text-shadow:
+      0 0 4px rgba(102, 204, 255, 0.3),
+      0 0 8px rgba(0, 187, 255, 0.2),
+      0 0 12px rgba(0, 187, 255, 0.2);
+  }
+
+  .nav-link:hover::after {
+    width: 0;
+    box-shadow: none;
+  }
+
+  .project-card:hover {
+    transform: none;
+  }
+
+  .tech-tag:hover {
+    background: rgb(0, 187, 255, 0.1);
+    box-shadow: none;
+  }
+
+  /* live-tag: disable the blob expansion */
+  .live-tag:hover {
+    box-shadow: 0 0 0 1px #ffffff;
+    color: #ffffff;
+    border-radius: 9999px;
+  }
+  .live-tag:hover::before {
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+  }
+  .live-tag:hover span {
+    transform: none;
+  }
+
+  /* contact-form: no shimmer sweep on touch */
+  .contact-form:hover::before {
+    left: -100%;
+  }
+
+  /* glass-box: disable the complex pseudo-element hover on touch */
+  .glass-box:hover::before,
+  .glass-box:hover::after {
+    transform: skewX(15deg);
+    left: 50px;
+    width: 50%;
+  }
+  .glass-box:hover span::before {
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  .glass-box:hover span::after {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+  .glass-box:hover .glass-content {
+    left: 0;
+    padding: 20px;
+  }
+  .glass-box:hover .glass-content h2 {
+    transform: none;
+  }
+
+  /* bento-card: no 3D perspective tilt */
+  .bento-card {
+    transform: none !important;
+  }
+  .bento-grid-container {
+    perspective: none !important;
+  }
+}

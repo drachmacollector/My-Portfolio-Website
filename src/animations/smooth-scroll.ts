@@ -11,6 +11,10 @@ let lenisInstance: Lenis | null = null;
  * Call once at app startup. Returns a cleanup function.
  */
 export function initSmoothScroll(): () => void {
+  // Skip Lenis on touch/mobile devices — native scroll is faster on Android
+  const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+  if (isTouchDevice) return () => {};
+
   if (lenisInstance) return () => {};
 
   const lenis = new Lenis({

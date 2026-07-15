@@ -16,7 +16,7 @@ function Monkeytype() {
                   href="https://monkeytype.com/profile/drachmacollector" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="block h-full flex flex-col justify-center items-center relative z-10"
+                  className="block h-full flex-col justify-center items-center relative z-10"
                 >
 
                   {/* Header with Logo */}

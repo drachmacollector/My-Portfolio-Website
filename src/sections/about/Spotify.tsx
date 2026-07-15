@@ -94,7 +94,7 @@ const Spotify = () => {
 
   return (
     <div
-      className="w-full h-full rounded-2xl overflow-hidden shadow-lg group transition-all duration-500 ease-out border bg-[radial-gradient(circle_at_20%_20%,rgba(29,185,84,0.28),rgba(0,0,0,0.92)_48%,rgba(0,0,0,1)_100%)] border-[#1DB954]/30 backdrop-blur-xl shadow-[0_0_28px_rgba(29,185,84,0.14)] hover:border-[#1DB954]/55 hover:shadow-[0_0_38px_rgba(29,185,84,0.28)]"
+      className="w-full h-full rounded-2xl overflow-hidden shadow-lg group transition-all duration-500 ease-out border bg-[radial-gradient(circle_at_20%_20%,rgba(29,185,84,0.28),rgba(0,0,0,0.92)_48%,rgba(0,0,0,1)_100%)] border-[#1DB954]/30 backdrop-blur-xl] hover:border-[#1DB954]/55 hover:shadow-[0_0_38px_rgba(29,185,84,0.28)]"
     >
       <div className="w-full h-full rounded-2xl p-4 flex flex-col justify-center relative overflow-hidden">
 

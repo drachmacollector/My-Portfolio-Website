@@ -2,12 +2,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import { X, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger, DialogClose } from '@/components/ui/dialog';
 import { getLenis } from '@/animations/smooth-scroll';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Blender = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const cardRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
 
   const blenderFiles = [
     'chair.png',
@@ -24,10 +26,10 @@ const Blender = () => {
     'dumbbells.png'
   ];
 
-  // Add subtle tilt effect
+  // Add subtle tilt effect (desktop only)
   useEffect(() => {
     const card = cardRef.current;
-    if (!card) return;
+    if (!card || isMobile) return;
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = card.getBoundingClientRect();
@@ -53,7 +55,7 @@ const Blender = () => {
       card.removeEventListener('mousemove', handleMouseMove);
       card.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, []);
+  }, [isMobile]);
 
   const openLightbox = (index: number) => {
     setCurrentIndex(index);
