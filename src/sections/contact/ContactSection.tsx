@@ -8,7 +8,7 @@ const ContactSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-6">
-          <h2 className="text-xl md:text-5xl font-bold mb-8">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-8">
             Get In <span className="text-firebase-red">Touch</span>
           </h2>
         </div>
@@ -16,7 +16,7 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Glassmorphic Contact Card */}
           <div className="flex justify-center items-center">
-            <div className="glass-box relative w-full max-w-[300px] h-[380px] flex justify-center items-center my-8 transition-all duration-600 ease-[cubic-bezier(0.23,1,0.32,1)]">
+            <div className="glass-box relative w-full max-w-sm h-auto min-h-[340px] lg:min-h-[380px] flex justify-center items-center my-8 transition-all duration-600 ease-[cubic-bezier(0.23,1,0.32,1)]">
               <span className="absolute top-0 left-0 right-0 bottom-0 z-5 pointer-events-none"></span>
               <div className="glass-content relative z-10 left-0 p-5 bg-white/5 backdrop-blur-md rounded-lg shadow-lg transition-all duration-600 ease-[cubic-bezier(0.23,1,0.32,1)]">
                 <h2 className="text-xl font-bold text-white mb-5 transition-transform duration-600 ease-[cubic-bezier(0.23,1,0.32,1)]">

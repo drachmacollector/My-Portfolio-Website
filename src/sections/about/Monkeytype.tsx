@@ -1,7 +1,6 @@
 function Monkeytype() {
     return(
-        <>
-            <div className="w-full h-full rounded-2xl overflow-hidden
+        <div className="w-full h-full rounded-2xl overflow-hidden
             shadow-lg transition-all duration-500 ease-out hover:scale-[1.01] 
             group bg-black/100">
               
@@ -113,7 +112,6 @@ function Monkeytype() {
                 </a>
               </div>
             </div>
-        </>
     )
 }
 

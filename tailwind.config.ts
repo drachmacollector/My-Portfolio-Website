@@ -57,16 +57,7 @@ const config = {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				},
+
 				firebase: {
 					orange: '#FF5F1F',
 					red: '#FF3131',
@@ -88,22 +79,7 @@ const config = {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			keyframes: {
-				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
-				},
-				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
-				},
+
 				'fade-in': {
 					'0%': {
 						opacity: '0',
@@ -114,10 +90,7 @@ const config = {
 						transform: 'translateY(0)'
 					}
 				},
-				'slide-in-right': {
-					'0%': { transform: 'translateX(100%)' },
-					'100%': { transform: 'translateX(0)' }
-				},
+
 				'glow-pulse': {
 					'0%, 100%': { 
 						boxShadow: '0 0 20px rgba(255, 138, 101, 0.5)' 
@@ -138,18 +111,7 @@ const config = {
 					'0%, 50%': { borderColor: 'transparent' },
 					'51%, 100%': { borderColor: '#FF8A65' }
 				},
-				'particle-float': {
-					'0%': { 
-						transform: 'translateY(100vh) translateX(0px)',
-						opacity: '0'
-					},
-					'10%': { opacity: '1' },
-					'90%': { opacity: '1' },
-					'100%': { 
-						transform: 'translateY(-100vh) translateX(100px)',
-						opacity: '0'
-					}
-				},
+
 				'rotate-slow': {
 					'0%': { transform: 'rotate(0deg)' },
 					'100%': { transform: 'rotate(360deg)' }
@@ -224,14 +186,11 @@ const config = {
 				}
 			},
 			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
-				'slide-in-right': 'slide-in-right 0.3s ease-out',
 				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
 				'float': 'float 2s ease-in-out infinite',
 				'typing': 'typing 3.5s steps(40, end), blink 0.75s step-end infinite',
-				'particle-float': 'particle-float 15s linear infinite',
+
 				'rotate-slow': 'rotate-slow 20s linear infinite',
 				'rotate-slow2': 'rotate-slow2 20s linear infinite',
 				'slide-up': 'slide-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',

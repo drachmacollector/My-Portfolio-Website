@@ -1,7 +1,6 @@
 function Socials() {
     return(
-        <>
-            <div className="w-full h-full rounded-2xl overflow-hidden
+        <div className="w-full h-full rounded-2xl overflow-hidden
             shadow-lg bg-black/100">
               
               <div className="w-full h-full rounded-2xl p-4 flex items-center justify-center
@@ -53,7 +52,6 @@ function Socials() {
                 </div>
               </div>
             </div>
-        </>
     )
 }
 

@@ -72,18 +72,6 @@ const HeroButtons: React.FC<HeroButtonsProps> = ({ className = '' }) => {
             </div>
           ))}
         </div>
-
-        {/* Call-to-Action "Explore more" key */}
-        {/* <div className="key-position flex items-center justify-center ml-2.5">
-          <a
-            id="cta-hero-btn"
-            href="#about"
-            data-block="center"
-            className="key call-to-action peer"
-          >
-            <p className="call-to-action-content text-white">Explore more</p>
-          </a>
-        </div> */}
       </div>
     </TooltipProvider>
   );

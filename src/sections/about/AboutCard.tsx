@@ -3,11 +3,11 @@ import React from 'react';
 const AboutCard = () => {
   return (
     <div 
-      className="w-full h-full rounded-full overflow-hidden
+      className="w-full h-full rounded-2xl overflow-hidden
       shadow-lg
       group cursor-pointer bg-black/100"
     >
-      <div className="w-full h-full rounded-full p-6 flex flex-col justify-center 
+      <div className="w-full h-full rounded-2xl p-6 flex flex-col justify-center 
       relative overflow-hidden">
         
         <p className="text-white/80 text-sm leading-relaxed text-center relative z-10

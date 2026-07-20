@@ -34,15 +34,6 @@
     --ring: 224 76% 48%;
 
     --radius: 0.5rem;
-
-    --sidebar-background: 240 6% 10%;
-    --sidebar-foreground: 240 5% 96%;
-    --sidebar-primary: 224 76% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 4% 16%;
-    --sidebar-accent-foreground: 240 5% 96%;
-    --sidebar-border: 240 4% 16%;
-    --sidebar-ring: 217 91% 60%;
   }
 }
 
@@ -241,13 +232,7 @@
   }
 }
 
-/* .grid-bg {
-  opacity: 20%;
-  background-image: 
-    linear-gradient( #07ff0f 0.1px, transparent 1px),
-    linear-gradient(90deg, #07ff0f 0.1px, transparent 1px);
-  background-size: 50px 50px;
-} */
+
 
 /* ============================================================
    Extracted from Bento.tsx inline <style>
@@ -438,9 +423,18 @@
    ============================================================ */
 @media (hover: none) and (pointer: coarse) {
 
-  /* --- Disable all CSS transitions globally on mobile --- */
-  *, *::before, *::after {
-    transition-duration: 0ms !important;
+  /* --- Pause expensive background animations on mobile --- */
+  /* LetterGlitch runs on desktop only, but guard anyway */
+  .marquee,
+  .marquee-slow,
+  .animate-float,
+  .animate-rotate-slow,
+  .animate-rotate-slow2,
+  .animate-spin-reverse,
+  .animate-neon-pulse,
+  .animate-glow-pulse,
+  .animate-orbit,
+  .animate-aurora {
     animation-play-state: paused !important;
   }
 
