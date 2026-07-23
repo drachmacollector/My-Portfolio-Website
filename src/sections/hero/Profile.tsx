@@ -1,4 +1,66 @@
+import { useEffect, useRef } from 'react';
+
+// Normal and Hover speeds in degrees per second
+const speeds = {
+  layer1: { normal: 360 / 20, hover: 360 / 5 },
+  layer2: { normal: 360 / 35, hover: 360 / 10 },
+  layer3: { normal: 360 / 60, hover: 360 / 15 },
+  layer4: { normal: -360 / 20, hover: -360 / 4 },
+};
+
 function Profile() {
+  const layer1Ref = useRef<HTMLDivElement>(null);
+  const layer2Ref = useRef<HTMLDivElement>(null);
+  const layer3Ref = useRef<HTMLDivElement>(null);
+  const layer4Ref = useRef<HTMLDivElement>(null);
+  const isHoveredRef = useRef(false);
+  const requestRef = useRef<number>();
+  const previousTimeRef = useRef<number>();
+  const rotations = useRef([0, 0, 0, 0]);
+
+  const currentSpeeds = useRef([
+    speeds.layer1.normal,
+    speeds.layer2.normal,
+    speeds.layer3.normal,
+    speeds.layer4.normal
+  ]);
+
+  useEffect(() => {
+    const animate = (time: number) => {
+      if (previousTimeRef.current !== undefined) {
+        const deltaTime = (time - previousTimeRef.current) / 1000;
+        const isHov = isHoveredRef.current;
+        
+        const targetSpeeds = [
+          isHov ? speeds.layer1.hover : speeds.layer1.normal,
+          isHov ? speeds.layer2.hover : speeds.layer2.normal,
+          isHov ? speeds.layer3.hover : speeds.layer3.normal,
+          isHov ? speeds.layer4.hover : speeds.layer4.normal,
+        ];
+
+        // Smoothly interpolate current speed towards target speed for buttery transition
+        const lerpFactor = Math.min(deltaTime * 3, 1); 
+        
+        for (let i = 0; i < 4; i++) {
+          currentSpeeds.current[i] += (targetSpeeds[i] - currentSpeeds.current[i]) * lerpFactor;
+          rotations.current[i] = (rotations.current[i] + currentSpeeds.current[i] * deltaTime) % 360;
+        }
+
+        if (layer1Ref.current) layer1Ref.current.style.transform = `rotate(${rotations.current[0]}deg)`;
+        if (layer2Ref.current) layer2Ref.current.style.transform = `rotate(${rotations.current[1]}deg)`;
+        if (layer3Ref.current) layer3Ref.current.style.transform = `rotate(${rotations.current[2]}deg)`;
+        if (layer4Ref.current) layer4Ref.current.style.transform = `rotate(${rotations.current[3]}deg)`;
+      }
+      previousTimeRef.current = time;
+      requestRef.current = requestAnimationFrame(animate);
+    };
+
+    requestRef.current = requestAnimationFrame(animate);
+    return () => {
+      if (requestRef.current) cancelAnimationFrame(requestRef.current);
+    };
+  }, []);
+
   return (
     <>
       {/* Right Side - Profile Image Area */}
@@ -6,13 +68,19 @@ function Profile() {
       <div className="flex justify-center lg:justify-end z-10 p-4 lg:p-8">
         
         {/* Core Container - Added 'group' class here to trigger hover effects on children */}
-        <div className="relative w-80 h-80 lg:w-96 lg:h-96 animate-float group cursor-crosshair">
+        <div 
+          className="relative w-80 h-80 lg:w-96 lg:h-96 animate-float group cursor-crosshair"
+          onMouseEnter={() => isHoveredRef.current = true}
+          onMouseLeave={() => isHoveredRef.current = false}
+        >
 
           {/* ========================================================= */}
           {/* HUD LAYER 1: The Outer Targeting Perimeter                  */}
           {/* ========================================================= */}
-          {/* Added base duration and faster group-hover duration */}
-          <div className="absolute -inset-10 lg:-inset-12 rounded-full border border-firebase-cyan/20 animate-rotate-slow [animation-duration:20s] group-hover:[animation-duration:5s] pointer-events-none hidden md:block">
+          <div 
+            ref={layer1Ref}
+            className="absolute -inset-10 lg:-inset-12 rounded-full border border-firebase-cyan/20 pointer-events-none hidden md:block"
+          >
             <div className="absolute top-0 left-1/2 w-6 h-1 bg-firebase-cyan -translate-x-1/2 shadow-[0_0_8px_#00bbff]" />
             <div className="absolute bottom-0 left-1/2 w-6 h-1 bg-firebase-cyan -translate-x-1/2 shadow-[0_0_8px_#00bbff]" />
             <div className="absolute left-0 top-1/2 w-1 h-6 bg-firebase-cyan -translate-y-1/2 shadow-[0_0_8px_#00bbff]" />
@@ -22,9 +90,9 @@ function Profile() {
           {/* ========================================================= */}
           {/* HUD LAYER 2: High-Fidelity Segmented Data Tracks            */}
           {/* ========================================================= */}
-          {/* Outer thick tick marks - Moved duration to Tailwind classes */}
           <div 
-            className="absolute -inset-7 lg:-inset-8 rounded-full animate-rotate-slow2 [animation-duration:35s] group-hover:[animation-duration:10s] pointer-events-none"
+            ref={layer2Ref}
+            className="absolute -inset-7 lg:-inset-8 rounded-full pointer-events-none"
             style={{
               background: 'repeating-conic-gradient(from 0deg, transparent 0deg 4deg, rgba(255,7,58,0.4) 4deg 6deg)',
               WebkitMaskImage: 'radial-gradient(circle, transparent 67%, black 68%)',
@@ -34,7 +102,8 @@ function Profile() {
           
           {/* Inner dense, fine tick marks - Moved duration to Tailwind classes */}
           <div 
-            className="absolute -inset-3 lg:-inset-4 rounded-full animate-rotate-slow [animation-duration:60s] group-hover:[animation-duration:15s] pointer-events-none"
+            ref={layer3Ref}
+            className="absolute -inset-3 lg:-inset-4 rounded-full pointer-events-none"
             style={{
               background: 'repeating-conic-gradient(from 0deg, transparent 0deg 2deg, rgba(0,187,255,0.5) 2deg 3deg)',
               WebkitMaskImage: 'radial-gradient(circle, transparent 69%, black 70%)',
@@ -43,7 +112,10 @@ function Profile() {
           />
 
           {/* Solid Orbital Ring with Gaps - Moved duration to Tailwind classes */}
-          <div className="absolute -inset-5 lg:-inset-6 rounded-full border-[3px] border-transparent border-t-firebase-cyan/80 border-b-firebase-cyan/80 animate-spin-reverse [animation-duration:20s] group-hover:[animation-duration:4s] pointer-events-none" />
+          <div 
+            ref={layer4Ref}
+            className="absolute -inset-5 lg:-inset-6 rounded-full border-[3px] border-transparent border-t-firebase-cyan/80 border-b-firebase-cyan/80 pointer-events-none" 
+          />
 
           {/* ========================================================= */}
           {/* HUD LAYER 3: Tactical Brackets                              */}
