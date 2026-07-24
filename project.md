@@ -452,3 +452,16 @@ Deployed on **Netlify** with:
 - `netlify.toml` configuration for redirects & function setup
 - Netlify Forms for contact form handling
 - Netlify Functions for visitor IP logging (`/.netlify/functions/log-ip`)
+
+---
+
+## SEO Guidelines
+
+### Adding New Content
+- **Semantic HTML**: Always use correct semantic tags (<section>, <article>, <nav>, <main>).
+- **Heading Hierarchy**: Maintain logical heading hierarchy (H1 -> H2 -> H3). Never skip levels or use headings purely for styling. Use CSS classes for styling instead.
+- **Image Optimization**: Every new image must have a descriptive lt text. Use loading=lazy` and decoding=sync` for images outside the initial viewport.
+- **Structured Data**: Keep JSON-LD in index.html updated if your primary roles, social links, or project highlights change.
+- **URLs & Assets**: Ensure any new asset filenames are URL-safe (no spaces, use lowercase and hyphens).
+- **Performance**: Monitor bundle size when importing new libraries to maintain fast LCP (Largest Contentful Paint) and Core Web Vitals.
+

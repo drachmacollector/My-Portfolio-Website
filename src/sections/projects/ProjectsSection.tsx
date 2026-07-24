@@ -64,6 +64,9 @@ const ProjectsSection = () => {
                     src={project.image}
                     alt={project.title}
                     loading="lazy"
+                    decoding="async"
+                    width={800}
+                    height={600}
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-5">
@@ -129,6 +132,9 @@ const ProjectsSection = () => {
                       src={project.image}
                       alt={project.title}
                       loading="lazy"
+                      decoding="async"
+                      width={800}
+                      height={600}
                       className="w-full h-full object-cover transition-transform duration-500 
                       group-hover/card:scale-110 rounded-xl"
                     />

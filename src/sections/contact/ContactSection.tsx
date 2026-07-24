@@ -19,9 +19,9 @@ const ContactSection = () => {
             <div className="glass-box relative w-full max-w-sm h-auto min-h-[340px] lg:min-h-[380px] flex justify-center items-center my-8 transition-all duration-600 ease-[cubic-bezier(0.23,1,0.32,1)]">
               <span className="absolute top-0 left-0 right-0 bottom-0 z-5 pointer-events-none"></span>
               <div className="glass-content relative z-10 left-0 p-5 bg-white/5 backdrop-blur-md rounded-lg shadow-lg transition-all duration-600 ease-[cubic-bezier(0.23,1,0.32,1)]">
-                <h2 className="text-xl font-bold text-white mb-5 transition-transform duration-600 ease-[cubic-bezier(0.23,1,0.32,1)]">
+                <h3 className="text-xl font-bold text-white mb-5 transition-transform duration-600 ease-[cubic-bezier(0.23,1,0.32,1)]">
                   Contact Information
-                </h2>
+                </h3>
                 
                 <div className="space-y-6">
                   {/* Email */}
