@@ -20,7 +20,7 @@ function Socials() {
                     className="transition-all duration-300 hover:drop-shadow-[0_0_15px_rgba(255,69,96,0.7)]"
                   >
                     <img 
-                      src="/Uploads/instagram.png" 
+                      src="/instagram.png" 
                       alt="Instagram"
                       className="w-9 h-9 object-contain"
                     />
@@ -32,7 +32,7 @@ function Socials() {
                     className="transition-all duration-300 hover:drop-shadow-[0_0_15px_rgba(255,69,0,0.7)]"
                   >
                     <img 
-                      src="/Uploads/reddit.png" 
+                      src="/reddit.png" 
                       alt="Reddit"
                       className="w-12 h-12 object-contain"
                     />
@@ -44,7 +44,7 @@ function Socials() {
                     className="transition-all duration-300 hover:drop-shadow-[0_0_15px_rgba(76,175,80,0.7)]"
                   >
                     <img 
-                      src="/Uploads/4chan.png" 
+                      src="/4chan.png" 
                       alt="4chan"
                       className="w-16 h-16 object-contain"
                     />

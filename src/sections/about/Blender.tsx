@@ -131,7 +131,7 @@ const Blender = () => {
               <div className="w-44 h-44 rounded-full flex items-center justify-center mb-4 mr-15 
               transition-transform duration-500 ease-out group-hover:scale-110 group-hover:rotate-6">
                 <img 
-                  src="/Uploads/Blender.png" 
+                  src="/tech/Blender.png" 
                   alt="Blender"
                   className="w-44 h-44 object-contain drop-shadow-[0_0_15px_rgba(255,95,31,0)] 
                   group-hover:drop-shadow-[0_0_15px_rgba(255,95,31,0.3)]

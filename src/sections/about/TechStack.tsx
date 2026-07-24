@@ -16,7 +16,7 @@ const TechStack = () => {
             {[...TECH_STACK, ...TECH_STACK].map((tech, index) => (
               <div key={index} className="flex flex-col items-center space-y-1 mx-6 w-[60px] flex-shrink-0">
                 <img 
-                  src={`/Uploads/${tech}.png`} 
+                  src={`/tech/${tech}.png`} 
                   alt={tech}
                   loading="lazy"
                   className="w-10 h-10 object-contain"

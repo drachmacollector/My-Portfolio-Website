@@ -22,7 +22,7 @@ function Monkeytype() {
                   <div className="flex items-center justify-center space-x-1 mb-8 
                   transition-all duration-300 group-hover:scale-[1.02]">
                     <img 
-                      src="/Uploads/monkeytype.png" 
+                      src="/monkeytype.png" 
                       alt="Monkeytype"
                       loading="lazy"
                       className="w-8 h-6 opacity-100 transition-all duration-300 

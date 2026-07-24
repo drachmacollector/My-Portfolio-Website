@@ -54,7 +54,7 @@ src/
 │   ├── navigation.ts          # NAV_ITEMS array (href, label)
 │   ├── projects.ts            # PROJECTS array (id, title, description, image, tech, urls)
 │   ├── social-links.tsx       # SOCIAL_LINKS + DEVELOPER_TITLES
-│   └── tech-stack.ts          # TECH_STACK array (icon filenames matching public/Uploads/)
+│   └── tech-stack.ts          # TECH_STACK array (icon filenames matching public/projects/ and public/tech/)
 │
 ├── hooks/
 │   ├── use-canvas-cursor.ts   # Canvas cursor logic (@ts-nocheck, prototype-based JS)
@@ -131,7 +131,7 @@ All static content lives in `src/constants/`. **Never hardcode data inside a com
 | To change... | Edit... |
 |---|---|
 | Projects | `constants/projects.ts` |
-| Tech stack icons | `constants/tech-stack.ts` + add PNG to `public/Uploads/` |
+| Tech stack icons | `constants/tech-stack.ts` + add PNG to `public/projects/ and public/tech/` |
 | Nav items | `constants/navigation.ts` |
 | Social links / hero titles | `constants/social-links.tsx` |
 | Experience entries | `constants/experience.ts` |
@@ -218,7 +218,7 @@ public/
 ├── favicon.ico
 ├── Nakul_Resume.pdf           # Active resume — linked from HeroButtons
 ├── blender/                   # 3D art files (.mp4, .png) for Blender gallery
-└── Uploads/
+└── public/
     ├── Nakul 5.jpg            # Profile photo (LCP image — preloaded in index.html)
     ├── Blender.png            # Blender logo (Bento card)
     ├── monkeytype.png         # Monkeytype logo (Monkeytype card)
@@ -227,7 +227,7 @@ public/
     └── [TechName].png         # Tech icons — must match exact string in tech-stack.ts
 ```
 
-**Tech icon naming:** `TechStack.tsx` constructs the path as `` `/Uploads/${tech}.png` ``. The filename must match the constant string exactly (case-sensitive).
+**Tech icon naming:** `TechStack.tsx` constructs the path as `` `/tech/.png` ``. The filename must match the constant string exactly (case-sensitive).
 
 ---
 
@@ -305,7 +305,7 @@ Edit `src/constants/projects.ts`:
   id: 7,
   title: "🔭 My New Project",
   description: "One concise paragraph.",
-  image: "/Uploads/MyProject.png",  // add PNG to public/Uploads/
+  image: "/projects/MyProject.png",  // add PNG to public/projects/ and public/tech/
   tech: ["React", "Python"],
   githubUrl: "https://github.com/...",
   liveUrl: "https://...",
