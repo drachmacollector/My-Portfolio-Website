@@ -44,7 +44,7 @@
   --paper: #f3ece4;
   --paper-ink: #1b1715;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --rail: 88px;
+  --rail: 120px;
   color-scheme: dark;
 }
 

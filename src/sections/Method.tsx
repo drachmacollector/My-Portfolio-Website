@@ -100,13 +100,7 @@ const Method = () => {
                 i % 2 === 0 ? "right-[clamp(20px,5vw,64px)]" : "left-[calc(var(--rail)+24px)]"
               }`}
             >
-              <p className="flex items-center gap-3">
-                <span className="deva grid h-10 w-10 place-items-center rounded-md bg-blood text-[1.3rem] text-paper">
-                  {toDeva(i + 1)}
-                </span>
-                <span className="label text-paper-mute">Move {i + 1} of 4</span>
-              </p>
-              <h3 className="display mt-5 text-[clamp(2.4rem,4vw,3.8rem)]">{m.title}</h3>
+              <h3 className="display text-[clamp(2.4rem,4vw,3.8rem)]">{m.title}</h3>
               <p className="mt-5 text-[1.02rem] leading-relaxed text-paper-ink/80">{m.body}</p>
             </div>
           ))}
@@ -117,13 +111,10 @@ const Method = () => {
       <ol className="shell grid gap-12 pb-24 pt-14 lg:hidden motion-reduce:lg:grid">
         {METHOD.map((m, i) => (
           <li key={m.title} className="border-t border-paper-ink/15 pt-8">
-            <p className="flex items-center gap-4">
-              <span className="deva grid h-10 w-10 place-items-center rounded-md bg-blood text-[1.3rem] text-paper">
-                {toDeva(i + 1)}
-              </span>
-              <span className="deva text-[2.2rem] leading-none">{m.word}</span>
-            </p>
-            <h3 className="display mt-5 text-[2.6rem]">{m.title}</h3>
+            <h3>
+              <span className="deva block text-[3.4rem] leading-none text-blood">{m.word}</span>
+              <span className="display mt-3 block text-[2.6rem]">{m.title}</span>
+            </h3>
             <p className="mt-4 text-[1rem] leading-relaxed text-paper-ink/80">{m.body}</p>
           </li>
         ))}

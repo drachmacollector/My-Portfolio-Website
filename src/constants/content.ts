@@ -75,7 +75,7 @@ export const KPMG = {
       word: "कायदा",
       title: "Labour codes",
       sub: "Inspection Testing portal",
-      body: "India folded 29 central labour laws into four codes. I read all four and pulled out what matters for factory inspections: what gets inspected, how often, what employers owe workers, how machinery is tested. Then I proposed where AI fits.",
+      body: "For the Inspection Testing portal. India folded 29 central labour laws into four codes; I read all four and pulled out what matters for factory inspections: what gets inspected, how often, what employers owe workers, how machinery is tested. Then I proposed where AI fits, in four parts.",
       list: [
         "Risk scores per factory from past violations, failed tests and accidents",
         "Test reports turned into compliance signals, mapped by PSN",
@@ -89,7 +89,7 @@ export const KPMG = {
       word: "किंमत",
       title: "CPI validation",
       sub: "Consumer Price Index survey",
-      body: "I mapped how India calculates CPI-IW, CPI-AL and CPI-RL, end to end, in decks and flowcharts. When the team planned a state-level survey app, I owned the verification and validation stage.",
+      body: "I mapped how India calculates the Consumer Price Index for industrial workers, agricultural and rural labourers, end to end, in decks and flowcharts. When the team planned a state-level survey app, I owned verification and validation, and proposed six checks.",
       list: [
         "Anomaly detection: flatlined prices, spikes, suspiciously stable series",
         "Cross-shop duplication scores to catch copied data",
@@ -105,7 +105,7 @@ export const KPMG = {
       word: "प्रणाली",
       title: "Scholarship pipeline",
       sub: "MAHABOCW, the construction workers' welfare board",
-      body: "Children of registered construction workers can claim up to ₹1 lakh a year for engineering or medical study. About 1 lakh engineering and 30,000 medical applications had college names typed however applicants liked, and consultants were checking each one by hand. I built the system that does it instead.",
+      body: "For MAHABOCW, the construction workers' welfare board. Workers' children can claim up to ₹1 lakh a year for engineering or medical study. Applicants typed college names however they liked, and consultants were checking more than a lakh applications a year by hand. I built the system that does it instead.",
       list: [],
       listTitle: "",
     },

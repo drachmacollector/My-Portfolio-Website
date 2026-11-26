@@ -67,7 +67,7 @@ const Record = () => {
         </div>
 
         <div>
-          <p className="label text-bone/55">Honours</p>
+          <h3 className="display text-[clamp(1.6rem,2.6vw,2.2rem)] text-bone/70">Honours</h3>
           <ol className="rc-list mt-4">
             {HONOURS.map((h, i) => (
               <li
@@ -81,7 +81,7 @@ const Record = () => {
                   <span className="display block text-[clamp(1.6rem,3.2vw,2.8rem)] leading-[0.95]">{h.what}</span>
                   <span className="mt-2 block text-[0.92rem] text-bone/60">{h.note}</span>
                 </span>
-                <span className="label text-blood-hi">{h.place}</span>
+                <span className="tabular whitespace-nowrap text-[0.95rem] text-blood-hi">{h.place}</span>
               </li>
             ))}
           </ol>

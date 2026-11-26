@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import { KPMG, toDeva } from "@/constants/content";
 import { gsap, useGSAP, ScrollTrigger, DESKTOP_MOTION, ANY_MOTION } from "@/lib/gsap";
+import { ArrowDown } from "@/components/Icons";
+import { CONTACT } from "@/constants/content";
 
 /* ── Chapter visuals ─────────────────────────────────────────────── */
 
@@ -58,23 +60,22 @@ const PriceFlags = () => {
   );
 };
 
-const ScaleBlock = () => (
-  <div className="kp-scale grid max-w-[420px] grid-cols-2 gap-px overflow-hidden rounded-2xl border border-bone/10 bg-bone/10">
-    {[
-      ["~1,00,000", "engineering applications"],
-      ["~30,000", "medical applications"],
-      ["Up to ₹1 lakh", "a year, per student"],
-      ["By hand", "how each one was checked"],
-    ].map(([a, b]) => (
-      <div key={b} className="bg-ink-2 px-5 py-6">
-        <p className="display text-[1.6rem] text-bone">{a}</p>
-        <p className="mt-2 text-[0.85rem] text-bone/60">{b}</p>
-      </div>
+/** The seven stations, as a table of contents for the pipeline below. */
+const StageIndex = () => (
+  <ol className="grid max-w-[440px] border-t border-bone/15">
+    {KPMG.pipeline.map((s, i) => (
+      <li key={s.t} className="flex items-baseline gap-4 border-b border-bone/10 py-2.5">
+        <span className="deva w-5 shrink-0 text-blood-hi">{toDeva(i + 1)}</span>
+        <span className="display text-[1.25rem]">{s.t}</span>
+      </li>
     ))}
-  </div>
+    <li className="flex items-center gap-3 pt-4 text-[0.92rem] text-bone/60">
+      <ArrowDown className="h-3.5 w-3.5 text-blood-hi" /> Each station, below
+    </li>
+  </ol>
 );
 
-const VISUALS = [LawsToCodes, PriceFlags, ScaleBlock];
+const VISUALS = [LawsToCodes, PriceFlags, StageIndex];
 
 /* ── Section ─────────────────────────────────────────────────────── */
 
@@ -91,7 +92,7 @@ const Kpmg = () => {
           .timeline({
             scrollTrigger: { trigger: ".kp-opener", start: "top top", end: "+=110%", scrub: true, pin: true },
           })
-          .fromTo(".kp-letter", { xPercent: (i) => [-6, -2, 2, 6][i] }, { xPercent: (i) => [-34, -12, 12, 34][i], ease: "none" }, 0)
+          .fromTo(".kp-letter", { xPercent: (i) => [-6, -2, 2, 6][i] }, { xPercent: (i) => [-24, -8, 8, 24][i], ease: "none" }, 0)
           .fromTo(".kp-person", { yPercent: 6, scale: 0.96 }, { yPercent: 0, scale: 1.04, ease: "none" }, 0)
           .from(".kp-meta", { opacity: 0, y: 30, duration: 0.35, ease: "none" }, 0)
           .from(".kp-intro", { opacity: 0, y: 30, duration: 0.35, ease: "none" }, 0.08);
@@ -226,7 +227,7 @@ const Kpmg = () => {
           src="/img/nakul-kpmg-cut.webp"
           alt="Nakul at the KPMG office in Mumbai"
           loading="lazy"
-          className="kp-person absolute bottom-0 left-1/2 h-[86%] -translate-x-1/2 object-contain object-bottom [filter:drop-shadow(0_30px_40px_rgba(0,0,0,0.6))]"
+          className="kp-person absolute bottom-0 left-1/2 h-[86%] -translate-x-1/2 object-contain object-bottom [filter:grayscale(1)_contrast(1.12)_brightness(0.92)] transition-[filter] duration-700 hover:[filter:grayscale(0)]"
         />
         </div>
         <div className="shell relative z-[2] grid w-full gap-10 pb-16 pt-8 md:grid-cols-2 lg:pt-0">
@@ -235,16 +236,16 @@ const Kpmg = () => {
               <span className="deva text-[1.6rem] text-blood">क्षेत्र</span>
               <span className="display text-[clamp(1.6rem,2.6vw,2.4rem)]">{KPMG.role}</span>
             </h2>
-            <dl className="kp-meta mt-6 grid max-w-[340px] gap-2 rounded-2xl bg-ink/70 p-5 backdrop-blur-sm">
+            <dl className="kp-meta mt-6 max-w-[360px] border-t border-bone/20">
               {KPMG.meta.map((m) => (
-                <div key={m.k} className="flex gap-4 text-[0.92rem]">
+                <div key={m.k} className="flex gap-4 border-b border-bone/10 py-2 text-[0.92rem]">
                   <dt className="label w-16 shrink-0 pt-[3px] text-bone/50">{m.k}</dt>
                   <dd className="text-bone/90">{m.v}</dd>
                 </div>
               ))}
             </dl>
           </div>
-          <p className="kp-intro self-end justify-self-end rounded-2xl bg-ink/70 p-5 text-[1.05rem] leading-relaxed text-bone/85 backdrop-blur-sm md:max-w-[360px]">
+          <p className="kp-intro self-end justify-self-end border-t border-bone/20 pt-4 text-[1.05rem] leading-relaxed text-bone/85 md:max-w-[360px]">
             {KPMG.intro}
           </p>
         </div>
@@ -268,20 +269,16 @@ const Kpmg = () => {
                 </span>
                 <div className="shell relative grid items-center gap-14 lg:grid-cols-[1.1fr_1fr]">
                   <div>
-                    <p className="kp-reveal flex items-center gap-4 text-bone/60">
-                      <span className="deva text-[2rem] text-blood">{ch.word}</span>
-                      <span className="label">
-                        Assignment {ch.n} of 3 · {ch.sub}
-                      </span>
-                    </p>
-                    <h3 className="kp-reveal display mt-6 text-[clamp(3rem,7vw,6rem)]">{ch.title}</h3>
+                    <h3 className="kp-reveal">
+                      <span className="deva block text-[clamp(3.6rem,8vw,7.5rem)] leading-[1] text-blood">{ch.word}</span>
+                      <span className="display mt-2 block text-[clamp(2.8rem,6vw,5.4rem)]">{ch.title}</span>
+                    </h3>
                     <p className="kp-reveal mt-8 max-w-[52ch] text-[1.05rem] leading-relaxed text-bone/80">{ch.body}</p>
                   </div>
                   <div className="kp-reveal">
                     {ch.list.length > 0 && (
                       <div className="mb-10">
-                        <p className="label text-blood-hi">{ch.listTitle}</p>
-                        <ol className="mt-4 grid gap-2">
+                        <ol className="grid gap-2 border-t border-bone/15 pt-3">
                           {ch.list.map((li, j) => (
                             <li key={li} className="flex gap-4 border-b border-bone/10 pb-2 text-[0.95rem] text-bone/80">
                               <span className="deva w-5 shrink-0 text-blood">{toDeva(j + 1)}</span>
@@ -365,10 +362,10 @@ const Kpmg = () => {
           <div className="mt-16 grid items-end gap-10 border-t border-bone/10 pt-14 md:grid-cols-[1fr_auto]">
             <p className="max-w-[30ch] text-[clamp(1.5rem,2.6vw,2.3rem)] font-light leading-snug">{KPMG.shipped}</p>
             <a
-              href="#contact"
-              className="label inline-flex items-center gap-2 rounded-full border border-bone/20 px-5 py-3 transition-colors duration-300 hover:border-blood hover:bg-blood"
+              href={`mailto:${CONTACT.email}?subject=${encodeURIComponent("Your KPMG pipeline")}`}
+              className="inline-flex items-center gap-2 rounded-full border border-bone/20 px-5 py-3 text-[0.92rem] transition-colors duration-300 hover:border-blood hover:bg-blood"
             >
-              Ask me about it
+              Email me about the pipeline
             </a>
           </div>
 

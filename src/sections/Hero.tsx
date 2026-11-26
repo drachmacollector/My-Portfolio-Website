@@ -115,7 +115,7 @@ const Hero = ({ ready }: { ready: boolean }) => {
           <img
             src="/img/nakul-cut.webp"
             alt="Nakul Bhadade in a suit, holding a debate trophy"
-            className="absolute inset-0 h-full w-full object-contain object-bottom [filter:grayscale(1)_contrast(1.12)_brightness(0.92)_drop-shadow(-18px_0_38px_rgba(208,20,44,0.45))]"
+            className="absolute inset-0 h-full w-full object-contain object-bottom [filter:grayscale(1)_contrast(1.12)_brightness(0.92)]"
             {...{ fetchpriority: "high" }}
           />
           <div ref={reveal} className="absolute inset-0" style={{ clipPath: "circle(0px at 50% 40%)" }}>

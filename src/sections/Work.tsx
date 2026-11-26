@@ -79,17 +79,17 @@ const Work = () => {
               <div className="wk-card grid h-full origin-top grid-rows-[auto_1fr] overflow-hidden rounded-[28px] border border-bone/10 bg-ink-2 lg:grid-cols-[1fr_1.15fr] lg:grid-rows-1">
                 <div className="flex flex-col justify-between gap-6 p-6 md:p-10">
                   <div>
-                    <p className="flex items-center justify-between text-bone/55">
-                      <span className="label">
-                        {p.kind} · {p.year}
-                      </span>
-                      <span className="deva text-[1.1rem]">
+                    <p className="flex justify-end text-bone/55">
+                      <span className="deva whitespace-nowrap text-[1.1rem]">
                         <span className="text-blood-hi">{toDeva(String(i + 1).padStart(2, "0"))}</span> /{" "}
                         {toDeva(String(total).padStart(2, "0"))}
                       </span>
                     </p>
-                    <h3 className="display mt-5 text-[clamp(2.6rem,5.2vw,5.4rem)]">{p.title}</h3>
-                    <p className="mt-5 max-w-[46ch] text-[1rem] leading-relaxed text-bone/75 max-md:text-[0.95rem]">
+                    <h3 className="display mt-2 text-[clamp(2.6rem,5.2vw,5.4rem)]">{p.title}</h3>
+                    <p className="mt-3 text-[1rem] text-bone/55">
+                      {p.kind}, {p.year}
+                    </p>
+                    <p className="mt-4 max-w-[46ch] text-[1rem] leading-relaxed text-bone/75 max-md:text-[0.95rem]">
                       {p.body}
                     </p>
                   </div>
@@ -137,7 +137,7 @@ const Work = () => {
 
       <div className="shell relative z-[1] bg-ink pb-10 pt-16">
         <div className="grid gap-4 border-t border-bone/10 pt-8 md:grid-cols-[auto_1fr] md:gap-10">
-          <p className="label text-blood-hi">In progress</p>
+          <h3 className="display text-[1.4rem] text-blood-hi">In progress</h3>
           <p className="max-w-[62ch] text-[1rem] leading-relaxed text-bone/75">
             <span className="text-bone">{RESEARCH.title}</span> {RESEARCH.body}
           </p>

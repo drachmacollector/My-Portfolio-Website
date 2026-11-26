@@ -116,11 +116,11 @@ const Chrome = () => {
       {/* Chapter rail */}
       <nav
         aria-label="Chapters"
-        className={`fixed left-8 top-1/2 z-50 hidden -translate-y-1/2 lg:block transition-colors duration-500 ${
-          light ? "text-paper-ink" : "text-bone"
+        className={`fixed left-4 top-1/2 z-50 hidden w-[112px] -translate-y-1/2 rounded-2xl border px-4 py-5 lg:block transition-colors duration-500 ${
+          light ? "border-paper-ink/10 bg-paper text-paper-ink" : "border-bone/10 bg-ink text-bone"
         }`}
       >
-        <ol className="flex flex-col gap-[14px]">
+        <ol className="flex flex-col gap-[12px]">
           {SECTIONS.map((s, i) => (
             <li key={s.id}>
               <a
