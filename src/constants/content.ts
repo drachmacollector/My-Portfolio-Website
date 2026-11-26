@@ -100,41 +100,13 @@ export const KPMG = {
     },
   ],
   pipeline: [
-    {
-      t: "Open the claim",
-      d: "Playwright works through the board's portal, which has no API, and collects every uploaded document.",
-      tools: "Playwright · BeautifulSoup",
-    },
-    {
-      t: "Pick the evidence",
-      d: "Bonafide certificate and college ID first. The other documents are read only when those two fall short.",
-      tools: "Two-phase triage",
-    },
-    {
-      t: "Clean the scans",
-      d: "Retry downloads, drop duplicates by SHA-256, render PDFs at 300 DPI and fix rotation by testing four angles.",
-      tools: "PyMuPDF · Pillow",
-    },
-    {
-      t: "Read the text",
-      d: "OCR on the GPU, with confidence kept for every page.",
-      tools: "PaddleOCR",
-    },
-    {
-      t: "Pull the fields",
-      d: "A local model turns noisy text into student, year, college and address, fixing common OCR mistakes on the way.",
-      tools: "Qwen 2.5 7B · Ollama",
-    },
-    {
-      t: "Find the real college",
-      d: "A fuzzy cache first. Otherwise a search-grounded model resolves the official name and address, with a fallback provider behind it.",
-      tools: "Gemini + Google Search · OpenRouter · RapidFuzz",
-    },
-    {
-      t: "Score and hand back",
-      d: "OCR confidence 30, web verification 40, cross-document agreement 30. Anything under 80 goes to a person. Every claim is saved to Excel as it finishes.",
-      tools: "Deterministic scoring · openpyxl",
-    },
+    { t: "Open the claim", d: "Playwright walks the board's portal, which has no API, and collects every document.", tools: "Playwright" },
+    { t: "Pick the evidence", d: "Bonafide certificate and college ID first; the rest only if needed.", tools: "Two-phase triage" },
+    { t: "Clean the scans", d: "De-duplicate, render at 300 DPI, fix rotation.", tools: "PyMuPDF · Pillow" },
+    { t: "Read the text", d: "OCR on the GPU, with confidence kept per page.", tools: "PaddleOCR" },
+    { t: "Pull the fields", d: "A local model pulls student, year, college and address.", tools: "Qwen 2.5 7B" },
+    { t: "Find the college", d: "A search-grounded model resolves the official name.", tools: "Gemini · RapidFuzz" },
+    { t: "Score it", d: "Scored out of 100. Anything under 80 goes to a person.", tools: "Excel out" },
   ],
   shipped:
     "Shipped as a Windows installer, with its own runtime and a desktop app, so the department runs it without us.",
@@ -297,10 +269,10 @@ export const MUN = {
 };
 
 export const RENDERS = [
-  { title: "Low orbit", file: "space station.mp4", still: "/img/still-space-station.webp" },
-  { title: "Neon street", file: "cyberpunk street.mp4", still: "/img/still-cyberpunk-street.webp" },
-  { title: "Storm", file: "stormy ocean boat.mp4", still: "/img/still-stormy-ocean-boat.webp" },
-  { title: "No. 5", file: "chanel perfume.mp4", still: "/img/still-chanel-perfume.webp" },
+  { title: "Space Station", file: "space station.mp4", still: "/img/still-space-station.webp" },
+  { title: "Cyberpunk street", file: "cyberpunk street.mp4", still: "/img/still-cyberpunk-street.webp" },
+  { title: "The Storm", file: "stormy ocean boat.mp4", still: "/img/still-stormy-ocean-boat.webp" },
+  { title: "Chanel", file: "chanel perfume.mp4", still: "/img/still-chanel-perfume.webp" },
   { title: "Heart", file: "heart.mp4", still: "/img/still-heart.webp" },
   { title: "Molten gold", file: "melting gold fluid simulation.mp4", still: "/img/still-melting-gold.webp" },
   { title: "Wrecking ball", file: "wrecking ball.mp4", still: "/img/still-wrecking-ball.webp" },

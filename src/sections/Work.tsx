@@ -70,13 +70,14 @@ const Work = () => {
         const sheets = gsap.utils.toArray<HTMLElement>(".wk-sheet");
         sheets.forEach((sheet, i) => {
           if (i === sheets.length - 1) return;
-          gsap.to(sheet.querySelector(".wk-card"), {
-            scale: 0.9,
-            filter: "brightness(0.45)",
-            ease: "none",
+          // Explicit start values: tweening from filter "none" snaps instead of easing.
+          gsap.fromTo(sheet.querySelector(".wk-card"), { scale: 1, filter: "brightness(1)" }, {
+            scale: 0.93,
+            filter: "brightness(0.62)",
+            ease: "power2.in",
             scrollTrigger: {
               trigger: sheets[i + 1],
-              start: "top bottom",
+              start: "top 75%",
               end: "top top",
               scrub: true,
             },
@@ -115,7 +116,7 @@ const Work = () => {
   const total = PROJECTS.length;
 
   return (
-    <section id="work" ref={root} className="relative bg-ink pt-[clamp(110px,18vh,200px)]" aria-label="Selected work">
+    <section id="work" ref={root} className="relative bg-ink pt-[clamp(88px,14vh,160px)]" aria-label="Selected work">
       <div className="shell wk-head flex flex-wrap items-end justify-between gap-6">
         <h2 className="display text-[clamp(3.4rem,9vw,8.5rem)] leading-[0.85]">
           Selected

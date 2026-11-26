@@ -106,7 +106,7 @@ const Experience = () => {
     <section
       id="experience"
       ref={root}
-      className="relative overflow-x-clip bg-ink pb-[clamp(90px,14vh,160px)] pt-[clamp(110px,18vh,200px)]"
+      className="relative overflow-x-clip bg-ink pb-[clamp(76px,11vh,130px)] pt-[clamp(88px,14vh,160px)]"
       aria-label="Experience"
     >
       <div className="shell">
@@ -134,8 +134,8 @@ const Experience = () => {
 
             <div>
               <div className="ex-logo flex flex-wrap items-center justify-between gap-6">
-                <span className="inline-flex rounded-xl bg-white px-5 py-4">
-                  <img src="/img/logo-kpmg.webp" alt="KPMG" width={720} height={287} className="h-9 w-auto md:h-11" />
+                <span className="block aspect-[2.1/1] h-[5.5rem] overflow-hidden rounded-xl md:h-28">
+                  <img src="/img/kpmg.webp" alt="KPMG" width={726} height={726} className="h-full w-full object-cover" />
                 </span>
                 <span className="tabular text-[0.95rem] text-bone/60">{KPMG.meta.find((m) => m.k === "When")?.v}</span>
               </div>

@@ -25,7 +25,7 @@ const Record = () => {
   );
 
   return (
-    <section id="honours" ref={root} className="relative overflow-x-clip bg-ink py-[clamp(110px,18vh,200px)]" aria-label="Honours">
+    <section id="honours" ref={root} className="relative overflow-x-clip bg-ink py-[clamp(88px,14vh,160px)]" aria-label="Honours">
       <div className="shell grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
         <div className="lg:sticky lg:top-32 lg:self-start">
           <h2 className="display text-[clamp(2.6rem,5vw,4.6rem)]">Honours</h2>

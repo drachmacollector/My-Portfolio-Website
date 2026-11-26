@@ -10,18 +10,24 @@ import Monkeytype from "@/components/Monkeytype";
 const src = (file: string) => `/blender/${encodeURIComponent(file)}`;
 const isVideo = (file: string) => file.endsWith(".mp4");
 
-const MarqueeRow = ({ text, outline, dir }: { text: string; outline?: boolean; dir: 1 | -1 }) => (
+/** "ANIMATION" running past, each word paired with the Blender mark at cap height. */
+const MarqueeRow = ({ dir }: { dir: 1 | -1 }) => (
   <div className="overflow-hidden">
     <div className="rn-row marquee-track" data-dir={dir}>
       {[0, 1, 2, 3].map((k) => (
         <span
           key={k}
-          className={`display shrink-0 whitespace-nowrap pr-[0.4em] text-[clamp(4rem,11vw,10rem)] leading-[0.95] ${
-            outline ? "outline-text" : ""
-          }`}
+          className="display flex shrink-0 items-center gap-[0.28em] whitespace-nowrap pr-[0.5em] text-[clamp(4rem,11vw,10rem)] leading-[0.95]"
           aria-hidden={k > 0}
         >
-          {text}
+          Animation
+          <img
+            src="/img/logo-blender.svg"
+            alt={k === 0 ? "Blender" : ""}
+            className="h-[0.8em] w-auto"
+            width={181}
+            height={148}
+          />
         </span>
       ))}
     </div>
@@ -133,21 +139,23 @@ const Renders = () => {
 
   useEffect(() => {
     if (open === null) return;
+    // Capture phase, so a focused video can't swallow the keys for seeking.
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight") step(1);
-      if (e.key === "ArrowLeft") step(-1);
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      e.preventDefault();
+      e.stopPropagation();
+      step(e.key === "ArrowRight" ? 1 : -1);
     };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    window.addEventListener("keydown", onKey, true);
+    return () => window.removeEventListener("keydown", onKey, true);
   }, [open, step]);
 
   const current = open !== null ? RENDERS[open] : null;
 
   return (
-    <section id="renders" ref={root} className="relative overflow-hidden bg-ink pt-[clamp(90px,14vh,160px)]" aria-label="3D work">
+    <section id="renders" ref={root} className="relative overflow-hidden bg-ink pt-[clamp(76px,11vh,130px)]" aria-label="3D work">
       <div className="text-bone">
-        <MarqueeRow text="After hours ·" dir={1} />
-        <MarqueeRow text="Blender · 3D · Motion ·" outline dir={-1} />
+        <MarqueeRow dir={1} />
       </div>
 
       <div className="rn-pin relative flex flex-col justify-center py-16 lg:h-[100svh] lg:py-0 motion-reduce:lg:h-auto">
@@ -168,7 +176,7 @@ const Renders = () => {
       </div>
 
       {/* Off the clock */}
-      <div className="shell grid gap-px overflow-hidden pb-[clamp(90px,14vh,160px)] pt-6">
+      <div className="shell grid gap-px overflow-hidden pb-[clamp(76px,11vh,130px)] pt-6">
         <div className="grid gap-px overflow-hidden rounded-2xl border border-bone/10 bg-bone/10 md:grid-cols-[1fr_1.4fr]">
           <Monkeytype />
           <NowPlaying />

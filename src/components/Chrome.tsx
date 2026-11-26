@@ -95,8 +95,8 @@ const Chrome = () => {
           rel="noopener noreferrer"
           className={`label hidden sm:inline-block rounded-full border px-4 py-3 transition-colors duration-300 ${
             light
-              ? "border-paper-ink/25 text-paper-ink hover:bg-paper-ink hover:text-paper"
-              : "border-bone/20 text-bone hover:bg-bone hover:text-ink"
+              ? "border-paper-ink/25 bg-paper text-paper-ink hover:bg-paper-ink hover:text-paper"
+              : "border-bone/20 bg-ink text-bone hover:bg-bone hover:text-ink"
           }`}
         >
           Résumé <ArrowUpRight />

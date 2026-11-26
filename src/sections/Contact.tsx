@@ -132,7 +132,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" ref={root} className="relative overflow-hidden bg-ink pt-[clamp(100px,16vh,180px)]" aria-label="Contact">
+    <section id="contact" ref={root} className="relative overflow-hidden bg-ink pt-[clamp(80px,12vh,140px)]" aria-label="Contact">
       {/* Running line behind the call to action */}
       <div className="relative">
       <div className="pointer-events-none" aria-hidden="true">

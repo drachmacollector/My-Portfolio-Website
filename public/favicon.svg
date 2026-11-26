@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Nakul Bhadade</title>
+  <defs><clipPath id="r"><rect width="64" height="64" rx="15"/></clipPath></defs>
+  <g clip-path="url(#r)">
+    <rect width="64" height="64" fill="#0b0b0c"/>
+    <rect x="-12" y="27" width="88" height="13" fill="#c8102a" transform="rotate(-24 32 32)"/>
+    <path transform="translate(14.4 50.6) scale(0.0258 -0.0258)" fill="#efe7dc" d="M0 0H461C361 48 297 141 297 253V1089L903 0H1365C1265 47 1200 142 1200 254V1181C1200 1290 1266 1389 1365 1434H903C1003 1389 1067 1291 1067 1181V345L461 1434H0C100 1389 164 1291 164 1181V253C164 141 101 47 0 0Z"/>
+  </g>
+</svg>

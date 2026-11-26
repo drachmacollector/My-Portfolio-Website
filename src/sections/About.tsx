@@ -51,7 +51,7 @@ const About = () => {
   );
 
   return (
-    <section id="about" ref={root} className="relative bg-ink py-[clamp(110px,18vh,200px)]">
+    <section id="about" ref={root} className="relative bg-ink py-[clamp(88px,14vh,160px)]">
       <div className="shell">
         <h2 className="flex items-baseline gap-4">
           <span className="display text-[clamp(1.8rem,3vw,2.6rem)]">Who I am</span>
