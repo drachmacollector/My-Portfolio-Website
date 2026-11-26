@@ -17,7 +17,9 @@ export const scrollToId = (id: string) => {
 const Chrome = () => {
   const [active, setActive] = useState(0);
   const [open, setOpen] = useState(false);
-  const [hush, setHush] = useState<Record<string, boolean>>({});
+  const [hush, setHush] = useState<Record<string, boolean>>(() => ({
+    hero: typeof window !== "undefined" && window.scrollY < window.innerHeight * 0.55,
+  }));
   const overlayRef = useRef<HTMLDivElement>(null);
   const tl = useRef<gsap.core.Timeline>();
 
@@ -31,16 +33,16 @@ const Chrome = () => {
         onToggle: (self) => self.isActive && setActive(i),
       }),
     );
-    // The rail steps aside in the hero and while the chapters slide sideways.
-    const quiet = ["#top", ".kp-chapters"].map((sel) =>
-      ScrollTrigger.create({
-        trigger: sel,
-        start: sel === "#top" ? "top top" : "top 1%",
-        end: sel === "#top" ? "bottom 40%" : () => `+=${(document.querySelector(".kp-track") as HTMLElement)?.scrollWidth - window.innerWidth}`,
-        onToggle: (self) => setHush((h) => ({ ...h, [sel]: self.isActive })),
-      }),
-    );
-    return () => [...triggers, ...quiet].forEach((t) => t.kill());
+    // Sections ask the rail to step aside (hero, sideways chapters).
+    const onHush = (e: Event) => {
+      const { key, on } = (e as CustomEvent<{ key: string; on: boolean }>).detail;
+      setHush((h) => ({ ...h, [key]: on }));
+    };
+    window.addEventListener("rail-hush", onHush);
+    return () => {
+      triggers.forEach((t) => t.kill());
+      window.removeEventListener("rail-hush", onHush);
+    };
   }, []);
 
   useGSAP(
@@ -128,7 +130,7 @@ const Chrome = () => {
         aria-label="Chapters"
         className={`fixed left-4 top-1/2 z-50 hidden w-[112px] -translate-y-1/2 rounded-2xl border px-4 py-5 lg:block transition-[color,background-color,border-color,opacity] duration-500 ${
           light ? "border-paper-ink/10 bg-paper text-paper-ink" : "border-bone/10 bg-ink text-bone"
-        } ${(hush[".kp-chapters"] || hush["#top"]) && !open ? "pointer-events-none opacity-0" : ""}`}
+        } ${Object.values(hush).some(Boolean) && !open ? "pointer-events-none opacity-0" : ""}`}
       >
         <ol className="flex flex-col gap-[12px]">
           {SECTIONS.map((s, i) => (

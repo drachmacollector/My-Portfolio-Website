@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import Tape from "@/components/Tape";
 import { TAPE_A, TAPE_B } from "@/constants/content";
-import { gsap, useGSAP, ANY_MOTION } from "@/lib/gsap";
+import { gsap, useGSAP, ANY_MOTION, ScrollTrigger, hushRail } from "@/lib/gsap";
 import { scrollToId } from "@/components/Chrome";
 import { ArrowDown } from "@/components/Icons";
 
@@ -36,6 +36,25 @@ const Hero = ({ ready }: { ready: boolean }) => {
       return () => mm.revert();
     },
     { scope: root, dependencies: [ready] },
+  );
+
+  // The rail stays out of the first viewport.
+  useGSAP(
+    () => {
+      const st = ScrollTrigger.create({
+        trigger: root.current,
+        start: "top top",
+        end: "bottom 45%",
+        onLeave: () => hushRail("hero", false),
+        onEnterBack: () => hushRail("hero", true),
+      });
+      hushRail("hero", st.progress < 1);
+      return () => {
+        st.kill();
+        hushRail("hero", false);
+      };
+    },
+    { scope: root },
   );
 
   // Colour torch: grey portrait, colour under the pointer.

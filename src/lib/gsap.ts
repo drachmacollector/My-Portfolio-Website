@@ -12,3 +12,7 @@ export const DESKTOP_MOTION = "(min-width: 1024px) and (prefers-reduced-motion: 
 export const ANY_MOTION = "(prefers-reduced-motion: no-preference)";
 
 export { gsap, ScrollTrigger, useGSAP };
+
+/** Ask the chapter rail to step aside while a section needs the full width. */
+export const hushRail = (key: string, on: boolean) =>
+  window.dispatchEvent(new CustomEvent("rail-hush", { detail: { key, on } }));

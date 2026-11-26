@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { KPMG, toDeva } from "@/constants/content";
-import { gsap, useGSAP, ScrollTrigger, DESKTOP_MOTION, ANY_MOTION } from "@/lib/gsap";
+import { gsap, useGSAP, ScrollTrigger, DESKTOP_MOTION, ANY_MOTION, hushRail } from "@/lib/gsap";
 import { ArrowDown } from "@/components/Icons";
 import { CONTACT } from "@/constants/content";
 
@@ -109,6 +109,7 @@ const Kpmg = () => {
             pin: true,
             scrub: 1,
             invalidateOnRefresh: true,
+            onToggle: (self) => hushRail("chapters", self.isActive),
           },
         });
 

@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-27T00:00:00Z",
+  "title": "Design System: Nakul Bhadade",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0b0b0c", "cssVar": "--ink", "tonalRamp": ["#050506", "#0b0b0c", "#141416", "#1c1c1f", "#2a2a2e", "#45454a", "#7a7a80", "#c4c4c8"] },
+      "ink-2": { "role": "neutral", "displayName": "Ink Raised", "canonical": "#141416", "cssVar": "--ink-2", "tonalRamp": ["#050506", "#0b0b0c", "#141416", "#1c1c1f", "#2a2a2e", "#45454a", "#7a7a80", "#c4c4c8"] },
+      "ink-3": { "role": "neutral", "displayName": "Ink Well", "canonical": "#1c1c1f", "cssVar": "--ink-3", "tonalRamp": ["#050506", "#0b0b0c", "#141416", "#1c1c1f", "#2a2a2e", "#45454a", "#7a7a80", "#c4c4c8"] },
+      "bone": { "role": "neutral", "displayName": "Bone", "canonical": "#efe7dc", "cssVar": "--bone", "tonalRamp": ["#2b2722", "#4a443d", "#6e665d", "#938a80", "#b5ada2", "#d3cabe", "#efe7dc", "#faf6f0"] },
+      "blood": { "role": "primary", "displayName": "Blood Red", "canonical": "#c8102a", "cssVar": "--red", "tonalRamp": ["#3b0910", "#5c0c18", "#8e0d1e", "#b3102a", "#c8102a", "#e0283f", "#ff4255", "#ffc2c9"] },
+      "blood-hi": { "role": "primary", "displayName": "Lit Red", "canonical": "#ff4255", "cssVar": "--red-hi", "tonalRamp": ["#3b0910", "#5c0c18", "#8e0d1e", "#b3102a", "#c8102a", "#e0283f", "#ff4255", "#ffc2c9"] },
+      "tape-red": { "role": "secondary", "displayName": "Tape Red", "canonical": "#b3102a", "tonalRamp": ["#3b0910", "#5c0c18", "#8e0d1e", "#b3102a", "#c8102a", "#e0283f", "#ff4255", "#ffc2c9"] },
+      "tape-deep": { "role": "secondary", "displayName": "Tape Oxblood", "canonical": "#3b0910", "tonalRamp": ["#1f0408", "#3b0910", "#5c0c18", "#8e0d1e", "#b3102a", "#e0283f", "#ff8a97", "#ffd6db"] },
+      "paper": { "role": "neutral", "displayName": "Warm Paper", "canonical": "#f3ece4", "cssVar": "--paper", "tonalRamp": ["#3a332d", "#5e554d", "#857a70", "#ab9f94", "#cbc0b5", "#e2d8cd", "#f3ece4", "#fbf8f4"] },
+      "paper-ink": { "role": "neutral", "displayName": "Paper Ink", "canonical": "#1b1715", "cssVar": "--paper-ink", "tonalRamp": ["#0f0c0b", "#1b1715", "#2d2724", "#463e39", "#6b625b", "#958b83", "#c2b9b0", "#ebe5de"] },
+      "paper-mute": { "role": "neutral", "displayName": "Paper Mute", "canonical": "#6b625b", "tonalRamp": ["#0f0c0b", "#1b1715", "#2d2724", "#463e39", "#6b625b", "#958b83", "#c2b9b0", "#ebe5de"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Section titles, KPMG chapter titles, menu items, marquee rows and the giant outline name. Aostala caps only." },
+      "headline": { "displayName": "Headline", "purpose": "Project sheet titles, the pipeline heading, honours entries." },
+      "title": { "displayName": "Title", "purpose": "English half of bilingual headings, list-row names, pipeline stages." },
+      "statement": { "displayName": "Statement", "purpose": "Large light-weight voice for the About statement and the KPMG shipped line; 22-30ch." },
+      "body": { "displayName": "Body", "purpose": "Section copy at 0.95-1.05rem, relaxed leading, 34-62ch; meta lines at 0.85-0.92rem in bone 55-65%." },
+      "label": { "displayName": "Label", "purpose": "Aostala tracked caps for field labels, units, fact keys, edge labels, footer actions and the résumé pill. Never as an eyebrow above a heading." },
+      "numeral": { "displayName": "Numeral", "purpose": "Tiro Devanagari Marathi for every ordinal, counter and chapter word; 15px on the rail up to 40rem ghost numbers." }
+    },
+    "shadows": [
+      { "name": "floating-media", "value": "0 30px 60px -20px rgba(0,0,0,0.8)", "purpose": "Project screenshot inside a sheet's media well, tilting with scroll velocity." },
+      { "name": "floating-action", "value": "0 24px 48px -18px rgba(0,0,0,0.9)", "purpose": "The magnetic contact pill floating over the marquee." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "CSS transitions (link underline draw, state changes); --ease-out." },
+      { "name": "entrance", "value": "GSAP expo.out, 1.2-1.6s, stagger 0.04-0.1s", "purpose": "Hero entrance, heading rises, list rows (8% slide), stat count-ups." },
+      { "name": "curtain", "value": "GSAP expo.inOut, 0.7-0.9s, clip-path inset", "purpose": "Menu overlay drop, preloader lift." },
+      { "name": "pinned-chapter", "value": "ScrollTrigger pin + scrub 1", "purpose": "KPMG horizontal chapters, method stage (85% per move), render strip. Desktop motion only." },
+      { "name": "parallax-scrub", "value": "ScrollTrigger scrub true, ease none", "purpose": "Hero exit (portrait sinks, tapes swing), word-by-word brighten from 0.14 opacity, pipeline path draw, marquee drift, sheet recede to scale 0.9 / brightness 0.45." },
+      { "name": "velocity-tilt", "value": "quickTo rotateX, clamp ±14°, 0.6s power3.out", "purpose": "Project screens lean with scroll speed." },
+      { "name": "tape-run", "value": "linear infinite, 38s forward / 46s reverse", "purpose": "Running text in the crossing tapes; stopped under reduced motion." },
+      { "name": "torch", "value": "clip-path circle 0-190px, 0.6s power3.out follow, 0.9s expo.out open", "purpose": "Colour reveal over the grayscale hero portrait on hover-capable devices." },
+      { "name": "preloader", "value": "counter 0-100, 1.5s power3.inOut, once per session", "purpose": "Opening curtain; skipped under reduced motion." },
+      { "name": "media-query-desktop-motion", "value": "(min-width: 1024px) and (prefers-reduced-motion: no-preference)", "purpose": "The only context where pins and scrubbed sequences run." }
+    ],
+    "breakpoints": [
+      { "name": "xs", "value": "420px" },
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ],
+    "surfaces": [
+      { "name": "grain", "value": "fractalNoise SVG, opacity 0.06, mix-blend-mode overlay", "purpose": "Hero and KPMG opener only." },
+      { "name": "portrait-grayscale", "value": "filter: grayscale(1) contrast(1.12) brightness(0.92)", "purpose": "Cut-out portraits at rest; colour returns on hover." },
+      { "name": "outline-text", "value": "color: transparent; -webkit-text-stroke: 1px rgba(239,231,220,0.22)", "purpose": "Giant hero name and outline marquee rows." },
+      { "name": "focus-ring", "value": "outline: 2px solid #ff4255; outline-offset: 4px", "purpose": "Global :focus-visible." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Pill",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Blood pill with a trailing arrow; the hero's single call to action and the contact pill.",
+      "html": "<button class=\"ds-btn-primary\">Read the KPMG story <svg viewBox=\"0 0 16 16\" fill=\"none\" width=\"14\" height=\"14\" aria-hidden=\"true\"><path d=\"M8 2v12M3.5 9.5 8 14l4.5-4.5\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"square\"/></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 12px; background: var(--red, #c8102a); color: var(--bone, #efe7dc); padding: 12px 20px; border: 0; border-radius: 9999px; font-family: General, 'Segoe UI', system-ui, sans-serif; font-size: 0.9rem; cursor: pointer; transition: background-color 0.3s; } .ds-btn-primary svg { transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover svg { transform: translateY(2px); } .ds-btn-primary:focus-visible { outline: 2px solid #ff4255; outline-offset: 4px; }"
+    },
+    {
+      "name": "Bone Pill",
+      "kind": "button",
+      "refersTo": "button-bone",
+      "description": "Bone pill that turns blood on hover; Visit and Send.",
+      "html": "<a class=\"ds-btn-bone\" href=\"#\">Visit <svg viewBox=\"0 0 16 16\" fill=\"none\" width=\"12\" height=\"12\" aria-hidden=\"true\"><path d=\"M4 12 12 4M5.5 4H12v6.5\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"square\"/></svg></a>",
+      "css": ".ds-btn-bone { display: inline-flex; align-items: center; gap: 8px; background: var(--bone, #efe7dc); color: var(--ink, #0b0b0c); padding: 10px 20px; border-radius: 9999px; font-family: General, 'Segoe UI', system-ui, sans-serif; font-size: 0.9rem; text-decoration: none; transition: background-color 0.3s, color 0.3s; } .ds-btn-bone:hover { background: var(--red, #c8102a); color: var(--bone, #efe7dc); } .ds-btn-bone:focus-visible { outline: 2px solid #ff4255; outline-offset: 4px; }"
+    },
+    {
+      "name": "Ghost Pill",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Hairline pill for secondary actions: Code, lightbox stepping, résumé.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Code <svg viewBox=\"0 0 16 16\" fill=\"none\" width=\"12\" height=\"12\" aria-hidden=\"true\"><path d=\"M4 12 12 4M5.5 4H12v6.5\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"square\"/></svg></a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--bone, #efe7dc); padding: 10px 20px; border: 1px solid rgba(239,231,220,0.2); border-radius: 9999px; font-family: General, 'Segoe UI', system-ui, sans-serif; font-size: 0.9rem; text-decoration: none; transition: border-color 0.3s; } .ds-btn-ghost:hover { border-color: var(--bone, #efe7dc); } .ds-btn-ghost:focus-visible { outline: 2px solid #ff4255; outline-offset: 4px; }"
+    },
+    {
+      "name": "Chapter Rail",
+      "kind": "nav",
+      "refersTo": "chapter-rail",
+      "description": "Fixed plate of Devanagari ordinals; the active one turns blood and shows its label.",
+      "html": "<nav class=\"ds-rail\" aria-label=\"Chapters\"><ol><li><a href=\"#\"><span class=\"ds-rail-n\">०</span><span class=\"ds-rail-l\">Hello</span></a></li><li><a href=\"#\" aria-current=\"true\"><span class=\"ds-rail-n\">१</span><span class=\"ds-rail-l\">About</span></a></li><li><a href=\"#\"><span class=\"ds-rail-n\">२</span><span class=\"ds-rail-l\">KPMG</span></a></li><li><a href=\"#\"><span class=\"ds-rail-n\">३</span><span class=\"ds-rail-l\">Method</span></a></li></ol></nav>",
+      "css": ".ds-rail { width: 112px; padding: 20px 16px; background: var(--ink, #0b0b0c); color: var(--bone, #efe7dc); border: 1px solid rgba(239,231,220,0.1); border-radius: 16px; } .ds-rail ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; } .ds-rail a { display: flex; align-items: center; gap: 12px; color: inherit; text-decoration: none; } .ds-rail-n { width: 16px; text-align: center; font-family: 'Tiro Devanagari Marathi', 'Nirmala UI', serif; font-size: 15px; line-height: 1.1; opacity: 0.6; transition: color 0.3s, opacity 0.3s; } .ds-rail-l { font-family: Aostala, Georgia, serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transform: translateX(-4px); transition: opacity 0.5s, transform 0.5s; } .ds-rail a:hover .ds-rail-n { opacity: 1; } .ds-rail a:hover .ds-rail-l { opacity: 0.6; transform: none; } .ds-rail a[aria-current] .ds-rail-n { color: var(--red, #c8102a); opacity: 1; } .ds-rail a[aria-current] .ds-rail-l { opacity: 1; transform: none; } .ds-rail a:focus-visible { outline: 2px solid #ff4255; outline-offset: 4px; }"
+    },
+    {
+      "name": "Tape",
+      "kind": "custom",
+      "refersTo": "tape",
+      "description": "Crossing band of running text alternating Aostala caps and Devanagari words.",
+      "html": "<div class=\"ds-tape-wrap\"><div class=\"ds-tape\"><div class=\"ds-tape-track\"><span class=\"ds-tape-l\">AI Consultant</span><i></i><span class=\"ds-tape-d\">कर्म</span><i></i><span class=\"ds-tape-l\">KPMG · Government &amp; Public Services</span><i></i><span class=\"ds-tape-d\">मार्ग</span><i></i><span class=\"ds-tape-l\">AI Consultant</span><i></i><span class=\"ds-tape-d\">कर्म</span><i></i><span class=\"ds-tape-l\">KPMG · Government &amp; Public Services</span><i></i><span class=\"ds-tape-d\">मार्ग</span><i></i></div></div><div class=\"ds-tape ds-tape-deep\"><div class=\"ds-tape-track ds-rev\"><span class=\"ds-tape-l\">CSE · AI &amp; ML</span><i></i><span class=\"ds-tape-d\">वाद</span><i></i><span class=\"ds-tape-l\">Debater</span><i></i><span class=\"ds-tape-d\">कला</span><i></i><span class=\"ds-tape-l\">CSE · AI &amp; ML</span><i></i><span class=\"ds-tape-d\">वाद</span><i></i><span class=\"ds-tape-l\">Debater</span><i></i><span class=\"ds-tape-d\">कला</span><i></i></div></div></div>",
+      "css": ".ds-tape-wrap { position: relative; height: 180px; overflow: hidden; background: var(--ink, #0b0b0c); } .ds-tape { position: absolute; left: -15%; width: 130%; top: 30%; overflow: hidden; padding: 0.55em 0; background: #b3102a; color: var(--bone, #efe7dc); transform: rotate(-6deg); font-size: 1.1rem; z-index: 2; } .ds-tape-deep { top: 55%; background: #3b0910; color: #ff4255; transform: rotate(4deg); z-index: 1; } .ds-tape-track { display: flex; align-items: center; width: max-content; animation: ds-tape 38s linear infinite; } .ds-tape-track.ds-rev { animation-direction: reverse; animation-duration: 46s; } .ds-tape-l { font-family: Aostala, Georgia, serif; text-transform: uppercase; letter-spacing: -0.01em; padding: 0 24px; white-space: nowrap; } .ds-tape-d { font-family: 'Tiro Devanagari Marathi', 'Nirmala UI', serif; font-size: 1.35em; line-height: 1.1; padding: 0 24px; } .ds-tape-track i { width: 0.32em; height: 0.32em; border-radius: 9999px; background: currentColor; opacity: 0.6; flex-shrink: 0; } @keyframes ds-tape { to { transform: translate3d(-50%,0,0); } } @media (prefers-reduced-motion: reduce) { .ds-tape-track { animation: none; } }"
+    },
+    {
+      "name": "Bilingual Heading",
+      "kind": "custom",
+      "refersTo": "title",
+      "description": "English Aostala title in bone paired on the baseline with one Devanagari word in blood.",
+      "html": "<h2 class=\"ds-bihead\"><span class=\"ds-bihead-en\">Record</span><span class=\"ds-bihead-dv\">नोंद</span></h2>",
+      "css": ".ds-bihead { display: flex; align-items: baseline; gap: 16px; margin: 0; } .ds-bihead-en { font-family: Aostala, Georgia, serif; font-weight: 400; text-transform: uppercase; letter-spacing: -0.01em; line-height: 0.92; font-size: clamp(2.6rem, 5vw, 4.6rem); color: var(--bone, #efe7dc); } .ds-bihead-dv { font-family: 'Tiro Devanagari Marathi', 'Nirmala UI', serif; line-height: 1.1; font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--red, #c8102a); }"
+    },
+    {
+      "name": "Hairline List Row",
+      "kind": "custom",
+      "description": "Honours row: Devanagari index, display title with note, lit-red placing; indents on hover.",
+      "html": "<ol class=\"ds-hl\"><li><span class=\"ds-hl-i\">०१</span><span><span class=\"ds-hl-t\">Infacto 4.0</span><span class=\"ds-hl-n\">National debate</span></span><span class=\"ds-hl-p\">1st</span></li><li><span class=\"ds-hl-i\">०२</span><span><span class=\"ds-hl-t\">Render Riot</span><span class=\"ds-hl-n\">National 3D animation, twice</span></span><span class=\"ds-hl-p\">Winner</span></li></ol>",
+      "css": ".ds-hl { list-style: none; margin: 0; padding: 0; color: var(--bone, #efe7dc); } .ds-hl li { display: grid; grid-template-columns: 2.2rem 1fr auto; align-items: baseline; column-gap: 16px; padding: 20px 0; border-bottom: 1px solid rgba(239,231,220,0.1); transition: padding 0.5s; } .ds-hl li:hover { padding-left: 12px; } .ds-hl-i { font-family: 'Tiro Devanagari Marathi', 'Nirmala UI', serif; font-size: 1.1rem; color: rgba(239,231,220,0.55); transition: color 0.3s; } .ds-hl li:hover .ds-hl-i { color: var(--red, #c8102a); } .ds-hl-t { display: block; font-family: Aostala, Georgia, serif; text-transform: uppercase; font-size: clamp(1.6rem, 3.2vw, 2.8rem); line-height: 0.95; } .ds-hl-n { display: block; margin-top: 8px; font-family: General, system-ui, sans-serif; font-size: 0.92rem; color: rgba(239,231,220,0.6); } .ds-hl-p { font-family: General, system-ui, sans-serif; font-size: 0.95rem; white-space: nowrap; color: var(--red-hi, #ff4255); font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Project Sheet",
+      "kind": "card",
+      "refersTo": "project-sheet",
+      "description": "Raised 28px sheet split into text and an ink-3 media well with a floating screenshot.",
+      "html": "<article class=\"ds-sheet\"><div class=\"ds-sheet-text\"><p class=\"ds-sheet-c\"><span>०२</span> / ०८</p><h3 class=\"ds-sheet-t\">D.R.I.F.T.</h3><p class=\"ds-sheet-k\">Ocean plastics tracker, 2026</p><p class=\"ds-sheet-b\">Finds marine macroplastics at sub-pixel scale in Sentinel-2 imagery, then forecasts where they drift over 72 hours.</p><p class=\"ds-sheet-s\">PyTorch · U-Net · FastAPI · Deck.gl</p></div><div class=\"ds-sheet-well\"><div class=\"ds-sheet-screen\"></div></div></article>",
+      "css": ".ds-sheet { display: grid; grid-template-columns: 1fr 1.15fr; min-height: 360px; overflow: hidden; background: var(--ink-2, #141416); color: var(--bone, #efe7dc); border: 1px solid rgba(239,231,220,0.1); border-radius: 28px; } .ds-sheet-text { padding: 40px; } .ds-sheet-c { margin: 0; text-align: right; font-family: 'Tiro Devanagari Marathi', 'Nirmala UI', serif; font-size: 1.1rem; color: rgba(239,231,220,0.55); } .ds-sheet-c span { color: var(--red-hi, #ff4255); } .ds-sheet-t { margin: 8px 0 0; font-family: Aostala, Georgia, serif; font-weight: 400; text-transform: uppercase; letter-spacing: -0.01em; line-height: 0.92; font-size: clamp(2.6rem, 5.2vw, 4rem); } .ds-sheet-k { margin: 12px 0 0; font-family: General, system-ui, sans-serif; color: rgba(239,231,220,0.55); } .ds-sheet-b { margin: 16px 0 0; max-width: 46ch; font-family: General, system-ui, sans-serif; line-height: 1.625; color: rgba(239,231,220,0.75); } .ds-sheet-s { margin: 24px 0 0; font-family: General, system-ui, sans-serif; font-size: 0.88rem; color: rgba(239,231,220,0.55); } .ds-sheet-well { position: relative; background: var(--ink-3, #1c1c1f); } .ds-sheet-screen { position: absolute; inset: 6%; border-radius: 12px; border: 1px solid rgba(239,231,220,0.1); background: linear-gradient(160deg, #2a2a2e, #141416); box-shadow: 0 30px 60px -20px rgba(0,0,0,0.8); }"
+    },
+    {
+      "name": "Stat Row",
+      "kind": "custom",
+      "refersTo": "stat-cell",
+      "description": "Gap-px grid of ink cells: display tabular figure, lit-red unit, General caption.",
+      "html": "<dl class=\"ds-stats\"><div><dt class=\"ds-sr\">Records verified</dt><dd><span class=\"ds-stat-n\">1.5</span><span class=\"ds-stat-u\">lakh</span><p>Scholarship records verified</p></dd></div><div><dt class=\"ds-sr\">Labour laws</dt><dd><span class=\"ds-stat-n\">29</span><span class=\"ds-stat-u\">laws</span><p>Consolidated into four codes</p></dd></div></dl>",
+      "css": ".ds-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin: 0; overflow: hidden; background: rgba(239,231,220,0.1); border: 1px solid rgba(239,231,220,0.1); border-radius: 16px; } .ds-stats > div { background: var(--ink, #0b0b0c); padding: 32px 24px; color: var(--bone, #efe7dc); } .ds-stats dd { margin: 0; } .ds-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } .ds-stat-n { font-family: Aostala, Georgia, serif; font-size: clamp(3.2rem, 6vw, 5.2rem); line-height: 1; font-variant-numeric: tabular-nums; } .ds-stat-u { margin-left: 8px; font-family: Aostala, Georgia, serif; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--red-hi, #ff4255); } .ds-stats p { margin: 16px 0 0; font-family: General, system-ui, sans-serif; font-size: 0.92rem; color: rgba(239,231,220,0.65); }"
+    },
+    {
+      "name": "Underline Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Boxless field: label above, bone hairline below that turns blood on focus.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-l\">Your name</span><input type=\"text\" placeholder=\"Who is writing\" /></label>",
+      "css": ".ds-field { display: block; padding-bottom: 8px; border-bottom: 1px solid rgba(239,231,220,0.15); color: var(--bone, #efe7dc); transition: border-color 0.3s; } .ds-field:focus-within { border-color: var(--red, #c8102a); } .ds-field-l { font-family: Aostala, Georgia, serif; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(239,231,220,0.55); transition: color 0.3s; } .ds-field:focus-within .ds-field-l { color: var(--red-hi, #ff4255); } .ds-field input { display: block; width: 100%; margin-top: 8px; background: transparent; border: 0; outline: none; color: inherit; font-family: General, system-ui, sans-serif; font-size: 1.1rem; caret-color: #ff4255; } .ds-field input::placeholder { color: rgba(239,231,220,0.3); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Chaptered Night Reel",
+    "overview": "The site plays like a film reel cut into numbered chapters on a near-black ground. Each chapter opens on a giant caps title in a wedge serif, paired with one Devanagari word in red, and the reader moves through them on a fixed rail of Devanagari numerals. The grammar comes from a cinematic samurai portfolio that the user pinned, carried over into a Marathi and Indian setting: Devanagari takes the place of kanji, and red tape bands with running text cross behind a cut-out portrait.\n\nDensity is low and the drama comes from scale. Display type runs from 2.6rem to 34rem. Body copy is short, set in a quiet grotesque at 17px, and sits in narrow measures (22 to 62ch). Hairline rules and tonal steps of near-black do the structural work that cards would do elsewhere. The palette has one exception: a single warm-paper interlude with a red sun, used for the method chapter.\n\nMotion is part of the world. Chapters pin and scrub, words brighten as the reader scrolls, sheets stack and recede, and a counter preloader lifts like a curtain. On phones, and whenever the reader prefers reduced motion, the same content arrives as plain stacked lists.",
+    "keyCharacteristics": [
+      "Near-black tonal ground (ink, ink-2, ink-3) with bone text, and one red (blood) as the only chroma.",
+      "Two scripts: Aostala caps for Latin display, Tiro Devanagari Marathi for every numeral, ordinal and chapter word.",
+      "Bilingual chapter headings, with the English title in bone and the Devanagari word in red.",
+      "Crossing red tapes with running text, a giant outline name, and outline/fill marquee rows.",
+      "Hairline lists and gap-px stat grids in place of card walls.",
+      "Rounded pill actions, 16px panels, 28px project sheets.",
+      "Pinned, scrubbed chapters only at 1024px and up with motion allowed. Plain stacks everywhere else."
+    ],
+    "rules": [
+      { "name": "The One Blood Rule", "body": "Red is the only hue in the system. No second accent, no gradients between hues, no tinted neutrals beyond bone's warmth.", "section": "colors" },
+      { "name": "The Lit Red Rule", "body": "Small text in red uses blood-hi. Blood is reserved for fills, rules and type 1.5rem or larger.", "section": "colors" },
+      { "name": "The Paper Interlude Rule", "body": "Warm paper appears once, as an interlude chapter. While it is on screen, the fixed chrome (rail, résumé pill, menu button) flips to paper and paper-ink, so the chrome never floats dark on a light ground.", "section": "colors" },
+      { "name": "The Two Scripts Rule", "body": "Every number a reader counts is Devanagari: chapter ordinals, project \"०१ / ०८\" counters, honours indices, pipeline stage nodes, the year. Latin figures stay only where the value is data (stat figures, dates, wpm), and those use tabular numerals.", "section": "typography" },
+      { "name": "The Bilingual Heading Rule", "body": "A chapter heading pairs an English display title in bone with one Devanagari word in blood, baseline-aligned. The Devanagari word is a translation or gloss, never decoration.", "section": "typography" },
+      { "name": "The Caps Display Rule", "body": "Aostala is caps-only. Use it for titles and labels only, never for running text. Keep tracking at -0.01em for display and 0.22em for labels. Devanagari inside a label resets to normal tracking.", "section": "typography" },
+      { "name": "The Desktop Motion Rule", "body": "Pinning and scrubbing run only under `(min-width: 1024px) and (prefers-reduced-motion: no-preference)`. Light reveals (fade, rise) may run at any width when motion is allowed. Nothing pins on a phone.", "section": "layout" },
+      { "name": "The Rail Offset Rule", "body": "At desktop width, any left-anchored element uses the 144px rail offset, not the plain gutter.", "section": "layout" },
+      { "name": "The Soft Drop Rule", "body": "Shadows are long, blurred and black, and they appear only under media or an action that floats over moving type. There are no offset hard shadows and no coloured glows.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep red to one hue: blood for fills and large type, blood-hi for small text on ink.",
+      "Do number everything a reader counts in Devanagari (Tiro), and keep Latin tabular figures for data values.",
+      "Do open every chapter with a bilingual heading: an Aostala English title in bone and one Devanagari word in blood.",
+      "Do separate content with 1px bone/10 hairlines and gap-px grids before reaching for a filled card.",
+      "Do make actions full pills with a trailing 1.5px square-cap arrow from the shared icon family.",
+      "Do gate pins and scrubs behind `(min-width: 1024px) and (prefers-reduced-motion: no-preference)`, and give every pinned sequence a plain stacked fallback with the same content.",
+      "Do ease entrances with expo.out (1.2 to 1.6s) and curtains with expo.inOut (0.7 to 0.9s). CSS transitions use cubic-bezier(0.16, 1, 0.3, 1).",
+      "Do flip the fixed chrome to paper and paper-ink whenever a paper chapter is on screen.",
+      "Do keep every hover state legible at 4.5:1 or better for its text."
+    ],
+    "donts": [
+      "Don't build a neon developer-portfolio grid or a card wall of projects. Projects are stacked sheets, and lists are hairline rows.",
+      "Don't introduce a second accent hue, coloured glows, or a gradient between hues.",
+      "Don't set small reading text in blood (#c8102a) on ink. It falls below 4.5:1.",
+      "Don't put small tracked labels above headings as eyebrows or kickers. Labels name fields, units, keys and edges only.",
+      "Don't use offset hard shadows. Only the two soft drops in Elevation exist.",
+      "Don't set running text in Aostala, or set it in lowercase.",
+      "Don't use emoji or icon-font glyphs. Icons are inline 1.5px-stroke SVG.",
+      "Don't add a second paper chapter. The warm interlude is singular."
+    ]
+  }
+}
