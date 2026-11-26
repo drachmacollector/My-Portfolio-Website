@@ -14,7 +14,7 @@ Secondary: peers, hackathon judges, MUN and debate contacts, and collaborators w
 
 ## Product Purpose
 
-A personal portfolio for Nakul Bhadade, B.Tech CSE (AI & ML) at IIIT Nagpur (Aug 2024 – present). It must sell him first for **AI consulting / applied AI** roles: framing a client's problem, then building the system that solves it. Success is a visitor who leaves knowing the KPMG story, has opened at least one project, and has a way to contact him or download the resume.
+A personal portfolio for Nakul Bhadade, B.Tech CSE (AI & ML) at IIIT Nagpur (Aug 2024 – present). It must sell him first for **AI consulting / applied AI** roles: framing a client's problem, then building the system that solves it. Success is a visitor who leaves knowing what he built at KPMG, has opened at least one project, and has a way to contact him or download the resume.
 
 ## Positioning
 
@@ -50,7 +50,14 @@ Visitors read on desktop between other tabs, and on phones from LinkedIn. Deploy
 
 ## Product Principles
 
-1. Lead with the KPMG story; it is the strongest proof he has.
+1. KPMG is one entry under Experience, featured but not the whole site: official KPMG logo, the full office photo with its background, no oversized KPMG lettering, no KPMG mentions in the hero. (Owner direction, 2026-11-27.)
 2. Show the work, not adjectives: real systems, real numbers, real screens.
 3. Fewer, better sections. Every block must earn its place.
 4. Personality stays, but as a footnote to the work, not the headline.
+
+## Owner direction, 2026-11-27
+
+- Use official brand marks for third parties (KPMG wordmark, Monkeytype and Spotify logos), never the site's own type or colours to spell them.
+- Projects: eRTMAC-NWIS (SIH 2026, team PLANNS, Oil India) replaces Kadam and FloatChat.
+- Model UN gets its own compact section (source: the owner's MUN résumé on Canva and `C:\Users\Nakul\Desktop\EVERYTHING\MUNs`). Don't overdo it.
+- Devanagari is an accent: rail numerals, a few tape words, a couple of headings. Not every counter and label.
