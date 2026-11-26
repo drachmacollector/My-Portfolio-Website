@@ -62,7 +62,7 @@
       "refersTo": "button-primary",
       "description": "Blood pill with a trailing arrow; the hero's single call to action and the contact pill.",
       "html": "<button class=\"ds-btn-primary\">Read the KPMG story <svg viewBox=\"0 0 16 16\" fill=\"none\" width=\"14\" height=\"14\" aria-hidden=\"true\"><path d=\"M8 2v12M3.5 9.5 8 14l4.5-4.5\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"square\"/></svg></button>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 12px; background: var(--red, #c8102a); color: var(--bone, #efe7dc); padding: 12px 20px; border: 0; border-radius: 9999px; font-family: General, 'Segoe UI', system-ui, sans-serif; font-size: 0.9rem; cursor: pointer; transition: background-color 0.3s; } .ds-btn-primary svg { transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover svg { transform: translateY(2px); } .ds-btn-primary:focus-visible { outline: 2px solid #ff4255; outline-offset: 4px; }"
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 12px; background: var(--red, #c8102a); color: var(--bone, #efe7dc); padding: 12px 20px; border: 0; border-radius: 9999px; font-family: General, 'Segoe UI', system-ui, sans-serif; font-size: 0.9rem; cursor: pointer; transition: background-color 0.3s; } .ds-btn-primary svg { transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover { background: #8e0d1e; } .ds-btn-primary:hover svg { transform: translateY(2px); } .ds-btn-primary:focus-visible { outline: 2px solid #ff4255; outline-offset: 4px; }"
     },
     {
       "name": "Bone Pill",

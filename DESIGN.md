@@ -232,7 +232,7 @@ Borders are 1px hairlines in bone at 10 to 25 percent, or paper-ink at 10 to 25 
 ### Buttons
 Tactile pills, quiet until touched.
 - **Shape:** Full pill (9999px).
-- **Primary:** Blood fill, bone text, 12px by 20px, 0.9rem General, with a trailing 1.5px arrow. This is the hero's "Read the KPMG story" action. The contact action is the same pill at 20px by 32px and up to 1.2rem, with the floating-action shadow and a magnetic pull toward the pointer.
+- **Primary:** Blood fill, bone text, 12px by 20px, 0.9rem General, with a trailing 1.5px arrow. This is the hero's "Read the KPMG story" action. The contact action is the same pill at 20px by 32px and up to 1.2rem, with the floating-action shadow and a magnetic pull toward the pointer. On hover the fill deepens to oxblood #8e0d1e, which keeps bone text above 4.5:1.
 - **Bone:** Bone fill, ink text, 10px by 20px. It turns blood with bone text on hover. Used for "Visit" on project sheets and "Send" on the form.
 - **Ghost:** Transparent with a bone/20 hairline, 10px by 20px. On hover the hairline goes to full bone, or the button fills blood on the KPMG closing action. Used for "Code", lightbox previous/next, and the résumé pill (set in label type).
 - **Focus:** A 2px lit-red outline at a 4px offset, globally.

@@ -155,7 +155,7 @@ const Contact = () => {
       <div className="absolute inset-0 z-[1] flex items-center justify-center">
         <a
           href={`mailto:${CONTACT.email}`}
-          className="ct-cta inline-flex items-center gap-3 rounded-full bg-blood px-8 py-5 text-[clamp(1rem,1.6vw,1.2rem)] text-bone shadow-[0_24px_48px_-18px_rgba(0,0,0,0.9)] transition-colors duration-300 hover:bg-blood-hi"
+          className="ct-cta inline-flex items-center gap-3 rounded-full bg-blood px-8 py-5 text-[clamp(1rem,1.6vw,1.2rem)] text-bone shadow-[0_24px_48px_-18px_rgba(0,0,0,0.9)] transition-colors duration-300 hover:bg-blood-deep"
         >
           Email me about a role or a project <ArrowUpRight />
         </a>

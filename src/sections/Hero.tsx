@@ -164,7 +164,7 @@ const Hero = ({ ready }: { ready: boolean }) => {
         </p>
         <button
           onClick={() => scrollToId("kpmg")}
-          className="group mt-5 inline-flex items-center gap-3 rounded-full bg-blood px-5 py-3 text-[0.9rem] text-bone transition-colors duration-300 hover:bg-blood-hi"
+          className="group mt-5 inline-flex items-center gap-3 rounded-full bg-blood px-5 py-3 text-[0.9rem] text-bone transition-colors duration-300 hover:bg-blood-deep"
         >
           Read the KPMG story
           <ArrowDown className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-y-0.5" />
