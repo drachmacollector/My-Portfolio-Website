@@ -93,8 +93,8 @@ const Kpmg = () => {
           })
           .fromTo(".kp-letter", { xPercent: (i) => [-6, -2, 2, 6][i] }, { xPercent: (i) => [-34, -12, 12, 34][i], ease: "none" }, 0)
           .fromTo(".kp-person", { yPercent: 6, scale: 0.96 }, { yPercent: 0, scale: 1.04, ease: "none" }, 0)
-          .from(".kp-meta > *", { opacity: 0, y: 24, stagger: 0.05, ease: "none" }, 0.1)
-          .from(".kp-intro", { opacity: 0, y: 24, ease: "none" }, 0.2);
+          .from(".kp-meta", { opacity: 0, y: 30, duration: 0.35, ease: "none" }, 0)
+          .from(".kp-intro", { opacity: 0, y: 30, duration: 0.35, ease: "none" }, 0.08);
 
         const track = root.current!.querySelector<HTMLElement>(".kp-track")!;
         const dist = () => track.scrollWidth - window.innerWidth;
