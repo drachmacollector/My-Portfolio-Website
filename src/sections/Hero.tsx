@@ -89,12 +89,12 @@ const Hero = ({ ready }: { ready: boolean }) => {
       </div>
 
       {/* Tapes */}
-      <Tape items={TAPE_A} className="h-tape-a top-[30%] z-[1] -rotate-[11deg] text-[clamp(0.95rem,1.4vw,1.25rem)]" />
+      <Tape items={TAPE_A} className="h-tape-a top-[44%] md:top-[30%] z-[1] -rotate-[11deg] text-[clamp(0.95rem,1.4vw,1.25rem)]" />
       <Tape
         items={TAPE_B}
         reverse
         tone="deep"
-        className="h-tape-b top-[54%] z-[1] rotate-[7deg] text-[clamp(0.85rem,1.2vw,1.1rem)]"
+        className="h-tape-b top-[60%] md:top-[54%] z-[1] rotate-[7deg] text-[clamp(0.85rem,1.2vw,1.1rem)]"
       />
 
       {/* Giant outline name */}
@@ -110,7 +110,7 @@ const Hero = ({ ready }: { ready: boolean }) => {
       </h1>
 
       {/* Portrait */}
-      <div className="h-portrait absolute bottom-0 left-1/2 z-[3] aspect-square h-[min(84svh,980px)] -translate-x-1/2 max-md:h-[62svh]">
+      <div className="h-portrait absolute bottom-0 left-1/2 z-[3] aspect-square h-[min(84svh,980px)] -translate-x-1/2 max-md:h-[58svh]">
         <div className="relative h-full w-full">
           <img
             src="/img/nakul-cut.webp"
@@ -138,7 +138,7 @@ const Hero = ({ ready }: { ready: boolean }) => {
       </p>
 
       {/* Role + action */}
-      <div className="h-ui absolute bottom-[22%] left-5 z-[4] max-w-[300px] md:bottom-auto md:left-auto md:right-12 md:top-[34%] lg:right-20">
+      <div className="h-ui absolute left-5 right-5 top-[17%] z-[4] max-w-[340px] md:left-auto md:right-12 md:top-[34%] lg:right-20">
         <p className="text-[0.95rem] leading-relaxed text-bone/80">
           AI consultant and engineer. At KPMG I shaped AI strategy for the Government of Maharashtra, then built the
           system that verified <span className="text-bone">1.5 lakh scholarship records</span>.

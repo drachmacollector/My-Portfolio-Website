@@ -210,9 +210,10 @@ const Kpmg = () => {
   return (
     <section id="kpmg" ref={root} className="relative bg-ink" aria-label="KPMG case study">
       {/* Opener */}
-      <div className="kp-opener grain relative flex h-[100svh] min-h-[680px] items-end overflow-hidden">
+      <div className="kp-opener grain relative flex flex-col overflow-hidden lg:h-[100svh] lg:min-h-[680px] lg:flex-row lg:items-end">
+        <div className="relative h-[72svh] lg:absolute lg:inset-0 lg:h-auto">
         <div
-          className="pointer-events-none absolute inset-x-0 top-[12%] flex justify-center text-[clamp(9rem,33vw,34rem)] leading-[0.8]"
+          className="pointer-events-none absolute inset-x-0 top-[14%] flex justify-center text-[clamp(7rem,33vw,34rem)] leading-[0.8] lg:top-[12%]"
           aria-hidden="true"
         >
           {"KPMG".split("").map((c, i) => (
@@ -227,7 +228,8 @@ const Kpmg = () => {
           loading="lazy"
           className="kp-person absolute bottom-0 left-1/2 h-[86%] -translate-x-1/2 object-contain object-bottom [filter:drop-shadow(0_30px_40px_rgba(0,0,0,0.6))]"
         />
-        <div className="shell relative z-[2] grid w-full gap-10 pb-12 md:grid-cols-2 md:pb-16">
+        </div>
+        <div className="shell relative z-[2] grid w-full gap-10 pb-16 pt-8 md:grid-cols-2 lg:pt-0">
           <div>
             <h2 className="flex items-baseline gap-3">
               <span className="deva text-[1.6rem] text-blood">क्षेत्र</span>

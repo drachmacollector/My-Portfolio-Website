@@ -3,10 +3,10 @@ import { METHOD, toDeva } from "@/constants/content";
 import { gsap, useGSAP, DESKTOP_MOTION } from "@/lib/gsap";
 
 const SUN_POS = [
-  { x: "-18vw", y: "-6vh" },
-  { x: "16vw", y: "8vh" },
-  { x: "-10vw", y: "10vh" },
-  { x: "14vw", y: "-8vh" },
+  { x: "-16vw", y: "-4vh" },
+  { x: "16vw", y: "6vh" },
+  { x: "-15vw", y: "7vh" },
+  { x: "15vw", y: "-5vh" },
 ];
 
 const Method = () => {
@@ -30,12 +30,12 @@ const Method = () => {
         });
         METHOD.forEach((_, i) => {
           if (i === 0) {
-            tl.to(".mt-sun", { x: SUN_POS[0].x, y: SUN_POS[0].y, duration: 1, ease: "power2.inOut" });
+            tl.to(".mt-sun", { x: SUN_POS[0].x, y: SUN_POS[0].y, duration: 0.5, ease: "power2.inOut" });
             return;
           }
           tl.to(`.mt-move:nth-child(${i})`, { autoAlpha: 0, y: -50, filter: "blur(8px)", duration: 0.5 }, `m${i}`)
             .to(`.mt-glyph:nth-child(${i})`, { autoAlpha: 0, scale: 0.8, filter: "blur(10px)", duration: 0.5 }, `m${i}`)
-            .to(".mt-sun", { x: SUN_POS[i].x, y: SUN_POS[i].y, duration: 1, ease: "power2.inOut" }, `m${i}`)
+            .to(".mt-sun", { x: SUN_POS[i].x, y: SUN_POS[i].y, duration: 0.7, ease: "power3.inOut" }, `m${i}`)
             .fromTo(
               `.mt-move:nth-child(${i + 1})`,
               { autoAlpha: 0, y: 50, filter: "blur(8px)" },
