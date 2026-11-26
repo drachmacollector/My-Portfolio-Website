@@ -69,6 +69,12 @@ const Tile = ({ i, onOpen }: { i: number; onOpen: (i: number) => void }) => {
           className="absolute inset-0 h-full w-full object-cover"
         />
       )}
+      {r.badge && (
+        <span className="absolute left-4 top-4 z-[1] inline-flex items-center gap-2 rounded-full bg-blood px-3.5 py-1.5 text-[0.8rem] text-bone shadow-[0_8px_20px_-8px_rgba(0,0,0,0.8)]">
+          <span className="h-1.5 w-1.5 rounded-full bg-bone" aria-hidden="true" />
+          {r.badge}
+        </span>
+      )}
       <span className="absolute inset-x-0 bottom-0 flex items-end justify-between bg-[linear-gradient(to_top,rgba(11,11,12,0.85),transparent)] p-5 pt-16">
         <span>
           <span className="tabular block text-[0.9rem] text-blood-hi">{String(i + 1).padStart(2, "0")}</span>

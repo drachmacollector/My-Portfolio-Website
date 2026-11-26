@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { EXPERIENCE, KPMG } from "@/constants/content";
 import { gsap, useGSAP, ANY_MOTION } from "@/lib/gsap";
-import { ArrowUpRight } from "@/components/Icons";
+import { ArrowUpRight, Download } from "@/components/Icons";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -134,7 +134,7 @@ const Experience = () => {
 
             <div>
               <div className="ex-logo flex flex-wrap items-center justify-between gap-6">
-                <span className="block aspect-[2.1/1] h-[5.5rem] overflow-hidden rounded-xl md:h-28">
+                <span className="block aspect-[2.4/1] h-[5.5rem] overflow-hidden rounded-xl md:h-28">
                   <img src="/img/kpmg.webp" alt="KPMG" width={726} height={726} className="h-full w-full object-cover" />
                 </span>
                 <span className="tabular text-[0.95rem] text-bone/60">{KPMG.meta.find((m) => m.k === "When")?.v}</span>
@@ -220,7 +220,6 @@ const Experience = () => {
                     <h5 className="display text-[1.3rem] leading-tight text-bone/50 transition-colors duration-500 group-[.is-on]:text-bone">
                       {s.t}
                     </h5>
-                    <p className="mt-2 text-[0.88rem] leading-relaxed text-bone/65">{s.d}</p>
                     <p className="mt-3 text-[0.8rem] text-blood-hi">{s.tools}</p>
                   </li>
                 ))}
@@ -249,14 +248,22 @@ const Experience = () => {
               </dl>
               <div className="flex flex-col items-start gap-4 lg:items-end">
                 <p className="max-w-[34ch] text-[0.98rem] leading-relaxed text-bone/75 lg:text-right">{KPMG.shipped}</p>
-                <a
-                  href={KPMG.repo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-bone/20 px-5 py-2.5 text-[0.9rem] transition-colors duration-300 hover:border-bone"
-                >
-                  Pipeline code <ArrowUpRight />
-                </a>
+                <div className="flex flex-wrap gap-3">
+                  <a
+                    href={KPMG.download}
+                    className="inline-flex items-center gap-2 rounded-full bg-bone px-5 py-2.5 text-[0.9rem] text-ink transition-colors duration-300 hover:bg-blood hover:text-bone"
+                  >
+                    Download the app (.exe) <Download />
+                  </a>
+                  <a
+                    href={KPMG.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-bone/20 px-5 py-2.5 text-[0.9rem] transition-colors duration-300 hover:border-bone"
+                  >
+                    Pipeline code <ArrowUpRight />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -266,9 +273,19 @@ const Experience = () => {
         <ul className="ex-others mt-20 border-t border-bone/15">
           {EXPERIENCE.map((e) => {
             const inner = (
-              <div className="grid gap-x-10 gap-y-2 py-7 md:grid-cols-[1fr_1.3fr_auto] md:items-baseline">
-                <span className="display text-[clamp(1.6rem,2.6vw,2.2rem)] transition-colors duration-300 group-hover:text-blood-hi">
-                  {e.org}
+              <div className="grid gap-x-10 gap-y-3 py-7 md:grid-cols-[1fr_1.3fr_auto] md:items-center">
+                <span className="flex items-center gap-4">
+                  {e.logo && (
+                    <img
+                      src={e.logo}
+                      alt=""
+                      loading="lazy"
+                      className="h-12 w-12 shrink-0 object-contain md:h-14 md:w-14"
+                    />
+                  )}
+                  <span className="display text-[clamp(1.6rem,2.6vw,2.2rem)] transition-colors duration-300 group-hover:text-blood-hi">
+                    {e.org}
+                  </span>
                 </span>
                 <span className="text-[0.95rem] leading-relaxed text-bone/70">
                   <span className="text-bone/90">{e.role}</span>

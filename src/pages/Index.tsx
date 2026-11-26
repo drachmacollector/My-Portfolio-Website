@@ -6,7 +6,6 @@ import About from "@/sections/About";
 import Experience from "@/sections/Experience";
 import Work from "@/sections/Work";
 import Mun from "@/sections/Mun";
-import Record from "@/sections/Record";
 import Renders from "@/sections/Renders";
 import Contact from "@/sections/Contact";
 import { initSmoothScroll } from "@/animations/smooth-scroll";
@@ -35,7 +34,6 @@ const Index = () => {
         <Experience />
         <Work />
         <Mun />
-        <Record />
         <Renders />
         <Contact />
       </main>

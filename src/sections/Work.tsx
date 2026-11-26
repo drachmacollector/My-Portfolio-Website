@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { PROJECTS, RESEARCH, toDeva, type Project } from "@/constants/content";
 import { gsap, useGSAP, ScrollTrigger, ANY_MOTION } from "@/lib/gsap";
-import { ArrowUpRight } from "@/components/Icons";
+import { ArrowUpRight, Download } from "@/components/Icons";
 
 /** One screenshot, or several that take turns while the card is on screen. */
 const Shots = ({ p }: { p: Project }) => {
@@ -161,6 +161,14 @@ const Work = () => {
                           className="inline-flex items-center gap-2 rounded-full bg-bone px-5 py-2.5 text-[0.9rem] text-ink transition-colors duration-300 hover:bg-blood hover:text-bone"
                         >
                           Visit <ArrowUpRight />
+                        </a>
+                      )}
+                      {p.download && (
+                        <a
+                          href={p.download}
+                          className="inline-flex items-center gap-2 rounded-full bg-bone px-5 py-2.5 text-[0.9rem] text-ink transition-colors duration-300 hover:bg-blood hover:text-bone"
+                        >
+                          Download (.exe) <Download />
                         </a>
                       )}
                       {p.code && (

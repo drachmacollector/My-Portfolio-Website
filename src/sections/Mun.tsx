@@ -62,14 +62,6 @@ const Mun = () => {
           ease: "expo.out",
           scrollTrigger: { trigger: ".mn-head", start: "top 80%" },
         });
-        gsap.from(".mn-stat", {
-          y: 40,
-          opacity: 0,
-          stagger: 0.1,
-          duration: 1.2,
-          ease: "expo.out",
-          scrollTrigger: { trigger: ".mn-stats", start: "top 85%" },
-        });
         gsap.utils.toArray<HTMLElement>(".mn-list").forEach((list) => {
           gsap.from(list.querySelectorAll(".mn-row"), {
             y: 24,
@@ -145,18 +137,6 @@ const Mun = () => {
           </h2>
           <p className="max-w-[40ch] text-[1rem] leading-relaxed text-paper-ink/75">{MUN.intro}</p>
         </div>
-
-        <dl className="mn-stats mt-10 grid grid-cols-3 gap-6 border-t border-paper-ink/15 pt-6">
-          {MUN.stats.map((s) => (
-            <div key={s.label} className="mn-stat">
-              <dt className="sr-only">{s.label}</dt>
-              <dd>
-                <span className="display tabular block text-[clamp(2.6rem,5.5vw,4.6rem)] leading-none">{s.value}</span>
-                <span className="mt-2 block text-[0.92rem] text-paper-ink/65">{s.label}</span>
-              </dd>
-            </div>
-          ))}
-        </dl>
 
         <div className="mn-body mt-12 grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
           <div className="grid gap-8">

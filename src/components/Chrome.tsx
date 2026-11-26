@@ -87,6 +87,24 @@ const Chrome = () => {
 
   return (
     <>
+      {/* Contact: a vertical pill hanging under the menu button */}
+      <div
+        className={`fixed right-5 top-[84px] z-[60] hidden w-12 justify-center transition-opacity duration-300 sm:flex md:right-8 md:top-[92px] ${
+          open ? "pointer-events-none opacity-0" : ""
+        }`}
+      >
+        <button
+          onClick={() => scrollToId("contact")}
+          className={`label inline-flex items-center gap-2 rounded-full border px-3 py-4 [writing-mode:vertical-rl] transition-colors duration-300 ${
+            light
+              ? "border-paper-ink/25 bg-paper text-paper-ink hover:bg-paper-ink hover:text-paper"
+              : "border-bone/20 bg-ink text-bone hover:bg-bone hover:text-ink"
+          }`}
+        >
+          Contact
+        </button>
+      </div>
+
       {/* Top right actions */}
       <div className="fixed right-5 top-5 z-[60] flex items-center gap-3 md:right-8 md:top-7">
         <a

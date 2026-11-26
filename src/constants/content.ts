@@ -13,7 +13,6 @@ export const SECTIONS = [
   { id: "experience", label: "Experience" },
   { id: "work", label: "Work" },
   { id: "mun", label: "Model UN" },
-  { id: "honours", label: "Honours" },
   { id: "renders", label: "3D" },
   { id: "contact", label: "Contact" },
 ] as const;
@@ -64,6 +63,7 @@ export const KPMG = {
   intro:
     "Two months on the Labour Department's project to fold its scattered portals into one. I worked on three assignments, each bigger than the last.",
   repo: "https://github.com/drachmacollector/kpmg",
+  download: "https://github.com/drachmacollector/KPMG/releases/download/v2.1.0/MAHABOCW-Setup.exe",
   chapters: [
     {
       n: 1,
@@ -100,13 +100,13 @@ export const KPMG = {
     },
   ],
   pipeline: [
-    { t: "Open the claim", d: "Playwright walks the board's portal, which has no API, and collects every document.", tools: "Playwright" },
-    { t: "Pick the evidence", d: "Bonafide certificate and college ID first; the rest only if needed.", tools: "Two-phase triage" },
-    { t: "Clean the scans", d: "De-duplicate, render at 300 DPI, fix rotation.", tools: "PyMuPDF · Pillow" },
-    { t: "Read the text", d: "OCR on the GPU, with confidence kept per page.", tools: "PaddleOCR" },
-    { t: "Pull the fields", d: "A local model pulls student, year, college and address.", tools: "Qwen 2.5 7B" },
-    { t: "Find the college", d: "A search-grounded model resolves the official name.", tools: "Gemini · RapidFuzz" },
-    { t: "Score it", d: "Scored out of 100. Anything under 80 goes to a person.", tools: "Excel out" },
+    { t: "Open the claim", tools: "Playwright" },
+    { t: "Pick the evidence", tools: "Two-phase triage" },
+    { t: "Clean the scans", tools: "PyMuPDF · Pillow" },
+    { t: "Read the text", tools: "PaddleOCR" },
+    { t: "Pull the fields", tools: "Qwen 2.5 7B" },
+    { t: "Find the college", tools: "Gemini · RapidFuzz" },
+    { t: "Score it", tools: "Excel out" },
   ],
   shipped:
     "Shipped as a Windows installer, with its own runtime and a desktop app, so the department runs it without us.",
@@ -128,6 +128,8 @@ export interface Project {
   live?: string;
   code?: string;
   fit?: "cover" | "contain";
+  /** Direct link to a Windows installer. */
+  download?: string;
   /** Extra screenshots, cycled in the same frame. */
   gallery?: string[];
 }
@@ -156,11 +158,9 @@ export const PROJECTS: Project[] = [
     title: "eRTMAC-NWIS",
     year: "2026",
     kind: "Smart India Hackathon, drilling-hazard early warning",
-    fit: "contain",
     body: "Built with team PLANNS for an Oil India Limited problem. It turns 1,759 daily drilling reports into a 4,037-node knowledge graph, watches live rig telemetry for anomalies, matches what it sees against past wells, and briefs engineers through a citation-checked LLM. On a real Equinor Volve well it flagged a stuck pipe 106 m, about 44 minutes, early.",
     stack: ["Python", "FastAPI", "NetworkX", "ChromaDB", "Qwen 2.5 72B", "Gemini", "Leaflet"],
-    image: "/img/proj-nwis-graph.webp",
-    gallery: ["/img/proj-nwis-stream.webp", "/img/proj-nwis-dash.webp"],
+    image: "/img/proj-nwis-dash.webp",
     code: "https://github.com/n3ssdub3y/SIH_2026_PLANNS",
   },
   {
@@ -171,27 +171,8 @@ export const PROJECTS: Project[] = [
     stack: ["C#", "Win32", "Windows 11"],
     image: "/img/proj-xbar-panel.webp",
     code: "https://github.com/drachmacollector/XBar",
+    download: "https://github.com/drachmacollector/XBar/releases/download/v1.1.0/XBar-Setup-1.1.0.exe",
     fit: "contain",
-  },
-  {
-    title: "Kepler AI",
-    year: "2026",
-    kind: "Exoplanet classifier",
-    body: "Predicts likely exoplanets and their characteristics from raw Kepler Space Telescope observations, served through a FastAPI model behind a React dashboard.",
-    stack: ["Python", "scikit-learn", "FastAPI", "Pydantic", "React"],
-    image: "/img/proj-keplerai.webp",
-    live: "https://kepler-ai-koi.vercel.app/",
-    code: "https://github.com/drachmacollector/Kepler-AI",
-  },
-  {
-    title: "The Consistent Academy",
-    year: "2025",
-    kind: "Production EdTech platform",
-    body: "Courses, a test interface, Razorpay payments and Resend email for an IELTS and spoken-English academy. In production with 150+ users.",
-    stack: ["React", "Firebase", "Cloudinary", "Razorpay", "Resend"],
-    image: "/img/proj-tca.webp",
-    live: "https://theconsistentacademy.in/",
-    code: "https://github.com/sidii1/The-Consistent-Academy",
   },
   {
     title: "Parkify",
@@ -217,30 +198,21 @@ export const EXPERIENCE = [
     when: "Dec 2025 – now",
     body: "Built and run the academy's production platform: courses, a test interface, Razorpay payments and Resend email, for 150+ students.",
     href: "https://theconsistentacademy.in/",
+    logo: "/img/logo-tca.webp",
   },
   {
     org: "IIIT Nagpur",
     role: "B.Tech CSE (Artificial Intelligence & Machine Learning)",
     when: "Aug 2024 – now",
     body: "",
+    logo: "/img/logo-iiitn.webp",
+    href: "https://iiitn.ac.in/",
   },
-];
-
-export const HONOURS = [
-  { what: "Render Riot", note: "Two-time winner, national 3D animation competition", place: "1st ×2" },
-  { what: "Healthy Headspace Hackathon", note: "Hackathon", place: "1st" },
-  { what: "AstroHack 2025", note: "Hackathon", place: "2nd" },
-  { what: "Krafton Game Dev Hackathon", note: "IIT Bombay E-Summit 2025", place: "4th" },
 ];
 
 export const MUN = {
   intro:
     "Model UN since school, and competitive debate at college. I have argued for countries in the Security Council, the General Assembly, the Human Rights Council and the WHO, and lately I run the room from the chair.",
-  stats: [
-    { value: "5", label: "Best Delegate awards" },
-    { value: "11", label: "conferences" },
-    { value: "2", label: "committees chaired" },
-  ],
   grant: {
     title: "CWMUN New York 2026",
     body: "Awarded a €1,000 grant by Associazione Diplomatici and Change the World Academy to attend as a delegate.",
@@ -269,8 +241,8 @@ export const MUN = {
 };
 
 export const RENDERS = [
-  { title: "Space Station", file: "space station.mp4", still: "/img/still-space-station.webp" },
-  { title: "Cyberpunk street", file: "cyberpunk street.mp4", still: "/img/still-cyberpunk-street.webp" },
+  { title: "Space Station", file: "space station.mp4", still: "/img/still-space-station.webp", badge: "Render Riot 2025 winner" },
+  { title: "Cyberpunk street", file: "cyberpunk street.mp4", still: "/img/still-cyberpunk-street.webp", badge: "Kurukshetra (Viewport) winner" },
   { title: "The Storm", file: "stormy ocean boat.mp4", still: "/img/still-stormy-ocean-boat.webp" },
   { title: "Chanel", file: "chanel perfume.mp4", still: "/img/still-chanel-perfume.webp" },
   { title: "Heart", file: "heart.mp4", still: "/img/still-heart.webp" },
