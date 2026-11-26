@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { CONTACT, toDeva } from "@/constants/content";
+import { CONTACT } from "@/constants/content";
 import { gsap, useGSAP, ANY_MOTION } from "@/lib/gsap";
 import { ArrowUpRight, ArrowRight } from "@/components/Icons";
 import { scrollToId } from "@/components/Chrome";
@@ -229,7 +229,7 @@ const Contact = () => {
 
       <footer className="shell mt-[clamp(90px,14vh,160px)] flex flex-wrap items-center justify-between gap-4 border-t border-bone/10 py-8 text-[0.85rem] text-bone/50">
         <p>
-          Nakul Bhadade · <span className="deva">{toDeva(2026)}</span>
+          Nakul Bhadade · 2026
         </p>
         <p>Designed and built by me, with React and GSAP.</p>
         <button onClick={() => scrollToId("top")} className="label link-underline">

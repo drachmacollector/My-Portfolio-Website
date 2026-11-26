@@ -1,7 +1,63 @@
-import { useRef } from "react";
-import { PROJECTS, RESEARCH, toDeva } from "@/constants/content";
+import { useEffect, useRef, useState } from "react";
+import { PROJECTS, RESEARCH, toDeva, type Project } from "@/constants/content";
 import { gsap, useGSAP, ScrollTrigger, ANY_MOTION } from "@/lib/gsap";
 import { ArrowUpRight } from "@/components/Icons";
+
+/** One screenshot, or several that take turns while the card is on screen. */
+const Shots = ({ p }: { p: Project }) => {
+  const shots = [p.image, ...(p.gallery ?? [])];
+  const [cur, setCur] = useState(0);
+  const host = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (shots.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let timer: ReturnType<typeof setInterval> | null = null;
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting && !timer) timer = setInterval(() => setCur((c) => (c + 1) % shots.length), 3200);
+        if (!e.isIntersecting && timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      },
+      { threshold: 0.5 },
+    );
+    if (host.current) io.observe(host.current);
+    return () => {
+      io.disconnect();
+      if (timer) clearInterval(timer);
+    };
+  }, [shots.length]);
+
+  const fit = p.fit === "contain" ? "bg-[#202020] object-contain" : "object-cover object-top";
+  return (
+    <div ref={host} className="absolute inset-0">
+      {shots.map((src, i) => (
+        <img
+          key={src}
+          src={src}
+          alt={i === 0 ? `${p.title} screenshot` : ""}
+          aria-hidden={i === 0 ? undefined : true}
+          loading="lazy"
+          className={`absolute inset-0 h-full w-full transition-opacity duration-700 ${fit} ${i === cur ? "opacity-100" : "opacity-0"}`}
+        />
+      ))}
+      {shots.length > 1 && (
+        <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5 rounded-full bg-ink/70 px-2.5 py-2">
+          {shots.map((src, i) => (
+            <button
+              key={src}
+              type="button"
+              onClick={() => setCur(i)}
+              aria-label={`Show screenshot ${i + 1} of ${shots.length}`}
+              className={`h-1.5 rounded-full transition-all duration-500 ${i === cur ? "w-5 bg-bone" : "w-1.5 bg-bone/40"}`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 const Work = () => {
   const root = useRef<HTMLElement>(null);
@@ -67,8 +123,8 @@ const Work = () => {
           <span className="text-blood">work</span>
         </h2>
         <p className="max-w-[34ch] text-[1rem] leading-relaxed text-bone/70">
-          Things I designed, trained and shipped outside the internship: research dashboards, a Windows utility and
-          platforms with real users.
+          Things I designed, trained and shipped: a drilling early-warning system, research dashboards, a Windows
+          utility and platforms with real users.
         </p>
       </div>
 
@@ -121,12 +177,7 @@ const Work = () => {
                 </div>
                 <div className="relative min-h-0 overflow-hidden bg-ink-3 [perspective:1400px] max-lg:order-first max-lg:h-[30svh]">
                   <div className="wk-screen absolute inset-[6%] origin-center overflow-hidden rounded-xl border border-bone/10 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.8)] [transform-style:preserve-3d]">
-                    <img
-                      src={p.image}
-                      alt={`${p.title} screenshot`}
-                      loading="lazy"
-                      className={`h-full w-full ${p.fit === "contain" ? "bg-[#202020] object-contain" : "object-cover object-top"}`}
-                    />
+                    <Shots p={p} />
                   </div>
                 </div>
               </div>

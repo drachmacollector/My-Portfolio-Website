@@ -3,9 +3,9 @@ import Chrome from "@/components/Chrome";
 import Preloader from "@/components/Preloader";
 import Hero from "@/sections/Hero";
 import About from "@/sections/About";
-import Kpmg from "@/sections/Kpmg";
-import Method from "@/sections/Method";
+import Experience from "@/sections/Experience";
 import Work from "@/sections/Work";
+import Mun from "@/sections/Mun";
 import Record from "@/sections/Record";
 import Renders from "@/sections/Renders";
 import Contact from "@/sections/Contact";
@@ -32,9 +32,9 @@ const Index = () => {
       <main>
         <Hero ready={ready} />
         <About />
-        <Kpmg />
-        <Method />
+        <Experience />
         <Work />
+        <Mun />
         <Record />
         <Renders />
         <Contact />

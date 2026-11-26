@@ -4,7 +4,7 @@ import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { getLenis } from "@/animations/smooth-scroll";
 import { ArrowUpRight } from "@/components/Icons";
 
-const LIGHT_SECTIONS = new Set(["method"]);
+const LIGHT_SECTIONS = new Set(["mun"]);
 
 export const scrollToId = (id: string) => {
   const el = document.getElementById(id);
@@ -185,7 +185,7 @@ const Chrome = () => {
                 }}
                 className="menu-item group flex items-baseline gap-5 py-2 md:py-3"
               >
-                <span className="deva w-8 text-xl text-blood md:text-2xl">{toDeva(i + 1)}</span>
+                <span className="tabular w-8 text-lg text-blood md:text-xl">{String(i + 1).padStart(2, "0")}</span>
                 <span className="display text-[13vw] transition-colors duration-300 group-hover:text-blood md:text-[5.5rem]">
                   {s.label}
                 </span>

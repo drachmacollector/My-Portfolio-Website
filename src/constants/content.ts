@@ -10,10 +10,10 @@ export const toDeva = (n: number | string) =>
 export const SECTIONS = [
   { id: "top", label: "Hello" },
   { id: "about", label: "About" },
-  { id: "kpmg", label: "KPMG" },
-  { id: "method", label: "Method" },
+  { id: "experience", label: "Experience" },
   { id: "work", label: "Work" },
-  { id: "record", label: "Record" },
+  { id: "mun", label: "Model UN" },
+  { id: "honours", label: "Honours" },
   { id: "renders", label: "3D" },
   { id: "contact", label: "Contact" },
 ] as const;
@@ -28,23 +28,17 @@ export const CONTACT = {
 
 export const TAPE_A = [
   "Strategy, then the system",
+  "Applied AI",
   "सत्य",
-  "1.5 lakh records verified",
-  "कर्म",
-  "AI consultant",
-  "धैर्य",
-  "KPMG · Government & Public Services",
-  "मार्ग",
+  "Document pipelines",
+  "Forecasting models",
 ];
 export const TAPE_B = [
   "IIIT Nagpur",
-  "शिक्षण",
   "CSE · AI & ML",
+  "Best Delegate ×5",
   "वाद",
-  "Debater",
-  "कला",
   "3D artist",
-  "नागपूर",
 ];
 
 export const ABOUT = {
@@ -53,8 +47,8 @@ export const ABOUT = {
     "I study computer science at IIIT Nagpur and I like problems that arrive as [[a pile of paperwork]]. I work out what the client actually needs, [[build the system]] that does it, and hand it over so it [[runs without me]].",
   facts: [
     { k: "Studying", v: "B.Tech CSE (AI & ML), IIIT Nagpur, since 2024" },
-    { k: "Last role", v: "AI Consultant Intern, KPMG India" },
-    { k: "Also", v: "Debater, MUN delegate, 3D artist" },
+    { k: "Worked at", v: "KPMG India, The Consistent Academy" },
+    { k: "Also", v: "MUN delegate and chair, debater, 3D artist" },
   ],
 };
 
@@ -68,13 +62,12 @@ export const KPMG = {
     { k: "When", v: "May – July 2026" },
   ],
   intro:
-    "Two months inside a state government's largest consolidation project: folding the Labour Department's scattered portals into one. I worked on three assignments, each bigger than the last.",
+    "Two months on the Labour Department's project to fold its scattered portals into one. I worked on three assignments, each bigger than the last.",
+  repo: "https://github.com/drachmacollector/kpmg",
   chapters: [
     {
       n: 1,
-      word: "कायदा",
       title: "Labour codes",
-      sub: "Inspection Testing portal",
       body: "For the Inspection Testing portal. India folded 29 central labour laws into four codes; I read all four and pulled out what matters for factory inspections: what gets inspected, how often, what employers owe workers, how machinery is tested. Then I proposed where AI fits, in four parts.",
       list: [
         "Risk scores per factory from past violations, failed tests and accidents",
@@ -86,9 +79,7 @@ export const KPMG = {
     },
     {
       n: 2,
-      word: "किंमत",
       title: "CPI validation",
-      sub: "Consumer Price Index survey",
       body: "I mapped how India calculates the Consumer Price Index for industrial workers, agricultural and rural labourers, end to end, in decks and flowcharts. When the team planned a state-level survey app, I owned verification and validation, and proposed six checks.",
       list: [
         "Anomaly detection: flatlined prices, spikes, suspiciously stable series",
@@ -102,9 +93,7 @@ export const KPMG = {
     },
     {
       n: 3,
-      word: "प्रणाली",
       title: "Scholarship pipeline",
-      sub: "MAHABOCW, the construction workers' welfare board",
       body: "For MAHABOCW, the construction workers' welfare board. Workers' children can claim up to ₹1 lakh a year for engineering or medical study. Applicants typed college names however they liked, and consultants were checking more than a lakh applications a year by hand. I built the system that does it instead.",
       list: [],
       listTitle: "",
@@ -157,29 +146,6 @@ export const KPMG = {
   ],
 };
 
-export const METHOD = [
-  {
-    word: "वाचन",
-    title: "Read everything",
-    body: "The law, the data and the people, before any code. At KPMG that meant four labour codes and a CPI manual.",
-  },
-  {
-    word: "मांडणी",
-    title: "Frame it",
-    body: "Turn a vague ask into a framework someone can approve: four parts for inspections, six for CPI.",
-  },
-  {
-    word: "बांधणी",
-    title: "Build it",
-    body: "Then build the thing for real: browser automation, OCR, local and cloud models, scoring that a person can audit.",
-  },
-  {
-    word: "सोपवा",
-    title: "Hand it over",
-    body: "Package it so the client runs it alone. The pipeline left as an installer, not a notebook.",
-  },
-];
-
 export interface Project {
   title: string;
   year: string;
@@ -190,6 +156,8 @@ export interface Project {
   live?: string;
   code?: string;
   fit?: "cover" | "contain";
+  /** Extra screenshots, cycled in the same frame. */
+  gallery?: string[];
 }
 
 export const PROJECTS: Project[] = [
@@ -213,6 +181,17 @@ export const PROJECTS: Project[] = [
     live: "https://drift-mm.vercel.app/",
   },
   {
+    title: "eRTMAC-NWIS",
+    year: "2026",
+    kind: "Smart India Hackathon, drilling-hazard early warning",
+    fit: "contain",
+    body: "Built with team PLANNS for an Oil India Limited problem. It turns 1,759 daily drilling reports into a 4,037-node knowledge graph, watches live rig telemetry for anomalies, matches what it sees against past wells, and briefs engineers through a citation-checked LLM. On a real Equinor Volve well it flagged a stuck pipe 106 m, about 44 minutes, early.",
+    stack: ["Python", "FastAPI", "NetworkX", "ChromaDB", "Qwen 2.5 72B", "Gemini", "Leaflet"],
+    image: "/img/proj-nwis-graph.webp",
+    gallery: ["/img/proj-nwis-stream.webp", "/img/proj-nwis-dash.webp"],
+    code: "https://github.com/n3ssdub3y/SIH_2026_PLANNS",
+  },
+  {
     title: "XBar",
     year: "2026",
     kind: "Windows 11 utility",
@@ -233,16 +212,6 @@ export const PROJECTS: Project[] = [
     code: "https://github.com/drachmacollector/Kepler-AI",
   },
   {
-    title: "FloatChat",
-    year: "2025",
-    kind: "Ocean data chatbot",
-    body: "Ingests ARGO NetCDF ocean datasets, structures and vectorises them, and answers questions in plain language through a RAG pipeline. Built for the SIH 2025 internal round.",
-    stack: ["Python", "LangChain", "ChromaDB", "PostgreSQL", "Ollama", "React"],
-    image: "/img/proj-floatchat.webp",
-    live: "https://aquasense-seven.vercel.app/",
-    code: "https://github.com/drachmacollector/Aquasense",
-  },
-  {
     title: "The Consistent Academy",
     year: "2025",
     kind: "Production EdTech platform",
@@ -251,16 +220,6 @@ export const PROJECTS: Project[] = [
     image: "/img/proj-tca.webp",
     live: "https://theconsistentacademy.in/",
     code: "https://github.com/sidii1/The-Consistent-Academy",
-  },
-  {
-    title: "Kadam",
-    year: "2025",
-    kind: "NGO network",
-    body: "A pan-India network where NGOs and their supporters find each other, share what they are doing and take donations.",
-    stack: ["React", "Firebase", "Cloudinary"],
-    image: "/img/proj-kadam.webp",
-    live: "https://kadam-ngo.vercel.app/",
-    code: "https://github.com/n3ssdub3y/Kadam",
   },
   {
     title: "Parkify",
@@ -281,33 +240,61 @@ export const RESEARCH = {
 
 export const EXPERIENCE = [
   {
-    org: "KPMG India",
-    role: "AI Consultant Intern, Government & Public Services",
-    when: "May – Jul 2026",
-    href: "#kpmg",
-  },
-  {
     org: "The Consistent Academy",
     role: "Web Developer Intern, remote",
     when: "Dec 2025 – now",
+    body: "Built and run the academy's production platform: courses, a test interface, Razorpay payments and Resend email, for 150+ students.",
     href: "https://theconsistentacademy.in/",
   },
   {
     org: "IIIT Nagpur",
     role: "B.Tech CSE (Artificial Intelligence & Machine Learning)",
     when: "Aug 2024 – now",
+    body: "",
   },
 ];
 
 export const HONOURS = [
   { what: "Render Riot", note: "Two-time winner, national 3D animation competition", place: "1st ×2" },
-  { what: "Infacto 4.0", note: "National debate competition", place: "1st" },
   { what: "Healthy Headspace Hackathon", note: "Hackathon", place: "1st" },
   { what: "AstroHack 2025", note: "Hackathon", place: "2nd" },
   { what: "Krafton Game Dev Hackathon", note: "IIT Bombay E-Summit 2025", place: "4th" },
-  { what: "CWMUN New York 2026", note: "€1,000 grant from Associazione Diplomatici & Change the World Academy", place: "Grant" },
-  { what: "Model UN", note: "Several Best Delegate and High Commendation awards", place: "Awards" },
 ];
+
+export const MUN = {
+  intro:
+    "Model UN since school, and competitive debate at college. I have argued for countries in the Security Council, the General Assembly, the Human Rights Council and the WHO, and lately I run the room from the chair.",
+  stats: [
+    { value: "5", label: "Best Delegate awards" },
+    { value: "11", label: "conferences" },
+    { value: "2", label: "committees chaired" },
+  ],
+  grant: {
+    title: "CWMUN New York 2026",
+    body: "Awarded a €1,000 grant by Associazione Diplomatici and Change the World Academy to attend as a delegate.",
+  },
+  chair: [
+    { award: "Chairperson", conf: "Yuvaan Youth Conclave", where: "Civic Laws & Liberties, IIIT Nagpur" },
+    { award: "Vice Chairperson", conf: "RJMUN 3.0", where: "WHO, RJ International School" },
+  ],
+  floor: [
+    { award: "Best Delegate", conf: "ABMUN", where: "WHO, IIIT Nagpur" },
+    { award: "Best Delegate", conf: "GrantMUN 3.0", where: "UNSC, Grant University" },
+    { award: "Best Delegate", conf: "PACEMUN 4.0", where: "UNHRC, PACE Jr Science College" },
+    { award: "Best Delegate", conf: "VTSMUN 3.0", where: "UNGA, Villa Theresa School" },
+    { award: "Best Delegate", conf: "CCSMUN 5.0", where: "UNSC, Christ Church School" },
+    { award: "High Commendation", conf: "SymJashn MUN", where: "UNSC, Symbiosis Law School" },
+    { award: "Special Mention", conf: "IIITN MUN 3.0", where: "UNGA DISEC, IIIT Nagpur" },
+    { award: "Special Mention", conf: "CAPSMUN 3.0", where: "The Zodiac Files, CAPS International" },
+    { award: "1st place", conf: "Infacto 4.0", where: "Oxford-style debate, IIIT Nagpur" },
+  ],
+  photos: [
+    { src: "/img/mun-chair.webp", alt: "Nakul chairing the Civic Laws committee at Yuvaan" },
+    { src: "/img/mun-floor.webp", alt: "Nakul on his feet in committee at ABMUN" },
+    { src: "/img/mun-podium.webp", alt: "Nakul speaking at the podium at Yuvaan" },
+  ],
+  resume: "https://canva.link/1df4cck719q2sk7",
+};
 
 export const RENDERS = [
   { title: "Low orbit", file: "space station.mp4", still: "/img/still-space-station.webp" },

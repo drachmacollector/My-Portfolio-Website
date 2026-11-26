@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
-import { ArrowUpRight } from "@/components/Icons";
+import { ArrowUpRight, SpotifyLogo } from "@/components/Icons";
+
+const Brand = () => (
+  <span className="flex items-center gap-2.5 text-[#1ed760]">
+    <SpotifyLogo className="h-7 w-7" />
+    <span className="text-[1.05rem] tracking-tight">Spotify</span>
+  </span>
+);
 
 interface SpotifyData {
   isPlaying: boolean;
@@ -62,13 +69,14 @@ const NowPlaying = () => {
     };
   }, []);
 
-  const label = data?.isPlaying ? "Playing now on Spotify" : "Last played on Spotify";
+  const label = data?.isPlaying ? "Playing now" : "Last played";
 
   if (state !== "ok" || !data) {
     return (
-      <div className="flex flex-col justify-end bg-ink px-6 py-8">
+      <div className="flex flex-col justify-between gap-8 bg-ink px-6 py-7">
+        <Brand />
         <span className="text-[1.05rem] text-bone/60">
-          {state === "loading" ? "Checking what I'm playing on Spotify…" : "Nothing playing on Spotify right now."}
+          {state === "loading" ? "Checking what I'm listening to…" : "Nothing playing right now."}
         </span>
       </div>
     );
@@ -79,8 +87,12 @@ const NowPlaying = () => {
       href={data.songUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex items-end justify-between gap-6 bg-ink px-6 py-8"
+      className="group flex flex-col justify-between gap-8 bg-ink px-6 py-7"
     >
+      <span className="flex items-center justify-between gap-4">
+        <Brand />
+        <ArrowUpRight className="h-5 w-5 shrink-0 text-bone/50 transition-colors duration-300 group-hover:text-bone" />
+      </span>
       <span className="flex min-w-0 items-end gap-5">
         <img
           src={data.albumImageUrl}
@@ -92,12 +104,11 @@ const NowPlaying = () => {
             {data.title}
           </span>
           <span className="mt-1 flex items-center gap-2 truncate text-[0.92rem] text-bone/60">
-            {data.isPlaying && <span className="h-2 w-2 shrink-0 rounded-full bg-blood-hi" aria-hidden="true" />}
+            {data.isPlaying && <span className="h-2 w-2 shrink-0 rounded-full bg-[#1ed760]" aria-hidden="true" />}
             {data.artist} · {label}
           </span>
         </span>
       </span>
-      <ArrowUpRight className="h-5 w-5 shrink-0 text-bone/50 transition-colors duration-300 group-hover:text-bone" />
     </a>
   );
 };

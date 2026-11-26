@@ -159,14 +159,14 @@ const Hero = ({ ready }: { ready: boolean }) => {
       {/* Role + action */}
       <div className="h-ui absolute left-5 right-5 top-[17%] z-[4] max-w-[340px] md:left-auto md:right-12 md:top-[34%] lg:right-20">
         <p className="text-[0.95rem] leading-relaxed text-bone/80">
-          AI consultant and engineer. At KPMG I shaped AI strategy for the Government of Maharashtra, then built the
-          system that verified <span className="text-bone">1.5 lakh scholarship records</span>.
+          AI engineer at IIIT Nagpur. I turn messy problems into working systems: document pipelines, forecasting
+          models and dashboards people actually use. Off the keyboard, <span className="text-bone">Model UN and debate</span>.
         </p>
         <button
-          onClick={() => scrollToId("kpmg")}
+          onClick={() => scrollToId("experience")}
           className="group mt-5 inline-flex items-center gap-3 rounded-full bg-blood px-5 py-3 text-[0.9rem] text-bone transition-colors duration-300 hover:bg-blood-deep"
         >
-          Read the KPMG story
+          See my work
           <ArrowDown className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-y-0.5" />
         </button>
       </div>
