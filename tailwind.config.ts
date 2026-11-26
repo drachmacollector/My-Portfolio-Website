@@ -12,7 +12,7 @@ const config = {
       colors: {
         ink: { DEFAULT: "#0b0b0c", 2: "#141416", 3: "#1c1c1f" },
         bone: { DEFAULT: "#efe7dc", dim: "#a79f96" },
-        blood: { DEFAULT: "#d0142c", hi: "#ff4255", deep: "#8e0d1e" },
+        blood: { DEFAULT: "#c8102a", hi: "#ff4255", deep: "#8e0d1e" },
         paper: { DEFAULT: "#f3ece4", ink: "#1b1715", mute: "#6b625b" },
       },
       screens: { xs: "420px" },

@@ -43,7 +43,7 @@ const PriceFlags = () => {
   return (
     <figure className="kp-prices max-w-[420px]">
       <svg viewBox={`0 0 ${w} ${h}`} className="w-full overflow-visible" role="img" aria-label="Illustrative price series with a flatline and a spike flagged">
-        <rect x={pts[4][0]} y={0} width={pts[9][0] - pts[4][0]} height={h} fill="rgba(208,20,44,0.14)" className="kp-flag" />
+        <rect x={pts[4][0]} y={0} width={pts[9][0] - pts[4][0]} height={h} fill="rgba(200,16,42,0.16)" className="kp-flag" />
         <path d={d} fill="none" stroke="#efe7dc" strokeWidth="1.5" className="kp-line" />
         <circle cx={pts[13][0]} cy={pts[13][1]} r="7" fill="none" stroke="#ff4255" strokeWidth="1.5" className="kp-flag" />
         <circle cx={pts[13][0]} cy={pts[13][1]} r="2.5" fill="#ff4255" className="kp-flag" />
@@ -323,7 +323,7 @@ const Kpmg = () => {
               aria-hidden="true"
             >
               <path d={pathD} fill="none" stroke="rgba(239,231,220,0.1)" strokeWidth="2" vectorEffect="non-scaling-stroke" />
-              <path className="kp-path" d={pathD} fill="none" stroke="#d0142c" strokeWidth="2.5" vectorEffect="non-scaling-stroke" />
+              <path className="kp-path" d={pathD} fill="none" stroke="#c8102a" strokeWidth="2.5" vectorEffect="non-scaling-stroke" />
             </svg>
             <span className="pointer-events-none absolute bottom-0 left-[14px] top-0 w-px bg-bone/10 md:hidden" aria-hidden="true" />
 

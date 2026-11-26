@@ -39,7 +39,7 @@
   --bone-dim: #a79f96;
   --line: rgba(239, 231, 220, 0.12);
   --line-strong: rgba(239, 231, 220, 0.24);
-  --red: #d0142c;
+  --red: #c8102a;
   --red-hi: #ff4255;
   --paper: #f3ece4;
   --paper-ink: #1b1715;
@@ -79,6 +79,17 @@
     outline: 2px solid var(--red-hi);
     outline-offset: 4px;
     border-radius: 2px;
+  }
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
   }
   a {
     color: inherit;

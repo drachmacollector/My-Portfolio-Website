@@ -134,13 +134,13 @@ const Chrome = () => {
               >
                 <span
                   className={`deva w-4 text-center text-[15px] transition-colors duration-300 ${
-                    i === active ? "text-blood" : "opacity-40 group-hover:opacity-100"
+                    i === active ? "text-blood" : "opacity-60 group-hover:opacity-100"
                   }`}
                 >
                   {toDeva(i)}
                 </span>
                 <span
-                  className={`label text-[0.6rem] transition-all duration-500 ${
+                  className={`label text-[0.7rem] transition-all duration-500 ${
                     i === active
                       ? "translate-x-0 opacity-100"
                       : "-translate-x-1 opacity-0 group-hover:translate-x-0 group-hover:opacity-60"

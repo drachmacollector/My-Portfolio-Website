@@ -84,7 +84,7 @@ const Work = () => {
                         {p.kind} · {p.year}
                       </span>
                       <span className="deva text-[1.1rem]">
-                        <span className="text-blood">{toDeva(String(i + 1).padStart(2, "0"))}</span> /{" "}
+                        <span className="text-blood-hi">{toDeva(String(i + 1).padStart(2, "0"))}</span> /{" "}
                         {toDeva(String(total).padStart(2, "0"))}
                       </span>
                     </p>
@@ -138,7 +138,7 @@ const Work = () => {
       <div className="shell relative z-[1] bg-ink pb-10 pt-16">
         <div className="grid gap-4 border-t border-bone/10 pt-8 md:grid-cols-[auto_1fr] md:gap-10">
           <p className="label text-blood-hi">In progress</p>
-          <p className="max-w-[70ch] text-[1rem] leading-relaxed text-bone/75">
+          <p className="max-w-[62ch] text-[1rem] leading-relaxed text-bone/75">
             <span className="text-bone">{RESEARCH.title}</span> {RESEARCH.body}
           </p>
         </div>

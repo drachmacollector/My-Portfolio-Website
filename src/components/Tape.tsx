@@ -28,7 +28,7 @@ const Tape = ({
   return (
     <div
       className={`pointer-events-none absolute left-[-15%] w-[130%] overflow-hidden py-[0.55em] ${
-        tone === "red" ? "bg-blood text-ink" : "bg-[#3b0910] text-blood-hi/80"
+        tone === "red" ? "bg-[#b3102a] text-bone" : "bg-[#3b0910] text-blood-hi"
       } ${className}`}
     >
       <div className={`tape-track ${reverse ? "reverse" : ""}`}>
