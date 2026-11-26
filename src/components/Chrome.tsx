@@ -203,8 +203,8 @@ const Chrome = () => {
                 }}
                 className="menu-item group flex items-baseline gap-5 py-2 md:py-3"
               >
-                <span className="tabular w-8 text-lg text-blood md:text-xl">{String(i + 1).padStart(2, "0")}</span>
-                <span className="display text-[13vw] transition-colors duration-300 group-hover:text-blood md:text-[5.5rem]">
+                <span className="tabular w-8 text-base text-blood md:text-lg">{String(i + 1).padStart(2, "0")}</span>
+                <span className="display text-[11vw] transition-colors duration-300 group-hover:text-blood md:text-[4.4rem]">
                   {s.label}
                 </span>
               </a>
