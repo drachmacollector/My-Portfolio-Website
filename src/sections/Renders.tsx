@@ -176,14 +176,13 @@ const Renders = () => {
             className="group flex items-end justify-between gap-6 bg-ink px-6 py-8"
           >
             <span>
-              <span className="label text-bone/55">Typing speed, Monkeytype</span>
-              <span className="mt-3 flex items-baseline gap-3">
+              <span className="flex items-baseline gap-3">
                 <span className="display tabular text-[clamp(3.6rem,7vw,5.6rem)] leading-none transition-colors duration-300 group-hover:text-blood-hi">
                   137
                 </span>
                 <span className="label text-blood-hi">wpm</span>
               </span>
-              <span className="mt-3 block text-[0.88rem] text-bone/55">15 seconds · 100% accuracy · English</span>
+              <span className="mt-3 block text-[0.92rem] text-bone/60">My best Monkeytype run: 15 seconds, 100% accuracy, English.</span>
             </span>
             <ArrowUpRight className="h-5 w-5 text-bone/50 transition-colors duration-300 group-hover:text-bone" />
           </a>

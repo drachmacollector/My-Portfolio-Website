@@ -17,6 +17,7 @@ export const scrollToId = (id: string) => {
 const Chrome = () => {
   const [active, setActive] = useState(0);
   const [open, setOpen] = useState(false);
+  const [hush, setHush] = useState<Record<string, boolean>>({});
   const overlayRef = useRef<HTMLDivElement>(null);
   const tl = useRef<gsap.core.Timeline>();
 
@@ -30,7 +31,16 @@ const Chrome = () => {
         onToggle: (self) => self.isActive && setActive(i),
       }),
     );
-    return () => triggers.forEach((t) => t.kill());
+    // The rail steps aside in the hero and while the chapters slide sideways.
+    const quiet = ["#top", ".kp-chapters"].map((sel) =>
+      ScrollTrigger.create({
+        trigger: sel,
+        start: sel === "#top" ? "top top" : "top 1%",
+        end: sel === "#top" ? "bottom 40%" : () => `+=${(document.querySelector(".kp-track") as HTMLElement)?.scrollWidth - window.innerWidth}`,
+        onToggle: (self) => setHush((h) => ({ ...h, [sel]: self.isActive })),
+      }),
+    );
+    return () => [...triggers, ...quiet].forEach((t) => t.kill());
   }, []);
 
   useGSAP(
@@ -95,7 +105,7 @@ const Chrome = () => {
           aria-controls="site-menu"
           aria-label={open ? "Close menu" : "Open menu"}
           className={`group grid h-12 w-12 place-items-center rounded-2xl border transition-colors duration-300 ${
-            light ? "border-paper-ink/25 bg-paper/70" : "border-bone/15 bg-ink-2/80"
+            light ? "border-paper-ink/25 bg-paper" : "border-bone/15 bg-ink-2"
           } backdrop-blur-sm`}
         >
           <span className="relative block h-3 w-5">
@@ -116,9 +126,9 @@ const Chrome = () => {
       {/* Chapter rail */}
       <nav
         aria-label="Chapters"
-        className={`fixed left-4 top-1/2 z-50 hidden w-[112px] -translate-y-1/2 rounded-2xl border px-4 py-5 lg:block transition-colors duration-500 ${
+        className={`fixed left-4 top-1/2 z-50 hidden w-[112px] -translate-y-1/2 rounded-2xl border px-4 py-5 lg:block transition-[color,background-color,border-color,opacity] duration-500 ${
           light ? "border-paper-ink/10 bg-paper text-paper-ink" : "border-bone/10 bg-ink text-bone"
-        }`}
+        } ${(hush[".kp-chapters"] || hush["#top"]) && !open ? "pointer-events-none opacity-0" : ""}`}
       >
         <ol className="flex flex-col gap-[12px]">
           {SECTIONS.map((s, i) => (

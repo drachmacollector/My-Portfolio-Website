@@ -67,9 +67,8 @@ const NowPlaying = () => {
   if (state !== "ok" || !data) {
     return (
       <div className="flex flex-col justify-end bg-ink px-6 py-8">
-        <span className="label text-bone/55">On Spotify</span>
-        <span className="mt-3 text-[1.05rem] text-bone/60">
-          {state === "loading" ? "Checking what's playing…" : "Nothing playing right now."}
+        <span className="text-[1.05rem] text-bone/60">
+          {state === "loading" ? "Checking what I'm playing on Spotify…" : "Nothing playing on Spotify right now."}
         </span>
       </div>
     );
@@ -89,14 +88,13 @@ const NowPlaying = () => {
           className={`h-20 w-20 shrink-0 rounded-full object-cover ${data.isPlaying ? "animate-[spin_9s_linear_infinite]" : ""} motion-reduce:animate-none`}
         />
         <span className="min-w-0">
-          <span className="label flex items-center gap-2 text-bone/55">
-            {data.isPlaying && <span className="h-2 w-2 rounded-full bg-blood-hi" aria-hidden="true" />}
-            {label}
-          </span>
-          <span className="display mt-3 block truncate text-[clamp(1.5rem,2.6vw,2.2rem)] transition-colors duration-300 group-hover:text-blood-hi">
+          <span className="display block truncate text-[clamp(1.5rem,2.6vw,2.2rem)] transition-colors duration-300 group-hover:text-blood-hi">
             {data.title}
           </span>
-          <span className="mt-1 block truncate text-[0.92rem] text-bone/60">{data.artist}</span>
+          <span className="mt-1 flex items-center gap-2 truncate text-[0.92rem] text-bone/60">
+            {data.isPlaying && <span className="h-2 w-2 shrink-0 rounded-full bg-blood-hi" aria-hidden="true" />}
+            {data.artist} · {label}
+          </span>
         </span>
       </span>
       <ArrowUpRight className="h-5 w-5 shrink-0 text-bone/50 transition-colors duration-300 group-hover:text-bone" />
