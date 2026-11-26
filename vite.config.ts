@@ -24,14 +24,9 @@ export default defineConfig(({ mode }) => ({
         manualChunks: {
           // Vendor animation libs — loaded async, not on initial paint
           "vendor-gsap": ["gsap", "@gsap/react"],
-          "vendor-framer": ["framer-motion"],
           "vendor-lenis": ["lenis"],
           // Radix UI primitives
-          "vendor-radix": [
-            "@radix-ui/react-dialog",
-            "@radix-ui/react-slot",
-            "@radix-ui/react-tooltip",
-          ],
+          "vendor-radix": ["@radix-ui/react-dialog"],
         },
       },
     },

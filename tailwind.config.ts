@@ -1,215 +1,24 @@
-
 import type { Config } from "tailwindcss";
-import tailwindcssAnimate from "tailwindcss-animate";
+
 const config = {
-		darkMode: ["class"],
-	content: [
-		"./pages/**/*.{ts,tsx}",
-		"./components/**/*.{ts,tsx}",
-		"./app/**/*.{ts,tsx}",
-		"./src/**/*.{ts,tsx}",
-	],
-	prefix: "",
-	theme: {
-		container: {
-			center: true,
-			padding: '2rem',
-			screens: {
-				'2xl': '1400px'
-			}
-		},
-		extend: {
-			fontFamily: {
-				'space': ['Space Grotesk', 'sans-serif'],
-				'mono': ['JetBrains Mono', 'monospace'],
-			},
-			colors: {
-				border: 'hsl(var(--border))',
-				input: 'hsl(var(--input))',
-				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
-				foreground: 'hsl(var(--foreground))',
-				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
-				},
-				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
-				},
-				destructive: {
-					DEFAULT: 'hsl(var(--destructive))',
-					foreground: 'hsl(var(--destructive-foreground))'
-				},
-				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
-				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
-				},
-				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))'
-				},
-				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
-				},
-
-				firebase: {
-					orange: '#FF5F1F',
-					red: '#FF3131',
-					purple: '#BC13FE',
-					pink: '#E91E63',
-					blue: '#1F51FF',
-					cyan: '#00bbff',
-					green: '#2CFF05'
-				},
-				neon: {
-					red: '#FF073A',
-					'red-bright': '#FF1744',
-					'red-glow': '#FF5722'
-				}
-			},
-			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
-			},
-			keyframes: {
-
-				'fade-in': {
-					'0%': {
-						opacity: '0',
-						transform: 'translateY(10px)'
-					},
-					'100%': {
-						opacity: '1',
-						transform: 'translateY(0)'
-					}
-				},
-
-				'glow-pulse': {
-					'0%, 100%': { 
-						boxShadow: '0 0 20px rgba(255, 138, 101, 0.5)' 
-					},
-					'50%': { 
-						boxShadow: '0 0 40px rgba(255, 138, 101, 0.8), 0 0 60px rgba(255, 138, 101, 0.3)' 
-					}
-				},
-				'float': {
-					'0%, 100%': { transform: 'translateY(0px)' },
-					'50%': { transform: 'translateY(-10px)' }
-				},
-				'typing': {
-					'from': { width: '0' },
-					'to': { width: '100%' }
-				},
-				'blink': {
-					'0%, 50%': { borderColor: 'transparent' },
-					'51%, 100%': { borderColor: '#FF8A65' }
-				},
-
-				'rotate-slow': {
-					'0%': { transform: 'rotate(0deg)' },
-					'100%': { transform: 'rotate(360deg)' }
-				},
-				'rotate-slow2': {
-					'0%': { transform: 'rotate(0deg)' },
-					'100%': { transform: 'rotate(-360deg)' }
-				},
-				'slide-up': {
-					'0%': { 
-						transform: 'translateY(100%)',
-						opacity: '0'
-					},
-					'100%': { 
-						transform: 'translateY(0)',
-						opacity: '1'
-					}
-				},
-				'slide-down': {
-					'0%': { 
-						transform: 'translateY(0)',
-						opacity: '1'
-					},
-					'100%': { 
-						transform: 'translateY(-100%)',
-						opacity: '0'
-					}
-				},
-				'neon-pulse': {
-					'0%, 100%': { 
-						boxShadow: '0 0 20px rgba(255, 7, 58, 0.5), 0 0 40px rgba(255, 7, 58, 0.2)' 
-					},
-					'50%': { 
-						boxShadow: '0 0 40px rgba(255, 7, 58, 0.8), 0 0 80px rgba(255, 7, 58, 0.4)' 
-					}
-				},
-				'orbit': {
-					'0%': { transform: 'rotate(0deg) translateX(50px) rotate(0deg)' },
-					'100%': { transform: 'rotate(360deg) translateX(50px) rotate(-360deg)' },
-				},
-				'aurora': {
- 				    '0%': {
- 						backgroundPosition: '0% 50%',
- 						transform: 'rotate(-5deg) scale(0.9)',
- 						},
- 						'25%': {
- 						backgroundPosition: '50% 100%',
- 						transform: 'rotate(5deg) scale(1.1)',
- 						},
- 						'50%': {
- 						backgroundPosition: '100% 50%',
- 						transform: 'rotate(-3deg) scale(0.95)',
- 						},
- 						'75%': {
- 						backgroundPosition: '50% 0%',
- 						transform: 'rotate(3deg) scale(1.05)',
- 						},
- 						'100%': {
- 						backgroundPosition: '0% 50%',
- 						transform: 'rotate(-5deg) scale(0.9)',
- 						}
-				},
-				'lock-on': {
-					'0%': { transform: 'scale(3)', opacity: '0' },
-					'40%': { transform: 'scale(0.8)', opacity: '1' },
-					'70%': { transform: 'scale(1.1)', opacity: '0.8' },
-					'100%': { transform: 'scale(1)', opacity: '1' }
-				},
-				'spin-reverse': {
-					'0%': { transform: 'rotate(360deg)' },
-					'100%': { transform: 'rotate(0deg)' }
-				}
-			},
-			animation: {
-				'fade-in': 'fade-in 0.5s ease-out',
-				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
-				'float': 'float 2s ease-in-out infinite',
-				'typing': 'typing 3.5s steps(40, end), blink 0.75s step-end infinite',
-
-				'rotate-slow': 'rotate-slow 20s linear infinite',
-				'rotate-slow2': 'rotate-slow2 20s linear infinite',
-				'slide-up': 'slide-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-				'slide-down': 'slide-down 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-				'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
-				'orbit': 'orbit 8s linear infinite',
-				'aurora': 'aurora 8s ease-in-out infinite alternate',
-				'lock-on': 'lock-on 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
-				'spin-reverse': 'spin-reverse 10s linear infinite'
-			},
-			backgroundImage: {
-				'grid-pattern': 'linear-gradient(rgba(255, 138, 101, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 138, 101, 0.1) 1px, transparent 1px)',
-			},
-			backgroundSize: {
-				'grid': '50px 50px',
-			}
-		}
-	},
-	plugins: [tailwindcssAnimate],
-};
+  content: ["./index.html", "./src/**/*.{ts,tsx}"],
+  theme: {
+    extend: {
+      fontFamily: {
+        display: ["Aostala", "Georgia", "serif"],
+        body: ["General", "Segoe UI", "system-ui", "sans-serif"],
+        deva: ["Tiro Devanagari Marathi", "Nirmala UI", "serif"],
+      },
+      colors: {
+        ink: { DEFAULT: "#0b0b0c", 2: "#141416", 3: "#1c1c1f" },
+        bone: { DEFAULT: "#efe7dc", dim: "#a79f96" },
+        blood: { DEFAULT: "#d0142c", hi: "#ff4255", deep: "#8e0d1e" },
+        paper: { DEFAULT: "#f3ece4", ink: "#1b1715", mute: "#6b625b" },
+      },
+      screens: { xs: "420px" },
+    },
+  },
+  plugins: [],
+} satisfies Config;
 
 export default config;

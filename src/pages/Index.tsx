@@ -1,51 +1,45 @@
-import React, { useEffect } from "react";
-import Navbar from "@/components/layout/Navbar";
-import HeroSection from "@/sections/hero/HeroSection";
-import AboutSection from "@/sections/about/AboutSection";
-import Experience from "@/sections/experience/Experience";
-import ProjectsSection from "@/sections/projects/ProjectsSection";
-import ContactSection from "@/sections/contact/ContactSection";
-import CanvasCursor from "@/components/effects/CanvasCursor";
-import LetterGlitch from "@/components/effects/LetterGlitch";
-import { useIsMobile } from "@/hooks/use-mobile";
-
+import { useEffect, useState } from "react";
+import Chrome from "@/components/Chrome";
+import Preloader from "@/components/Preloader";
+import Hero from "@/sections/Hero";
+import About from "@/sections/About";
+import Kpmg from "@/sections/Kpmg";
+import Method from "@/sections/Method";
+import Work from "@/sections/Work";
+import Record from "@/sections/Record";
+import Renders from "@/sections/Renders";
+import Contact from "@/sections/Contact";
 import { initSmoothScroll } from "@/animations/smooth-scroll";
+import { ScrollTrigger } from "@/lib/gsap";
 
-const Index: React.FC = () => {
-  const isMobile = useIsMobile();
+const Index = () => {
+  const [ready, setReady] = useState(false);
 
-  // Initialize Lenis smooth scrolling
+  useEffect(() => initSmoothScroll(), []);
+
+  // Fonts change line lengths; re-measure every trigger once they land.
   useEffect(() => {
-    const cleanup = initSmoothScroll();
-    return cleanup;
+    document.fonts?.ready.then(() => ScrollTrigger.refresh());
+    const onLoad = () => ScrollTrigger.refresh();
+    window.addEventListener("load", onLoad);
+    return () => window.removeEventListener("load", onLoad);
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
-
-
-      {!isMobile && (
-        <div className="fixed inset-0 z-1 opacity-20">
-          <LetterGlitch
-            glitchColors={["#2b4539", "#61dca3", "#61b3dc"]}
-            glitchSpeed={50}
-            centerVignette
-            outerVignette
-            smooth
-          />
-        </div>
-      )}
-      {!isMobile && <CanvasCursor />}
-
-      <Navbar />
-      <main className="relative z-10">
-        <HeroSection />
-        <AboutSection />
-        <Experience />
-        <ProjectsSection />
-        <ContactSection />
+    <>
+      <Preloader onDone={() => setReady(true)} />
+      <Chrome />
+      <main>
+        <Hero ready={ready} />
+        <About />
+        <Kpmg />
+        <Method />
+        <Work />
+        <Record />
+        <Renders />
+        <Contact />
       </main>
-    </div>
+    </>
   );
 };
 

@@ -1,10 +1,5 @@
-import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index";
 
-const App = () => (
-  <TooltipProvider>
-    <Index />
-  </TooltipProvider>
-);
+const App = () => <Index />;
 
 export default App;

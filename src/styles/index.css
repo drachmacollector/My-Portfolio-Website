@@ -1,537 +1,223 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: 0 0% 0%;
-    --foreground: 210 40% 100%;
+/* ── Faces ─────────────────────────────────────────────────────────
+   Aostala (display) and General (text) come from ifonts.xyz
+   (demo, personal use). Tiro Devanagari Marathi is OFL. */
+@font-face {
+  font-family: "Aostala";
+  src: url("/fonts/aostala.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "General";
+  src: url("/fonts/general-book.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "General";
+  src: url("/fonts/general-light.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tiro Devanagari Marathi";
+  src: url("/fonts/tiro-devanagari-marathi.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0900-097F, U+200C-200D, U+25CC;
+}
 
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 221 83% 53%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 217 33% 17%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 224 76% 48%;
-
-    --radius: 0.5rem;
-  }
+:root {
+  --ink: #0b0b0c;
+  --ink-2: #141416;
+  --ink-3: #1c1c1f;
+  --bone: #efe7dc;
+  --bone-dim: #a79f96;
+  --line: rgba(239, 231, 220, 0.12);
+  --line-strong: rgba(239, 231, 220, 0.24);
+  --red: #d0142c;
+  --red-hi: #ff4255;
+  --paper: #f3ece4;
+  --paper-ink: #1b1715;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --rail: 88px;
+  color-scheme: dark;
 }
 
 @layer base {
-  * {
-    @apply border-border;
+  html {
+    background: var(--ink);
+    -webkit-text-size-adjust: 100%;
   }
-
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
   body {
-    @apply bg-background text-foreground font-space;
-    min-height: 100vh;
+    margin: 0;
+    background: var(--ink);
+    color: var(--bone);
+    font-family: "General", "Segoe UI", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
-
-
+  ::selection {
+    background: var(--red);
+    color: var(--bone);
+  }
+  :focus-visible {
+    outline: 2px solid var(--red-hi);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  img,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+  input,
+  textarea {
+    font: inherit;
+    color: inherit;
+    caret-color: var(--red-hi);
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--red) var(--ink);
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--ink);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--red);
+    border-radius: 8px;
+  }
 }
 
 @layer components {
-  .glass-card {
-    @apply bg-white/5 rounded-2xl;
-        background: linear-gradient(145deg, rgba(26, 22, 37, 0.8), rgba(16, 13, 25, 0.9));
-
-    box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  /* Display voice: Aostala is caps-only, so tracking stays near zero. */
+  .display {
+    font-family: "Aostala", Georgia, serif;
+    font-weight: 400;
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+  }
+  .label {
+    font-family: "Aostala", Georgia, serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .deva {
+    font-family: "Tiro Devanagari Marathi", "Nirmala UI", serif;
+    line-height: 1.1;
+  }
+  .outline-text {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(239, 231, 220, 0.22);
+  }
+  .shell {
+    width: 100%;
+    max-width: 1320px;
+    margin-inline: auto;
+    padding-inline: clamp(20px, 5vw, 64px);
+  }
+  @media (min-width: 1024px) {
+    .shell {
+      padding-left: calc(var(--rail) + 24px);
+    }
+  }
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s var(--ease-out);
+  }
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 1px;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
   }
 
-  .neomorph-card {
-    background: linear-gradient(145deg, rgba(26, 22, 37, 0.8), rgba(16, 13, 25, 0.9));
-    box-shadow: 
-      20px 20px 40px rgba(0, 0, 0, 0.4),
-      -20px -20px 40px rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+  /* Running text inside the crossing tapes */
+  .tape-track {
+    display: flex;
+    width: max-content;
+    animation: tape 38s linear infinite;
+  }
+  .tape-track.reverse {
+    animation-direction: reverse;
+    animation-duration: 46s;
+  }
+  @keyframes tape {
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
   }
 
-.glow-text {
-  color: #ffffff;
-  text-shadow:
-    0 0 4px rgba(102, 204, 255, 0.3),   /* light cyan */
-    0 0 8px rgba(0, 187, 255, 0.2),     /* electric blue */
-    0 0 12px rgba(0, 187, 255, 0.2);    /* ambient glow */
-}
-.glow-text:hover {
-  text-shadow:
-    0 0 6px rgba(102, 204, 255, 0.4),
-    0 0 12px rgba(0, 187, 255, 0.3),
-    0 0 18px rgba(0, 187, 255, 0.25);
-}
-
-
-  .nav-link {
-    @apply relative transition-all duration-300 hover:text-firebase-orange;
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
   }
 
-  .nav-link::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-firebase-orange transition-all duration-300;
-  }
-
-  .nav-link:hover::after {
-    @apply w-full;
-    box-shadow: 0 0 10px rgba(255, 138, 101, 0.7);
-  }
-
-  .particle {
+  .grain::after {
+    content: "";
     position: absolute;
-    background: linear-gradient(45deg, #FF8A65, #FF073A);
-    border-radius: 50%;
+    inset: 0;
     pointer-events: none;
-  }
-
-  .typing-container {
-    overflow: hidden;
-    border-right: 3px solid #FF8A65;
-    white-space: nowrap;
-    margin: 0 auto;
-    letter-spacing: 0.1em;
-    animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
-  }
-
-  .project-card {
-    transition: all 0.3s ease;
-    transform-style: preserve-3d;
-  }
-
-  .project-card:hover {
-    transform: perspective(1000px) rotateY(5deg) rotateX(5deg) translateZ(20px);
-  }
-
-  .tech-tag {
-    @apply px-3 py-1 rounded-full text-xs font-medium border transition-all duration-300;
-    background: rgb(0, 187, 255, 0.1);
-    border-color: rgb(0, 187, 255, 0.5);
-    color: #00bbff;
-  }
-
-  .tech-tag:hover {
-    background: rgb(0, 187, 255, 0.2);
-    box-shadow: 0 0 15px rgb(0, 187, 255, 0.4);
-  }
-.live-tag {
-  @apply px-6 py-2 rounded-full text-sm font-medium relative overflow-hidden transition-all duration-300 cursor-pointer;
-  background-color: transparent;
-  box-shadow: 0 0 0 1px #ffffff;
-  color: #ffffff;
-}
-
-.live-tag::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  background-color: #ffffff;
-  color: #0a0a0b;
-  border-radius: 50%;
-  opacity: 0;
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  z-index: 0;
-}
-
-.live-tag:hover {
-  box-shadow: 0 0 0 8px transparent;
-  color: #0a0a0b;
-  border-radius: 12px;
-}
-
-.live-tag:hover::before {
-  width: 220px;
-  height: 220px;
-  opacity: 1;
-}
-
-.live-tag:active {
-  transform: scale(0.95);
-  box-shadow: 0 0 0 4px #ffffff;
-}
-
-.live-tag span {
-  position: relative;
-  z-index: 1;
-  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.live-tag:hover span {
-  transform: translateX(12px);
-}
-
-  .contact-form {
-    @apply glass-card p-8;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .contact-form::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 138, 101, 0.1), transparent);
-    transition: left 0.5s;
-  }
-
-  .contact-form:hover::before {
-    left: 100%;
-  }
-
-  /* Enhanced neon effects */
-  .neon-glow {
-    box-shadow: 
-      0 0 10px rgba(255, 7, 58, 0.5),
-      0 0 20px rgba(255, 7, 58, 0.3),
-      0 0 40px rgba(255, 7, 58, 0.1);
-  }
-
-  /* Marquee animations for tech stack */
-  .marquee {
-    animation: slide-left 20s linear infinite;
-  }
-
-  .marquee-slow {
-    animation: slide-left-slow 40s linear infinite;
-  }
-
-  @keyframes slide-left {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }
-
-  @keyframes slide-left-slow {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
   }
 }
 
-
-
-/* ============================================================
-   Extracted from Bento.tsx inline <style>
-   ============================================================ */
-.bento-card {
-  position: relative;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.bento-card > * {
-  position: relative;
-  z-index: 2;
-}
-
-@keyframes shimmer {
-  0% { background-position: -1000px 0; }
-  100% { background-position: 1000px 0; }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
-}
-
-@keyframes float-up {
-  0% { transform: translateY(0) scale(1); opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { transform: translateY(-100px) scale(0); opacity: 0; }
-}
-
-/* ============================================================
-   Extracted from Spotify.tsx inline <style>
-   ============================================================ */
-@keyframes spotify-bar {
-  0%, 100% { transform: scaleY(0.35); opacity: 0.5; }
-  50% { transform: scaleY(1); opacity: 1; }
-}
-
-/* ============================================================
-   Extracted from TechStack.tsx inline <style>
-   ============================================================ */
-.mask-edges {
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-}
-
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.marquee-scroll {
-  animation: scroll 40s linear infinite;
-}
-
-/* ============================================================
-   Extracted from ContactSection.tsx inline <style>
-   ============================================================ */
-.glass-box {
-  perspective: 1000px;
-}
-
-.glass-box::before {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 50px;
-  width: 50%;
-  height: 100%;
-  border-radius: 8px;
-  transform: skewX(15deg);
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  background: linear-gradient(315deg, #03a9f4, #ff0058);
-  z-index: 1;
-}
-
-.glass-box::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50px;
-  width: 50%;
-  height: 100%;
-  border-radius: 8px;
-  transform: skewX(15deg);
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  filter: blur(30px);
-  background: linear-gradient(315deg, #03a9f4, #ff0058);
-  z-index: 1;
-}
-
-.glass-box:hover::before,
-.glass-box:hover::after {
-  transform: skewX(0deg);
-  left: 20px;
-  width: calc(100% - 90px);
-}
-
-.glass-box span::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  opacity: 0;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  animation: animate 3s ease-in-out infinite;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  z-index: 2;
-}
-
-.glass-box:hover span::before {
-  top: -50px;
-  left: 50px;
-  width: 100px;
-  height: 100px;
-  opacity: 1;
-}
-
-.glass-box span::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  opacity: 0;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  animation: animate 3s ease-in-out infinite;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  animation-delay: -1.5s;
-  z-index: 2;
-}
-
-.glass-box:hover span::after {
-  bottom: -50px;
-  right: 50px;
-  width: 100px;
-  height: 100px;
-  opacity: 1;
-}
-
-@keyframes animate {
-  0%, 100% { transform: translateY(10px) translateX(0); }
-  50% { transform: translateY(-10px) translateX(10px); }
-}
-
-.glass-box:hover .glass-content {
-  left: -25px;
-  padding: 40px 30px;
-}
-
-.glass-box:hover .glass-content h2 {
-  transform: translateY(-10px);
-}
-
-.glass-content {
-  background: rgba(15, 15, 35, 0.7) !important;
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-@media (max-width: 768px) {
-  .glass-box {
-    width: 280px !important;
-    height: 360px !important;
-    margin: 20px 0;
+@media (prefers-reduced-motion: reduce) {
+  .tape-track,
+  .tape-track.reverse {
+    animation: none;
   }
-
-  .glass-box:hover .glass-content {
-    padding: 30px 20px;
-    left: -15px;
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
   }
 }
 
-/* ============================================================
-   MOBILE / TOUCH DEVICE OPTIMIZATIONS
-   Targets touchscreen devices (Android, iOS) using the
-   `hover: none` media feature. Desktop is not affected.
-   ============================================================ */
-@media (hover: none) and (pointer: coarse) {
-
-  /* --- Pause expensive background animations on mobile --- */
-  /* LetterGlitch runs on desktop only, but guard anyway */
-  .marquee,
-  .marquee-slow,
-  .animate-float,
-  .animate-rotate-slow,
-  .animate-rotate-slow2,
-  .animate-spin-reverse,
-  .animate-neon-pulse,
-  .animate-glow-pulse,
-  .animate-orbit,
-  .animate-aurora {
-    animation-play-state: paused !important;
-  }
-
-  /* --- Re-enable ONLY the animations that are core to UX --- */
-  /* Spotify bars (small, GPU-friendly) */
-  .animate-\[spotify-bar_0\.82s_ease-in-out_infinite\] {
-    animation-play-state: running !important;
-  }
-
-  /* Marquee / tech stack scroll — keep running but slow it down */
-  .marquee-scroll {
-    animation-play-state: running !important;
-    animation-duration: 60s !important;
-  }
-
-  /* Loading spinner */
-  .animate-spin {
-    animation-play-state: running !important;
-  }
-
-  /* --- Reset all hover pseudo-states to their base state --- */
-
-  .glow-text:hover {
-    text-shadow:
-      0 0 4px rgba(102, 204, 255, 0.3),
-      0 0 8px rgba(0, 187, 255, 0.2),
-      0 0 12px rgba(0, 187, 255, 0.2);
-  }
-
-  .nav-link:hover::after {
-    width: 0;
-    box-shadow: none;
-  }
-
-  .project-card:hover {
-    transform: none;
-  }
-
-  .tech-tag:hover {
-    background: rgb(0, 187, 255, 0.1);
-    box-shadow: none;
-  }
-
-  /* live-tag: disable the blob expansion */
-  .live-tag:hover {
-    box-shadow: 0 0 0 1px #ffffff;
-    color: #ffffff;
-    border-radius: 9999px;
-  }
-  .live-tag:hover::before {
-    width: 20px;
-    height: 20px;
+@keyframes fadeIn {
+  from {
     opacity: 0;
   }
-  .live-tag:hover span {
-    transform: none;
-  }
-
-  /* contact-form: no shimmer sweep on touch */
-  .contact-form:hover::before {
-    left: -100%;
-  }
-
-  /* glass-box: disable the complex pseudo-element hover on touch */
-  .glass-box:hover::before,
-  .glass-box:hover::after {
-    transform: skewX(15deg);
-    left: 50px;
-    width: 50%;
-  }
-  .glass-box:hover span::before {
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    opacity: 0;
-  }
-  .glass-box:hover span::after {
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-  }
-  .glass-box:hover .glass-content {
-    left: 0;
-    padding: 20px;
-  }
-  .glass-box:hover .glass-content h2 {
-    transform: none;
-  }
-
-  /* bento-card: no 3D perspective tilt */
-  .bento-card {
-    transform: none !important;
-  }
-  .bento-grid-container {
-    perspective: none !important;
+  to {
+    opacity: 1;
   }
 }
