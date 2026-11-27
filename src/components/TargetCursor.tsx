@@ -393,7 +393,7 @@ const TargetCursor = ({
       />
       <span
         ref={labelRef}
-        className="absolute top-0 left-0 text-[12px] leading-none font-medium whitespace-nowrap opacity-0 [color:var(--target-cursor-color,#ffffff)] will-change-[transform,opacity]"
+        className="absolute top-0 left-0 text-[12px] leading-none tracking-[0.02em] whitespace-nowrap opacity-0 [color:var(--target-cursor-color,#ffffff)] will-change-[transform,opacity]"
       />
     </div>,
     host

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { SECTIONS, CONTACT, toDeva } from "@/constants/content";
+import { SECTIONS, CONTACT, pad2 } from "@/constants/content";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { getLenis } from "@/animations/smooth-scroll";
 import { ArrowDown, ArrowUpRight } from "@/components/Icons";
@@ -186,11 +186,11 @@ const Chrome = () => {
                 aria-current={i === active ? "true" : undefined}
               >
                 <span
-                  className={`deva w-4 text-center text-[15px] transition-colors duration-300 ${
+                  className={`fraktur w-4 text-center text-[17px] transition-colors duration-300 ${
                     i === active ? "text-blood" : "opacity-60 group-hover:opacity-100"
                   }`}
                 >
-                  {toDeva(i)}
+                  {i}
                 </span>
                 <span
                   className={`label text-[0.7rem] transition-all duration-500 ${
@@ -226,7 +226,7 @@ const Chrome = () => {
                 }}
                 className="menu-item group flex items-baseline gap-5 py-2 md:py-3"
               >
-                <span className="tabular w-8 text-base text-blood md:text-lg">{String(i + 1).padStart(2, "0")}</span>
+                <span className="fraktur w-8 text-xl text-blood md:text-2xl">{pad2(i + 1)}</span>
                 <span className="display text-[11vw] transition-colors duration-300 group-hover:text-blood md:text-[4.4rem]">
                   {s.label}
                 </span>

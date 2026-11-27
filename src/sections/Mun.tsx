@@ -1,7 +1,8 @@
 import { useRef } from "react";
-import { MUN } from "@/constants/content";
+import { MUN, DE } from "@/constants/content";
 import { gsap, useGSAP, ANY_MOTION, DESKTOP_MOTION } from "@/lib/gsap";
 import { ArrowUpRight } from "@/components/Icons";
+import De from "@/components/De";
 
 type Row = { award: string; conf: string; where: string };
 
@@ -132,8 +133,11 @@ const Mun = () => {
     >
       <div className="shell">
         <div className="mn-head flex flex-wrap items-end justify-between gap-6">
-          <h2 className="cursor-target display text-[clamp(3.4rem,9vw,8.5rem)] leading-[0.85]">
+          <h2 className="display text-[clamp(3.4rem,9vw,8.5rem)] leading-[0.85]">
             Model <span className="text-blood">UN</span>
+            <De className="ml-[0.25em] text-[0.42em] text-blood">
+              {DE.mun}
+            </De>
           </h2>
           <p className="max-w-[40ch] text-[1rem] leading-relaxed text-paper-ink/75">{MUN.intro}</p>
         </div>

@@ -1,6 +1,6 @@
 ---
 name: Nakul Bhadade
-description: A cinematic, chaptered dark portfolio in two scripts, Latin caps and Devanagari numerals, cut by one blood red.
+description: A cinematic, chaptered dark portfolio in two scripts, Latin caps and blackletter numerals, cut by one blood red.
 colors:
   ink: "#0b0b0c"
   ink-2: "#141416"
@@ -50,7 +50,7 @@ typography:
     lineHeight: 1.2
     letterSpacing: "0.22em"
   numeral:
-    fontFamily: "Tiro Devanagari Marathi, Nirmala UI, serif"
+    fontFamily: "Grenze Gotisch, Georgia, serif"
     fontWeight: 400
     lineHeight: 1.1
     letterSpacing: "0em"
@@ -128,7 +128,7 @@ components:
 
 **Creative North Star: "The Chaptered Night Reel"**
 
-The site plays like a film reel cut into numbered chapters on a near-black ground. Each chapter opens on a giant caps title in a wedge serif, paired with one Devanagari word in red, and the reader moves through them on a fixed rail of Devanagari numerals. The grammar comes from a cinematic samurai portfolio that the user pinned, carried over into a Marathi and Indian setting: Devanagari takes the place of kanji, and red tape bands with running text cross behind a cut-out portrait.
+The site plays like a film reel cut into numbered chapters on a near-black ground. Each chapter opens on a giant caps title in a wedge serif, paired with one German word in red, and the reader moves through them on a fixed rail of blackletter numerals. The grammar comes from a cinematic samurai portfolio that the user pinned, carried over into a German setting: blackletter takes the place of kanji, and red tape bands with running text cross behind a cut-out portrait.
 
 Density is low and the drama comes from scale. Display type runs from 2.6rem to 34rem. Body copy is short, set in a quiet grotesque at 17px, and sits in narrow measures (22 to 62ch). Hairline rules and tonal steps of near-black do the structural work that cards would do elsewhere. The palette has one exception: a single warm-paper interlude with a red sun, used for the method chapter.
 
@@ -136,8 +136,8 @@ Motion is part of the world. Chapters pin and scrub, words brighten as the reade
 
 **Key Characteristics:**
 - Near-black tonal ground (ink, ink-2, ink-3) with bone text, and one red (blood) as the only chroma.
-- Two scripts: Aostala caps for Latin display, Tiro Devanagari Marathi for every numeral, ordinal and chapter word.
-- Bilingual chapter headings, with the English title in bone and the Devanagari word in red.
+- Two scripts: Aostala caps for Latin display, Grenze Gotisch for every numeral, ordinal and chapter word.
+- Bilingual chapter headings, with the English title in bone and the German word in red.
 - Crossing red tapes with running text, a giant outline name, and outline/fill marquee rows.
 - Hairline lists and gap-px stat grids in place of card walls.
 - Rounded pill actions, 16px panels, 28px project sheets.
@@ -148,7 +148,7 @@ Motion is part of the world. Chapters pin and scrub, words brighten as the reade
 A night palette: three steps of near-black, one warm bone for text, and one red, with a single warm-paper interlude.
 
 ### Primary
-- **Blood Red** (blood): Fills and large type. Used for the primary pill action, the active rail numeral, the Devanagari word in every bilingual heading, the second line of the logotype, the method sun, the pipeline path, the preloader rule and the scrollbar thumb. On ink it measures about 3.3:1, so it is used for large type and fills only, never for small reading text. The CSS custom property name is `--red`.
+- **Blood Red** (blood): Fills and large type. Used for the primary pill action, the active rail numeral, the German word in every bilingual heading, the second line of the logotype, the method sun, the pipeline path, the preloader rule and the scrollbar thumb. On ink it measures about 3.3:1, so it is used for large type and fills only, never for small reading text. The CSS custom property name is `--red`.
 - **Lit Red** (blood-hi): The legible red for small text on ink (about 5.8:1). Used for units, figure captions, tool lists, honours placings, the "In progress" heading, row hover text and the focus ring. The CSS custom property name is `--red-hi`.
 
 ### Secondary
@@ -175,7 +175,7 @@ A night palette: three steps of near-black, one warm bone for text, and one red,
 
 **Display Font:** Aostala (with Georgia, serif)
 **Body Font:** General Book 400 and General Light 300 (with Segoe UI, system-ui, sans-serif)
-**Numeral Font:** Tiro Devanagari Marathi (with Nirmala UI, serif), loaded for the Devanagari range only
+**Numeral Font:** Grenze Gotisch (with Nirmala UI, serif), German blackletter (OFL)
 
 **Character:** Aostala is a caps-only wedge serif that reads as a film title card. General is a neutral grotesque that stays out of its way. Tiro carries the second script and makes every count on the page bilingual.
 
@@ -189,11 +189,11 @@ A night palette: three steps of near-black, one warm bone for text, and one red,
 - **Numeral** (400, 1.1 leading): Every ordinal, counter and chapter word. Sizes range from 15px on the rail to 40rem for the ghost chapter numbers.
 
 ### Named Rules
-**The Two Scripts Rule.** Every number a reader counts is Devanagari: chapter ordinals, project "०१ / ०८" counters, honours indices, pipeline stage nodes, the year. Latin figures stay only where the value is data (stat figures, dates, wpm), and those use tabular numerals.
+**The Two Scripts Rule.** Every number a reader counts is set in blackletter: chapter ordinals, project "01 / 08" counters, honours indices, pipeline stage nodes, the year. Latin figures stay only where the value is data (stat figures, dates, wpm), and those use tabular numerals.
 
-**The Bilingual Heading Rule.** A chapter heading pairs an English display title in bone with one Devanagari word in blood, baseline-aligned. The Devanagari word is a translation or gloss, never decoration.
+**The Bilingual Heading Rule.** A chapter heading pairs an English display title in bone with one German word in blood, baseline-aligned. The German word is a translation or gloss, never decoration.
 
-**The Caps Display Rule.** Aostala is caps-only. Use it for titles and labels only, never for running text. Keep tracking at -0.01em for display and 0.22em for labels. Devanagari inside a label resets to normal tracking.
+**The Caps Display Rule.** Aostala is caps-only. Use it for titles and labels only, never for running text. Keep tracking at -0.01em for display and 0.22em for labels. Blackletter inside a label resets to normal tracking.
 
 ## Layout
 
@@ -203,7 +203,7 @@ Section rhythm is clamp(110px, 18vh, 200px) top and bottom. KPMG, renders and co
 
 Composition is asymmetric. Intro copy is right-aligned against large left titles, sheets split 1fr to 1.15fr between text and media, and the record chapter keeps a sticky left column (0.8fr) beside a scrolling honours list (1.2fr).
 
-**Responsive behaviour.** Breakpoints are 420 (xs), 640, 768, 1024 and 1280px. The rail, horizontal KPMG chapters, pinned method stage and pinned render strip exist only at 1024px and up with motion allowed. Below that, and under reduced motion, every sequence becomes a vertical stack. Method becomes a plain list with the Devanagari word above each move, KPMG chapters stack with top hairlines, and renders become a one- or two-column grid. The hero portrait drops to 58svh on phones, and the role copy moves to the top.
+**Responsive behaviour.** Breakpoints are 420 (xs), 640, 768, 1024 and 1280px. The rail, horizontal KPMG chapters, pinned method stage and pinned render strip exist only at 1024px and up with motion allowed. Below that, and under reduced motion, every sequence becomes a vertical stack. Method becomes a plain list with the German word above each move, KPMG chapters stack with top hairlines, and renders become a one- or two-column grid. The hero portrait drops to 58svh on phones, and the role copy moves to the top.
 
 ### Named Rules
 **The Desktop Motion Rule.** Pinning and scrubbing run only under `(min-width: 1024px) and (prefers-reduced-motion: no-preference)`. Light reveals (fade, rise) may run at any width when motion is allowed. Nothing pins on a phone.
@@ -238,24 +238,24 @@ Tactile pills, quiet until touched.
 - **Focus:** A 2px lit-red outline at a 4px offset, globally.
 
 ### Navigation
-- **Chapter rail:** A fixed plate (112px wide, 16px radius, ink fill, bone/10 hairline), vertically centred at the left edge, at 1024px and up only. It lists the Devanagari ordinals ० to ७. The active ordinal turns blood, and its label slides in beside it in label type. Hovering another ordinal previews its label at 60 percent. On the paper interlude the plate turns paper.
+- **Chapter rail:** A fixed plate (112px wide, 16px radius, ink fill, bone/10 hairline), vertically centred at the left edge, at 1024px and up only. It lists the blackletter ordinals 0 to 7. The active ordinal turns blood, and its label slides in beside it in label type. Hovering another ordinal previews its label at 60 percent. On the paper interlude the plate turns paper.
 - **Top-right actions:** The résumé ghost pill (hidden below 640px) and a 48px menu button with a 16px radius. The menu button has an ink-2 fill at 80 percent with backdrop blur and two 1.5px bars that cross into an X.
-- **Menu overlay:** A full-screen ink sheet revealed top-down by clip-path (0.7s expo.inOut). Items are display type at 13vw (5.5rem on desktop), each with a blood Devanagari ordinal and a bone/10 hairline. Items rise in at a 0.05s stagger and turn blood on hover. Underlined label links sit at the foot.
+- **Menu overlay:** A full-screen ink sheet revealed top-down by clip-path (0.7s expo.inOut). Items are display type at 13vw (5.5rem on desktop), each with a blood blackletter ordinal and a bone/10 hairline. Items rise in at a 0.05s stagger and turn blood on hover. Underlined label links sit at the foot.
 
 ### Tapes
-The signature device. Two bands cross the hero at -11° and 7°, each 130 percent of the viewport wide. Each carries running text that alternates Aostala caps and Tiro Devanagari words, separated by small round dots. The front tape is tape-red with bone text and runs 38s. The rear tape is tape-deep with lit-red text and runs 46s in reverse. On scroll-out they swing apart. Under reduced motion they stop.
+The signature device. Two bands cross the hero at -11° and 7°, each 130 percent of the viewport wide. Each carries running text that alternates Aostala caps and Grenze Gotisch German words, separated by small round dots. The front tape is tape-red with bone text and runs 38s. The rear tape is tape-deep with lit-red text and runs 46s in reverse. On scroll-out they swing apart. Under reduced motion they stop.
 
 ### Bilingual Heading
-A baseline-aligned pair with a 12 to 16px gap: an English Aostala title (1.6 to 4.6rem) in bone, and one Devanagari word in blood at about 0.8 times its size. In KPMG chapters and the mobile method list the pair stacks, with the Devanagari word above at up to 7.5rem in blood.
+A baseline-aligned pair with a 12 to 16px gap: an English Aostala title (1.6 to 4.6rem) in bone, and one German word in blood at about 0.8 times its size. In KPMG chapters and the mobile method list the pair stacks, with the German word above at up to 7.5rem in blood.
 
 ### Outline Type
-Aostala caps with transparent fill and a 1px stroke in bone at 22 percent. Used for the giant hero name along the bottom edge, and as alternating rows in the outline/fill marquees in the renders and contact chapters. A faint Devanagari row in blood at 20 percent runs under the contact marquee.
+Aostala caps with transparent fill and a 1px stroke in bone at 22 percent. Used for the giant hero name along the bottom edge, and as alternating rows in the outline/fill marquees in the renders and contact chapters. A faint German row in blood at 20 percent runs under the contact marquee.
 
 ### Hairline Lists
-Rows separated by bone/10 bottom borders, 20px vertical padding, with an Aostala name and a General meta line. Experience rows show a right-aligned tabular date. Honours rows use a three-column grid (Devanagari index, title with note, lit-red placing) and indent 12px on hover. Contact links use name, note and arrow, and the arrow nudges up and right on hover. Rows enter with an 8 percent slide and 0.07s stagger.
+Rows separated by bone/10 bottom borders, 20px vertical padding, with an Aostala name and a General meta line. Experience rows show a right-aligned tabular date. Honours rows use a three-column grid (blackletter index, title with note, lit-red placing) and indent 12px on hover. Contact links use name, note and arrow, and the arrow nudges up and right on hover. Rows enter with an 8 percent slide and 0.07s stagger.
 
 ### Project Sheets
-Full-viewport sticky sheets that stack. Each is an ink-2 panel with a 28px radius and bone/10 hairline. It is split into a text side (40px padding: Devanagari "०२ / ०८" counter, headline title, kind and year, body, stack line, pill actions) and an ink-3 media well. The well holds a 12px-radius screenshot with the floating-media shadow. As the next sheet slides over, the previous one scales to 0.9 and dims to 45 percent brightness. Screens tilt up to ±14° on rotateX with scroll velocity. Below 1024px the media well moves above the text at 30svh.
+Full-viewport sticky sheets that stack. Each is an ink-2 panel with a 28px radius and bone/10 hairline. It is split into a text side (40px padding: German blackletter "02 / 08" counter, headline title, kind and year, body, stack line, pill actions) and an ink-3 media well. The well holds a 12px-radius screenshot with the floating-media shadow. As the next sheet slides over, the previous one scales to 0.9 and dims to 45 percent brightness. Screens tilt up to ±14° on rotateX with scroll velocity. Below 1024px the media well moves above the text at 30svh.
 
 ### Stat Row
 A gap-px grid of ink cells inside a 16px-radius bone/10 frame: 2 columns on phones, 4 at 1024px and up for KPMG numbers, and 3 for About facts. Each cell holds a display tabular figure (3.2 to 5.6rem) with a lit-red unit in label type, then a General caption. Figures count up once on entry.
@@ -266,18 +266,18 @@ A gap-px grid of ink cells inside a 16px-radius bone/10 frame: 2 columns on phon
 - **Status:** A polite live region beside the send button, with bone text for success and lit red for failure.
 
 ### Pipeline
-An SVG path in blood (2.5px, non-scaling) is drawn by scroll over a bone/10 ghost path. It zig-zags between alternating stage bodies. Each stage has a 30px circular node carrying its Devanagari ordinal, which fills blood when active, while the stage title brightens from bone/50 to bone. On phones the path becomes a straight bone/10 line at 14px from the left.
+An SVG path in blood (2.5px, non-scaling) is drawn by scroll over a bone/10 ghost path. It zig-zags between alternating stage bodies. Each stage has a 30px circular node carrying its blackletter ordinal, which fills blood when active, while the stage title brightens from bone/50 to bone. On phones the path becomes a straight bone/10 line at 14px from the left.
 
 ### Preloader and Portrait Torch
-- **Preloader:** Shown once per session and skipped under reduced motion. It counts from 000 to 100 in display tabular type (up to 12rem), with the Devanagari percentage beside it and a blood rule drawing across. Then "नमस्कार" and the counter slide away and the sheet lifts by clip-path (0.9s expo.inOut).
+- **Preloader:** Shown once per session and skipped under reduced motion. It counts from 000 to 100 in display tabular type (up to 12rem), with the blackletter "Prozent" count beside it and a blood rule drawing across. Then "Willkommen" and the counter slide away and the sheet lifts by clip-path (0.9s expo.inOut).
 - **Colour torch:** On hover-capable devices, the grayscale hero portrait reveals full colour inside a 190px circle that follows the pointer.
 
 ## Do's and Don'ts
 
 ### Do:
 - **Do** keep red to one hue: blood for fills and large type, blood-hi for small text on ink.
-- **Do** number everything a reader counts in Devanagari (Tiro), and keep Latin tabular figures for data values.
-- **Do** open every chapter with a bilingual heading: an Aostala English title in bone and one Devanagari word in blood.
+- **Do** number everything a reader counts in blackletter (Grenze Gotisch), and keep Latin tabular figures for data values.
+- **Do** open every chapter with a bilingual heading: an Aostala English title in bone and one German word in blood.
 - **Do** separate content with 1px bone/10 hairlines and gap-px grids before reaching for a filled card.
 - **Do** make actions full pills with a trailing 1.5px square-cap arrow from the shared icon family.
 - **Do** gate pins and scrubs behind `(min-width: 1024px) and (prefers-reduced-motion: no-preference)`, and give every pinned sequence a plain stacked fallback with the same content.

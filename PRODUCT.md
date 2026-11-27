@@ -60,4 +60,4 @@ Visitors read on desktop between other tabs, and on phones from LinkedIn. Deploy
 - Use official brand marks for third parties (KPMG wordmark, Monkeytype and Spotify logos), never the site's own type or colours to spell them.
 - Projects: eRTMAC-NWIS (SIH 2026, team PLANNS, Oil India) replaces Kadam and FloatChat.
 - Model UN gets its own compact section (source: the owner's MUN résumé on Canva and `C:\Users\Nakul\Desktop\EVERYTHING\MUNs`). Don't overdo it.
-- Devanagari is an accent: rail numerals, a few tape words, a couple of headings. Not every counter and label.
+- German blackletter is an accent: rail numerals, a few tape words, a couple of headings. Not every counter and label.

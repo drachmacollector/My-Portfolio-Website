@@ -4,7 +4,7 @@
 
 /* ── Faces ─────────────────────────────────────────────────────────
    Aostala (display) and General (text) come from ifonts.xyz
-   (demo, personal use). Tiro Devanagari Marathi is OFL. */
+   (demo, personal use). Grenze Gotisch, the German blackletter, is OFL. */
 @font-face {
   font-family: "Aostala";
   src: url("/fonts/aostala.woff2") format("woff2");
@@ -24,11 +24,10 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "Tiro Devanagari Marathi";
-  src: url("/fonts/tiro-devanagari-marathi.woff2") format("woff2");
+  font-family: "Grenze Gotisch";
+  src: url("/fonts/grenze-gotisch.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
-  unicode-range: U+0900-097F, U+200C-200D, U+25CC;
 }
 
 :root {
@@ -145,9 +144,11 @@
     text-transform: uppercase;
     line-height: 1.2;
   }
-  .deva {
-    font-family: "Tiro Devanagari Marathi", "Nirmala UI", serif;
+  .fraktur {
+    font-family: "Grenze Gotisch", Georgia, serif;
     line-height: 1.1;
+    letter-spacing: 0;
+    text-transform: none;
   }
   .outline-text {
     color: transparent;

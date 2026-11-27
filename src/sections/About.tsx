@@ -1,6 +1,7 @@
 import { useRef } from "react";
-import { ABOUT } from "@/constants/content";
+import { ABOUT, DE } from "@/constants/content";
 import { gsap, useGSAP, ANY_MOTION } from "@/lib/gsap";
+import De from "@/components/De";
 
 /** Split "[[red]]" markup into words, keeping which ones are red. */
 const words = ABOUT.statement
@@ -53,9 +54,9 @@ const About = () => {
   return (
     <section id="about" ref={root} className="relative bg-ink py-[clamp(88px,14vh,160px)]">
       <div className="shell">
-        <h2 className="cursor-target flex w-fit items-baseline gap-4">
+        <h2 className="flex w-fit items-baseline gap-4">
           <span className="display text-[clamp(1.8rem,3vw,2.6rem)]">Who I am</span>
-          <span className="deva text-[clamp(1.6rem,2.6vw,2.2rem)] text-blood">मी</span>
+          <De className="text-[clamp(1.8rem,2.9vw,2.5rem)] text-blood">{DE.about}</De>
         </h2>
 
         <p className="ab-statement mt-10 max-w-[22ch] text-[clamp(2rem,4.6vw,4.4rem)] font-light leading-[1.08] tracking-[-0.02em] md:max-w-[24ch]">

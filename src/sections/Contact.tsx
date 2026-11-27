@@ -1,8 +1,9 @@
 import { useRef, useState } from "react";
-import { CONTACT } from "@/constants/content";
+import { CONTACT, DE } from "@/constants/content";
 import { gsap, useGSAP, ANY_MOTION } from "@/lib/gsap";
 import { ArrowUpRight, ArrowRight, GithubLogo, LinkedInLogo } from "@/components/Icons";
 import { scrollToId } from "@/components/Chrome";
+import De from "@/components/De";
 
 const encode = (data: Record<string, string>) =>
   Object.keys(data)
@@ -145,8 +146,8 @@ const Contact = () => {
         </div>
         <div className="ct-row marquee-track -mt-[0.3em]">
           {[0, 1].map((k) => (
-            <span key={k} className="deva shrink-0 whitespace-nowrap pr-[0.4em] text-[clamp(3rem,8vw,8rem)] leading-[1.15] text-blood/20">
-              चला, काहीतरी घडवूया ·
+            <span key={k} lang="de" className="fraktur shrink-0 whitespace-nowrap pr-[0.4em] text-[clamp(3rem,8vw,8rem)] leading-[1.15] text-blood/20">
+              {DE.marquee}
             </span>
           ))}
         </div>
@@ -164,9 +165,9 @@ const Contact = () => {
 
       <div className="shell mt-[clamp(80px,12vh,140px)] grid gap-16 lg:grid-cols-2">
         <div>
-          <h2 className="cursor-target flex w-fit items-baseline gap-4">
+          <h2 className="flex w-fit items-baseline gap-4">
             <span className="display text-[clamp(2.4rem,4.5vw,4rem)]">Write to me</span>
-            <span className="deva text-[clamp(1.6rem,2.8vw,2.4rem)] text-blood">संपर्क</span>
+            <De className="text-[clamp(1.8rem,3.1vw,2.7rem)] text-blood">{DE.contact}</De>
           </h2>
           <form name="contact" method="POST" data-netlify="true" onSubmit={onSubmit} className="mt-10 grid gap-8" noValidate={false}>
             <input type="hidden" name="form-name" value="contact" />
@@ -230,7 +231,7 @@ const Contact = () => {
 
       <footer className="shell mt-[clamp(90px,14vh,160px)] flex flex-wrap items-center justify-between gap-4 border-t border-bone/10 py-8 text-[0.85rem] text-bone/50">
         <p>
-          Nakul Bhadade · 2026
+          Nakul Bhadade · <span className="fraktur text-[1.15em]">2026</span>
         </p>
         <p>Designed and built by me, with React and GSAP.</p>
         <button onClick={() => scrollToId("top")} className="label link-underline">

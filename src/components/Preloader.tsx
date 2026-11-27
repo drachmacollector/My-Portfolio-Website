@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { gsap, useGSAP, prefersReducedMotion } from "@/lib/gsap";
-import { toDeva } from "@/constants/content";
+import { DE } from "@/constants/content";
 
 /** Counter from 0 to 100, then the curtain lifts. Shown once per session. */
 const Preloader = ({ onDone }: { onDone: () => void }) => {
@@ -45,7 +45,7 @@ const Preloader = ({ onDone }: { onDone: () => void }) => {
       aria-hidden="true"
     >
       <div className="overflow-hidden">
-        <p className="pl-word deva text-[clamp(2.5rem,7vw,6rem)] text-blood">नमस्कार</p>
+        <p lang="de" className="pl-word fraktur text-[clamp(2.5rem,7vw,6rem)] text-blood">{DE.hello}</p>
       </div>
       <div className="mt-6 flex items-end justify-between">
         <div className="overflow-hidden">
@@ -54,7 +54,7 @@ const Preloader = ({ onDone }: { onDone: () => void }) => {
           </span>
         </div>
         <div className="overflow-hidden text-right">
-          <span className="pl-word deva block text-2xl text-bone/50">{toDeva(n)}%</span>
+          <span lang="de" className="pl-word fraktur block text-2xl text-bone/50">{n} {DE.percent}</span>
         </div>
       </div>
       <div className="pl-line mt-6 h-px w-full origin-left scale-x-0 bg-blood" />

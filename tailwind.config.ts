@@ -7,7 +7,7 @@ const config = {
       fontFamily: {
         display: ["Aostala", "Georgia", "serif"],
         body: ["General", "Segoe UI", "system-ui", "sans-serif"],
-        deva: ["Tiro Devanagari Marathi", "Nirmala UI", "serif"],
+        fraktur: ["Grenze Gotisch", "Georgia", "serif"],
       },
       colors: {
         ink: { DEFAULT: "#0b0b0c", 2: "#141416", 3: "#1c1c1f" },

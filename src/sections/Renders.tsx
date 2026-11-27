@@ -1,11 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { RENDERS } from "@/constants/content";
+import { RENDERS, DE, pad2 } from "@/constants/content";
 import { gsap, useGSAP, DESKTOP_MOTION, ANY_MOTION } from "@/lib/gsap";
 import { getLenis } from "@/animations/smooth-scroll";
 import { ArrowLeft, ArrowRight, Close, Play } from "@/components/Icons";
 import NowPlaying from "@/components/NowPlaying";
 import Monkeytype from "@/components/Monkeytype";
+import Duolingo from "@/components/Duolingo";
+import De from "@/components/De";
 
 const src = (file: string) => `/blender/${encodeURIComponent(file)}`;
 const isVideo = (file: string) => file.endsWith(".mp4");
@@ -77,7 +79,7 @@ const Tile = ({ i, onOpen }: { i: number; onOpen: (i: number) => void }) => {
       )}
       <span className="absolute inset-x-0 bottom-0 flex items-end justify-between bg-[linear-gradient(to_top,rgba(11,11,12,0.85),transparent)] p-5 pt-16">
         <span>
-          <span className="tabular block text-[0.9rem] text-blood-hi">{String(i + 1).padStart(2, "0")}</span>
+          <span className="fraktur block text-[1.1rem] text-blood-hi">{pad2(i + 1)}</span>
           <span className="display text-[1.5rem]">{r.title}</span>
         </span>
         {isVideo(r.file) && (
@@ -170,8 +172,11 @@ const Renders = () => {
             Modelling, simulation and lighting in Blender. Two national wins at Render Riot came out of this habit. Hover
             a frame to play it, open it to watch full size.
           </p>
-          <p className="label text-bone/50">
-            <span className="text-blood">{RENDERS.length}</span> pieces
+          <p className="label flex items-baseline gap-2 text-bone/50">
+            <span className="fraktur text-[1.3rem] text-blood">{RENDERS.length}</span> pieces ·
+            <De className="text-[1.3rem] text-blood">
+              {DE.renders}
+            </De>
           </p>
         </div>
         <div className="rn-strip flex gap-5 px-[clamp(20px,5vw,64px)] max-lg:grid max-lg:grid-cols-1 sm:max-lg:grid-cols-2 lg:w-max lg:pl-[calc(var(--rail)+24px)] motion-reduce:lg:w-full motion-reduce:lg:flex-wrap">
@@ -183,9 +188,12 @@ const Renders = () => {
 
       {/* Off the clock */}
       <div className="shell grid gap-px overflow-hidden pb-[clamp(76px,11vh,130px)] pt-6">
-        <div className="grid gap-px overflow-hidden rounded-2xl border border-bone/10 bg-bone/10 md:grid-cols-[1fr_1.4fr]">
+        <div className="grid gap-px overflow-hidden rounded-2xl border border-bone/10 bg-bone/10 md:grid-cols-2 xl:grid-cols-[1fr_1fr_1.4fr]">
           <Monkeytype />
-          <NowPlaying />
+          <Duolingo />
+          <div className="grid md:col-span-2 xl:col-span-1">
+            <NowPlaying />
+          </div>
         </div>
       </div>
 
@@ -222,8 +230,8 @@ const Renders = () => {
               <button onClick={() => step(-1)} className="label inline-flex items-center gap-2 rounded-full border border-bone/20 px-5 py-3 hover:border-bone">
                 <ArrowLeft /> Previous
               </button>
-              <span className="tabular text-bone/60">
-                {open !== null && open + 1} / {RENDERS.length}
+              <span className="fraktur text-[1.2rem] text-bone/60">
+                <span className="text-blood-hi">{open !== null && open + 1}</span> / {RENDERS.length}
               </span>
               <button onClick={() => step(1)} className="label inline-flex items-center gap-2 rounded-full border border-bone/20 px-5 py-3 hover:border-bone">
                 Next <ArrowRight />

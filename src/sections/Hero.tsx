@@ -103,7 +103,7 @@ const Hero = ({ ready }: { ready: boolean }) => {
         <p className="display text-[1.55rem] leading-[0.86] md:text-[2.1rem]">Nakul</p>
         <p className="display text-[1.55rem] leading-[0.86] text-blood md:text-[2.1rem]">Bhadade</p>
         <p className="label mt-2 hidden opacity-60 md:block">
-          Portfolio · <span className="deva tracking-normal">२०२६</span>
+          Portfolio · <span className="fraktur text-[1.25em]">2026</span>
         </p>
       </div>
 

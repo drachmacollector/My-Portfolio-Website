@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { PROJECTS, RESEARCH, toDeva, type Project } from "@/constants/content";
+import { PROJECTS, RESEARCH, DE, pad2, type Project } from "@/constants/content";
 import { gsap, useGSAP, ScrollTrigger, ANY_MOTION } from "@/lib/gsap";
 import { ArrowUpRight, Download, GithubLogo } from "@/components/Icons";
+import De from "@/components/De";
 
 /** One screenshot, or several that take turns while the card is on screen. */
 const Shots = ({ p }: { p: Project }) => {
@@ -118,10 +119,13 @@ const Work = () => {
   return (
     <section id="work" ref={root} className="relative bg-ink pt-[clamp(88px,14vh,160px)]" aria-label="Selected work">
       <div className="shell wk-head flex flex-wrap items-end justify-between gap-6">
-        <h2 className="cursor-target display text-[clamp(3.4rem,9vw,8.5rem)] leading-[0.85]">
+        <h2 className="display text-[clamp(3.4rem,9vw,8.5rem)] leading-[0.85]">
           Selected
           <br />
           <span className="text-blood">work</span>
+          <De className="ml-[0.25em] text-[0.42em] text-blood">
+            {DE.work}
+          </De>
         </h2>
         <p className="max-w-[34ch] text-[1rem] leading-relaxed text-bone/70">
           Things I designed, trained and shipped: a drilling early-warning system, research dashboards, a Windows
@@ -137,12 +141,11 @@ const Work = () => {
                 <div className="flex flex-col justify-between gap-6 p-6 md:p-10">
                   <div>
                     <p className="flex justify-end text-bone/55">
-                      <span className="deva whitespace-nowrap text-[1.1rem]">
-                        <span className="text-blood-hi">{toDeva(String(i + 1).padStart(2, "0"))}</span> /{" "}
-                        {toDeva(String(total).padStart(2, "0"))}
+                      <span className="fraktur whitespace-nowrap text-[1.25rem]">
+                        <span className="text-blood-hi">{pad2(i + 1)}</span> / {pad2(total)}
                       </span>
                     </p>
-                    <h3 className="cursor-target display mt-2 w-fit text-[clamp(2.6rem,5.2vw,5.4rem)]">{p.title}</h3>
+                    <h3 className="display mt-2 w-fit text-[clamp(2.6rem,5.2vw,5.4rem)]">{p.title}</h3>
                     <p className="mt-3 text-[1rem] text-bone/55">
                       {p.kind}, {p.year}
                     </p>

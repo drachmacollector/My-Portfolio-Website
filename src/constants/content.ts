@@ -1,11 +1,46 @@
 // All copy and data for the site. Components never inline content.
 
-export const DEVA_DIGITS = ["०", "१", "२", "३", "४", "५", "६", "७", "८", "९"];
-export const toDeva = (n: number | string) =>
-  String(n)
-    .split("")
-    .map((c) => (/\d/.test(c) ? DEVA_DIGITS[Number(c)] : c))
-    .join("");
+/** Zero-padded counter, set in the blackletter face wherever a reader counts. */
+export const pad2 = (n: number) => String(n).padStart(2, "0");
+
+/** German accents, set in Grenze Gotisch. Each one glosses the English beside it. */
+export const DE = {
+  hello: "Willkommen",
+  percent: "Prozent",
+  about: "Ich",
+  experience: "Erfahrung",
+  work: "Werke",
+  mun: "Diplomatie",
+  renders: "Kunst",
+  contact: "Kontakt",
+  marquee: "Lass uns etwas bauen ·",
+  pipeline: "System",
+  everyDay: "Jeden Tag ein bisschen.",
+};
+
+/** English for every German word on the site, shown in the cursor's tooltip on hover. */
+export const GLOSS: Record<string, string> = {
+  Willkommen: "Welcome",
+  Prozent: "percent",
+  Ich: "Me",
+  Erfahrung: "Experience",
+  Werke: "Works",
+  Diplomatie: "Diplomacy",
+  Kunst: "Art",
+  Kontakt: "Contact",
+  "Lass uns etwas bauen ·": "Let's build something",
+  System: "System",
+  Gesetz: "Law",
+  Preis: "Price",
+  Wahrheit: "Truth",
+  Tatkraft: "Drive",
+  Mut: "Courage",
+  Weg: "The way",
+  Bildung: "Education",
+  Debatte: "Debate",
+  Fernweh: "A longing for faraway places",
+  "Jeden Tag ein bisschen.": "A little every day.",
+};
 
 export const SECTIONS = [
   { id: "top", label: "Hello" },
@@ -23,21 +58,31 @@ export const CONTACT = {
   github: "https://github.com/drachmacollector",
   resume: "/Nakul_Resume.pdf",
   monkeytype: "https://monkeytype.com/profile/drachmacollector",
+  duolingo: "https://www.duolingo.com/profile/MuttonKebab007",
 };
 
-export const TAPE_A = [
+/** Tape items: plain strings are English (Aostala caps), `{ de }` items are German (blackletter). */
+export type TapeItem = string | { de: string };
+
+export const TAPE_A: TapeItem[] = [
   "Strategy, then the system",
+  { de: "Wahrheit" },
   "Applied AI",
-  "सत्य",
+  { de: "Tatkraft" },
   "Document pipelines",
+  { de: "Mut" },
   "Forecasting models",
+  { de: "Weg" },
 ];
-export const TAPE_B = [
+export const TAPE_B: TapeItem[] = [
   "IIIT Nagpur",
+  { de: "Bildung" },
   "CSE · AI & ML",
+  { de: "Debatte" },
   "Best Delegate ×5",
-  "वाद",
+  { de: "Kunst" },
   "3D artist",
+  { de: "Fernweh" },
 ];
 
 export const ABOUT = {
@@ -63,6 +108,7 @@ export const KPMG = {
     {
       n: 1,
       title: "Labour codes",
+      word: "Gesetz",
       body: "For the Inspection Testing portal. India folded 29 central labour laws into four codes; I read all four and pulled out what matters for factory inspections: what gets inspected, how often, what employers owe workers, how machinery is tested. Then I proposed where AI fits, in four parts.",
       list: [
         "Risk scores per factory from past violations, failed tests and accidents",
@@ -75,6 +121,7 @@ export const KPMG = {
     {
       n: 2,
       title: "CPI validation",
+      word: "Preis",
       body: "I mapped how India calculates the Consumer Price Index for industrial workers, agricultural and rural labourers, end to end, in decks and flowcharts. When the team planned a state-level survey app, I owned verification and validation, and proposed six checks.",
       list: [
         "Anomaly detection: flatlined prices, spikes, suspiciously stable series",

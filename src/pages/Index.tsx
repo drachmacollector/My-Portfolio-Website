@@ -12,6 +12,17 @@ import Contact from "@/sections/Contact";
 import { initSmoothScroll } from "@/animations/smooth-scroll";
 import { ScrollTrigger } from "@/lib/gsap";
 
+/**
+ * What the reticle locks onto: buttons (real ones, pill-shaped links, and the
+ * disclosure toggles) and German text, which also shows its English as a tooltip.
+ */
+const CURSOR_TARGETS = [
+  "button",
+  "summary",
+  "a.rounded-full",
+  '[lang="de"][data-cursor-label]',
+].join(", ");
+
 const Index = () => {
   const [ready, setReady] = useState(false);
   // The reticle cursor lives everywhere below the landing screen.
@@ -42,7 +53,13 @@ const Index = () => {
           <Contact />
         </div>
       </main>
-      <TargetCursor container={rest} spinDuration={2} hideDefaultCursor parallaxOn />
+      <TargetCursor
+        container={rest}
+        targetSelector={CURSOR_TARGETS}
+        spinDuration={2}
+        hideDefaultCursor
+        parallaxOn
+      />
     </>
   );
 };

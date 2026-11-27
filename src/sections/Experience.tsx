@@ -1,9 +1,8 @@
 import { useRef } from "react";
-import { EXPERIENCE, KPMG } from "@/constants/content";
+import { EXPERIENCE, KPMG, DE, pad2 as pad } from "@/constants/content";
 import { gsap, useGSAP, ANY_MOTION } from "@/lib/gsap";
 import { ArrowUpRight } from "@/components/Icons";
-
-const pad = (n: number) => String(n).padStart(2, "0");
+import De from "@/components/De";
 
 const Experience = () => {
   const root = useRef<HTMLElement>(null);
@@ -111,7 +110,12 @@ const Experience = () => {
     >
       <div className="shell">
         <div className="ex-head flex flex-wrap items-end justify-between gap-6">
-          <h2 className="cursor-target display text-[clamp(3.4rem,9vw,8.5rem)] leading-[0.85]">Experience</h2>
+          <h2 className="display text-[clamp(3.4rem,9vw,8.5rem)] leading-[0.85]">
+            Experience
+            <De className="ml-[0.25em] text-[0.42em] text-blood">
+              {DE.experience}
+            </De>
+          </h2>
           <p className="max-w-[34ch] text-[1rem] leading-relaxed text-bone/70">
             Where I have worked so far, and what I left behind.
           </p>
@@ -139,7 +143,7 @@ const Experience = () => {
                 </span>
                 <span className="tabular text-[0.95rem] text-bone/60">{KPMG.meta.find((m) => m.k === "When")?.v}</span>
               </div>
-              <h3 id="ex-kpmg" className="cursor-target display mt-8 w-fit text-[clamp(2.2rem,4.4vw,3.8rem)] leading-[0.95]">
+              <h3 id="ex-kpmg" className="display mt-8 w-fit text-[clamp(2.2rem,4.4vw,3.8rem)] leading-[0.95]">
                 {KPMG.role}
               </h3>
               <dl className="mt-6 grid gap-x-8 border-t border-bone/15 sm:grid-cols-2">
@@ -157,9 +161,14 @@ const Experience = () => {
               <ol className="ex-jobs mt-10 grid gap-8">
                 {KPMG.chapters.map((ch) => (
                   <li key={ch.title} className="ex-job grid grid-cols-[2.4rem_1fr] gap-x-4">
-                    <span className="tabular pt-2 text-[0.95rem] text-blood-hi">{pad(ch.n)}</span>
+                    <span className="fraktur pt-1 text-[1.2rem] text-blood-hi">{pad(ch.n)}</span>
                     <div>
-                      <h4 className="cursor-target display w-fit text-[clamp(1.6rem,2.6vw,2.2rem)]">{ch.title}</h4>
+                      <h4 className="flex w-fit flex-wrap items-baseline gap-x-3">
+                        <span className="display text-[clamp(1.6rem,2.6vw,2.2rem)]">{ch.title}</span>
+                        <De className="text-[clamp(1.4rem,2.2vw,1.9rem)] text-blood">
+                          {ch.word}
+                        </De>
+                      </h4>
                       <p className="mt-3 max-w-[120ch] text-[0.98rem] leading-relaxed text-bone/75">{ch.body}</p>
                       {ch.list.length > 0 && (
                         <details className="group mt-4 max-w-[120ch]">
@@ -170,8 +179,9 @@ const Experience = () => {
                             {ch.listTitle}
                           </summary>
                           <ul className="mt-3 grid gap-1.5 border-l border-blood/60 pl-4">
-                            {ch.list.map((li) => (
-                              <li key={li} className="text-[0.92rem] leading-relaxed text-bone/70">
+                            {ch.list.map((li, j) => (
+                              <li key={li} className="flex gap-3 text-[0.92rem] leading-relaxed text-bone/70">
+                                <span className="fraktur w-4 shrink-0 text-[1.05rem] text-blood-hi">{j + 1}</span>
                                 {li}
                               </li>
                             ))}
@@ -188,10 +198,13 @@ const Experience = () => {
           {/* 03 · Scholarship pipeline */}
           <div className="ex-pipe mt-20 border-t border-bone/10 pt-12">
             <div className="grid grid-cols-[2.4rem_1fr] gap-x-4">
-              <span className="tabular pt-2 text-[0.95rem] text-blood-hi">03</span>
+              <span className="fraktur pt-1 text-[1.2rem] text-blood-hi">03</span>
               <div>
-                <h4 className="cursor-target display w-fit text-[clamp(1.6rem,2.6vw,2.2rem)]">
-                  Scholarship pipeline
+                <h4 className="flex w-fit flex-wrap items-baseline gap-x-3">
+                  <span className="display text-[clamp(1.6rem,2.6vw,2.2rem)]">Scholarship pipeline</span>
+                  <De className="text-[clamp(1.4rem,2.2vw,1.9rem)] text-blood">
+                    {DE.pipeline}
+                  </De>
                 </h4>
                 <p className="mt-3 max-w-[120ch] text-[0.98rem] leading-relaxed text-bone/75">
                   {KPMG.pipelineIntro}
@@ -218,7 +231,7 @@ const Experience = () => {
                       className="absolute left-0 top-0 grid h-[30px] w-[30px] place-items-center rounded-full border border-bone/25 bg-ink text-[0.78rem] transition-colors duration-500 group-[.is-on]:border-blood group-[.is-on]:bg-blood"
                       aria-hidden="true"
                     >
-                      <span className="tabular">{i + 1}</span>
+                      <span className="fraktur text-[0.95rem] leading-none">{i + 1}</span>
                     </span>
                     <h5 className="display text-[1.3rem] leading-tight text-bone/50 transition-colors duration-500 group-[.is-on]:text-bone">
                       {s.t}
@@ -237,7 +250,7 @@ const Experience = () => {
                     <div key={n.label}>
                       <dt className="sr-only">{n.label}</dt>
                       <dd>
-                        <span className={`inline-block ${n.unit === "lakh" ? "cursor-target" : ""}`}>
+                        <span className="inline-block">
                           <span className="display tabular text-[clamp(2.4rem,4vw,3.4rem)] leading-none">
                             <span className="ex-num" data-to={n.display} data-dec={dec}>
                               {n.display}
