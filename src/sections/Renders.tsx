@@ -53,7 +53,7 @@ const Tile = ({ i, onOpen }: { i: number; onOpen: (i: number) => void }) => {
       onFocus={start}
       onBlur={stop}
       className={`rn-tile group relative shrink-0 overflow-hidden rounded-2xl bg-ink-3 text-left ${
-        tall ? "aspect-[9/14] h-[min(58svh,560px)]" : "aspect-[16/10] h-[min(58svh,560px)]"
+        tall ? "aspect-[9/14] h-[min(46svh,440px)]" : "aspect-[16/10] h-[min(46svh,440px)]"
       } max-lg:h-auto max-lg:w-full`}
       aria-label={`Open ${r.title}`}
     >

@@ -275,7 +275,7 @@ const Experience = () => {
         <ul className="ex-others mt-20 border-t border-bone/15">
           {EXPERIENCE.map((e) => {
             const inner = (
-              <div className="grid gap-x-10 gap-y-3 py-7 md:grid-cols-[1fr_1.3fr_auto] md:items-center">
+              <div className="grid gap-x-10 gap-y-3 py-7 md:grid-cols-[1fr_1.3fr_8.5rem] md:items-center">
                 <span className="flex items-center gap-4">
                   {e.logo && (
                     <img
@@ -293,7 +293,7 @@ const Experience = () => {
                   <span className="text-bone/90">{e.role}</span>
                   {e.body && <span className="mt-1 block">{e.body}</span>}
                 </span>
-                <span className="tabular whitespace-nowrap text-[0.88rem] text-bone/55">{e.when}</span>
+                <span className="tabular whitespace-nowrap text-[0.88rem] text-bone/55 md:text-right">{e.when}</span>
               </div>
             );
             return (

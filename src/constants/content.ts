@@ -191,6 +191,14 @@ export const EXPERIENCE = [
     logo: "/img/logo-tca.webp",
   },
   {
+    org: "SneakyPandas",
+    role: "Co-founder, web development studio",
+    when: "2026 – now",
+    body: "A two-person studio with Siddhi Dhoke. We design and build scroll-worthy websites, platforms and motion systems for founders and small businesses.",
+    href: "https://sneakypandas.vercel.app/",
+    logo: "/img/logo-sneakypandas.svg",
+  },
+  {
     org: "IIIT Nagpur",
     role: "B.Tech CSE (Artificial Intelligence & Machine Learning)",
     when: "Aug 2024 – now",

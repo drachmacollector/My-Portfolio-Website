@@ -3,7 +3,7 @@ import Tape from "@/components/Tape";
 import { TAPE_A, TAPE_B } from "@/constants/content";
 import { gsap, useGSAP, ANY_MOTION, ScrollTrigger, hushRail } from "@/lib/gsap";
 import { scrollToId } from "@/components/Chrome";
-import { ArrowDown } from "@/components/Icons";
+import { ArrowDown, ArrowUpRight } from "@/components/Icons";
 
 const Hero = ({ ready }: { ready: boolean }) => {
   const root = useRef<HTMLElement>(null);
@@ -160,15 +160,28 @@ const Hero = ({ ready }: { ready: boolean }) => {
       <div className="h-ui absolute left-5 right-5 top-[17%] z-[4] max-w-[340px] md:left-auto md:right-12 md:top-[34%] lg:right-20">
         <p className="text-[0.95rem] leading-relaxed text-bone/80">
           AI engineer at IIIT Nagpur. I turn messy problems into working systems: document pipelines, forecasting
-          models and dashboards people actually use. Off the keyboard, <span className="text-bone">Model UN and debate</span>.
+          models and dashboards people actually use. I also run <span className="text-bone">SneakyPandas</span>, a
+          two-person web studio. Off the keyboard, <span className="text-bone">Model UN and debate</span>.
         </p>
-        <button
-          onClick={() => scrollToId("experience")}
-          className="group mt-5 inline-flex items-center gap-3 rounded-full bg-blood px-5 py-3 text-[0.9rem] text-bone transition-colors duration-300 hover:bg-blood-deep"
-        >
-          See my work
-          <ArrowDown className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-y-0.5" />
-        </button>
+        <div className="mt-5 flex flex-wrap items-center gap-3">
+          <button
+            onClick={() => scrollToId("experience")}
+            className="group inline-flex items-center gap-3 rounded-full bg-blood px-5 py-3 text-[0.9rem] text-bone transition-colors duration-300 hover:bg-blood-deep"
+          >
+            See my work
+            <ArrowDown className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-y-0.5" />
+          </button>
+          <a
+            href="https://sneakypandas.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2.5 rounded-full border border-bone/20 bg-ink py-1.5 pl-1.5 pr-4 text-[0.9rem] text-bone transition-colors duration-300 hover:border-bone"
+          >
+            <img src="/img/logo-sneakypandas.svg" alt="" width={32} height={32} className="h-8 w-8 rounded-full" />
+            My agency
+            <ArrowUpRight className="h-3 w-3 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </a>
+        </div>
       </div>
     </section>
   );

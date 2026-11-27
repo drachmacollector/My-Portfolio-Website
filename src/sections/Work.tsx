@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { PROJECTS, RESEARCH, toDeva, type Project } from "@/constants/content";
 import { gsap, useGSAP, ScrollTrigger, ANY_MOTION } from "@/lib/gsap";
-import { ArrowUpRight, Download } from "@/components/Icons";
+import { ArrowUpRight, Download, GithubLogo } from "@/components/Icons";
 
 /** One screenshot, or several that take turns while the card is on screen. */
 const Shots = ({ p }: { p: Project }) => {
@@ -178,7 +178,7 @@ const Work = () => {
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 rounded-full border border-bone/20 px-5 py-2.5 text-[0.9rem] transition-colors duration-300 hover:border-bone"
                         >
-                          Code <ArrowUpRight />
+                          <GithubLogo /> Code <ArrowUpRight />
                         </a>
                       )}
                     </div>

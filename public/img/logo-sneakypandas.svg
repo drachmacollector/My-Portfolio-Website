@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- The SneakyPandas clan crest (same geometry as src/art/Mon.tsx, kind="studio") -->
+  <circle cx="100" cy="100" r="100" fill="#f7efe2"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#d8322a" stroke-width="12"/>
+  <circle cx="56" cy="58" r="24" fill="#d8322a"/>
+  <circle cx="144" cy="58" r="24" fill="#d8322a"/>
+  <circle cx="100" cy="106" r="62" fill="#f7efe2" stroke="#d8322a" stroke-width="10"/>
+  <path d="M50 102 C58 84 84 90 94 106 C100 120 88 138 72 136 C56 134 44 118 50 102 Z" fill="#d8322a"/>
+  <path d="M150 102 C142 84 116 90 106 106 C100 120 112 138 128 136 C144 134 156 118 150 102 Z" fill="#d8322a"/>
+  <circle cx="76" cy="112" r="7" fill="#f7efe2"/>
+  <circle cx="124" cy="112" r="7" fill="#f7efe2"/>
+  <path d="M89 138 C96 133 104 133 111 138 C109 147 104 151 100 151 C96 151 91 147 89 138 Z" fill="#d8322a"/>
+</svg>

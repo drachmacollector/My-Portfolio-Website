@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { SECTIONS, CONTACT, toDeva } from "@/constants/content";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { getLenis } from "@/animations/smooth-scroll";
-import { ArrowUpRight } from "@/components/Icons";
+import { ArrowDown, ArrowUpRight } from "@/components/Icons";
 
 const LIGHT_SECTIONS = new Set(["mun"]);
 
@@ -17,6 +17,7 @@ export const scrollToId = (id: string) => {
 const Chrome = () => {
   const [active, setActive] = useState(0);
   const [open, setOpen] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
   const [hush, setHush] = useState<Record<string, boolean>>(() => ({
     hero: typeof window !== "undefined" && window.scrollY < window.innerHeight * 0.55,
   }));
@@ -43,6 +44,14 @@ const Chrome = () => {
       triggers.forEach((t) => t.kill());
       window.removeEventListener("rail-hush", onHush);
     };
+  }, []);
+
+  // Back-to-top shows once the landing screen is behind us.
+  useEffect(() => {
+    const onScroll = () => setPastHero(window.scrollY > window.innerHeight * 0.9);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useGSAP(
@@ -104,6 +113,20 @@ const Chrome = () => {
           Contact
         </button>
       </div>
+
+      {/* Back to top */}
+      <button
+        onClick={() => scrollToId("top")}
+        aria-label="Back to top"
+        tabIndex={pastHero && !open ? 0 : -1}
+        className={`fixed bottom-5 right-5 z-[60] grid h-12 w-12 place-items-center rounded-full border transition-[opacity,transform,color,background-color,border-color] duration-500 md:bottom-8 md:right-8 ${
+          light
+            ? "border-paper-ink/25 bg-paper text-paper-ink hover:bg-paper-ink hover:text-paper"
+            : "border-bone/20 bg-ink text-bone hover:bg-bone hover:text-ink"
+        } ${pastHero && !open ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"}`}
+      >
+        <ArrowDown className="h-4 w-4 rotate-180" />
+      </button>
 
       {/* Top right actions */}
       <div className="fixed right-5 top-5 z-[60] flex items-center gap-3 md:right-8 md:top-7">

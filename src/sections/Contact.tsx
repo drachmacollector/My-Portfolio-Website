@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { CONTACT } from "@/constants/content";
 import { gsap, useGSAP, ANY_MOTION } from "@/lib/gsap";
-import { ArrowUpRight, ArrowRight } from "@/components/Icons";
+import { ArrowUpRight, ArrowRight, GithubLogo, LinkedInLogo } from "@/components/Icons";
 import { scrollToId } from "@/components/Chrome";
 
 const encode = (data: Record<string, string>) =>
@@ -12,9 +12,9 @@ const encode = (data: Record<string, string>) =>
 type Status = "idle" | "sending" | "sent" | "error";
 
 const LINKS = [
-  { name: "LinkedIn", note: "The fastest way to reach me about roles.", href: CONTACT.linkedin },
-  { name: "GitHub", note: "Code for most of the projects above.", href: CONTACT.github },
-  { name: "Résumé", note: "One page, PDF.", href: CONTACT.resume },
+  { name: "LinkedIn", note: "The fastest way to reach me about roles.", href: CONTACT.linkedin, Icon: LinkedInLogo },
+  { name: "GitHub", note: "Code for most of the projects above.", href: CONTACT.github, Icon: GithubLogo },
+  { name: "Résumé", note: "One page, PDF.", href: CONTACT.resume, Icon: null },
 ];
 
 const Field = ({
@@ -202,7 +202,7 @@ const Contact = () => {
             className="group block border-b border-bone/10 pb-6"
           >
             <span className="label text-bone/55">Email</span>
-            <span className="display mt-3 block break-all text-[clamp(1.6rem,3.2vw,2.6rem)] text-blood-hi transition-colors duration-300 group-hover:text-bone">
+            <span className="mt-3 block break-all text-[clamp(1.6rem,3.2vw,2.6rem)] leading-tight tracking-tight text-blood-hi transition-colors duration-300 group-hover:text-bone">
               {CONTACT.email}
             </span>
           </a>
@@ -215,7 +215,8 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   className="group grid grid-cols-[minmax(8rem,auto)_1fr_auto] items-center gap-6 py-6"
                 >
-                  <span className="display text-[clamp(1.5rem,2.6vw,2.2rem)] transition-colors duration-300 group-hover:text-blood-hi">
+                  <span className="display inline-flex items-center gap-3 text-[clamp(1.5rem,2.6vw,2.2rem)] transition-colors duration-300 group-hover:text-blood-hi">
+                    {l.Icon && <l.Icon className="h-[0.8em] w-[0.8em] shrink-0" />}
                     {l.name}
                   </span>
                   <span className="text-[0.92rem] text-bone/60">{l.note}</span>
