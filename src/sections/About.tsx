@@ -66,14 +66,6 @@ const About = () => {
           ))}
         </p>
 
-        <dl className="ab-facts mt-20 grid gap-px overflow-hidden rounded-2xl border border-bone/10 bg-bone/10 md:grid-cols-3">
-          {ABOUT.facts.map((f) => (
-            <div key={f.k} className="ab-fact bg-ink px-6 py-7">
-              <dt className="label text-blood-hi">{f.k}</dt>
-              <dd className="mt-3 text-[1.05rem] text-bone/85">{f.v}</dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   );

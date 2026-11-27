@@ -44,11 +44,6 @@ export const ABOUT = {
   // Red spans are marked with [[ ]]
   statement:
     "I study computer science at IIIT Nagpur and I like problems that arrive as [[a pile of paperwork]]. I work out what the client actually needs, [[build the system]] that does it, and hand it over so it [[runs without me]].",
-  facts: [
-    { k: "Studying", v: "B.Tech CSE (AI & ML), IIIT Nagpur, since 2024" },
-    { k: "Worked at", v: "KPMG India, The Consistent Academy" },
-    { k: "Also", v: "MUN delegate and chair, debater, 3D artist" },
-  ],
 };
 
 export const KPMG = {
@@ -63,7 +58,7 @@ export const KPMG = {
   intro:
     "Two months on the Labour Department's project to fold its scattered portals into one. I worked on three assignments, each bigger than the last.",
   repo: "https://github.com/drachmacollector/kpmg",
-  download: "https://github.com/drachmacollector/KPMG/releases/download/v2.1.0/MAHABOCW-Setup.exe",
+  appLogo: "/img/logo-mahabocw.png",
   chapters: [
     {
       n: 1,
@@ -91,14 +86,9 @@ export const KPMG = {
       ],
       listTitle: "A six-point validation framework",
     },
-    {
-      n: 3,
-      title: "Scholarship pipeline",
-      body: "For MAHABOCW, the construction workers' welfare board. Workers' children can claim up to ₹1 lakh a year for engineering or medical study. Applicants typed college names however they liked, and consultants were checking more than a lakh applications a year by hand. I built the system that does it instead.",
-      list: [],
-      listTitle: "",
-    },
   ],
+  pipelineIntro:
+    "For MAHABOCW, the construction workers' welfare board. Workers' children can claim up to ₹1 lakh a year for engineering or medical study. Applicants typed college names however they liked, and consultants were checking more than a lakh applications a year by hand. I built the system that does it instead.",
   pipeline: [
     { t: "Open the claim", tools: "Playwright" },
     { t: "Pick the evidence", tools: "Two-phase triage" },

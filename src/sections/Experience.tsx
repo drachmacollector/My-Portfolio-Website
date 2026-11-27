@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { EXPERIENCE, KPMG } from "@/constants/content";
 import { gsap, useGSAP, ANY_MOTION } from "@/lib/gsap";
-import { ArrowUpRight, Download } from "@/components/Icons";
+import { ArrowUpRight } from "@/components/Icons";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -152,7 +152,7 @@ const Experience = () => {
                     </div>
                   ))}
               </dl>
-              <p className="mt-8 max-w-[56ch] text-[1.05rem] leading-relaxed text-bone/80">{KPMG.intro}</p>
+              <p className="mt-8 max-w-[90ch] text-[1.05rem] leading-relaxed text-bone/80">{KPMG.intro}</p>
 
               <ol className="ex-jobs mt-10 grid gap-8">
                 {KPMG.chapters.map((ch) => (
@@ -160,9 +160,9 @@ const Experience = () => {
                     <span className="tabular pt-2 text-[0.95rem] text-blood-hi">{pad(ch.n)}</span>
                     <div>
                       <h4 className="display text-[clamp(1.6rem,2.6vw,2.2rem)]">{ch.title}</h4>
-                      <p className="mt-3 max-w-[60ch] text-[0.98rem] leading-relaxed text-bone/75">{ch.body}</p>
+                      <p className="mt-3 max-w-[120ch] text-[0.98rem] leading-relaxed text-bone/75">{ch.body}</p>
                       {ch.list.length > 0 && (
-                        <details className="group mt-4 max-w-[60ch]">
+                        <details className="group mt-4 max-w-[120ch]">
                           <summary className="inline-flex cursor-pointer list-none items-center gap-2 text-[0.9rem] text-bone/70 transition-colors duration-300 hover:text-bone [&::-webkit-details-marker]:hidden">
                             <span className="grid h-5 w-5 place-items-center rounded-full border border-bone/25 text-[0.8rem] leading-none transition-transform duration-300 group-open:rotate-45">
                               +
@@ -185,17 +185,20 @@ const Experience = () => {
             </div>
           </div>
 
-          {/* The pipeline, in seven steps */}
+          {/* 03 · Scholarship pipeline */}
           <div className="ex-pipe mt-20 border-t border-bone/10 pt-12">
-            <div className="flex flex-wrap items-end justify-between gap-6">
-              <h4 className="display text-[clamp(2rem,4.4vw,3.6rem)] leading-[0.95]">
-                Paperwork in, <span className="text-blood">verdict out</span>
-              </h4>
-              <p className="max-w-[40ch] text-[0.98rem] leading-relaxed text-bone/70">
-                The scholarship pipeline reads each claim the way a consultant would, and only asks a person when it is
-                unsure.
-              </p>
+            <div className="grid grid-cols-[2.4rem_1fr] gap-x-4">
+              <span className="tabular pt-2 text-[0.95rem] text-blood-hi">03</span>
+              <div>
+                <h4 className="display text-[clamp(1.6rem,2.6vw,2.2rem)]">
+                  Scholarship pipeline
+                </h4>
+                <p className="mt-3 max-w-[120ch] text-[0.98rem] leading-relaxed text-bone/75">
+                  {KPMG.pipelineIntro}
+                </p>
+              </div>
             </div>
+
 
             <div className="relative mt-12">
               <span className="absolute left-0 right-0 top-[14px] hidden h-px bg-bone/15 xl:block" aria-hidden="true" />
@@ -248,13 +251,7 @@ const Experience = () => {
               </dl>
               <div className="flex flex-col items-start gap-4 lg:items-end">
                 <p className="max-w-[34ch] text-[0.98rem] leading-relaxed text-bone/75 lg:text-right">{KPMG.shipped}</p>
-                <div className="flex flex-wrap gap-3">
-                  <a
-                    href={KPMG.download}
-                    className="inline-flex items-center gap-2 rounded-full bg-bone px-5 py-2.5 text-[0.9rem] text-ink transition-colors duration-300 hover:bg-blood hover:text-bone"
-                  >
-                    Download the app (.exe) <Download />
-                  </a>
+                <div className="flex flex-wrap items-center gap-3">
                   <a
                     href={KPMG.repo}
                     target="_blank"
@@ -263,6 +260,11 @@ const Experience = () => {
                   >
                     Pipeline code <ArrowUpRight />
                   </a>
+                  <img
+                    src={KPMG.appLogo}
+                    alt="MAHABOCW app"
+                    className="h-10 w-10 rounded-lg object-contain"
+                  />
                 </div>
               </div>
             </div>
