@@ -164,7 +164,7 @@ const Contact = () => {
 
       <div className="shell mt-[clamp(80px,12vh,140px)] grid gap-16 lg:grid-cols-2">
         <div>
-          <h2 className="flex items-baseline gap-4">
+          <h2 className="cursor-target flex w-fit items-baseline gap-4">
             <span className="display text-[clamp(2.4rem,4.5vw,4rem)]">Write to me</span>
             <span className="deva text-[clamp(1.6rem,2.8vw,2.4rem)] text-blood">संपर्क</span>
           </h2>

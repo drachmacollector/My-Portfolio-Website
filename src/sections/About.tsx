@@ -53,7 +53,7 @@ const About = () => {
   return (
     <section id="about" ref={root} className="relative bg-ink py-[clamp(88px,14vh,160px)]">
       <div className="shell">
-        <h2 className="flex items-baseline gap-4">
+        <h2 className="cursor-target flex w-fit items-baseline gap-4">
           <span className="display text-[clamp(1.8rem,3vw,2.6rem)]">Who I am</span>
           <span className="deva text-[clamp(1.6rem,2.6vw,2.2rem)] text-blood">मी</span>
         </h2>

@@ -111,7 +111,7 @@ const Experience = () => {
     >
       <div className="shell">
         <div className="ex-head flex flex-wrap items-end justify-between gap-6">
-          <h2 className="display text-[clamp(3.4rem,9vw,8.5rem)] leading-[0.85]">Experience</h2>
+          <h2 className="cursor-target display text-[clamp(3.4rem,9vw,8.5rem)] leading-[0.85]">Experience</h2>
           <p className="max-w-[34ch] text-[1rem] leading-relaxed text-bone/70">
             Where I have worked so far, and what I left behind.
           </p>
@@ -139,7 +139,7 @@ const Experience = () => {
                 </span>
                 <span className="tabular text-[0.95rem] text-bone/60">{KPMG.meta.find((m) => m.k === "When")?.v}</span>
               </div>
-              <h3 id="ex-kpmg" className="display mt-8 text-[clamp(2.2rem,4.4vw,3.8rem)] leading-[0.95]">
+              <h3 id="ex-kpmg" className="cursor-target display mt-8 w-fit text-[clamp(2.2rem,4.4vw,3.8rem)] leading-[0.95]">
                 {KPMG.role}
               </h3>
               <dl className="mt-6 grid gap-x-8 border-t border-bone/15 sm:grid-cols-2">
@@ -159,7 +159,7 @@ const Experience = () => {
                   <li key={ch.title} className="ex-job grid grid-cols-[2.4rem_1fr] gap-x-4">
                     <span className="tabular pt-2 text-[0.95rem] text-blood-hi">{pad(ch.n)}</span>
                     <div>
-                      <h4 className="display text-[clamp(1.6rem,2.6vw,2.2rem)]">{ch.title}</h4>
+                      <h4 className="cursor-target display w-fit text-[clamp(1.6rem,2.6vw,2.2rem)]">{ch.title}</h4>
                       <p className="mt-3 max-w-[120ch] text-[0.98rem] leading-relaxed text-bone/75">{ch.body}</p>
                       {ch.list.length > 0 && (
                         <details className="group mt-4 max-w-[120ch]">
@@ -190,7 +190,7 @@ const Experience = () => {
             <div className="grid grid-cols-[2.4rem_1fr] gap-x-4">
               <span className="tabular pt-2 text-[0.95rem] text-blood-hi">03</span>
               <div>
-                <h4 className="display text-[clamp(1.6rem,2.6vw,2.2rem)]">
+                <h4 className="cursor-target display w-fit text-[clamp(1.6rem,2.6vw,2.2rem)]">
                   Scholarship pipeline
                 </h4>
                 <p className="mt-3 max-w-[120ch] text-[0.98rem] leading-relaxed text-bone/75">
@@ -237,12 +237,14 @@ const Experience = () => {
                     <div key={n.label}>
                       <dt className="sr-only">{n.label}</dt>
                       <dd>
-                        <span className="display tabular text-[clamp(2.4rem,4vw,3.4rem)] leading-none">
-                          <span className="ex-num" data-to={n.display} data-dec={dec}>
-                            {n.display}
+                        <span className={`inline-block ${n.unit === "lakh" ? "cursor-target" : ""}`}>
+                          <span className="display tabular text-[clamp(2.4rem,4vw,3.4rem)] leading-none">
+                            <span className="ex-num" data-to={n.display} data-dec={dec}>
+                              {n.display}
+                            </span>
                           </span>
+                          <span className="label ml-2 text-blood-hi">{n.unit}</span>
                         </span>
-                        <span className="label ml-2 text-blood-hi">{n.unit}</span>
                         <p className="mt-2 max-w-[18ch] text-[0.88rem] text-bone/60">{n.label}</p>
                       </dd>
                     </div>

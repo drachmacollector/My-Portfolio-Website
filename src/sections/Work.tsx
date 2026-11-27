@@ -118,7 +118,7 @@ const Work = () => {
   return (
     <section id="work" ref={root} className="relative bg-ink pt-[clamp(88px,14vh,160px)]" aria-label="Selected work">
       <div className="shell wk-head flex flex-wrap items-end justify-between gap-6">
-        <h2 className="display text-[clamp(3.4rem,9vw,8.5rem)] leading-[0.85]">
+        <h2 className="cursor-target display text-[clamp(3.4rem,9vw,8.5rem)] leading-[0.85]">
           Selected
           <br />
           <span className="text-blood">work</span>
@@ -142,7 +142,7 @@ const Work = () => {
                         {toDeva(String(total).padStart(2, "0"))}
                       </span>
                     </p>
-                    <h3 className="display mt-2 text-[clamp(2.6rem,5.2vw,5.4rem)]">{p.title}</h3>
+                    <h3 className="cursor-target display mt-2 w-fit text-[clamp(2.6rem,5.2vw,5.4rem)]">{p.title}</h3>
                     <p className="mt-3 text-[1rem] text-bone/55">
                       {p.kind}, {p.year}
                     </p>

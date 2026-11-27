@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import TargetCursor from "@/components/TargetCursor";
 import Chrome from "@/components/Chrome";
 import Preloader from "@/components/Preloader";
 import Hero from "@/sections/Hero";
@@ -13,6 +14,8 @@ import { ScrollTrigger } from "@/lib/gsap";
 
 const Index = () => {
   const [ready, setReady] = useState(false);
+  // The reticle cursor lives everywhere below the landing screen.
+  const rest = useRef<HTMLDivElement>(null);
 
   useEffect(() => initSmoothScroll(), []);
 
@@ -30,13 +33,16 @@ const Index = () => {
       <Chrome />
       <main>
         <Hero ready={ready} />
-        <About />
-        <Experience />
-        <Work />
-        <Mun />
-        <Renders />
-        <Contact />
+        <div ref={rest}>
+          <About />
+          <Experience />
+          <Work />
+          <Mun />
+          <Renders />
+          <Contact />
+        </div>
       </main>
+      <TargetCursor container={rest} spinDuration={2} hideDefaultCursor parallaxOn />
     </>
   );
 };

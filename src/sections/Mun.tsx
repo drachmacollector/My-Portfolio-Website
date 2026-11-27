@@ -132,7 +132,7 @@ const Mun = () => {
     >
       <div className="shell">
         <div className="mn-head flex flex-wrap items-end justify-between gap-6">
-          <h2 className="display text-[clamp(3.4rem,9vw,8.5rem)] leading-[0.85]">
+          <h2 className="cursor-target display text-[clamp(3.4rem,9vw,8.5rem)] leading-[0.85]">
             Model <span className="text-blood">UN</span>
           </h2>
           <p className="max-w-[40ch] text-[1rem] leading-relaxed text-paper-ink/75">{MUN.intro}</p>
